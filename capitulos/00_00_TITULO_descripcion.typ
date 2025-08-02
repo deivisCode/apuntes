@@ -22,6 +22,7 @@ Como sabemos polo @cap:topoloxia :
 
 #teorema("Fermat", "teo:fermat")[
     $ a^2 + b = 0 => a = 1 $ <ec:fermat1>
+    $ a^2 + b = 0 => a = 1 $ <ec:fermat2>
 ]
 
 #definicion("Espazo topoloxico", "def:espazo_topoloxico")[
@@ -41,3 +42,5 @@ Como sabemos polo @cap:topoloxia :
 Tal e como vemos na @def:espazo_topoloxico e seguindo o @teo:fermat
 
 Esto é unha palabra que vai ao indice, *mirade*!! #indice("Mirar")
+
+E a ec @ec:fermat1

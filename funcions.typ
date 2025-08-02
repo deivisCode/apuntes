@@ -164,7 +164,17 @@
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
     }
-    set math.equation(numbering: "[1]")
+    set math.equation(
+        numbering: eso => context {
+            "("
+            str(counter(heading.where(level:1)).at(here()).last())
+            "."
+            str(counter(heading.where(level:2)).at(here()).last())
+            "."
+            str(eso)
+            ")"
+        }
+    )
     // Esto é para customizar as referencias
     show ref: it => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
