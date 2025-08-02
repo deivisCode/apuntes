@@ -21,7 +21,7 @@ Esto é unha cita no texto e na marxe #cita(<kostrikin_1983>)
 Como sabemos polo @cap:topoloxia :
 
 #teorema("Fermat", "teo:fermat")[
-    $ a^2 + b = 0 => a = 0 $
+    $ a^2 + b = 0 => a = 1 $ <ec:fermat1>
 ]
 
 #definicion("Espazo topoloxico", "def:espazo_topoloxico")[

@@ -165,6 +165,42 @@
         eso.body
     }
     set math.equation(numbering: "[1]")
+    // Esto é para customizar as referencias
+    show ref: it => {
+        // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
+        // no caso de que a referencia apunte a unha figura de tipo "teorema"
+        if it.element != none and it.element.func() == figure and it.element.kind == "teorema" {
+            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
+            let NUM = counter(figure.where(kind:"teorema")).at(it.element.location()).last()
+            link(
+                it.element.location(),
+                [#text(font:"New Computer Modern Mono")[teo];[#HEA.#SEC.#NUM]]
+            )
+        // O mesmo, pero con definicions
+        } else if it.element != none and it.element.func() == figure and it.element.kind == "definicion" {
+            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
+            let NUM = counter(figure.where(kind:"definicion")).at(it.element.location()).last()
+            link(
+                it.element.location(),
+                [#text(font:"New Computer Modern Mono")[def];[#HEA.#SEC.#NUM]]
+            )
+        // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
+        // no caso de que a referencia apunte a unha figura de tipo 'math.equation'
+        } else if it.element != none and it.element.func() == math.equation {
+            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
+            let NUM = counter(math.equation).at(it.element.location()).first()
+            link(
+                it.element.location(),
+                [#text(font:"New Computer Modern Mono")[ec];[#HEA.#SEC.#NUM]]
+            )
+        // No resto de casos
+        } else {
+            it
+        }
+    }
     doc
 }
 
@@ -256,19 +292,15 @@
     )
 }
 
-/// Contadores para teoremas e definicions.
-#let contador_teorema = counter("teorema")
-#let contador_definicion = counter("definicion")
-
-/// Un teorema simple, e.g. '#teorema("fermat")[$a+b=0$]
+/// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
+//
 // :FACER: meter automaticamente esto no indice?
-// :FACER: os numeros deberían ser algo como CAP . SEC . CONTADOR, por exemplo
-//         algo como 1.2.356, pero non sei facelo. Estou mesturando un conteo
-//         creado a man con counter() e ademais o conteo das figuras (as cales
-//         necesito para poder referenciar as cousas)
-#let teorema(nome, ancla, corpo) = {
-    contador_teorema.step()
+#let teorema(titulo, ancla, corpo ) = context {
     show figure: set align(left)
+    let HEA = counter(heading.where(level: 1)).get().first()
+    let SEC = counter(heading.where(level: 2)).get().last()
+    // :FACER: o de sumar 1 ao final é un apaño, non sei por qué fai falta
+    let NUM = counter(figure.where(kind:"teorema")).get().first() + 1
     // Creo un rectangulo
     rect(
         stroke:(
@@ -276,45 +308,39 @@
             bottom : luma(20%) + 1pt
         ),
         fill: rgb("#FF0000").lighten(90%),
+        width:100%,
         // Metolle contido dentro
         [
-            // E dentro do contido, unha figura
             #figure(
                 kind:"teorema",
-                supplement: [Teorema],
-                [
-                    *Teorema*
-                    *#context contador_teorema.display()*
-                    (#smallcaps[#nome]) : #corpo
-                ]
+                supplement: "Teorema",
+                [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(titulo)) #corpo ]
             )
             // Esto é porque o label debe estar dentro dun contido, e así
             // ánclase á figura anterior
             #label(ancla)
         ]
     )
-
 }
 
-/// O mismo pero pa definicions
-#let definicion(nome, ancla, corpo) = {
-    contador_definicion.step()
+/// Unha definicion simple, e.g. '#definicion("exemplo","def:algo")[a = 0]'
+#let definicion(titulo, ancla, corpo ) = context {
     show figure: set align(left)
+    let HEA = counter(heading.where(level: 1)).get().first()
+    let SEC = counter(heading.where(level: 2)).get().last()
+    let NUM = counter(figure.where(kind:"definicion")).get().first() + 1
     rect(
         stroke:(
             top    : luma(20%) + 1pt,
             bottom : luma(20%) + 1pt
         ),
         fill: rgb("#0000FF").lighten(90%),
+        width:100%,
         [
             #figure(
                 kind:"definicion",
-                supplement: [Definición],
-                [
-                    *Definición*
-                    *#context contador_definicion.display()*
-                    (#smallcaps[#nome]) : #corpo
-                ]
+                supplement: "Definicion",
+                [ *Definicion* #HEA.#SEC.#NUM (#smallcaps(titulo)) #corpo ]
             )
             #label(ancla)
         ]
