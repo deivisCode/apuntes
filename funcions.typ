@@ -288,18 +288,23 @@
 #let nota = note.with( numbering: none, text-style:(size:9pt) )
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
-// completa da cita na marxe
-//
-// :FACER: só poñela na marxe a primeira vez, se volve aparecer, colocala so no
-//         texto, así non se ocupa demasiado as marxes
+// completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
+// engadimos no texto pero NON na marxe
+#let lista_citas = state("citas", ())
 #let cita(nome) = {
     // Primeiro cítase no propio texto
     cite(nome)
-    // E logo na marxe exterior
-    nota(
-        side: "outer",
-        cite(nome, form: "full")
-    )
+    context {
+        // Comprobo se a chave da cita, e.g. 'goldberg_1980', xa está na lista.
+        let repetido = lista_citas.get().contains(str(nome))
+        // Se non o está
+        if not repetido {
+            // Engadimos o nome a lista
+            lista_citas.update(it => it + (str(nome),))
+            // E engadimos unha nota ao marxe, ca cita completa
+            nota( side: "outer", cite(nome, form: "full"))
+        }
+    }
 }
 
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]

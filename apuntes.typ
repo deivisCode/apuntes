@@ -6,3 +6,5 @@
 )
 
 #include("/capitulos/00_00_TITULO_descripcion.typ")
+
+#cita(<goldberg_1980>)
