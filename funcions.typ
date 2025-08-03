@@ -310,7 +310,11 @@
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
 //
 // :FACER: meter automaticamente esto no indice?
-#let teorema(titulo, ancla, corpo ) = context {
+#let teorema(
+    nome   : " -- SEN NOME -- ",
+    ancora : " -- SEN ÁNCORA -- ",
+    corpo
+) = context {
     show figure: set align(left)
     let HEA = counter(heading.where(level: 1)).get().first()
     let SEC = counter(heading.where(level: 2)).get().last()
@@ -329,17 +333,21 @@
             #figure(
                 kind:"teorema",
                 supplement: "Teorema",
-                [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(titulo)) #corpo ]
+                [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #corpo ]
             )
             // Esto é porque o label debe estar dentro dun contido, e así
             // ánclase á figura anterior
-            #label(ancla)
+            #label(ancora)
         ]
     )
 }
 
 /// Unha definicion simple, e.g. '#definicion("exemplo","def:algo")[a = 0]'
-#let definicion(titulo, ancla, corpo ) = context {
+#let definicion(
+    nome   : " -- SEN NOME -- ",
+    ancora : " -- SEN ÁNCORA -- ",
+    corpo
+) = context {
     show figure: set align(left)
     let HEA = counter(heading.where(level: 1)).get().first()
     let SEC = counter(heading.where(level: 2)).get().last()
@@ -355,15 +363,19 @@
             #figure(
                 kind:"definicion",
                 supplement: "Definicion",
-                [ *Definicion* #HEA.#SEC.#NUM (#smallcaps(titulo)) #corpo ]
+                [ *Definicion* #HEA.#SEC.#NUM (#smallcaps(nome)) #corpo ]
             )
-            #label(ancla)
+            #label(ancora)
         ]
     )
 }
 
 /// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.
-#let capitulo(nome, epigrafe, ancla) = {
+#let capitulo(
+    nome     : " -- SEN NOME -- ",
+    ancora   : " -- SEN ANCORA -- ",
+    epigrafe : " -- SEN EPIGRAFE -- "
+) = {
     // :FACER: forzar que sempre se comece no lado dereito
     pagebreak()
     grid(
@@ -380,7 +392,7 @@
                     [#nome],
                 )
             )
-            #label(ancla)
+            #label(ancora)
         ],
         [], [], [],
         [#h(1fr)],
@@ -393,7 +405,10 @@
     v(2em)
 }
 
-#let seccion(nome, ancla) = {
+#let seccion(
+    nome   : " -- SEN NOME -- ",
+    ancora : " -- SEN ANCORA -- "
+) = {
     show figure: set align(left)
     [
         #figure(
@@ -405,6 +420,6 @@
                 [#nome],
             )
         )
-        #label(ancla)
+        #label(ancora)
     ]
 }

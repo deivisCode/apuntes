@@ -1,13 +1,13 @@
 #import("/funcions.typ"): *
 
 #capitulo(
-    "Topoloxía",
-    [
+    nome : "Topoloxía",
+    ancora : "cap:topoloxia",
+    epigrafe : [
         _Imos ter que poñerche puntos_
         #v(1fr)
         A Doutora a min, logo de cortarme unha perna cun cortasetos
     ],
-    "cap:topoloxia",
 )
 
 #lorem(20)
@@ -16,16 +16,25 @@ Esto é unha cita no texto e na marxe #cita(<kostrikin_1983>)
 
 #lorem(20)
 
-#seccion("Teoremas e definicions", "sec:exemplo")
+#seccion(
+    nome : "Teoremas e definicions",
+    ancora : "sec:exemplo"
+)
 
 Como sabemos polo @cap:topoloxia :
 
-#teorema("Fermat", "teo:fermat")[
+#teorema(
+    nome : "Fermat",
+    ancora : "teo:fermat"
+)[
     $ a^2 + b = 0 => a = 1 $ <ec:fermat1>
     $ a^2 + b = 0 => a = 1 $ <ec:fermat2>
 ]
 
-#definicion("Espazo topoloxico", "def:espazo_topoloxico")[
+#definicion(
+    nome: "Espazo topoloxico",
+    ancora: "def:espazo_topoloxico"
+)[
     Un espazo topolóxico é un par $(X, tau)$ con $X$ un conxunto de puntos e
     $tau subset cal(P)(X)$ unha _topoloxía sobre_ $X$ que cumple as seguintes
     propiedades.
