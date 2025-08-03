@@ -5,6 +5,4 @@
     autoria : ((nome: "David Cotelo Varela"),),
 )
 
-#include("/capitulos/00_00_TITULO_descripcion.typ")
-
-#cita(<goldberg_1980>)
+#include("/capitulos/01_TOPOLOXIA_00_introducion.typ")

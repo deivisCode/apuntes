@@ -248,7 +248,7 @@
 
     // :FACER: crear un 'show-frame' independente
     // :FACER: facer o frame condicional, cun argumento en activar_estilo
-    show: marginalia.show-frame
+    // show: marginalia.show-frame
 
     //// Mostramos o indice
     pagebreak()
