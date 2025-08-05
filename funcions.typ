@@ -61,7 +61,7 @@
     // :FACER: biblio en cada capítulo?
     bibliography(
         "/bibliografia.bib",
-        style : "aps_modificado.csl"
+        style : "ebd.csl"
     )
 }
 
