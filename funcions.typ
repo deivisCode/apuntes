@@ -291,6 +291,7 @@
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
 // engadimos no texto pero NON na marxe
 #let lista_citas = state("citas", ())
+// :FACER: as citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
 #let cita(nome) = {
     // Primeiro cítase no propio texto
     cite(nome)

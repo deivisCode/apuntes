@@ -6,3 +6,4 @@
 )
 
 #include("/capitulos/01_TOPOLOXIA_00_introducion.typ")
+#include("/capitulos/02_ALXEBRA_00_introducion.typ")
