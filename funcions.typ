@@ -211,6 +211,17 @@
             it
         }
     }
+    show footnote: it => {
+        super(
+            [[#text(fill: rgb("#FF0000"), weight:"bold", it)]]
+        )
+    }
+    show footnote.entry: it => {
+        let loc = it.note.location()
+        let num = counter(footnote).at(loc).first()
+        super([[#text(fill: rgb("#FF0000"), weight:"bold", [#num])] ])
+        it.note.body
+    }
     doc
 }
 
