@@ -400,6 +400,7 @@
 ) = {
     // :FACER: forzar que sempre se comece no lado dereito
     pagebreak()
+    counter(heading.where(level: 2)).update(0)
     grid(
         columns : (auto,20%,1fr),
         rows    : (5em, 5em),
