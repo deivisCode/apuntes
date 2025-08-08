@@ -152,7 +152,11 @@
     )
     set text(fill:black)
     set heading(numbering: "1.")
-    set par( justify: true, first-line-indent: 1.5em )
+    set par(
+        justify: true,
+        first-line-indent: 1.5em,
+        linebreaks: "optimized"
+    )
     show raw: set text( font: "New Computer Modern Mono" )
     show quote: eso => {
         set quote(block: true)
@@ -245,9 +249,14 @@
         binding : left,
     )
     set text(
-        size : 12pt,
-        font : "New Computer Modern",
-        lang : "gl",
+        size         : 12pt,
+        font         : "New Computer Modern",
+        lang         : "gl",
+        region       : "ES",
+        script       : "latn",
+        dir          : ltr,
+        hyphenate    : true,
+        slashed-zero : true,
     )
 
     //// Montamos a portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
