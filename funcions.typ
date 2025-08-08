@@ -143,6 +143,7 @@
         footer     : pe(),
         fill       : rgb("#fdf9e6"),
         background : none,
+        // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
         margin     : (
             top     : 4cm,
             inside  : 3cm,
@@ -443,4 +444,18 @@
         )
         #label(ancora)
     ]
+}
+
+/// Un bloque que ocupa a marxe grande tamén.
+#let bloque_ancho(contido) = {
+    context {
+        let num = counter(page).get().first()
+        if calc.even(num) {
+            set align(right)
+            block(width: 100% + 2cm, contido)
+        } else {
+            set align(left)
+            block(width: 100% + 2cm, contido)
+        }
+    }
 }
