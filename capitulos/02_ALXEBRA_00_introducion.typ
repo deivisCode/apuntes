@@ -41,7 +41,7 @@ Usamos grupos para caracterizar a simetría; os aneis, e concretamente os
 corpos, son os números cos que medimos as magnitudes escalares como as que
 mencionei antes; a combinación de grupos e aneis danos os espazos lineais
 omnipresentes en calquera rama de traballo; se tivésemos varios aneis
-falaríamos dunha álxebra#footnote[Coidado con isto: _a álxebra_, cun artículo
+falaríamos dunha #underline[álxebra]#nota[Coidado con isto: _a álxebra_, cun artículo
 definido, é a rama das matemáticas; _unha álxebra_ cun artículo indefinido, é
 unha estrutura concreta];; se un de ditos aneis é asociativo temos unha álxebra
 asociativa; se en vez de asociatividade fose unha operación bilineal que cumpre

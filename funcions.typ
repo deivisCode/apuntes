@@ -324,7 +324,7 @@
             // Engadimos o nome a lista
             lista_citas.update(it => it + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
-            nota( side: "outer", cite(nome, form: "full"))
+            note( side: "outer", numbering: none , cite(nome, form: "full"))
         }
     }
 }
