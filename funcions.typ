@@ -133,7 +133,7 @@
 #let estilo_corpo(doc) = {
     show: marginalia.setup.with(
         inner : ( far: 5mm, width: 2cm , sep: 5mm ),
-        outer : ( far: 5mm, width: 4cm , sep: 5mm ),
+        outer : ( far: 5mm, width: 5cm , sep: 5mm ),
         book  : true,
     )
     set page(
@@ -147,7 +147,7 @@
         margin     : (
             top     : 4cm,
             inside  : 3cm,
-            outside : 5cm,
+            outside : 6cm,
             bottom  : 4cm
         ),
     )
@@ -306,7 +306,7 @@
 // xeral
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota = note.with( numbering: none, text-style:(size:9pt) )
+#let nota = note.with( numbering: none, text-style:(size:10pt) )
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
@@ -324,7 +324,7 @@
             // Engadimos o nome a lista
             lista_citas.update(it => it + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
-            note( side: "outer", numbering: none , cite(nome, form: "full"))
+            note( side: "outer", numbering: none, text-style:(size:10pt), cite(nome, form: "full"))
         }
     }
 }
@@ -453,10 +453,10 @@
         let num = counter(page).get().first()
         if calc.even(num) {
             set align(right)
-            block(width: 100% + 2cm, contido)
+            block(width: 100% + 3cm, contido)
         } else {
             set align(left)
-            block(width: 100% + 2cm, contido)
+            block(width: 100% + 3cm, contido)
         }
     }
 }
