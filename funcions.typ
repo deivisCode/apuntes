@@ -2,6 +2,8 @@
 
 // :FACER: eventualmente gustaríame facer estas cousas a man
 #import "@preview/marginalia:0.2.3" as marginalia: note
+// :FACER: Indice. Debería poder ir á palabra exacta
+// :FACER: Indice. Resaltar a palabra no texto
 #import "@preview/in-dexter:0.7.2": index as indice, make-index
 
 // Pequena funcion pa usar texto en Sans
@@ -169,6 +171,8 @@
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
     }
+    // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
+    // :FACER: como referencio as ecuacións??
     set math.equation(
         numbering: eso => context {
             "("
@@ -365,6 +369,7 @@
 }
 
 /// Unha definicion simple, e.g. '#definicion("exemplo","def:algo")[a = 0]'
+// :FACER: Definicions. Engadir algo de espazo antes e despois do texto
 #let definicion(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
