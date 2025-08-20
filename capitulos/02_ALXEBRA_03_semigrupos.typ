@@ -5,8 +5,15 @@
     ancora : "sec:alxebra:semigrupos"
 )
 
-(Ollo, meto os magmas antes??)
+#definicion(
+    nome : "Semigrupo",
+    ancora : "def:alxebra:magma"
+)[
+    Unha parella $(A,*)$ onde $A$ é un conxunto arbitrario e
+    $*$ é unha operación binaria, interna e asociativa, dise que é un
+    semigrupo#indice[semigrupo]. É dicir, un magma, pero onde a operación
+    $*$ tamén é asociativa
+]
 
-+ Semigrupo, Parella $(X,*)$ con $*$ asociativo, máis existe neutro
-+ subsemigrupo
-+ homomorfismos de semigrupos
+// :FACER: subsemigrupos
+// :FACER: morfismos de subsemigrupos

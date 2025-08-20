@@ -148,6 +148,7 @@ outro elemento sen afectalo de ningún modo.
 ]
 
 // :FACER: conceptos básicos, inverso é único
+// :FACER: se un elemento ten inverso, o elemento dise _invertible_
 O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
 na multiplicativa.
 
