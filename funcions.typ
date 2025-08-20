@@ -63,6 +63,8 @@
     // :FACER: biblio en cada capítulo?
     bibliography(
         "/bibliografia.bib",
+        // :FACER: máis espazo entre o título e o corpo da bibliografía (falla con indice)
+        title: sans[Bibliografía],
         style : "ebd.csl"
     )
 }
@@ -185,51 +187,51 @@
         }
     )
     // Esto é para customizar as referencias
-    show ref: it => {
+    show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
-        if it.element != none and it.element.func() == figure and it.element.kind == "teorema" {
-            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
-            let NUM = counter(figure.where(kind:"teorema")).at(it.element.location()).last()
+        if eso.element != none and eso.element.func() == figure and eso.element.kind == "teorema" {
+            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let NUM = counter(figure.where(kind:"teorema")).at(eso.element.location()).last()
             link(
-                it.element.location(),
+                eso.element.location(),
                 [#text(font:"New Computer Modern Mono")[teo];[#HEA.#SEC.#NUM]]
             )
         // O mesmo, pero con definicions
-        } else if it.element != none and it.element.func() == figure and it.element.kind == "definicion" {
-            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
-            let NUM = counter(figure.where(kind:"definicion")).at(it.element.location()).last()
+        } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "definicion" {
+            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let NUM = counter(figure.where(kind:"definicion")).at(eso.element.location()).last()
             link(
-                it.element.location(),
+                eso.element.location(),
                 [#text(font:"New Computer Modern Mono")[def];[#HEA.#SEC.#NUM]]
             )
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
         // no caso de que a referencia apunte a unha figura de tipo 'math.equation'
-        } else if it.element != none and it.element.func() == math.equation {
-            let HEA = counter(heading.where(level: 1)).at(it.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(it.element.location()).last()
-            let NUM = counter(math.equation).at(it.element.location()).first()
+        } else if eso.element != none and eso.element.func() == math.equation {
+            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let NUM = counter(math.equation).at(eso.element.location()).first()
             link(
-                it.element.location(),
+                eso.element.location(),
                 [#text(font:"New Computer Modern Mono")[ec];[#HEA.#SEC.#NUM]]
             )
         // No resto de casos
         } else {
-            it
+            eso
         }
     }
-    show footnote: it => {
+    show footnote: eso => {
         super(
-            [[#text(fill: rgb("#FF0000"), weight:"bold", it)]]
+            [[#text(fill: rgb("#FF0000"), weight:"bold", eso)]]
         )
     }
-    show footnote.entry: it => {
-        let loc = it.note.location()
+    show footnote.entry: eso => {
+        let loc = eso.note.location()
         let num = counter(footnote).at(loc).first()
         super([[#text(fill: rgb("#FF0000"), weight:"bold", [#num])] ])
-        it.note.body
+        eso.note.body
     }
     doc
 }
@@ -254,14 +256,13 @@
         binding : left,
     )
     set text(
-        size         : 12pt,
-        font         : "New Computer Modern",
-        lang         : "gl",
-        region       : "ES",
-        script       : "latn",
-        dir          : ltr,
-        hyphenate    : true,
-        slashed-zero : true,
+        size      : 12pt,
+        font      : "New Computer Modern",
+        lang      : "gl",
+        region    : "ES",
+        script    : "latn",
+        dir       : ltr,
+        hyphenate : true,
     )
 
     //// Montamos a portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -326,7 +327,7 @@
         // Se non o está
         if not repetido {
             // Engadimos o nome a lista
-            lista_citas.update(it => it + (str(nome),))
+            lista_citas.update(eso => eso + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
             note( side: "outer", numbering: none, text-style:(size:10pt), cite(nome, form: "full"))
         }
@@ -375,6 +376,7 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = context {
+    // :FACER: este context igual se pode meter dentro do contido do rectangulo?
     show figure: set align(left)
     let HEA = counter(heading.where(level: 1)).get().first()
     let SEC = counter(heading.where(level: 2)).get().last()
