@@ -136,19 +136,27 @@
 // :FACER: crear algunha opcion para poder activar/desactivar o fondo sepia
 #let estilo_corpo(doc) = {
     show: marginalia.setup.with(
-        inner : ( far: 5mm, width: 2cm , sep: 5mm ),
-        outer : ( far: 5mm, width: 5cm , sep: 5mm ),
-        book  : true,
+        inner  : ( far: 5mm, width: 2cm , sep: 5mm ),
+        outer  : ( far: 5mm, width: 5cm , sep: 5mm ),
+        top    : 4cm,
+        bottom : 4cm,
+        book   : true,
     )
     set page(
         // :FACER: comezar en 1 no corpo do documento
-        numbering  : "1",
-        header     : encabezado(),
-        footer     : pe(),
-        fill       : rgb("#fdf9e6"),
-        background : none,
-        // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
-        margin     : (
+        numbering      : "1",
+        header         : encabezado(),
+        footer         : pe(),
+        // O texto comeza EXACTAMENTE onde están as marxes. Se queremos ter
+        // espazo entre encabezado e o texto, metemos o encabezado _dentro_ da
+        // marxe. Co pe de paxina é análogo. O de ascent/descent é canto os
+        // metemos nas marxes
+        header-ascent  : 10%,
+        footer-descent : 10%,
+        fill           : rgb("#fdf9e6"),
+        background     : none,
+        margin         : (
+            // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
             top     : 4cm,
             inside  : 3cm,
             outside : 6cm,
@@ -187,6 +195,7 @@
         }
     )
     // Esto é para customizar as referencias
+    // :FACER: numeros para táboas
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"

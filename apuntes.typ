@@ -18,4 +18,4 @@
 #include("/capitulos/02_ALXEBRA_08_espazos-lineais.typ")
 #include("/capitulos/02_ALXEBRA_09_alxebras.typ")
 // :FACER: crear un 'wideblock' e facer que esta taboa colla, ou rotala
-// #include("/capitulos/02_ALXEBRA_10_estruturas.typ")
+#include("/capitulos/02_ALXEBRA_10_estruturas.typ")
