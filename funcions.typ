@@ -89,7 +89,7 @@
     heading(
         level: 1,
         numbering: none,
-        [Índice Alfabético],
+        sans[Índice Alfabético],
     )
     v(1em)
     columns(2)[ #make-index(title: none) ]
