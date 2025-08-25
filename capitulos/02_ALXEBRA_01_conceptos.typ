@@ -39,7 +39,7 @@ $
 $
 
 Onde usei $plus.circle$ en lugar de $f$ ao final. Outros símbolos posibles son
-$+ * · dot.circle$ ou o que veña en mente ao escribir.
+$+ * · dot.circle diamond.stroked$ ou o que veña en mente ao escribir.
 
 A pesar de que existen infinidade de símbolos, úsanse 2 estilos claramente
 diferenciados. Na notación *aditiva* úsanse símbolos que asemellan os da suma,

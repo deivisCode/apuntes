@@ -1,20 +1,23 @@
 // Este é o arquivo cas funcións e estilos de todos os apuntes.
 
+// :FACER: Palabras clave (en comentarios) en cada arquivo. Logo con python ler
+// todo o diretorio e crear un grafo das relacións entre temas
+
 // :FACER: eventualmente gustaríame facer estas cousas a man
 #import "@preview/marginalia:0.2.3" as marginalia: note
-// :FACER: Indice. Debería poder ir á palabra exacta
+// :FACER: Indice. Debería poder ir á palabra exacta, en vez de só a paxina
 // :FACER: Indice. Resaltar a palabra no texto
 #import "@preview/in-dexter:0.7.2": index as indice, make-index
 
-// Pequena funcion pa usar texto en Sans
-#let sans = eso => text(font: "New Computer Modern Sans")[#eso]
-#let tt   = eso => text(font: "New Computer Modern Mono")[#eso]
+// Pequena funcion pa usar texto en Sans e en Monoespaciado
+#let sf = eso => text(font: "New Computer Modern Sans")[#eso]
+#let tt = eso => text(font: "New Computer Modern Mono")[#eso]
 
 /// Funcion para crear un encabezado
 //
 // :FACER: simboliño do medio no encabezado
 // :FACER: nome do capitulo ou seccion no encabezado
-#let encabezado() = {
+#let crear_encabezado() = {
     grid(
         columns: (1fr, 20%, 1fr),
         align: (left + horizon, center + horizon, right + horizon ),
@@ -26,8 +29,11 @@
 
 /// Funcion para crear o pe de paxina
 //
-// :FACER: non sei se o pe de paxina se ve ben de todo
-#let pe() = {
+// :FACER: non sei se o pe de paxina se ve ben de todo. As notas ao pe
+// colocanse no corpo do documento, polo que quedan entre o texto do corpo e a
+// liña do pe de paxina. Non me convence, pero tampouco as uso...Esto vai da
+// man do 'footer-descent'
+#let crear_pe() = {
     context {
         let num = counter(page).get().first()
         if calc.even(num) {
@@ -64,7 +70,7 @@
     bibliography(
         "/bibliografia.bib",
         // :FACER: máis espazo entre o título e o corpo da bibliografía (falla con indice)
-        title: sans[Bibliografía],
+        title: sf[Bibliografía],
         style : "ebd.csl"
     )
 }
@@ -79,7 +85,7 @@
         eso
     }
     outline(
-        title: sans[Índice de contidos #v(1em)],
+        title: sf[Índice de contidos #v(1em)],
         depth: 2
     )
 }
@@ -89,7 +95,7 @@
     heading(
         level: 1,
         numbering: none,
-        sans[Índice Alfabético],
+        sf[Índice Alfabético],
     )
     v(1em)
     columns(2)[ #make-index(title: none) ]
@@ -145,8 +151,8 @@
     set page(
         // :FACER: comezar en 1 no corpo do documento
         numbering      : "1",
-        header         : encabezado(),
-        footer         : pe(),
+        header         : crear_encabezado(),
+        footer         : crear_pe(),
         // O texto comeza EXACTAMENTE onde están as marxes. Se queremos ter
         // espazo entre encabezado e o texto, metemos o encabezado _dentro_ da
         // marxe. Co pe de paxina é análogo. O de ascent/descent é canto os
@@ -276,6 +282,7 @@
 
     //// Montamos a portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     show: estilo_portada
+    // :FACER: meter nun if portada != none
     portada
 
     //// As opcions para o corpo do documento %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,6 +294,7 @@
 
     //// Mostramos o indice
     pagebreak()
+    // :FACER: meter nun if indice != none
     indice
 
     //// Devolvemos o contido do documento
@@ -296,14 +304,17 @@
 
     //// Mostramos a bibliografia
     pagebreak()
+    // :FACER: meter nun if biblio != none
     bibliografia
 
     //// Mostramos o índice alfabético
     pagebreak()
+    // :FACER: meter nun if indice != none
     indice_alfabetico
 
     //// Mostramos a contraportada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     show: estilo_contraportada
+    // :FACER: meter nun if contrapor != none
     contraportada
 
 }
@@ -327,6 +338,7 @@
 // engadimos no texto pero NON na marxe
 #let lista_citas = state("citas", ())
 // :FACER: as citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
+// :FACER: pode usarse esto ao facer @kostrikin_1986 ?
 #let cita(nome) = {
     // Primeiro cítase no propio texto
     cite(nome)
@@ -335,6 +347,12 @@
         let repetido = lista_citas.get().contains(str(nome))
         // Se non o está
         if not repetido {
+            // :FACER: cambiar idioma para as citas (así fai mellores hífens)?
+            // Includo creando un parámetro (por defecto 'en' ou 'es') para
+            // controlalo en cada cita. Ou incluso usar a info da cita?. CSL
+            // debería ter un valor tipo 'lang'
+            // set text(lang: "en")
+            //
             // Engadimos o nome a lista
             lista_citas.update(eso => eso + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
@@ -345,7 +363,9 @@
 
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
 //
-// :FACER: meter automaticamente esto no indice?
+// :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
+// :FACER: entorno de demostracions
+// :FACER: hai 'kind' de moitos tipos, documentalos!!
 #let teorema(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
@@ -417,6 +437,7 @@
     // :FACER: forzar que sempre se comece no lado dereito
     pagebreak()
     counter(heading.where(level: 2)).update(0)
+    // :FACER: reescribir este grid con grid.cell, dado que é mais facil de ler
     grid(
         columns : (auto,20%,1fr),
         rows    : (5em, 5em),
