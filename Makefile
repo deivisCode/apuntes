@@ -1,37 +1,37 @@
-# Unhas regras de make básicas
-
 SHELL := bash
+.DEFAULT_GOAL := .pdf/apuntes.pdf
+.PHONY: limpa
 
-.DEFAULT_GOAL := rula
+# :FACER: poder elixir se usar compile ou watch con 'make metodo=watch'. Polo
+# de agora, ao cancelar con CTRL-C, make da erro
+METODO := compile
+XERADOS := .pdf/*
 
-NOME := apuntes
+# Lista de nomes das figuras que queremos compilar. Podería facerse con
+# $(wildcard figuras/*.typ) pero prefiero ser explícito
+FIGURAS := \
+	proba \
+	proba2
 
-# COMANDO PARA COMPILAR
-# --format pdf              -> xerar un PDF (por defecto, pero prefiero explicitalo)
-# --root .                  -> tomar '.' como directorio principal, podense importar cousas
-#                              con /a/b/c onde / é o directorio '.'
-# --pdf-standard 2.0,a-4f   -> versión do PDF e estandar de accesibilidade
-# --diagnostic-format short -> mostra os error en forma corta para poder metelos no editor facilmente
-# $(NOME).typ               -> o nome do documento
-# .pdf/$(NOME).pdf          -> gardar o PDF no directorio especifico
-COMPILA := typst compile \
-	--format pdf \
-	--root . \
-	--pdf-standard 2.0,a-4f \
+FIGURAS_PDF = $(patsubst %, .pdf/%.pdf, $(FIGURAS))
+
+# Opcions para compilar
+OPCIONS := \
+	--format pdf              \
+	--root .                  \
+	--pdf-standard 2.0,a-4f   \
 	--diagnostic-format short \
-	$(NOME).typ \
-	.pdf/$(NOME).pdf
 
-# Typst non crea os diretorios auxiliares (inda)
-rula: $(NOME).typ
+# Hai que asegurarse de que existe o directorio .pdf
+$(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
-	# Checkeamos se temos os directorios auxiliares
-	@if [ ! -d ".pdf" ]; then mkdir .pdf; fi
+# Xeramos os apuntes
+.pdf/apuntes.pdf: apuntes.typ $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
+	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
-	# Compilamos o documento
-	@$(COMPILA)
+# Xerar as figuras
+$(FIGURAS_PDF): .pdf/%.pdf: figuras/%.typ
+	typst $(METODO) $(OPCIONS) $^ $@
 
 limpa:
-	rm -rf .pdf/* .aux/*
-
-.PHONY: rula limpa
+	rm -rf $(XERADOS)
