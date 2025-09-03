@@ -50,6 +50,7 @@ explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.
 
 
+// :FACER: cardinalidade dun conxunto, tal vez aqui ou en topo ? delgado_2010
 #definicion(
     nome : "Estrutura Alxébrica",
     ancora : "def:alxebra:estrutura"
@@ -152,6 +153,7 @@ outro elemento sen afectalo de ningún modo.
 O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
 na multiplicativa.
 
+// :FACER: subestrutura cando hai varios conxuntos ou varias operacións
 #definicion(
     nome : "Sub Estrutura",
     ancora : "def:alxebra:subestrutura"

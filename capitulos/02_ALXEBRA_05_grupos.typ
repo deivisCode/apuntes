@@ -20,5 +20,6 @@ agora.
 ]
 
 // :FACER: Subgrupo
+// :FACER: Test de Subgrupo delgado_2010 4.14
 // :FACER: Homomorfismo de grupos
 // :FACER: Clases laterais de grupos?

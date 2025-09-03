@@ -189,6 +189,7 @@
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
     // :FACER: como referencio as ecuacións??
+    // :FACER: en lugar de usar strings, usar contido e variables para as partes
     set math.equation(
         numbering: eso => context {
             "("
@@ -366,6 +367,8 @@
 // :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
 // :FACER: entorno de demostracions
 // :FACER: hai 'kind' de moitos tipos, documentalos!!
+// :FACER: reducir o tamaño do 'context'
+// :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
 #let teorema(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
