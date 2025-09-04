@@ -30,7 +30,7 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
-$(FIGURAS_PDF): .pdf/%.pdf: figuras/%.typ
+$(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 	typst $(METODO) $(OPCIONS) $^ $@
 
 limpa:
