@@ -9,8 +9,6 @@
 
 // :FACER: ollada ao Dean
 // :FACER: ollada ao Jacobson
-// :FACER: cuantificador universal   Ax Px (delgado_2010)
-// :FACER: cuantificador existencial Ex Px (delgado_2010)
 // :FACER: usar 'tal que' literal, e non |
 #include("/capitulos/02_ALXEBRA_00_introducion.typ")
 #include("/capitulos/02_ALXEBRA_01_conceptos.typ")

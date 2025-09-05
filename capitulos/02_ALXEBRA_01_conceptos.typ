@@ -114,7 +114,7 @@ independentes.
     ancora : "def:alxebra:neutro"
 )[
     Nunha estrutura $(A,*)$, un elemento $e$ que cumpre
-    $ e * a = a * e = a, forall a in A $
+    $ forall a in A space.quad e * a = a * e = a  $
     dise que é un elemento neutro.#indice[Elemento Neutro]
 ]
 
@@ -144,7 +144,7 @@ outro elemento sen afectalo de ningún modo.
 )[
     Nunha estrutura $(A,*)$ con $e$ o elemento neutro, un elemento $y$ que
     cumpre
-    $ a * y = y * a = e $
+    $ forall a in A space.quad a * y = y * a = e $
     dise que é o elemento inverso de $a$ #indice[Elemento Inverso]
 ]
 
