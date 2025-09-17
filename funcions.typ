@@ -500,3 +500,10 @@
         }
     }
 }
+
+// Letras moi reviradas
+// :FACER: esto vai ser builtin de typst pronto
+#let scr(it) = text(
+    features: ("ss01",),
+    box($cal(it)$),
+)
