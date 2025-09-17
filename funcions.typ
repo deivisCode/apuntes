@@ -191,16 +191,11 @@
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
     // :FACER: como referencio as ecuacións??
-    // :FACER: en lugar de usar strings, usar contido e variables para as partes
     set math.equation(
         numbering: eso => context {
-            "("
-            str(counter(heading.where(level:1)).at(here()).last())
-            "."
-            str(counter(heading.where(level:2)).at(here()).last())
-            "."
-            str(eso)
-            ")"
+            let HEA = counter(heading.where(level:1)).at(here()).last()
+            let SEC = counter(heading.where(level:2)).at(here()).last()
+            [(#HEA.#SEC.#eso)]
         }
     )
     // Esto é para customizar as referencias
