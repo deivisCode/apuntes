@@ -258,6 +258,7 @@
     bibliografia      : crear_bibliografia(),
     indice_alfabetico : crear_indice_alfabetico(),
     contraportada     : crear_contraportada(),
+    marco             : false,
     documento
 ) = {
 
@@ -280,41 +281,50 @@
     )
 
     //// Montamos a portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    show: estilo_portada
-    // :FACER: meter nun if portada != none
-    portada
+    if portada != none {
+        show: estilo_portada
+        portada
+        pagebreak()
+    }
 
     //// As opcions para o corpo do documento %%%%%%%%%%%%%%%%%%%%%%%%%
     show: estilo_corpo
 
-    // :FACER: crear un 'show-frame' independente
-    // :FACER: facer o frame condicional, cun argumento en activar_estilo
-    // show: marginalia.show-frame
 
     //// Mostramos o indice
-    pagebreak()
-    // :FACER: meter nun if indice != none
-    indice
+    if indice != none {
+        indice
+        pagebreak()
+    }
 
     //// Devolvemos o contido do documento
-    pagebreak()
     // :FACER: separar en frontmatter, mainmatter, backmatter, etc.?
-    documento
+    if marco == true {
+        // :FACER: crear un 'show-frame' independente
+        // :FACER: facer o frame condicional, cun argumento en activar_estilo
+        show: marginalia.show-frame
+        documento
+    } else {
+        documento
+    }
 
     //// Mostramos a bibliografia
-    pagebreak()
-    // :FACER: meter nun if biblio != none
-    bibliografia
+    if bibliografia != none {
+        pagebreak()
+        bibliografia
+    }
 
     //// Mostramos o índice alfabético
-    pagebreak()
-    // :FACER: meter nun if indice != none
-    indice_alfabetico
+    if crear_indice_alfabetico != none {
+        pagebreak()
+        indice_alfabetico
+    }
 
     //// Mostramos a contraportada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    show: estilo_contraportada
-    // :FACER: meter nun if contrapor != none
-    contraportada
+    if contraportada != none {
+        show: estilo_contraportada
+        contraportada
+    }
 
 }
 
