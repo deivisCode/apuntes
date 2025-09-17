@@ -7,6 +7,8 @@
 #import "@preview/marginalia:0.2.3" as marginalia: note
 // :FACER: Indice. Debería poder ir á palabra exacta, en vez de só a paxina
 // :FACER: Indice. Resaltar a palabra no texto
+// :FACER: Indice. non separar alfabeticamente a - á
+// :FACER: Indice. como facer 'see ...'
 #import "@preview/in-dexter:0.7.2": index as indice, make-index
 
 // Pequena funcion pa usar texto en Sans e en Monoespaciado
@@ -203,6 +205,7 @@
     )
     // Esto é para customizar as referencias
     // :FACER: numeros para táboas
+    // :FACER: capitulos e seccións
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
@@ -342,6 +345,7 @@
 // :FACER: pode usarse esto ao facer @kostrikin_1986 ?
 #let cita(nome) = {
     // Primeiro cítase no propio texto
+    // :FACER: citar con strings "kos", tags <kos>, ou? unificalo
     cite(nome)
     context {
         // Comprobo se a chave da cita, e.g. 'goldberg_1980', xa está na lista.
@@ -403,6 +407,7 @@
 
 /// Unha definicion simple, e.g. '#definicion("exemplo","def:algo")[a = 0]'
 // :FACER: Definicions. Engadir algo de espazo antes e despois do texto
+// :FACER: tilde en Definición
 #let definicion(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
