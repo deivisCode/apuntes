@@ -51,6 +51,7 @@ ambas notacións máis adiante ao falar de asociatividade.
 
 
 // :FACER: cardinalidade dun conxunto, tal vez aqui ou en topo ? delgado_2010
+// :FACER: chamamos como G ao grupo (G,*)
 #definicion(
     nome : "Estrutura Alxébrica",
     ancora : "def:alxebra:estrutura"
@@ -61,9 +62,23 @@ ambas notacións máis adiante ao falar de asociatividade.
 ]
 
 Nesta definición, digo _polo menos_ porque é posible ter máis conxuntos e máis
-operacións. Por exemplo, no caso dunha Álxebra de Lie, o número ascende a
-5 operacións en 2 conxuntos diferentes. Nestes casos soe usarse notación
-multiplicativa e aditiva en distintas operacións.
+operacións. Tamén é posible unha estrutura composta á sua vez de estruturas
+máis pequenas. Por exemplo, no caso dunha #underline[Álxebra de Lie] #nota[Para
+o curioso, a estrutura é $((V,plus.circle,[dot,dot]), (KK,+,dot),
+circle.stroked.small)$. Xa presentaremos todo no seu debido tempo] , o número
+ascende a 5 operacións en 2 conxuntos diferentes, que se relacionan en un
+grupo, un anel e unha operación aparte. Cando hai varias operacións soe usarse
+notación aditiva para a primeira e multiplicativa para a segunda. No caso de
+ter nas mans varias estruturas do mesmo tipo, gústame a idea de notar as
+operacións da segunda engadindo círculos ás operacións da primeira. É dicir, se
+teño dúas estruturas sendo a primeira $(A,+,dot)$, entón na segunda usarei as
+operacións $plus.circle$ e $dot.circle$, i.e. $(B,plus.circle,dot.circle)$. Hai
+que ter en conta que isto non é unha norma, senón un gusto.
+
+Un detalle notacional máis, cando unha estrutura é coñecida soe abusarse da
+notación e simplificar todo co nome do seu conxunto. De haber varios, é típico
+que haxa un máis _interesante_ e usarase ese. Por exemplo, o grupo $(G, +)$
+simplifícase por $G$, e o espazo lineal $((V,+),(KK,+,dot),compose)$ por $V$
 
 #definicion(
     nome: "Asociatividade",
@@ -71,13 +86,13 @@ multiplicativa e aditiva en distintas operacións.
 )[
     Dicimos que unha operación nunha estrutura calquera $(A,*)$ é asociativa
     #indice("Operación")[asociativa] se se cumpre que
-    $a * (b * c) = (a * b) * c$ para calquera $a,b,c in A$
+    $ (forall a,b,c in A) space.quad a * (b * c) = (a * b) * c $
 ]
 
 Se unha operación é asociativa, non só o é en 3 elementos, senón en xeral. Pode
-verse unha demostración en [$section 1.3$]#cita(<kostrikin_1983>). Isto
-significa que a asociatividade nos permite eliminar completamente os parénteses
-de calquera expresión como
+verse unha demostración en #cita(<kostrikin_1983>). Isto significa que a
+asociatividade nos permite eliminar completamente os parénteses de calquera
+expresión como
 
 $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f $
 #label("ec:alxebra:asociatividade_xeneralizada")
@@ -85,7 +100,7 @@ $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f $
 É común atoparse con situacións como a da
 @ec:alxebra:asociatividade_xeneralizada pero onde a operación se repite no
 mesmo elemento. Podemos simplificar a escritura usando *potencias*. En notación
-multiplicativa
+multiplicativa #cita(<delgado_2010>)
 
 $ underbrace(a * a * a * dots, "n veces") $
 
@@ -102,7 +117,7 @@ simplifícase a $n a$, como se estivésemos a sumar un número varias veces.
 )[
     Dicimos que unha operación nunha estrutura calquera $(A,*)$ é conmutativa
     #indice("Operación")[conmutativa] se se cumpre que
-    $a * b = b * a$ para calquera $a,b in A$.
+    $ (forall a,b in A) space.quad a * b = b * a $
 ]
 
 É dicir, podemos operar cunha parella de elementos en calquera orde. É
@@ -114,12 +129,16 @@ independentes.
     ancora : "def:alxebra:neutro"
 )[
     Nunha estrutura $(A,*)$, un elemento $e$ que cumpre
-    $ forall a in A space.quad e * a = a * e = a  $
+    $ (forall a in A) space.quad e * a = a * e = a  $
     dise que é un elemento neutro.#indice[Elemento Neutro]
 ]
 
 Un elemento neutro, ás veces chamado _identidade_, pode operarse con calquera
-outro elemento sen afectalo de ningún modo.
+outro elemento sen afectalo de ningún modo. Nunha situación na que teñamos
+varios conxuntos $A, B, C, dots$ con neutro, podemos identificalo con
+subíndices para poder diferencialos, ousexa $e_A, e_B, e_C, dots$ Ás veces, na
+notación aditiva esribimos o neutro como $0$, e na notación multiplicativa como
+$1, bb(1)$ ou $I$.
 
 #teorema(
     nome : "Elemento neutro é único",
@@ -128,7 +147,7 @@ outro elemento sen afectalo de ningún modo.
     Sexa $(A,*)$ unha estrutura alxébrica calquera. Se existe un elemento
     neutro, entón é único.
 
-    Sexan $e,e'$ dous elementos neutros.
+    Sexan $e,e'$ dous elementos neutros da operación $*$
 
     $ e = e * e' = e' $
 
@@ -144,16 +163,52 @@ outro elemento sen afectalo de ningún modo.
 )[
     Nunha estrutura $(A,*)$ con $e$ o elemento neutro, un elemento $y$ que
     cumpre
-    $ forall a in A space.quad a * y = y * a = e $
-    dise que é o elemento inverso de $a$ #indice[Elemento Inverso]
+
+    $
+        (forall a in A) space.quad a * y = y * a = e
+    $
+
+    dise que é o elemento inverso de $a$ #indice[Elemento Inverso], e que o
+    elemento $a$ é invertible.
 ]
 
-// :FACER: conceptos básicos, inverso é único
-// :FACER: se un elemento ten inverso, o elemento dise _invertible_
+// :FACER: ollo, esto xustifica falar de a^-1, senón non teria sentido. Especificalo no de notacion
+// :FACER: esto depende da asociatividade, mencionalo!!
+#teorema(
+    nome : "Elemento inverso é único",
+    ancora : "teo:alxebra:inverso_unico"
+)[
+    Sexa $(A,*)$ unha estrutura alxébrica calquera. Se existe un elemento
+    inverso, entón é único.
+
+    Sexa $a^(-1)$ o elemento neutro de $a$. Entón, $a a^(-1) = e = a a^(-1)$
+    Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a a'^(-1) =
+    e = a a'^(-1)$ (por que tamén é inverso). Entón $a'^(-1) = e a'^(-1) =
+    (a^(-1) a) a'^(-1) = a^(-1)(a a'^(-1)) = a^(-1)e = a^-1$
+]
+
 O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
 na multiplicativa.
 
-// :FACER: subestrutura cando hai varios conxuntos ou varias operacións
+#definicion(
+    nome : "Operación distributiva",
+    ancora : "def:alxebra:distributiva"
+)[
+    Sexa $(A,dot,*)$ unha estrutura con dúas operacións calquera $dot$ e $*$
+
+    Dicimos que a operación $dot$ #indice("Operación")[Distributiva] é
+    distributiva respecto de $*$ se se cumpre que $(forall a,b,c in A)$
+
+    $
+        &a dot (b * c) = a dot b * a dot c \
+        &(b * c) dot a = b dot a * c dot a
+    $
+]
+
+Ás veces podemos referirnos a distributiva _pola esquerda_ ou _pola dereita_,
+no caso de que só se cumpra unha das condicións de
+#ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a secas) se o é pola esquera e pola dereita
+
 #definicion(
     nome : "Sub Estrutura",
     ancora : "def:alxebra:subestrutura"
@@ -163,7 +218,8 @@ na multiplicativa.
     $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
     todas as condicións que se pedían para $(A,*)$
 
-    - $a * b in B, forall a,b in B$ (a operación $*$ é interna)
+    // :FACER: poñer a nota pero sen que quede o codigo tan afora
+    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B) #nota[Cando a operación tamén é interna no subconxunto B soe dicirse que é _cerrada_ ou que _cerra_ en B]
     - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$
     - Se a operación $*$ é conmutativa en $(A,*)$, tamén o é en $(B,*)$
     - Se existe un elemento neutro $e in (A,*)$, tamén está en $(B,*)$
@@ -196,5 +252,29 @@ ninguén proba no campo de xogo nunca.
     operación $plus.circle$ ocorre en $B$, entre $f(a)$ e $f(b)$
 ]
 
+Dependendo da estrutura concreta ca que nos topemos, os morfismos ás veces
+chámanse _homomorfismos_, entre grupos; _homomorfismos de aneis_, entre aneis;
+ou _aplicacións lineais_, en espazos lineais, etc. Veremos cada caso co detalle
+que precisemos.
+
+// :FACER: operador para o kernel
+#definicion(
+    nome : "Núcleo dun morfismo",
+    ancora : "def:alxebra:nucleo"
+)[
+    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.circle)$. O
+    conxunto de elementos de $A$ que pasan ao neutro de $B$ a través de $f$
+    chámase #indice("Núcleo") núcleo ou #indice("Kernel") kernel de $f$ e
+    denóase por $"ker"(f)$. É dicir, é o conxunto
+
+    $
+        "ker"(f) = { a in A | f(a) = e_B }
+    $
+]
+
+Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
+que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
+espero que o vaia sendo nas seccións seguintes
+
+// :FACER: (ab)^-1 = b^-1 a^-1 (shoe socks theorme)
 // :FACER: morfismo, algunha explicación a maiores
-// :FACER: neutro pasa ao neutro, inverso ao inverso, kernel.. ?

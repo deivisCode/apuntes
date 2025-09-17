@@ -18,6 +18,8 @@ son. Nesta sección mencionamos unha das máis simples posibles.
     magma#indice[Magma]
 ]
 
+Adicionalmente, se a operación é conmutativa, entón é un magma conmutativo.
+
 En realidade non hai nada máis que comentar desta estrutura. Pode parecer que
 non lle imos dar ningún uso, pero veredes que se pode usar como comparación
 para ver como construír outras estruturas.

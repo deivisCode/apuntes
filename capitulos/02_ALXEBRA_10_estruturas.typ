@@ -5,6 +5,35 @@
     ancora : "sec:alxebra:estruturas"
 )
 
+As seccións anteriores foron unha presentación ordenada de distintas
+estruturas, dende un magma (un conxunto e unha operación), ata unha álxebra
+(dous conxuntos, 5 operacións, multitude de propiedades).
+
+Na táboa @tab:alxebra:estruturas presento os resultados principais. Na primeira
+columna (rotando a páxina $pi\/2$) partimos dun magma e avanzamos cara abaixo
+engadindo propiedades de asociatividade, existencia de neutro e finalmente
+existencia de inversos, co cal definimos semigrupo, monoide e grupo.
+
+Na segunda columna, partimos dun grupo e un magma, e imos engadindo estrutura
+ao magma, con asociatividade, existencia de neutro e de inversos#nota[No caso
+dos inversos está o detalle de que o neutro da primeira operación non ten
+inverso, o cal non ocorre no caso anterior (só con unha operación). Pero a
+idea a grandes trazos é equivalente]. En cada caso, obtemos un anel asociativo,
+unitario e finalmente un corpo.
+
+No caso dos módulos e espazos lineais a idea é semellante, pero xa non nos
+molestamos nos casos onde non temos asociatividade ou neutro, por eso as dúas
+primeiras filas están baleiras.
+
+Na cuarta columna, partimos dunha álxebra asociativa e chegamos ás unitarias,
+como era esperable, máis non tocamos o caso de ter inversos, porque nunca o vin
+en ningunha referencia.
+
+Na columna final está a Álxebra de Lie sen compañía. Esto débese a que a
+diferenza cos casos anteriores non é engadir propiedades de asociatividade,
+neutro ou inversos, senón outras totalmente diferentes (bilinealidade e
+Jacobi).
+
 // Teño que facer o texto máis pequeno ou non colle
 #set text(size: 9pt)
 #set par(first-line-indent:0pt)
@@ -20,7 +49,7 @@
 
 #let taboa = table(
 
-    columns: 5,
+    columns       : 5,
     rows          : (24.5%,24.5%,24.5%,24.5%),
     stroke        : 0.3pt + luma(85%),
     align         : left,
