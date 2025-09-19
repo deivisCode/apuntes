@@ -135,8 +135,6 @@
 
 
 /// ESTILO do corpo, entre a portada e a contraportada
-//
-// :FACER: crear algunha opcion para poder activar/desactivar o fondo sepia
 #let estilo_corpo(doc) = {
     show: marginalia.setup.with(
         inner  : ( far: 5mm, width: 2cm , sep: 5mm ),
@@ -169,9 +167,9 @@
     set text(fill:black)
     set heading(numbering: "1.")
     set par(
-        justify: true,
-        first-line-indent: 1.5em,
-        linebreaks: "optimized"
+        justify           : true,
+        first-line-indent : 1.5em,
+        linebreaks        : "optimized"
     )
     show raw: set text( font: "New Computer Modern Mono" )
     show quote: eso => {
@@ -307,7 +305,6 @@
     //// Mostramos o indice
     if indice != none {
         indice
-        pagebreak()
     }
 
     //// Devolvemos o contido do documento
@@ -360,7 +357,7 @@
 // engadimos no texto pero NON na marxe
 #let lista_citas = state("citas", ())
 // :FACER: as citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
-// :FACER: pode usarse esto ao facer @kostrikin_1986 ?
+// :FACER: pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
 #let cita(nome) = {
     // Primeiro cítase no propio texto
     cite(label(nome))
@@ -387,7 +384,7 @@
 //
 // :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
 // :FACER: entorno de demostracions
-// :FACER: hai 'kind' de moitos tipos, documentalos!!
+// :FACER: usar outra palabra en lugar de 'teorema'
 // :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
 #let teorema(
     nome   : " -- SEN NOME -- ",
@@ -424,8 +421,6 @@
 }
 
 /// Unha definicion simple, e.g. '#definicion("exemplo","def:algo")[a = 0]'
-// :FACER: Definicions. Engadir algo de espazo antes e despois do texto
-// :FACER: tilde en Definición
 #let definicion(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
@@ -459,8 +454,8 @@
 /// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.
 #let capitulo(
     nome     : " -- SEN NOME -- ",
-    ancora   : " -- SEN ANCORA -- ",
-    epigrafe : " -- SEN EPIGRAFE -- "
+    ancora   : " -- SEN ÁNCORA -- ",
+    epigrafe : " -- SEN EPÍGRAFE -- "
 ) = {
     pagebreak(to:"odd")
     counter(heading.where(level: 2)).update(0)
@@ -500,7 +495,7 @@
 
 #let seccion(
     nome   : " -- SEN NOME -- ",
-    ancora : " -- SEN ANCORA -- "
+    ancora : " -- SEN ÁNCORA -- "
 ) = {
     show figure: set align(left)
     [
