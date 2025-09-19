@@ -26,7 +26,7 @@ OPCIONS := \
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
 # Xeramos os apuntes
-.pdf/apuntes.pdf: apuntes.typ $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
+.pdf/apuntes.pdf: apuntes.typ funcions.typ $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
 	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
