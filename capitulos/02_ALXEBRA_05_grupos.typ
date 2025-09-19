@@ -29,7 +29,7 @@ sección. A diferenza dos monoides, agora temos noción de _elemento inverso_,
 polo que aparece unha propiedade importante, a *cancelación*. Por un lado
 
 $
-    (forall a,b,c in A) space.quad a * b = a * c arrow.r.double b = c
+    (forall a,b,c in A) space.quad a * b = a * c implica b = c
 $
 
 xa que podemos multiplicar na esquerda por $a^(-1)$. O caso $b * a = c * a$ é
@@ -69,7 +69,7 @@ Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 grupos como o morfismo
 
 $
-    f: A stretch(arrow.r, size: #300%) B \
+    f: A frecha B \
     f(a_1 * a_2) = f(a_1) dot f(a_2)
 $
 
@@ -91,11 +91,10 @@ $
 
 E o inverso $a^(-1)$ transfórmase como $f(a^(-1)) = f(a)^(-1)$
 
-// :FACER: variable para implica = arrow.r.double
 $
     &f(a) dot f(a^(-1)) = f(a * a^(-1)) = f(e_A) = e_B \
     &f(a^(-1)) dot f(a) = f(a^(-1) * a) = f(e_A) = e_B \
-    &arrow.r.double f(a^(-1)) dot f(a) = f(a) dot f(a^(-1)) = e_B \
-    &arrow.r.double f(a^(-1)) "é o inverso de" f(a) \
+    &implica f(a^(-1)) dot f(a) = f(a) dot f(a^(-1)) = e_B \
+    &implica f(a^(-1)) "é o inverso de" f(a) \
     &f(a^(-1)) = f(a)^(-1)
 $

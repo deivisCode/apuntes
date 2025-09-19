@@ -67,7 +67,7 @@ Se temos dous monoides $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 monoides como o morfismo
 
 $
-    f: A stretch(arrow.r, size: #300%) B \
+    f: A frecha B \
     f(a_1 * a_2) = f(a_1) dot f(a_2)
 $
 

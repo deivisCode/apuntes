@@ -532,3 +532,15 @@
     features: ("ss01",),
     box($cal(it)$),
 )
+
+#let frecha = text(
+    box($stretch(arrow.r, size: #300%)$)
+)
+
+#let mapea = text(
+    box($stretch(mapsto, size: #300%)$)
+)
+
+#let implica = text(
+    box($arrow.r.double$)
+)

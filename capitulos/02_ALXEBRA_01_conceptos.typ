@@ -22,10 +22,9 @@ mesmo conxunto $A$.
     ancora: "def:alxebra:operacion_bi"
 )[
     Unha operación binaria e interna é unha aplicación calquera
-    // :FACER: variables para frechas típicas
     $
-        f: A times A & stretch(arrow.r, size: #300%) A \
-        a,b & stretch(mapsto, size: #300%) f(a,b)
+        f: A times A & frecha A \
+        a,b & mapea f(a,b)
     $
 ]
 
