@@ -457,8 +457,7 @@
     ancora   : " -- SEN ANCORA -- ",
     epigrafe : " -- SEN EPIGRAFE -- "
 ) = {
-    // :FACER: forzar que sempre se comece no lado dereito
-    pagebreak()
+    pagebreak(to:"odd")
     counter(heading.where(level: 2)).update(0)
     // :FACER: reescribir este grid con grid.cell, dado que é mais facil de ler
     grid(
