@@ -17,17 +17,12 @@
 
 /// Funcion para crear un encabezado
 //
-// :FACER: simboliño do medio no encabezado
 // :FACER: nome do capitulo ou seccion no encabezado
-#let crear_encabezado() = {
-    grid(
-        columns: (1fr, 20%, 1fr),
-        align: (left + horizon, center + horizon, right + horizon ),
-        line(length: 100%, stroke: 0.5pt),
-        [$E= m c^2$],
-        line(length: 100%, stroke: 0.5pt),
-    )
-}
+#let crear_encabezado() = grid(
+    columns: 1,
+    align: (left + horizon, center + horizon, right + horizon ),
+    line(length: 100%, stroke: 0.5pt),
+)
 
 /// Funcion para crear o pe de paxina
 //
