@@ -245,15 +245,20 @@
         }
     }
     show footnote: eso => {
-        super(
-            [[#text(fill: rgb("#FF0000"), weight:"bold", eso)]]
-        )
+        super([[#text(fill: rgb("#bb0000"), weight:"bold", eso)]])
     }
     show footnote.entry: eso => {
         let loc = eso.note.location()
         let num = counter(footnote).at(loc).first()
-        super([[#text(fill: rgb("#FF0000"), weight:"bold", [#num])] ])
-        eso.note.body
+        link(
+            loc,
+            [
+                #super(
+                    [[#text(fill: rgb("#bb0000"), weight:"bold", [#num])]]
+                )
+                #eso.note.body
+            ]
+        )
     }
     doc
 }
