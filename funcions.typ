@@ -20,7 +20,7 @@
 // :FACER: nome do capitulo ou seccion no encabezado
 #let crear_encabezado() = grid(
     columns: 1,
-    align: (left + horizon, center + horizon, right + horizon ),
+    align: (center + horizon),
     line(length: 100%, stroke: 0.5pt),
 )
 
