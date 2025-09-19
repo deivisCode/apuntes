@@ -90,7 +90,7 @@ simplifícase por $G$, e o espazo lineal $((V,+),(KK,+,dot),compose)$ por $V$
 ]
 
 Se unha operación é asociativa, non só o é en 3 elementos, senón en xeral. Pode
-verse unha demostración en #cita(<kostrikin_1983>). Isto significa que a
+verse unha demostración en #cita("kostrikin_1983"). Isto significa que a
 asociatividade nos permite eliminar completamente os parénteses de calquera
 expresión como
 
@@ -100,7 +100,7 @@ $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f $
 É común atoparse con situacións como a da
 @ec:alxebra:asociatividade_xeneralizada pero onde a operación se repite no
 mesmo elemento. Podemos simplificar a escritura usando *potencias*. En notación
-multiplicativa #cita(<delgado_2010>)
+multiplicativa #cita("delgado_2010")
 
 $ underbrace(a * a * a * dots, "n veces") $
 

@@ -78,7 +78,7 @@ gañábamos a noción de elemento neutro respecto do caso dos semigrupos, o cal
 nos permite falar do núcleo dun morfismo de monoides. Agora traballamos cun
 grupo, polo que existe o concepto de _elemento inverso_ polo que podemos dicir
 algo máis. En concreto, o neutro transformase como $f(e_A) = e_B$
-#cita(<delgado_2010>)
+#cita("delgado_2010")
 
 $
     f(e_A) &= f(e_A) dot e_A \

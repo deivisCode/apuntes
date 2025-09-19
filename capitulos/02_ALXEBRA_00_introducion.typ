@@ -36,7 +36,7 @@ nestas, paso a paso, dende aquelas máis simples, coma un monoide ou un grupo,
 ás máis mesturadas, coma unha álxebra de Lie. A relevancia da álxebra na física
 é esta: non nos chega con números para caracterizar a física, queremos algo
 *máis*, mentres mantemos as propiedades que nos son cómodas e coñecidas.
-#cita(<shafarevich_1990>)
+#cita("shafarevich_1990")
 
 Usamos grupos para caracterizar a simetría; os aneis, e concretamente os
 corpos, son os números cos que medimos as magnitudes escalares como as que

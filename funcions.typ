@@ -350,8 +350,7 @@
 // :FACER: pode usarse esto ao facer @kostrikin_1986 ?
 #let cita(nome) = {
     // Primeiro cítase no propio texto
-    // :FACER: citar con strings "kos", tags <kos>, ou? unificalo
-    cite(nome)
+    cite(label(nome))
     context {
         // Comprobo se a chave da cita, e.g. 'goldberg_1980', xa está na lista.
         let repetido = lista_citas.get().contains(str(nome))
@@ -366,7 +365,7 @@
             // Engadimos o nome a lista
             lista_citas.update(eso => eso + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
-            note( side: "outer", numbering: none, text-style:(size:10pt), cite(nome, form: "full"))
+            note( side: "outer", numbering: none, text-style:(size:10pt), cite(label(nome), form: "full"))
         }
     }
 }
