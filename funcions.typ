@@ -459,30 +459,36 @@
 ) = {
     pagebreak(to:"odd")
     counter(heading.where(level: 2)).update(0)
-    // :FACER: reescribir este grid con grid.cell, dado que é mais facil de ler
     grid(
         columns : (auto,20%,1fr),
         rows    : (5em, 5em),
         align   : (left, center, right + bottom),
-        [
-            #figure(
-                kind: "capitulo",
-                supplement: [Capítulo],
-                heading(
-                    level: 1,
-                    numbering: "1.",
-                    [#nome],
+
+        grid.cell(
+            x:0, y:0,
+            [
+                #figure(
+                    kind: "capitulo",
+                    supplement: [Capítulo],
+                    heading(
+                        level: 1,
+                        numbering: "1.",
+                        smallcaps[#nome],
+                    )
                 )
-            )
-            #label(ancora)
-        ],
-        [], [], [],
-        [#h(1fr)],
-        text(size:10pt)[
-            #epigrafe
-            #v(1fr)
-            #line(length:20%, stroke:0.5pt)
-        ]
+                #label(ancora)
+            ],
+        ),
+
+        grid.cell(
+            x:2, y:1,
+            text(size:10pt)[
+                #epigrafe
+                #v(1fr)
+                #line(length:20%, stroke:0.5pt)
+            ]
+        )
+
     )
     v(2em)
 }
