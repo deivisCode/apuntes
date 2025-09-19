@@ -195,7 +195,6 @@
     )
     // Esto é para customizar as referencias
     // :FACER: numeros para táboas
-    // :FACER: capitulos e seccións
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
@@ -205,7 +204,7 @@
             let NUM = counter(figure.where(kind:"teorema")).at(eso.element.location()).last()
             link(
                 eso.element.location(),
-                [#text(font:"New Computer Modern Mono")[teo];[#HEA.#SEC.#NUM]]
+                [[#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM]]]
             )
         // O mesmo, pero con definicions
         } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "definicion" {
@@ -214,7 +213,21 @@
             let NUM = counter(figure.where(kind:"definicion")).at(eso.element.location()).last()
             link(
                 eso.element.location(),
-                [#text(font:"New Computer Modern Mono")[def];[#HEA.#SEC.#NUM]]
+                [[#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM]]]
+            )
+        } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "capitulo" {
+            let NUM = counter(figure.where(kind:"capitulo")).at(eso.element.location()).last()
+            link(
+                eso.element.location(),
+                [#text(fill:rgb("#bb0000"))[#NUM]]
+            )
+        } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "seccion" {
+            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let NUM = counter(figure.where(kind:"seccion")).at(eso.element.location()).last()
+            link(
+                eso.element.location(),
+                [$section$#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM]]
             )
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
         // no caso de que a referencia apunte a unha figura de tipo 'math.equation'
@@ -224,7 +237,7 @@
             let NUM = counter(math.equation).at(eso.element.location()).first()
             link(
                 eso.element.location(),
-                [#text(font:"New Computer Modern Mono")[ec];[#HEA.#SEC.#NUM]]
+                [(#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM])]
             )
         // No resto de casos
         } else {
