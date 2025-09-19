@@ -52,9 +52,9 @@
 /// Funcion para crear a portada
 #let crear_portada() = {
     v(3em)
-    align(center, context{ text(size:40pt, weight:"bold")[#document.title] })
+    align(center, text(size:40pt, weight:"bold", context {document.title}) )
     v(1em)
-    align(center, context{ smallcaps(document.author.join("\n")) })
+    align(center, smallcaps( context {document.author.join("\n")}) )
     v(1fr)
     [Comezo: #tt[#datetime(year:2025, month:8, day:1).display()]]
     h(1fr)
@@ -370,18 +370,13 @@
 // :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
 // :FACER: entorno de demostracions
 // :FACER: hai 'kind' de moitos tipos, documentalos!!
-// :FACER: reducir o tamaño do 'context'
 // :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
 #let teorema(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
     corpo
-) = context {
+) = {
     show figure: set align(left)
-    let HEA = counter(heading.where(level: 1)).get().first()
-    let SEC = counter(heading.where(level: 2)).get().last()
-    // :FACER: o de sumar 1 ao final é un apaño, non sei por qué fai falta
-    let NUM = counter(figure.where(kind:"teorema")).get().first() + 1
     // Creo un rectangulo
     rect(
         stroke:(
@@ -395,7 +390,13 @@
             #figure(
                 kind:"teorema",
                 supplement: "Teorema",
-                [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #corpo ]
+                context {
+                    set par(first-line-indent:0pt)
+                    let HEA = counter(heading.where(level: 1)).get().first()
+                    let SEC = counter(heading.where(level: 2)).get().last()
+                    let NUM = counter(figure.where(kind:"teorema")).get().first()
+                    [ #v(0.5em) *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo #v(0.5em) ]
+                }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
             // ánclase á figura anterior
@@ -411,12 +412,8 @@
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
     corpo
-) = context {
-    // :FACER: este context igual se pode meter dentro do contido do rectangulo?
+) = {
     show figure: set align(left)
-    let HEA = counter(heading.where(level: 1)).get().first()
-    let SEC = counter(heading.where(level: 2)).get().last()
-    let NUM = counter(figure.where(kind:"definicion")).get().first() + 1
     rect(
         stroke:(
             top    : luma(20%) + 1pt,
@@ -427,8 +424,14 @@
         [
             #figure(
                 kind:"definicion",
-                supplement: "Definicion",
-                [ *Definicion* #HEA.#SEC.#NUM (#smallcaps(nome)) #corpo ]
+                supplement: "Definición",
+                context {
+                    set par(first-line-indent:0pt)
+                    let HEA = counter(heading.where(level: 1)).get().first()
+                    let SEC = counter(heading.where(level: 2)).get().last()
+                    let NUM = counter(figure.where(kind:"definicion")).get().first()
+                    [ #v(0.5em) *Definición* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo #v(0.5em) ]
+                }
             )
             #label(ancora)
         ]
