@@ -6,9 +6,11 @@
 )
 
 #include("/capitulos/01_TOPOLOXIA_00_introducion.typ")
+#include("/capitulos/01_TOPOLOXIA_01_espazos-topoloxicos.typ")
 
 // :FACER: ollada ao Dean
 // :FACER: ollada ao Jacobson
+// :FACER: estandarizar a notación para as operacions, + o * etc
 #include("/capitulos/02_ALXEBRA_00_introducion.typ")
 #include("/capitulos/02_ALXEBRA_01_conceptos.typ")
 #include("/capitulos/02_ALXEBRA_02_magmas.typ")
