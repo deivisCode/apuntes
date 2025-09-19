@@ -7,6 +7,7 @@
 
 #include("/capitulos/01_TOPOLOXIA_00_introducion.typ")
 #include("/capitulos/01_TOPOLOXIA_01_espazos-topoloxicos.typ")
+#include("/capitulos/01_TOPOLOXIA_99_NOTAS-TEMPORAIS.typ")
 
 // :FACER: ollada ao Dean
 // :FACER: ollada ao Jacobson
