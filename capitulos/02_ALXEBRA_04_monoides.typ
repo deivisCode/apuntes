@@ -12,7 +12,7 @@
     Unha parella $(A,*)$ onde $A$ é un conxunto arbitrario e
     $*$ é unha operación binaria, interna e asociativa, máis existe
     un elemento neutro $e in A$, dise que é un monoide#indice[monoide]. É
-    dicir, un semigrupo, pero tamén existe un neutro.
+    dicir, un semigrupo onde tamén existe un neutro.
 
     Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
     _ou_ multiplicar pero non dividir.
@@ -39,7 +39,7 @@ Exemplos de monoide, abstractos e nada visuais, pero útiles:
   arrow.r X, id(x) = x$, entón $(S(X),compose)$ é un monoide, sendo $id$ o seu
   neutro
 
-- Para un conxunta calquera $X$, denotamos como $P(X)$ o conxunto de todos os
+- Para un conxunta calquera $X$, denotamos como $scr(P)(X)$ o conxunto de todos os
   subconxuntos de $X$. Se $union$ e $inter$ son a unión e intersección de
   conxuntos, entón $( scr(P)(X), union )$ e $( scr(P)(X), inter )$ son monoides.
   No primerio caso o neutro é $nothing$, e no segundo é $X$
@@ -49,10 +49,10 @@ Exemplos de monoide, abstractos e nada visuais, pero útiles:
     nome : "Submonoide",
     ancora : "def:alxebra:submonoide"
 )[
-    Sexa $(A,*)$ un monoide con neutro $e$, e $B in A$. Entón, $(B,*)$ é un
+    Sexa $(A,*)$ un monoide con neutro $e$, e $B subset A$. Entón, $(B,*)$ é un
     submonoide de $(A,*)$ se
     $
-        (forall a_1, a_2 in B) space.quad a_1 * a_2 in B \
+        (forall b_1, b_2 in B) space.quad b_1 * b_2 in B \
         e in B
     $
 ]

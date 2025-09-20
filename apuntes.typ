@@ -12,6 +12,7 @@
 // :FACER: ollada ao Dean
 // :FACER: ollada ao Jacobson
 // :FACER: estandarizar a notación para as operacions, + o * etc
+// :FACER: logo de facer o capitulo de conxuntos, mencionar inxectividade, sobrexectividade, etc
 #include("/capitulos/02_ALXEBRA_00_introducion.typ")
 #include("/capitulos/02_ALXEBRA_01_conceptos.typ")
 #include("/capitulos/02_ALXEBRA_02_magmas.typ")

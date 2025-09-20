@@ -47,6 +47,7 @@ plus.circle b$. Na notación *multiplicativa* úsanse símbolos que asemellan a
 multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
 explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.
+// :FACER: explicitar cando non escribo nada en lugar de * ou ·
 
 
 // :FACER: cardinalidade dun conxunto, tal vez aqui ou en topo ? delgado_2010
@@ -137,7 +138,7 @@ outro elemento sen afectalo de ningún modo. Nunha situación na que teñamos
 varios conxuntos $A, B, C, dots$ con neutro, podemos identificalo con
 subíndices para poder diferencialos, ousexa $e_A, e_B, e_C, dots$ Ás veces, na
 notación aditiva esribimos o neutro como $0$, e na notación multiplicativa como
-$1, bb(1)$ ou $I$.
+$1, bb(1)$ ou $I$. Podemos combinar todo e escribir $1_A, bb(1)_B, 0_A$, etc.
 
 #teorema(
     nome : "Elemento neutro é único",
@@ -171,6 +172,9 @@ $1, bb(1)$ ou $I$.
     elemento $a$ é invertible.
 ]
 
+O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
+na multiplicativa.
+
 // :FACER: ollo, esto xustifica falar de a^-1, senón non teria sentido. Especificalo no de notacion
 // :FACER: esto depende da asociatividade, mencionalo!!
 #teorema(
@@ -180,14 +184,11 @@ $1, bb(1)$ ou $I$.
     Sexa $(A,*)$ unha estrutura alxébrica calquera. Se existe un elemento
     inverso, entón é único.
 
-    Sexa $a^(-1)$ o elemento neutro de $a$. Entón, $a a^(-1) = e = a a^(-1)$
-    Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a a'^(-1) =
-    e = a a'^(-1)$ (por que tamén é inverso). Entón $a'^(-1) = e a'^(-1) =
-    (a^(-1) a) a'^(-1) = a^(-1)(a a'^(-1)) = a^(-1)e = a^-1$
+    Sexa $a^(-1)$ o elemento inverso de $a$. Entón, $a a^(-1) = e = a a^(-1)$.
+    Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a'^(-1) a =
+    e = a a'^(-1)$ (por que tamén é inverso). Entón $a^(-1) = e a^(-1) =
+    (a'^(-1) a) a^(-1) = a'^(-1)(a a^(-1)) = a'^(-1)e = a'^(-1)$
 ]
-
-O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
-na multiplicativa.
 
 #definicion(
     nome : "Operación distributiva",
@@ -208,12 +209,13 @@ na multiplicativa.
 no caso de que só se cumpra unha das condicións de
 #ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a secas) se o é pola esquera e pola dereita
 
+// :FACER: esto non é de todo correcto, hai que parafrasealo
 #definicion(
     nome : "Sub Estrutura",
     ancora : "def:alxebra:subestrutura"
 )[
     Sexa $(A,*)$ unha estrutura alxébrica calquera, co conxunto $A$ máis a
-    operación $*$. Sexa tamén un subconxunto arbitrario $B in A$. A parella
+    operación $*$. Sexa tamén un subconxunto arbitrario $B subset A$. A parella
     $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
     todas as condicións que se pedían para $(A,*)$
 
@@ -235,6 +237,9 @@ demostración de varias propiedades demostrando unha relación diferente (como n
 test de subgrupo), e en xeral, hai propiedades que son totalmente evidentes e
 ninguén proba no campo de xogo nunca.
 
+// :FACER: o Sebas di que hai que ter en conta que existen outras
+// transformacións que tamén son morfismos pero eu digo que morfismos son só os
+// que cumplen f(a+b) = f(a) * f(b) (structure preserving maps)
 #definicion(
     nome : "Morfismo",
     ancora : "def:alxebra:morfismo"
@@ -256,7 +261,7 @@ chámanse _homomorfismos_, entre grupos; _homomorfismos de aneis_, entre aneis;
 ou _aplicacións lineais_, en espazos lineais, etc. Veremos cada caso co detalle
 que precisemos.
 
-// :FACER: operador para o kernel
+// :FACER: mencionar o tema de inxectividade, sobre, bi, inversas, etc.
 #definicion(
     nome : "Núcleo dun morfismo",
     ancora : "def:alxebra:nucleo"
@@ -264,7 +269,7 @@ que precisemos.
     Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.circle)$. O
     conxunto de elementos de $A$ que pasan ao neutro de $B$ a través de $f$
     chámase #indice("Núcleo") núcleo ou #indice("Kernel") kernel de $f$ e
-    denóase por $"ker"(f)$. É dicir, é o conxunto
+    denótase por $"ker"(f)$. É dicir, é o conxunto
 
     $
         "ker"(f) = { a in A | f(a) = e_B }

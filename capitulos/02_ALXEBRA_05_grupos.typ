@@ -21,6 +21,7 @@ agora.
     todos os elementos son invertibles.
 ]
 
+// :FACER: por qué en grupos é abeliano pero non nas estruturas anteriores?
 Se a operación é conmutativa, diremos que o grupo é conmutativo, ou _abeliano_.
 
 Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
@@ -47,12 +48,12 @@ obtendo $x = a^(-1) * b$
     nome : "Subgrupo",
     ancora : "def:alxebra:subgrupo"
 )[
-    Sexa $(A,*)$ un grupo con neutro $e$, e $B in A$. Entón, $(B,*)$ é un
+    Sexa $(A,*)$ un grupo con neutro $e$, e $B subset A$. Entón, $(B,*)$ é un
     subgrupo de $(A,*)$ se
     $
-        (forall a_1, a_2 in B) space.quad a_1 * a_2 in B \
+        (forall b_1, b_2 in B) space.quad b_1 * b_2 in B \
         e in B \
-        (forall a in A) space.quad a^(-1) in A
+        (forall b in B) space.quad b^(-1) in B
     $
 ]
 
@@ -80,8 +81,9 @@ grupo, polo que existe o concepto de _elemento inverso_ polo que podemos dicir
 algo máis. En concreto, o neutro transformase como $f(e_A) = e_B$
 #cita("delgado_2010")
 
+// :FACER: se non é inxectiva pode existir x in A | f(x) = e_B. Mencionalo
 $
-    f(e_A) &= f(e_A) dot e_A \
+    f(e_A) &= f(e_A) dot e_B \
            &= f(e_A) dot (f(a) dot f(a)^(-1)) \
            &= (f(e_A) dot f(a)) dot f(a)^(-1) \
            &= f(e_A * a) dot f(a)^(-1) \

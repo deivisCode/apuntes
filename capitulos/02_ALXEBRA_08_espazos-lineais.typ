@@ -9,13 +9,13 @@ Case no final deste camiño presentamos unha das estruturas máis ubicuas, o
 espazo lineal (ou _vectorial_). #nota[Persoalmente prefiro falar de espazo
 _lineal_ en lugar de _vectorial_. En moitos casos o segundo nome suxire
 unha interpretación xeométrica (as típicas _frechas_), o cal só é razoable
-en casos moi concretos, polo que prefiro esquivalo]
+en casos moi concretos, polo que prefiro esquivalo.]
 
 #definicion(
     nome : "Espazo Lineal",
     ancora : "def:alxebra:espazo-lineal"
 )[
-    Sexa $(E,plus.circle)$ un grupo, $(A,+,dot)$ un campo, e
+    Sexa $(E,plus.circle)$ un grupo abeliano, $(A,+,dot)$ un campo, e
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
     arrow.r E$. A terna formada por ditos tres obxectos é un
     #indice("Espazo")[lineal] espazo lineal ou #indice("Espazo")[Vectorial]
@@ -36,9 +36,13 @@ en casos moi concretos, polo que prefiro esquivalo]
 No caso xeral soe denotarse ao conxunto do grupo como $V$, en alusión ao
 concepto de vector; e ao conxunto do campo usando unha letra dobre, como $KK$.
 Ademais, a operación do grupo soe ser $+$ e a primeira do campo $+$ tamén,
-abusando da notación (son operacións distintas). Finalmente, a operación
+abusando da notación (son operacións distintas). A operación
 $circle.stroked.tiny$ soe omitirse, polo que $k circle.stroked.tiny v, v in V,
-k in KK$ escríbese simplemente como $k v$.
+k in KK$ escríbese simplemente como $k v$. Finalmente, referímonos a
+$((V,+),(KK,+,dot),circle.stroked.tiny)$ simplemente como o espazo lineal
+$(V,KK,+)$, un _$KK$-espazo lineal_ ou un _espazo lineal sobre $KK$_. No límite
+de abusar da notación, referirémonos ao espazo lineal só polo nome do grupo,
+$V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
 
 Exemplos de espazos lineais:
 
@@ -52,8 +56,8 @@ Exemplos de espazos lineais:
   elemento da forma $3cos(x)$ é un vector.
 
 - O conxunto de ternas $(x,y,z)$ con $x,y,x in RR$ ca operación de suma usual,
-  é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$. Se temos o campo dos reais
-  $RR$, e a operación entre $R$ e as ternas definida como $k (x,y,z) =
+  é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$ é un grupo. Se temos o campo
+  dos reais $RR$, e a operación entre $RR$ e as ternas definida como $k (x,y,z) =
   (k x,k y,k z)$ entón, temos un espazo vectorial
   $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso, os vectores si teñen
   unha interpretación xeométrica evidente.
@@ -78,7 +82,7 @@ xeral dos vectores xeométricos.
     ancora : "def:alxebra:subesapazo-lineal"
 )[
     Sexa $((V,+),(KK,+,dot),circle.stroked.tiny)$ un espazo lineal calquera, e
-    $W in V$.
+    $W subset V$.
 ]
 
 + Subespazos
