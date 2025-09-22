@@ -391,26 +391,33 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    show figure: set align(left)
     // Creo un rectangulo
-    rect(
+    block(
         stroke:(
             top    : luma(20%) + 1pt,
             bottom : luma(20%) + 1pt
         ),
         fill: rgb("#FF0000").lighten(90%),
         width:100%,
+        inset : (
+            top    : 0.5em,
+            bottom : 0.5em,
+            left   : 0.5em,
+            right  : 0.5em
+        ),
         // Metolle contido dentro
         [
+            #show figure: set align(left)
+            #show figure: set block(breakable: false) // :FACER: non me convence como se ve entre páxinas
+            #set par(first-line-indent:0pt)
             #figure(
                 kind:"teorema",
                 supplement: "Teorema",
                 context {
-                    set par(first-line-indent:0pt)
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"teorema")).get().first()
-                    [ #v(0.5em) *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo #v(0.5em) ]
+                    [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo ]
                 }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
@@ -426,24 +433,31 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    show figure: set align(left)
-    rect(
+    block(
         stroke:(
             top    : luma(20%) + 1pt,
             bottom : luma(20%) + 1pt
         ),
         fill: rgb("#0000FF").lighten(90%),
         width:100%,
+        inset : (
+            top    : 0.5em,
+            bottom : 0.5em,
+            left   : 0.5em,
+            right  : 0.5em
+        ),
         [
+            #show figure: set align(left)
+            #show figure: set block(breakable: false)
+            #set par(first-line-indent:0pt)
             #figure(
                 kind:"definicion",
                 supplement: "Definición",
                 context {
-                    set par(first-line-indent:0pt)
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"definicion")).get().first()
-                    [ #v(0.5em) *Definición* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo #v(0.5em) ]
+                    [ *Definición* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo ]
                 }
             )
             #label(ancora)
