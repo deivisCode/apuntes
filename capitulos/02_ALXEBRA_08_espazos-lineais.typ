@@ -15,14 +15,14 @@ en casos moi concretos, polo que prefiro esquivalo.]
     nome : "Espazo Lineal",
     ancora : "def:alxebra:espazo-lineal"
 )[
-    Sexa $(E,plus.circle)$ un grupo abeliano, $(A,+,dot)$ un campo, e
+    Sexa $(E,plus.o)$ un grupo abeliano, $(A,+,dot)$ un campo, e
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
     arrow.r E$. A terna formada por ditos tres obxectos é un
     #indice("Espazo")[lineal] espazo lineal ou #indice("Espazo")[Vectorial]
     vectorial:
 
     $
-        ((E,plus.circle),(A,+,dot),circle.stroked.tiny)
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny)
     $
 
     É dicir, un módulo, pero en lugar do anel temos un campo.

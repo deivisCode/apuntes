@@ -33,16 +33,16 @@ usamos letras para as operacións senón símbolos especiais. É dicir, os pasos
 
 $
     f(a,b) stretch(arrow.r, size: #110%)^"símb. entre argumentos"
-    a f b stretch(arrow.r, size: #110%)^"símb. especial" a plus.circle b
+    a f b stretch(arrow.r, size: #110%)^"símb. especial" a plus.o b
 $
 
-Onde usei $plus.circle$ en lugar de $f$ ao final. Outros símbolos posibles son
-$+ * · dot.circle diamond.stroked$ ou o que veña en mente ao escribir.
+Onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
+$+ * · dot.o diamond.stroked$ ou o que veña en mente ao escribir.
 
 A pesar de que existen infinidade de símbolos, úsanse 2 estilos claramente
 diferenciados. Na notación *aditiva* úsanse símbolos que asemellan os da suma,
-como $+ plus.circle$, e as operacións escríbense completas, como $a+b$ ou $a
-plus.circle b$. Na notación *multiplicativa* úsanse símbolos que asemellan a
+como $+ plus.o$, e as operacións escríbense completas, como $a+b$ ou $a
+plus.o b$. Na notación *multiplicativa* úsanse símbolos que asemellan a
 multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
 explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.
@@ -53,15 +53,15 @@ ambas notacións máis adiante ao falar de asociatividade.
     nome : "Estrutura Alxébrica",
     ancora : "def:alxebra:estrutura"
 )[
-    A parella $(A,plus.circle)$ formada _polo menos_ por un conxunto arbitrario
-    $A$ máis unha operación calquera definida neste $plus.circle$ é unha
+    A parella $(A,plus.o)$ formada _polo menos_ por un conxunto arbitrario
+    $A$ máis unha operación calquera definida neste $plus.o$ é unha
     estrutura alxébrica #indice[Estrutura Alxébrica].
 ]
 
 Nesta definición, digo _polo menos_ porque é posible ter máis conxuntos e máis
 operacións. Tamén é posible unha estrutura composta á sua vez de estruturas
 máis pequenas. Por exemplo, no caso dunha #underline[Álxebra de Lie] #nota[Para
-o curioso, a estrutura é $((V,plus.circle,[dot,dot]), (KK,+,dot),
+o curioso, a estrutura é $((V,plus.o,[dot,dot]), (KK,+,dot),
 circle.stroked.small)$. Xa presentaremos todo no seu debido tempo] , o número
 ascende a 5 operacións en 2 conxuntos diferentes, que se relacionan en un
 grupo, un anel e unha operación aparte. Cando hai varias operacións soe usarse
@@ -69,7 +69,7 @@ notación aditiva para a primeira e multiplicativa para a segunda. No caso de
 ter nas mans varias estruturas do mesmo tipo, gústame a idea de notar as
 operacións da segunda engadindo círculos ás operacións da primeira. É dicir, se
 teño dúas estruturas sendo a primeira $(A,+,dot)$, entón na segunda usarei as
-operacións $plus.circle$ e $dot.circle$, i.e. $(B,plus.circle,dot.circle)$. Hai
+operacións $plus.o$ e $dot.o$, i.e. $(B,plus.o,dot.o)$. Hai
 que ter en conta que isto non é unha norma, senón un gusto.
 
 Un detalle notacional máis, cando unha estrutura é coñecida soe abusarse da
@@ -279,15 +279,15 @@ ninguén proba no campo de xogo nunca.
     ancora : "def:alxebra:morfismo"
 )[
     Un #indice("Morfismo") morfismo entre dúas estruturas $(A,*)$ e
-    $(B,plus.circle)$ (do mesmo tipo) é unha aplicación calquera $f: A &
+    $(B,plus.o)$ (do mesmo tipo) é unha aplicación calquera $f: A &
     arrow.r B$ que cumpre
 
     $
-        f(a*b) = f(a) plus.circle f(b)
+        f(a*b) = f(a) plus.o f(b)
     $
 
     Onde a operación $a*b$ ocorre en $A$, e logo se lle aplica $f$; e a
-    operación $plus.circle$ ocorre en $B$, entre $f(a)$ e $f(b)$
+    operación $plus.o$ ocorre en $B$, entre $f(a)$ e $f(b)$
 ]
 
 Dependendo da estrutura concreta ca que nos topemos, os morfismos ás veces
@@ -300,7 +300,7 @@ que precisemos.
     nome : "Núcleo dun morfismo",
     ancora : "def:alxebra:nucleo"
 )[
-    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.circle)$. O
+    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.o)$. O
     conxunto de elementos de $A$ que pasan ao neutro de $B$ a través de $f$
     chámase #indice("Núcleo") núcleo ou #indice("Kernel") kernel de $f$ e
     denótase por $"ker"(f)$. É dicir, é o conxunto

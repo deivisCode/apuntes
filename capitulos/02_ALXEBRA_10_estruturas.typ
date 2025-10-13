@@ -62,25 +62,25 @@ Jacobi).
     table.cell(
         x:0, y:0,
         [
-            *Magma* $(X, plus.circle )$
+            *Magma* $(X, plus.o )$
             #v(5pt)
-            $plus.circle$ binaria e interna
+            $plus.o$ binaria e interna
         ],
     ),
 
     table.cell(
         x:0, y:1,
         [
-            *Semigrupo* $(X, plus.circle )$
+            *Semigrupo* $(X, plus.o )$
             #v(5pt)
-            Magma, $plus.circle$ é asociativa
+            Magma, $plus.o$ é asociativa
         ],
     ),
 
     table.cell(
         x:0, y:2,
         [
-            *Monoide* $(X, plus.circle )$
+            *Monoide* $(X, plus.o )$
             #v(5pt)
             Semigrupo, e existe neutro $e$
         ],
@@ -89,7 +89,7 @@ Jacobi).
     table.cell(
         x:0, y:3,
         [
-            *Grupo* $(X, plus.circle )$
+            *Grupo* $(X, plus.o )$
             #v(5pt)
             Monoide, e todos os elementos son invertibles
         ],
@@ -98,44 +98,44 @@ Jacobi).
     table.cell(
         x:1, y:0,
         [
-            *Anel non \ asociativo* $(A,plus.circle,*)$
+            *Anel non \ asociativo* $(A,plus.o,*)$
             #v(5pt)
-            $(A,plus.circle)$ grupo \
+            $(A,plus.o)$ grupo \
             $(A,*)$ magma \
-            $*$ distributivo respecto de $plus.circle$ \
+            $*$ distributivo respecto de $plus.o$ \
         ],
     ),
 
     table.cell(
         x:1, y:1,
         [
-            *Anel \ asociativo* $(A,plus.circle,*)$
+            *Anel \ asociativo* $(A,plus.o,*)$
             #v(5pt)
-            $(A,plus.circle)$ grupo \
+            $(A,plus.o)$ grupo \
             $(A,*)$ semigrupo \
-            $*$ distributivo respecto de $plus.circle$ \
+            $*$ distributivo respecto de $plus.o$ \
         ],
     ),
 
     table.cell(
         x:1, y:2,
         [
-            *Anel \ Unitario* $(A,plus.circle,*)$
+            *Anel \ Unitario* $(A,plus.o,*)$
             #v(5pt)
-            $(A,plus.circle)$ grupo \
+            $(A,plus.o)$ grupo \
             $(A,*)$ monoide \
-            $*$ distributivo respecto de $plus.circle$ \
+            $*$ distributivo respecto de $plus.o$ \
         ],
     ),
 
     table.cell(
         x:1, y:3,
         [
-            *Corpo* $(A,plus.circle,*)$
+            *Corpo* $(A,plus.o,*)$
             #v(5pt)
-            $(A,plus.circle)$ grupo \
+            $(A,plus.o)$ grupo \
             $(A-{0},*)$ grupo \
-            $*$ distributivo respecto de $plus.circle$ \
+            $*$ distributivo respecto de $plus.o$ \
             #v(5pt)
             Se $*$ é conmutativa, \ Campo
         ],
@@ -144,9 +144,9 @@ Jacobi).
     table.cell(
         x:2, y:2,
         [
-            *Módulo* \ $((G,plus.circle),(KK,+,*),circle.stroked.small)$
+            *Módulo* \ $((G,plus.o),(KK,+,*),circle.stroked.small)$
             #v(5pt)
-            $(G,plus.circle)$ grupo \
+            $(G,plus.o)$ grupo \
             $(KK,+,*)$ anel unitario \
             Operación $circle.stroked.small: KK times G arrow G$
         ],
@@ -155,12 +155,12 @@ Jacobi).
     table.cell(
         x:2, y:3,
         [
-            *Espazo  Lineal* \ $((G,plus.circle), (KK,+,*), circle.stroked.small )$
+            *Espazo  Lineal* \ $((G,plus.o), (KK,+,*), circle.stroked.small )$
             #v(5pt)
-            $(G,plus.circle)$ grupo \
+            $(G,plus.o)$ grupo \
             $(KK,+,*)$ corpo/campo \
             Operación $circle.stroked.small: KK times G arrow G$
-            // Alternativamente: $((G,plus.circle), (KK,+,*), circle.stroked.small: KK arrow "End"(G))$
+            // Alternativamente: $((G,plus.o), (KK,+,*), circle.stroked.small: KK arrow "End"(G))$
         ]
     ),
 
@@ -168,43 +168,43 @@ Jacobi).
         x:3, y:0,
         [
             *Álxebra sobre un Corpo* $KK$ \
-            $((V,plus.circle,times), (KK,+,*), circle.stroked.small)$\
+            $((V,plus.o,times), (KK,+,*), circle.stroked.small)$\
             #v(5pt)
-            Espazo lineal \ $((V,plus.circle), (KK,+,*), circle.stroked.small)$ \
+            Espazo lineal \ $((V,plus.o), (KK,+,*), circle.stroked.small)$ \
             #v(-3pt)
-            Anel non Asociativo $(V,plus.circle,times)$
+            Anel non Asociativo $(V,plus.o,times)$
         ],
     ),
 
     table.cell(
         x:3, y:1,
         [
-            *Álxebra Asociativa* \ $((V,plus.circle,times), (KK,+,*), circle.stroked.small)$\
+            *Álxebra Asociativa* \ $((V,plus.o,times), (KK,+,*), circle.stroked.small)$\
             #v(5pt)
-            Espazo lineal \ $((V,plus.circle), (KK,+,*), circle.stroked.small)$ \
+            Espazo lineal \ $((V,plus.o), (KK,+,*), circle.stroked.small)$ \
             #v(-3pt)
-            Anel Asociativo $(V,plus.circle,times)$
+            Anel Asociativo $(V,plus.o,times)$
         ],
     ),
 
     table.cell(
         x:3, y:2,
         [
-            *Álxebra con unidade* \ $((V,plus.circle,times), (KK,+,*), circle.stroked.small)$\
+            *Álxebra con unidade* \ $((V,plus.o,times), (KK,+,*), circle.stroked.small)$\
             #v(5pt)
-            Espazo lineal \ $((V,plus.circle), (KK,+,*), circle.stroked.small)$ \
+            Espazo lineal \ $((V,plus.o), (KK,+,*), circle.stroked.small)$ \
             #v(-3pt)
-            Anel Unitario $(V,plus.circle,times)$
+            Anel Unitario $(V,plus.o,times)$
         ],
     ),
 
     table.cell(
         x:4, y:0,
         [
-            *Álxebra de Lie* \ $((V,plus.circle,[dot,dot]), (KK,+,dot), circle.stroked.small)$
+            *Álxebra de Lie* \ $((V,plus.o,[dot,dot]), (KK,+,dot), circle.stroked.small)$
             #v(5pt)
             Álxebra \
-            $((V,plus.circle,[dot,dot]), (KK,+,dot), circle.stroked.small)$
+            $((V,plus.o,[dot,dot]), (KK,+,dot), circle.stroked.small)$
             #v(-3pt)
             Operación $[dot,dot]$ Bilineal, Antisimétrica, cumpre a identidade de Jacobi
         ],

@@ -12,13 +12,13 @@ operacións.
     nome : "Módulo",
     ancora : "def:alxebra:modulo"
 )[
-    Sexa $(E,plus.circle)$ un grupo, $(A,+,dot)$ un anel, e
+    Sexa $(E,plus.o)$ un grupo, $(A,+,dot)$ un anel, e
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
     arrow.r E$. A terna formada por ditos tres obxectos é un #indice("Módulo")
     módulo:
 
     $
-        ((E,plus.circle),(A,+,dot),circle.stroked.tiny)
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny)
     $
 ]
 

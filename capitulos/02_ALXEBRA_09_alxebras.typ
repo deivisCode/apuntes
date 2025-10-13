@@ -15,13 +15,13 @@ mundo cuántico onde se usa unha estrutura semellante.
     nome : "Álxebra",
     ancora : "def:alxebra:alxebra"
 )[
-    Sexa $(V,plus.circle,*)$ un anel, $(KK,+,dot)$ un campo, e
+    Sexa $(V,plus.o,*)$ un anel, $(KK,+,dot)$ un campo, e
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: V times A
     arrow.r V$. A terna formada por ditos tres obxectos é unha
     #indice("Álxebra") álxebra
 
     $
-        ((V,plus.circle,*),(A,+,dot),circle.stroked.tiny)
+        ((V,plus.o,*),(A,+,dot),circle.stroked.tiny)
     $
 
     É dicir, un espazo lineal, pero o primeiro elemento é un anel.
@@ -31,7 +31,7 @@ mundo cuántico onde se usa unha estrutura semellante.
     nome : "Álxebra de Lie",
     ancora : "def:alxebra:alxebra-lie"
 )[
-    Sexa $((V,plus.circle,*), (KK,+,dot), circle.stroked.small)$ unha álxebra.
+    Sexa $((V,plus.o,*), (KK,+,dot), circle.stroked.small)$ unha álxebra.
 
     No caso de que a operación $*$ sexa bilineal, antisimétrica e cumpra a
     identidade de Jacobi, entón falamos dunha #indice("Álxebra")[De Lie]
