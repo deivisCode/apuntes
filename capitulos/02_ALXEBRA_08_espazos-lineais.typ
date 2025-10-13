@@ -46,11 +46,10 @@ $V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
 
 Exemplos de espazos lineais:
 
-- O conxunto ${a cos(x), a in RR}$ #nota[$0.3cos(x), 9cos(x), \ pi cos(x),
-  -3cos(x), dots, "etc."$] ca suma de funcións usual $3cos(x) + 7cos(x) =
-  10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se escollemos a
-  operación entre vectores e escalares de xeito que $k circle.stroked.tiny
-  (a.cos(x)) = (k a)cos(x)$, entón dito conxunto de cosenos, co campo dos
+- O conxunto ${a cos(x), a in RR}$ ca suma de funcións usual $3cos(x) + 7cos(x)
+  = 10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se escollemos a
+  operación entre vectores e escalares de xeito que $k circle.stroked.tiny (a
+  dot cos(x)) = (k a) dot cos(x)$, entón dito conxunto de cosenos, co campo dos
   reais e a operación indicada, é un espazo lineal. Evidentemente este espazo
   non ten unha interpretación "gráfica" ou "visual" evidente, inda así cada
   elemento da forma $3cos(x)$ é un vector.
@@ -76,16 +75,22 @@ A distinción será especialmente evidente no caso da álxebra multilineal, onde
 aparecerá o concepto de _tensor_, que é un caso concreto dos vectores, pero
 xeral dos vectores xeométricos.
 
-// :AQUI:
 #definicion(
     nome : "Subespazo lineal",
     ancora : "def:alxebra:subesapazo-lineal"
 )[
     Sexa $((V,+),(KK,+,dot),circle.stroked.tiny)$ un espazo lineal calquera, e
-    $W subset V$.
+    $W subset V$. Se se cumpre que
+
+    $
+        ((W,+),(KK,+,dot),circle.stroked.tiny) "é un espazo lineal" \
+        (W,+) subgrupo (V,+)
+    $
 ]
 
-+ Subespazos
-+ Clases laterais
-+ Homomorfismos de espazos lineais (aplicacións lineais)
-+ Kernel e tal
+Neste caso só nos interesa que $(W,+)$ é un subgrupo de $(V,+)$, e que o propio
+$W$ é un espazo vectorial.
+
+// :FACER: Clases laterais
+// :FACER: Homomorfismos de espazos lineais (aplicacións lineais)
+// :FACER: Kernel e tal

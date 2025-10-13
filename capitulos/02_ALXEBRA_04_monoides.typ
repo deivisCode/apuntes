@@ -18,7 +18,8 @@
     _ou_ multiplicar pero non dividir.
 ]
 
-Se a operación é conmutativa, diremos que é un monoide conmutativo.
+Podemos referirnos simplemente ao monoide como $A$. Se a operación é
+conmutativa, diremos que é un monoide conmutativo.
 
 Tal vez comezamos a ver un patrón. Partimos dunha estrutura sinxela (un magma)
 e imos engadindo detalles pouco a pouco construíndo outras estruturas máis
@@ -28,7 +29,6 @@ facemos aquí son os mesmos que ao construír aneis, espazos lineais, ou álxebr
 de Lie. Penso que ao coñecer os pasos é máis sinxelo entender as definicións
 máis complexas.
 
-// :FACER: funcion para exemplos. Debe poder romperse en varias paxinas. Mirar diferenzas rect() block()
 Exemplos de monoide, abstractos e nada visuais, pero útiles:
 
 - Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A elección da

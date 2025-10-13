@@ -18,7 +18,21 @@ son. Nesta sección mencionamos unha das máis simples posibles.
     magma#indice[Magma]
 ]
 
-Adicionalmente, se a operación é conmutativa, entón é un magma conmutativo.
+Podemos referirnos simplemente ao magma como $A$. Adicionalmente, se a
+operación é conmutativa, entón é un magma conmutativo.
+
+#definicion(
+    nome : "Submagma",
+    ancora : "def:alxebra:submagma"
+)[
+    Sexa $(A,*)$ un magma e $B subset A$. Se se cumpre que
+
+    $
+        (forall b_1,b_2 in B) space.quad b_1 * b_2 in B
+    $
+
+    Entón dicimos que $(B,*)$ é un submagma de $(A,*)$
+]
 
 En realidade non hai nada máis que comentar desta estrutura. Pode parecer que
 non lle imos dar ningún uso, pero veredes que se pode usar como comparación

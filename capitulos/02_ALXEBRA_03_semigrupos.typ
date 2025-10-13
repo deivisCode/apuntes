@@ -15,7 +15,8 @@
     $*$ tamén é asociativa
 ]
 
-Se a operación é conmutativa, diremos que é un semigrupo conmutativo.
+Podemos referirnos simplemente ao semigrupo como $A$. Se a operación é
+conmutativa, diremos que é un semigrupo conmutativo.
 
 Os semigrupos si aparecen de cando en vez de forma explícita na álxebra.
 Veremos esto unhas seccións máis adiante.

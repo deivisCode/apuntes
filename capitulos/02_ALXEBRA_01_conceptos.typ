@@ -5,7 +5,6 @@
     ancora : "sec:alxebra:conceptos"
 )
 
-// :FACER: conceptos basicos, faltan explicacións
 Esta será posiblemente a sección máis aburrida deste capítulo. Imos ver
 algunhas definicións e resultados básicos que logo imos aplicar a unha
 variedade de situacións.
@@ -47,11 +46,9 @@ plus.circle b$. Na notación *multiplicativa* úsanse símbolos que asemellan a
 multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
 explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.
-// :FACER: explicitar cando non escribo nada en lugar de * ou ·
 
 
 // :FACER: cardinalidade dun conxunto, tal vez aqui ou en topo ? delgado_2010
-// :FACER: chamamos como G ao grupo (G,*)
 #definicion(
     nome : "Estrutura Alxébrica",
     ancora : "def:alxebra:estrutura"
@@ -175,20 +172,53 @@ $1, bb(1)$ ou $I$. Podemos combinar todo e escribir $1_A, bb(1)_B, 0_A$, etc.
 O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por $a^(-1)$
 na multiplicativa.
 
-// :FACER: ollo, esto xustifica falar de a^-1, senón non teria sentido. Especificalo no de notacion
-// :FACER: esto depende da asociatividade, mencionalo!!
 #teorema(
     nome : "Elemento inverso é único",
     ancora : "teo:alxebra:inverso_unico"
 )[
-    Sexa $(A,*)$ unha estrutura alxébrica calquera. Se existe un elemento
-    inverso, entón é único.
+    Sexa $(A,*)$ unha estrutura alxébrica calquera ca propiedade de que $*$ é
+    unha operación asociativa. Se existe un elemento inverso, entón é único.
 
-    Sexa $a^(-1)$ o elemento inverso de $a$. Entón, $a a^(-1) = e = a a^(-1)$.
-    Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a'^(-1) a =
-    e = a a'^(-1)$ (por que tamén é inverso). Entón $a^(-1) = e a^(-1) =
-    (a'^(-1) a) a^(-1) = a'^(-1)(a a^(-1)) = a'^(-1)e = a'^(-1)$
+    Sexa $a^(-1)$ o elemento inverso de $a$. Entón, $a*a^(-1) = e = a*a^(-1)$.
+    Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a'^(-1)*a =
+    e = a*a'^(-1)$ (por que tamén é inverso). Entón
+    $
+        a^(-1) = e*a^(-1) = (a'^(-1)*a)*a^(-1) = \
+        a'^(-1)*(a*a^(-1)) = a'^(-1)*e = a'^(-1)
+    $
 ]
+
+O teorema @teo:alxebra:inverso_unico garante que podemos falar de $a^(-1)$,
+senón, poderíamos ter varios inversos de $a$ distintos, como $a_1,a_2$ etc.
+
+#teorema(
+    nome : "Inverso dun produto",
+    ancora : "teo:alxebra:inverso_produto"
+)[
+    Sexa $(A,*)$ unha estrutura calqueira onde $*$ é asociativa, existe neutro
+    $e$ máis todos os elementos son invertibles. Entón, o inverso $(a*b)^(-1) =
+    b^(-1)*a^(-1)$. Pode demostrarse multiplicando $a*b$ pola esquera e pola
+    dereita por $a^(-1)*b^(-1)$, o cal nos debe dar o neutro según a definición
+    @def:alxebra:inverso
+
+    Pola esquerda
+    $
+        (b^(-1)*a^(-1))*(a*b) = b^(-1)*(a*a^(-1))*b = \
+        b^(-1)*e*b = b^(-1)*b = e
+    $
+
+    E pola dereita
+    $
+        (a*b)*(b^(-1)*a^(-1)) = a*(b*b^(-1))*a^(-1) = \
+        a*e*a^(-1) = a*a^(-1) = e
+    $
+
+    Polo tanto, $(b^(-1)*a^(-1))$ é o inverso de $a*b$
+]
+
+Este teorema ás veces chámase _teorema de zapatos e calcetíns_ por que para
+calzarnos primeiro poñemos os zapatos e logo os calcetíns. Pero para
+descalzarnos quitamos primeiro os calcetíns e logo os zapatos.
 
 #definicion(
     nome : "Operación distributiva",
@@ -207,7 +237,8 @@ na multiplicativa.
 
 Ás veces podemos referirnos a distributiva _pola esquerda_ ou _pola dereita_,
 no caso de que só se cumpra unha das condicións de
-#ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a secas) se o é pola esquera e pola dereita
+#ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a
+secas) se o é pola esquera e pola dereita.
 
 // :FACER: esto non é de todo correcto, hai que parafrasealo
 #definicion(
@@ -219,14 +250,17 @@ no caso de que só se cumpra unha das condicións de
     $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
     todas as condicións que se pedían para $(A,*)$
 
-    // :FACER: poñer a nota pero sen que quede o codigo tan afora
-    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B) #nota[Cando a operación tamén é interna no subconxunto B soe dicirse que é _cerrada_ ou que _cerra_ en B]
+    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B) 
     - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$
     - Se a operación $*$ é conmutativa en $(A,*)$, tamén o é en $(B,*)$
     - Se existe un elemento neutro $e in (A,*)$, tamén está en $(B,*)$
     - Se todo elemento ten inverso en $(A,*)$, tamén o ten en $(B,*)$
     - etc.
 ]
+
+Cando a operación tamén é interna no subconxunto B soe dicirse que é
+#indice("Operación")[Cerrada] _cerrada_ ou que _cerra_ en B, que é o primeiro
+punto da definición @def:alxebra:subestrutura.
 
 A definición @def:alxebra:subestrutura dinos que se sabemos as condicións que
 satisfai unha estrutura de certo tipo, coma un monoide ou un anel, entón non
@@ -280,5 +314,25 @@ Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
 que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
 espero que o vaia sendo nas seccións seguintes
 
-// :FACER: (ab)^-1 = b^-1 a^-1 (shoe socks theorme)
-// :FACER: morfismo, algunha explicación a maiores
+#teorema(
+    nome : [$ker(f) = {e} sse f "é Inxectiva"$],
+    ancora : "teo:alxebra:nucleo_unidade"
+)[
+    Sexa $f:A arrow.r B$ un morfismo calquera entre as estruturas $(A,+)$ e
+    $(B,+)$. #nota[Uso en ambas estruturas a mesma operación + por comodidade.]
+    Entón $f$ é inxectiva $sse$ o núcleo de $f$ só contén o neutro de A.
+
+    $arrow.r.double$
+
+    Partimos de que $f$ é inxectiva. $f(e_A) = f(a-a) = f(a)-f(a) = e_B$
+    $implica f(e_A) = e_B implica e_A in ker(f)$ Pode ser que haxa outro
+    elemento $a' in A$ tal que $f(a') = e_B implica a' in ker(f)$, pero como
+    $f$ é inxectiva, entón se $f(e_A) = f(a') = e_B implica a' = e_A$. Polo
+    tanto, $ker(f) = {e_A}$
+
+    $arrow.l.double$
+
+    Partimos de que $ker(f)={e_A}$. Supoñemos que $f(a) = f(b) implica f(a-b) =
+    e_B$ polo que $a-b in ker(f) = {e_B}$. Entón, $a-b = e_B implica a=b$. Polo
+    tanto, $f(a)=f(b) implica a=b$, que é a condición de inxectividade.
+]  

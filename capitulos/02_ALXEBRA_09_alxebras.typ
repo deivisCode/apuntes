@@ -47,6 +47,6 @@ Outra forma de ver esta estrutura é como un espazo lineal usual, pero engadimos
 a operación $[dot,dot]$ que cumpre as propiedades antes mencionadas. Esta soe
 ser a definición na maioría de libros.
 
-+ Subalxebra
-+ Tipos de operacions, Alxebras asociativas, de Lie
-+ Morfismos de álxebras
+// :FACER: Subalxebra
+// :FACER: Tipos de operacions, Alxebras asociativas, de Lie
+// :FACER: Morfismos de álxebras
