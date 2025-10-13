@@ -25,19 +25,23 @@ O segundo caso é o seguinte: #cita("goldberg_1980")
     é unha #indice("Topoloxía") topoloxía en $X$ se se cumpre:
 
     $
-        X,emptyset in tau \
-        A,B in tau arrow.r.double A inter B in tau \
-        {A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau
+        &X,emptyset in tau \
+        &A,B in tau arrow.r.double A inter B in tau \
+        &{A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau
     $
 
 ]
+
+A segunda propiedade dinos que a interescción dun número _finito_ de elementos
+da topoloxía tamén pertence a $tau$, e a terceira que a unión _infinita_ tamén
+o fai.
 
 Os elementos de $tau$ chámanse #indice("Conxunto")[Aberto] conxuntos abertos,
 ou simplemente abertos.
 
 #definicion(
     nome : "Espazo topolóxico",
-    ancora : "def:topoloxia:espazo-topoloxico"
+    ancora : "def:topoloxia:espazo-topoloxic o"
 )[
     A parella $(X,tau)$ onde $X$ é un conxunto arbitrario e $tau$ unha
     topoloxía sobre $X$, é un #indice("Espazo")[Topolóxico] espazo topolóxico.
