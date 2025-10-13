@@ -197,6 +197,7 @@
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
         if eso.element != none and eso.element.func() == figure and eso.element.kind == "teorema" {
+            // :FACER: por qué non necesito usar un contexto aqui?
             let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
             let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
             let NUM = counter(figure.where(kind:"teorema")).at(eso.element.location()).last()
@@ -225,7 +226,8 @@
             let NUM = counter(figure.where(kind:"seccion")).at(eso.element.location()).last()
             link(
                 eso.element.location(),
-                [$section$#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM]]
+                // :FACER: o espazo nobreak debería ser zw
+                [$section$#sym.space.nobreak;#text(fill:rgb("#bb0000"))[#HEA.#SEC.#NUM]]
             )
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
         // no caso de que a referencia apunte a unha figura de tipo 'math.equation'
@@ -417,7 +419,7 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"teorema")).get().first()
-                    [ *Teorema* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo ]
+                    [ *Teorema* #HEA.#SEC.#NUM: #smallcaps(nome) #v(0.3em) #corpo ]
                 }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
@@ -457,7 +459,7 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"definicion")).get().first()
-                    [ *Definición* #HEA.#SEC.#NUM (#smallcaps(nome)) #v(0.3em) #corpo ]
+                    [ *Definición* #HEA.#SEC.#NUM: #smallcaps(nome) #v(0.3em) #corpo ]
                 }
             )
             #label(ancora)
