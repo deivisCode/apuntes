@@ -560,3 +560,11 @@
 #let implica = text(
     box($arrow.r.double$)
 )
+
+#let sse = text(
+    box($arrow.r.l.double$)
+)
+
+#let subgrupo = text(
+    box($lt.eq.slant$)
+)
