@@ -94,3 +94,29 @@ Distancias: [Def. 6.1]#cita("masa_2019")
     A parella $(X, d)$ onde $X$ é un conxunto calquera e $d$ unha distancia é
     un #indice("Espazo")[Métrico] espazo métrico.
 ]
+
+#definicion(
+    nome : "Funcion Continua",
+    ancora : "def:topoloxia:funcion-continua"
+)[
+    Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
+    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    #indice("Función")[Continua] función continua se
+
+    $
+        (forall U in tau_Y), space.quad f^(-1)(U) in tau_X
+    $
+]
+
+Por exemplo, sexa $f: (X,tau_X) arrow.r (Y,tau_Y)$ dada por
+
+$
+    f(x) = cases(
+        x "se" x lt.eq 0,
+        0 "se" x gt 0
+    )
+$
+
+con $tau_X, tau_Y$ a topoloxía cofinita. Entón podemos escoller $U := (-oo,0)
+union (0,oo)$ cuxa antiimaxe é $f^(-1)(U) = (-oo,0) in.not tau_"COF"$, polo que
+$f$ non é continua.
