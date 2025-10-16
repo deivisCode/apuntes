@@ -24,3 +24,5 @@
 #include("/capitulos/02_ALXEBRA_08_espazos-lineais.typ")
 #include("/capitulos/02_ALXEBRA_09_alxebras.typ")
 #include("/capitulos/02_ALXEBRA_10_estruturas.typ")
+
+#include("capitulos/03_GRUPOS_00_introducion.typ")
