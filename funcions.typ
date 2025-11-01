@@ -2,6 +2,8 @@
 
 // :FACER: Palabras clave (en comentarios) en cada arquivo. Logo con python ler
 // todo o diretorio e crear un grafo das relacións entre temas
+// :FACER: sys.inputs para meter version de git??
+// :FACER: concordancia https://en.wikipedia.org/wiki/Concordance_(publishing)
 
 // :FACER: eventualmente gustaríame facer estas cousas a man
 #import "@preview/marginalia:0.2.3" as marginalia: note

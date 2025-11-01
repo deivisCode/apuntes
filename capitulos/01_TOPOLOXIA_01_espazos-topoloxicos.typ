@@ -38,6 +38,7 @@ o fai.
 
 Os elementos de $tau$ chámanse #indice("Conxunto")[Aberto] conxuntos abertos,
 ou simplemente abertos.
+// :FACER: como saber cando un conxunto é aberto?
 
 #definicion(
     nome : "Espazo topolóxico",

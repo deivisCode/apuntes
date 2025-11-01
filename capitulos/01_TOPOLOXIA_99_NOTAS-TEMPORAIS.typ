@@ -44,6 +44,8 @@ Topoloxías distintas da usual. Nestos casos non podemos usar a noción usual de
 usual, pero noutra topoloxía os abertos son distintos. Para saber se un punto
 pertence ou no á fronteira, adherencia, etc. hai que comprobar as definicións
 anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
+// :FACER: topoloxia usual?
+// :FACER: nomes tau_u ..?
 
 - *Trivial/Indiscreta*: ${emptyset, cal(X)}$
 
@@ -120,3 +122,83 @@ $
 con $tau_X, tau_Y$ a topoloxía cofinita. Entón podemos escoller $U := (-oo,0)
 union (0,oo)$ cuxa antiimaxe é $f^(-1)(U) = (-oo,0) in.not tau_"COF"$, polo que
 $f$ non é continua.
+
+#definicion(
+    nome : "Funcion Aberta",
+    ancora : "def:topoloxia:funcion-aberta"
+)[
+    Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
+    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    #indice("Función")[Aberta] función aberta se
+
+    $
+        (forall U "aberto"), space.quad f(U) "é aberto en" (Y,tau_Y)
+    $
+]
+
+Por exemplo, a funcion $f(x) = -abs(x)$ e ambos espazos topolóxicos $RR$ ca
+topoloxía usual. Calquera intervalo aberto $U = (a,b) in tau_u$ pasa a outro
+intervalo tamén aberto $f(U) = (f(a), f(b)) in tau_u $, polo que a función é
+aberta. #nota[Esto digoo a ollo, dame reparo probalo]
+
+A función
+
+$
+    f:(RR,tau_K) frecha (RR,tau_K)
+$
+
+$
+    f(x) = cases(
+        -x &"se" x lt 0,
+        2  &"se" x gt.eq 0
+    )
+$
+
+non é aberta porque os abertos $U = (a, oo) in tau_K$ pasan a
+
+$
+    f(U) = cases(
+        (a, oo) union {2} "se" a lt 0,
+                      {2} "se" a gt.eq 0
+    )
+$
+
+e en ningún caso é aberto.
+
+#definicion(
+    nome : "Funcion Pechada",
+    ancora : "def:topoloxia:funcion-aberta"
+)[
+    Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
+    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    #indice("Función")[Pechada] función pechada se
+
+    $
+        (forall U "pechado"), space.quad f(U) "é pechado en" (Y,tau_Y)
+    $
+]
+
+A funcion
+
+$
+    f:(RR,tau_K) frecha (RR,tau_K) \
+    f(x) = abs(x)
+$
+
+non é pechada porque o caso concreto $U = (-oo,1] $ pechado ten como imaxe o
+conxunto $f(U) = [0,oo)$ que non é pechado.
+
+#definicion(
+    nome : "Homeomorfismo",
+    ancora : "def:topoloxia:homeomorfismo"
+)[
+    Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
+    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é un
+    #indice("Homeomorfismo") homeomorfismo se
+
+    + $f$ é bixectiva
+    + $f$ é continua
+    + $f^(-1)$ é continua
+]
+
+// :AQUI:
