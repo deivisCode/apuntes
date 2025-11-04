@@ -47,8 +47,6 @@ multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
 explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.
 
-
-// :FACER: cardinalidade dun conxunto, tal vez aqui ou en topo ? delgado_2010
 #definicion(
     nome : "Estrutura Alxébrica",
     ancora : "def:alxebra:estrutura"
@@ -60,22 +58,35 @@ ambas notacións máis adiante ao falar de asociatividade.
 
 Nesta definición, digo _polo menos_ porque é posible ter máis conxuntos e máis
 operacións. Tamén é posible unha estrutura composta á sua vez de estruturas
-máis pequenas. Por exemplo, no caso dunha #underline[Álxebra de Lie] #nota[Para
-o curioso, a estrutura é $((V,plus.o,[dot,dot]), (KK,+,dot),
-circle.stroked.small)$. Xa presentaremos todo no seu debido tempo] , o número
-ascende a 5 operacións en 2 conxuntos diferentes, que se relacionan en un
-grupo, un anel e unha operación aparte. Cando hai varias operacións soe usarse
-notación aditiva para a primeira e multiplicativa para a segunda. No caso de
-ter nas mans varias estruturas do mesmo tipo, gústame a idea de notar as
-operacións da segunda engadindo círculos ás operacións da primeira. É dicir, se
-teño dúas estruturas sendo a primeira $(A,+,dot)$, entón na segunda usarei as
-operacións $plus.o$ e $dot.o$, i.e. $(B,plus.o,dot.o)$. Hai
-que ter en conta que isto non é unha norma, senón un gusto.
+máis pequenas. Por exemplo, no caso dunha #underline[Álxebra de Lie]
+#nota[
+    Para o curioso, a estrutura é $((V,plus.o,[dot,dot]), (KK,+,dot),
+    circle.stroked.small)$. Xa presentaremos todo no seu debido tempo
+]
+, o número ascende a 5 operacións en 2 conxuntos diferentes, que se relacionan
+en un grupo, un anel e unha operación aparte. Cando hai varias operacións soe
+usarse notación aditiva para a primeira e multiplicativa para a segunda. No
+caso de ter nas mans varias estruturas do mesmo tipo, gústame a idea de notar
+as operacións da segunda engadindo círculos ás operacións da primeira. É dicir,
+se teño dúas estruturas sendo a primeira $(A,+,dot)$, entón na segunda usarei
+as operacións $plus.o$ e $dot.o$, i.e. $(B,plus.o,dot.o)$. Hai que ter en conta
+que isto non é unha norma, senón un gusto.
 
 Un detalle notacional máis, cando unha estrutura é coñecida soe abusarse da
 notación e simplificar todo co nome do seu conxunto. De haber varios, é típico
 que haxa un máis _interesante_ e usarase ese. Por exemplo, o grupo $(G, +)$
 simplifícase por $G$, e o espazo lineal $((V,+),(KK,+,dot),compose)$ por $V$
+
+#definicion(
+    nome : "Cardinalidade",
+    ancora : "def:alxebra:cardinalidade"
+)[
+    Nunha estrutura alxébrica calquera $A$ denotamos por $card(A)$ ao número de
+    elementos de $A$ se tal número é finito. Se non é finito, entón falaremos
+    do cardinal de $NN$ ou $RR$ dependendo do caso (véxase [Def.
+    3.63]#cita("delgado_2010")). No caso de que a estrutura teña varios
+    conxunto soe falarse da cardinalidade do conxunto máis relevante.
+]
 
 #definicion(
     nome: "Asociatividade",
@@ -106,7 +117,11 @@ números. E en notación aditiva
 
 $ underbrace(a + a + a + dots, "n veces") $
 
-simplifícase a $n a$, como se estivésemos a sumar un número varias veces.
+simplifícase a $n a$, como se estivésemos a sumar un número varias veces. A
+maiores, se temos (en notación multiplicativa) $a^n * a^m$ podemos simplificalo
+por $a^(n+m)$, e $(a^(n))^(m)$ é igual a $a^(n m)$, seguindo as nocións usuais
+de potencias de números. Pode verse unha demostración en [Cap.4 $section$2.3
+Teo.2]#cita("kostrikin_1983")
 
 #definicion(
     nome : "Conmutatividade",
@@ -250,7 +265,7 @@ secas) se o é pola esquera e pola dereita.
     $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
     todas as condicións que se pedían para $(A,*)$
 
-    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B) 
+    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B)
     - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$
     - Se a operación $*$ é conmutativa en $(A,*)$, tamén o é en $(B,*)$
     - Se existe un elemento neutro $e in (A,*)$, tamén está en $(B,*)$
@@ -295,7 +310,6 @@ chámanse _homomorfismos_, entre grupos; _homomorfismos de aneis_, entre aneis;
 ou _aplicacións lineais_, en espazos lineais, etc. Veremos cada caso co detalle
 que precisemos.
 
-// :FACER: mencionar o tema de inxectividade, sobre, bi, inversas, etc.
 #definicion(
     nome : "Núcleo dun morfismo",
     ancora : "def:alxebra:nucleo"
@@ -306,16 +320,37 @@ que precisemos.
     denótase por $"ker"(f)$. É dicir, é o conxunto
 
     $
-        "ker"(f) = { a in A | f(a) = e_B }
+        ker(f) = { a in A | f(a) = e_B }
     $
 ]
+
+Recordemos por un momento a noción de inxectividade. Unha función é inxectiva
+se se cumpre que $f(a) eq.not f(b) implica a eq.not b$, ou análogamente, $a = b
+implica f(a) = f(b)$.
+
+// :FACER: demostracion desto
+#teorema(
+    nome : "Inxectividade e Núcleo",
+    ancora : "teo:alxebra:inxectividade-nucleo"
+)[
+    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.o)$.
+
+    $
+        f "é inxectiva" sse ker(f) = {e_A}
+    $
+]
+
+No caso da teoría de conxuntos non se pode presentar tal resultado porque non
+teríamos unha noción de _kernel_ ou sequera do que é un elemento neutro. Na
+álxebra varios teoremas gañan contido e é posible usar resultados novos que
+antes non eran posibles.
 
 Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
 que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
 espero que o vaia sendo nas seccións seguintes
 
 #teorema(
-    nome : [$ker(f) = {e} sse f "é Inxectiva"$],
+    nome : [$ker(f) = {e_A} sse f "é Inxectiva"$],
     ancora : "teo:alxebra:nucleo_unidade"
 )[
     Sexa $f:A arrow.r B$ un morfismo calquera entre as estruturas $(A,+)$ e
@@ -335,4 +370,4 @@ espero que o vaia sendo nas seccións seguintes
     Partimos de que $ker(f)={e_A}$. Supoñemos que $f(a) = f(b) implica f(a-b) =
     e_B$ polo que $a-b in ker(f) = {e_B}$. Entón, $a-b = e_B implica a=b$. Polo
     tanto, $f(a)=f(b) implica a=b$, que é a condición de inxectividade.
-]  
+]
