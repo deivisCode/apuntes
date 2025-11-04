@@ -1,5 +1,3 @@
-// :FACER: aneis conmutativos
-// :FACER: exemplos de aneis
 #import("/funcions.typ"): *
 
 #seccion(
@@ -25,9 +23,17 @@ operacións.
     dise que é un #indice("anel")anel. É dicir, unha terna $(A,+,dot)$ onde
     $(A,+)$ é un grupo e $(A,dot)$ é un magma
 ]
+// :FACER: exemplos de aneis
 
 Podemos referirnos simplemente ao anel como $A$. Se a operación $dot$ é
 conmutativa dicimos que o anel é conmutativo.
+
+Algúns exemplos de aneis:
+
++ Sexa $M_(n times n)$ o conxunto de matrices cadradas de tamaño $n times n$,
+  onde temos as operacións de suma ($+$) e produto ($dot$) usuais de matrices.
+  O conxunto $(M_(n times n), +, dot)$ é un anel
+// :AQUI:
 
 Ca práctica acumulada presentando diferentes estruturas, non será nada
 sorprendente a definición de _subanel_.
