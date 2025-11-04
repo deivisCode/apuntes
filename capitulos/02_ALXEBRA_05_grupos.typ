@@ -1,7 +1,5 @@
 #import("/funcions.typ"): *
 
-// :FACER: exemplos de grupos: matrices ((a,a),(a,a)), mais matrices de pauli
-// :FACER: a^m a^n = a^(n+m)
 
 #seccion(
     nome : "Grupos",
@@ -22,7 +20,6 @@ agora.
     todos os elementos son invertibles.
 ]
 
-// :FACER: por qué en grupos é abeliano pero non nas estruturas anteriores?
 Podemos referirnos simplemente ao monoide como $A$. Se a operación é
 conmutativa, diremos que o grupo é conmutativo, ou _abeliano_.
 #nota[
@@ -54,7 +51,6 @@ Exemplos de grupos son:
     E o elemento inverso é
 
     $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ) $
-
 
 Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
 multiplicar e dividir. Personalmente vou usar notación multiplicativa nesta
@@ -116,8 +112,6 @@ Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010") O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
 algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
-// :FACER: Clases laterais de grupos?
-
 Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 grupos como o morfismo
 
@@ -153,3 +147,5 @@ $
     &implica f(a^(-1)) "é o inverso de" f(a) \
     &f(a^(-1)) = f(a)^(-1)
 $
+
+// :FACER: Clases laterais de grupos? SI, EMPEZAR AQUI E SE TAL MOVOO DE SITIO

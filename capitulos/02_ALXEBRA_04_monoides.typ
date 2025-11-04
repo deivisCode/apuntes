@@ -29,7 +29,7 @@ facemos aquí son os mesmos que ao construír aneis, espazos lineais, ou álxebr
 de Lie. Penso que ao coñecer os pasos é máis sinxelo entender as definicións
 máis complexas.
 
-Exemplos de monoide, abstractos e nada visuais, pero útiles:
+Exemplos de monoides abstractos e nada visuais, pero útiles:
 
 - Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A elección da
   letra $S$ non é arbitraria. Máis adiante aparecerá o chamado grupo Simétrico,
@@ -72,8 +72,7 @@ $
 $
 
 Nun monoide temos unha noción de neutro $e$, polo que podemos mencionar algo
-máis, os núcleos dos morfismos #nota[Véxase a definición @def:alxebra:nucleo].
-No caso dos semigrupos esto non tiña sentido, porque non existía un elemento
-neutro.
+máis, os núcleos dos morfismos @def:alxebra:nucleo. No caso dos semigrupos esto
+non tiña sentido, porque non existía un elemento neutro.
 
 // :FACER: Clases laterais de monoides?

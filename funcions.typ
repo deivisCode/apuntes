@@ -546,9 +546,9 @@
 
 // Letras moi reviradas
 // :FACER: esto vai ser builtin de typst pronto
-#let scr(it) = text(
+#let scr(eso) = text(
     features: ("ss01",),
-    box($cal(it)$),
+    box($cal(eso)$),
 )
 
 #let frecha = text(
