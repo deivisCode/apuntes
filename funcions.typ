@@ -570,3 +570,7 @@
 #let subgrupo = text(
     box($lt.eq.slant$)
 )
+
+#let card(eso) = text(
+    box($"card"(eso)$)
+)
