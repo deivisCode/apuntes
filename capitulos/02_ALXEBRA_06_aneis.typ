@@ -23,17 +23,16 @@ operacións.
     dise que é un #indice("anel")anel. É dicir, unha terna $(A,+,dot)$ onde
     $(A,+)$ é un grupo e $(A,dot)$ é un magma
 ]
-// :FACER: exemplos de aneis
 
 Podemos referirnos simplemente ao anel como $A$. Se a operación $dot$ é
 conmutativa dicimos que o anel é conmutativo.
 
+// :FACER: mais exemplos de aneis
 Algúns exemplos de aneis:
 
 + Sexa $M_(n times n)$ o conxunto de matrices cadradas de tamaño $n times n$,
   onde temos as operacións de suma ($+$) e produto ($dot$) usuais de matrices.
   O conxunto $(M_(n times n), +, dot)$ é un anel
-// :AQUI:
 
 Ca práctica acumulada presentando diferentes estruturas, non será nada
 sorprendente a definición de _subanel_.
@@ -104,15 +103,37 @@ Para o caso dun subanel unitario, estamos na misma situación que antes: é o
 mesmo que na definicion @def:alxebra:subanel pero agora $(B,dot)$ debe ser un
 submonoide de $(A,dot)$
 
-
 // :FACER: explicar mellor este detalle
 // En realidade, a existencia dun elemento neutro non require a de asociatividade,
 // pero prefiro presentar as estruturas con esta medio mentira
 
 Podemos comentar varias propiedades dos aneis. Imos supoñer que tratamos cun
 anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 0.
+#cita("kostrikin_1983")
 
-+ $(forall a in A) space.quad a dot 0 = 0$
++ $(forall a in A) space.quad a dot 0 = 0 dot a = 0$
+
+    $
+        &a = a + 0 \
+        &implica a dot a = a dot (a + 0) = a^2 + a dot 0 \
+        &implica a^2 = a^2 + a dot 0 \
+        &implica 0 = a dot 0
+    $
+
+    (pode facerse análogo para o caso $0 dot a$)
+
++ $(forall a, b in A) space.quad a dot (-b) = (-a) dot b = -(a dot b) $
+
+    $
+        &0 = a dot 0 = a dot (b - b) = a dot b + a dot (-b) \
+        &implica -(a dot b) = a dot (-b)
+    $
+
++ $(forall a, b in A), space.quad (-a) dot (-b) = a dot b$
+
+    $
+        (-a) dot (-b) = (-(-a)) dot b = a dot (-(-b)) = a dot b
+    $
 
 #definicion(
     nome : "Divisor de Cero",
@@ -123,17 +144,17 @@ anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 
     divisores de 0.
 ]
 
-Un exemplo no anel de matrices invertibles de tamaño $2 times 2$ son as
-matrices da forma $ mat(0,a;0,0) $ #label("ec:alxebra:matriz_divisora") Estas
-matrices non son cero, pero o produto de dúas delas si o é.
-
-// :FACER: a0 = 0 e outras propiedades de aneis
+Un exemplo no anel de matrices de tamaño $2 times 2$ son as matrices da forma $
+mat(0,a;0,0) $ #label("ec:alxebra:matriz_divisora") Estas matrices non son
+cero, pero o produto de dúas delas si o é.
 
 #definicion(
     nome : "Dominio de Integridade",
     ancora : "def:alxebra:dominio_integridade"
 )[
-    Un anel que non ten divisores do cero dicimos que é un dominio íntegro
+    Un anel que non ten divisores do cero dicimos que é un
+    #indice("Dominio")[íntegro] dominio íntegro ou dominio de integridade
+    #indice("Dominio")[de integridade]
 ]
 
 Por exemplo, o anel de matrices de tamaño $2 times 2$ non é un dominio de
@@ -159,15 +180,31 @@ deberían ser invertibles, o cal inclúe o neutro da primera operación (chamém
     - Existe un elemento neutro da operación $+$ (chámoo 0)
     - Todos os elementos son invertibles respecto de $+$
     - A operación $dot$ é interna e asociativa, e existe neutro (chámoo 1)
-    - Todos os elementos de $A - 0$ teñen inverso #nota[É dicir, o conxunto $A$ menos o neutro da primeira operación. Nos número enteiros ca suma serían todos os numeros menos o 0.]
+    - Todos os elementos de $A - {0}$ teñen inverso #nota[É dicir, o conxunto $A$ menos o neutro da primeira operación. Nos número enteiros ca suma serían todos os numeros menos o 0.]
 
     dise que é un #indice("Corpo") corpo. É dicir, unha terna $(A,+,dot)$ onde
-    ambos $(A,+)$ e $(A-0,dot)$ son grupos.
+    ambos $(A,+)$ e $(A-{0},dot)$ son grupos.
 ]
 
-No caso de que a operación $dot$ sexa conmutativa entón falamos dun
-#indice("Campo") campo. [Cap.4 #math.section 4]#cita("kostrikin_1983")
+Nun corpo non hai divisores do 0. No caso de que a operación $dot$ sexa
+conmutativa entón falamos dun #indice("Campo") campo. [Cap.4 #math.section
+4]#cita("kostrikin_1983")
+
+Como sempre, podemos falar de morfismos de aneis, e naturalmente de
+homomorfismos, que é unha aplicación entre os aneis $(A,+,dot)$ e
+$(B,plus.o,dot.o)$
+
+$
+    f:A frecha B \
+    f(a + b) = f(a) plus.o f(b) \
+    f(a dot b) = f(a) dot.o f(b)
+$
+
+O núcleo do homomorfismo $f$ é o conxunto
+
+$
+    ker(f) = {a in A | f(a) = 0}
+$
 
 // :FACER: sub  aneis e ideais, delgado_2010 + kos
-// :FACER: Homomorfismo de aneis
 // :FACER: Clases laterais de aneis? Ideais?

@@ -169,9 +169,10 @@
     set text(fill:black)
     set heading(numbering: "1.")
     set par(
-        justify           : true,
-        first-line-indent : 1.5em,
-        linebreaks        : "optimized"
+        justify              : true,
+        justification-limits : (tracking : (min: -0.04em, max: 0.02em)),
+        first-line-indent    : 1.5em,
+        linebreaks           : "optimized"
     )
     show raw: set text( font: "New Computer Modern Mono" )
     show quote: eso => {
@@ -280,6 +281,7 @@
     set document(
         title  : titulo,
         author : autoria.map(autor => autor.nome)
+        // :FACER: descripcion, keywords, date
     )
     set page(
         paper   : "a4",
@@ -287,8 +289,26 @@
     )
     set text(
         size      : 12pt,
-        font      : "New Computer Modern",
         lang      : "gl",
+        font      : "New Computer Modern",
+        // fallback  : false,
+        style     : "normal",
+        features  : (
+            "ss05",
+            "kern",
+            "salt",
+            "clig",
+            "liga",
+            "lnum",
+            "pnum",
+        ),
+        overhang  : true,
+        costs     : (
+            hyphenation : 100%,
+            runt        : 100%,
+            widow       : 100%,
+            orphan      : 100%,
+        ),
         region    : "ES",
         script    : "latn",
         dir       : ltr,

@@ -42,7 +42,7 @@ ou simplemente abertos.
 
 #definicion(
     nome : "Espazo topolóxico",
-    ancora : "def:topoloxia:espazo-topoloxic o"
+    ancora : "def:topoloxia:espazo-topoloxico"
 )[
     A parella $(X,tau)$ onde $X$ é un conxunto arbitrario e $tau$ unha
     topoloxía sobre $X$, é un #indice("Espazo")[Topolóxico] espazo topolóxico.

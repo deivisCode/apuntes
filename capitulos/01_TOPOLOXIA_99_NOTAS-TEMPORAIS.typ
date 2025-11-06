@@ -44,16 +44,23 @@ Topoloxías distintas da usual. Nestos casos non podemos usar a noción usual de
 usual, pero noutra topoloxía os abertos son distintos. Para saber se un punto
 pertence ou no á fronteira, adherencia, etc. hai que comprobar as definicións
 anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
-// :FACER: topoloxia usual?
-// :FACER: nomes tau_u ..?
+// :FACER: Casos xerais destas topos? e.g. sen RR
 
-- *Trivial/Indiscreta*: ${emptyset, cal(X)}$
+- *Usual*: $tau_"U" := {(a,b), (-oo,c), (d, oo)}$. Ousexa, os intervalos
+  abertos típicos en $RR$
 
-- *Discreta*: $ scr(P)(X) := {A | A subset cal(X)}$
+- *Trivial/Indiscreta*: $tau_"IND" := {emptyset, cal(X)}$. Unha topoloxía moi
+  simple na cal o único aberto ao que pode pertence un punto é o propio $RR$
 
-- *Cofinita*: ${emptyset} union {A subset cal(X) "tal que" X - A "é finito"}$
+- *Discreta*: $tau_"DIS" := scr(P)(X) := {A | A subset cal(X)}$. Neste caso, un
+  conxunto dun so punto da forma ${x}$ é un aberto.
 
-- *Kolomogorov*: En $RR$ os abertos son ${emptyset, RR} union {(a,+oo) "con" a in RR}$
+- *Cofinita*: $tau_"COF" := {emptyset} union {A subset cal(X) "tal que" X - A
+  "é finito"}$. Os abertos son os conxuntos cuxo complementario é finito. Por
+  exemplo, $RR - {1,2,3}$ xa que o complementario é $RR - (RR - {1,2,3}) =
+  {1,2,3}$
+
+- *Kolomogorov*: $tau_"K" := {emptyset, RR} union {(a,+oo) "con" a in RR}$
 
 Comparación de topoloxías:
 
@@ -108,6 +115,8 @@ Distancias: [Def. 6.1]#cita("masa_2019")
     $
         (forall U in tau_Y), space.quad f^(-1)(U) in tau_X
     $
+
+    É dicir, a antiimaxe de calquera aberto tamén é aberta
 ]
 
 Por exemplo, sexa $f: (X,tau_X) arrow.r (Y,tau_Y)$ dada por
@@ -132,11 +141,16 @@ $f$ non é continua.
     #indice("Función")[Aberta] función aberta se
 
     $
-        (forall U "aberto"), space.quad f(U) "é aberto en" (Y,tau_Y)
+        (forall U in tau_X), space.quad f(U) in tau_Y
     $
+
+    É dicir, a imaxe de calquera aberto é aberta
 ]
 
-Por exemplo, a funcion $f(x) = -abs(x)$ e ambos espazos topolóxicos $RR$ ca
+Ollo! A definición é moi parecida á de función continua
+@def:topoloxia:funcion-continua !
+
+Por exemplo, sexa a funcion $f(x) = -abs(x)$ e ambos espazos topolóxicos $RR$ ca
 topoloxía usual. Calquera intervalo aberto $U = (a,b) in tau_u$ pasa a outro
 intervalo tamén aberto $f(U) = (f(a), f(b)) in tau_u $, polo que a función é
 aberta. #nota[Esto digoo a ollo, dame reparo probalo]
@@ -167,7 +181,7 @@ e en ningún caso é aberto.
 
 #definicion(
     nome : "Funcion Pechada",
-    ancora : "def:topoloxia:funcion-aberta"
+    ancora : "def:topoloxia:funcion-pechada"
 )[
     Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
     calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
@@ -201,4 +215,62 @@ conxunto $f(U) = [0,oo)$ que non é pechado.
     + $f^(-1)$ é continua
 ]
 
+
+#teorema(
+    nome : "Definicións equivalentes de Homeomorfismo",
+    ancora : "def:topoloxia:equivalencia-homeomorfismo"
+)[
+    A definición @def:topoloxia:homeomorfismo é equivalente ás seguintes
+
+    Por un lado:
+    + $f$ é bixectiva
+    + $f$ é continua
+    + $f^(-1)$ é aberta
+
+    Por outro:
+    + $f$ é bixectiva
+    + $f$ é continua
+    + $f^(-1)$ é pechada
+]
+
+#definicion(
+    nome : "Espazos Homeomorfos",
+    ancora : "def:topoloxia:espazos-homeomorfos"
+)[
+    Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$. Se existe un
+    homeomorfismo $f$ entre ambos espazos entón dicimos que son
+    #indice("Espazo")[Homeomorfo] homeomorfos.
+]
+
+#definicion(
+    nome : "Invariante topolóxica",
+    ancora : "def:topoloxia:invariante-topoloxica"
+)[
+    Sexan os espazos topolóxicos homeomorfos $(X,tau_X)$ e $(Y,tau_Y)$. Sexa
+    unha certa propiedade $P$ dun espazo topolóxico como a compacidade,
+    conexión, Hausdorf, etc. que se cumple en $(X,tau_X)$. Se ao cumplirse $P$
+    en $(X,tau_X)$ tamén se cumple $P$ en $(Y,tau_Y)$, entón dicimos que $P$ é
+    unha #indice("Invariante")[Topolóxica] invariante topolóxica.
+
+    É dicir, son propiedades dun espazo topolóxico que se preservan entre
+    espazos homeomorfos.
+]
+
+Podemos usar esta definición á inversa. Se temos dous espazos topolóxicos con
+propiedades topolóxicas distintas (e.g. un deles é Hausdorff e outro non) entón
+temos asegurado que ditos espazos non son homeomorfos
+
 // :AQUI:
+#definicion(
+    nome : "Topoloxía produto",
+    ancora : "def:topoloxia:topoloxia-produto"
+)[
+    FACER
+]
+
+#definicion(
+    nome : "Continuidade na topoloxia produto",
+    ancora : "def:topoloxia:continuidade-produto"
+)[
+    FACER
+]
