@@ -44,6 +44,23 @@
     }
 }
 
+/// Funcion para crear a portada
+#let crear_portada() = {
+    v(3em)
+    align(center, text(size:30pt, weight:"bold", title() ) )
+    v(1em)
+    align(center, smallcaps( context {document.author.join("\n")} ) )
+    v(1fr)
+    [
+        #v(1fr)
+        #set text(font: "New Computer Modern Mono")
+        INIC: #datetime(year:2025, month:8, day:1).display() \
+        ACTU: #datetime.today().display() \
+        RAMA: #text(font : "FiraCode Nerd Font")[] #sys.inputs.at("rama") \
+        HASH: #text(font : "FiraCode Nerd Font")[] #sys.inputs.at("hash") \
+        DIRT: #sys.inputs.at("dirt")
+    ]
+}
 
 /// Funcion para crear a Bibliografía
 #let crear_bibliografia() = {
