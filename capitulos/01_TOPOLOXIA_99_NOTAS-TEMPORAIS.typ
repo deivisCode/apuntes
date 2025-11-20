@@ -17,12 +17,11 @@
 
 Tipos de puntos nun conxunto A, supoñendo que temos definida unha distancia
 
-// :FACER: que notacion usaba Saborido??
 - *Punto interior*. $x_0 in angstrom$ se $exists r > 0$ tal que $B(x_0,r)
   subset A$. É dicir, sempre podemos centrar unha bola en $x_0$ completamente
   contida en A. Por exemplo, en $QQ$, ningún punto pertence ao interior de
   $QQ$, xa que ao colocar unha bola en $x_0$, _sempre_ imos ter puntos $x in.not
-  QQ$ para calqueira $r$.
+  QQ$ para calqueira $r$. Ás veces o interior tamén se denota por $"Int"(A)$
 
 - *Punto aislado*. $x_0 in "Aisl"(A)$ se $exists r > 0$ tal que
   $(B(x_0,r)-{x_0}) inter A = emptyset$. É dicir, o único punto de $A$ nunha
@@ -33,7 +32,8 @@ Tipos de puntos nun conxunto A, supoñendo que temos definida unha distancia
   centrada en $x_0$ sempre contén puntos de $A$ e do seu complementario $A^c$
 
 - *Punto adherente*. $x_0 in macron(A)$ se $forall r > 0$ $B(x_0,r) inter A
-  eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre ten puntos de $A$
+  eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre ten puntos de $A$.
+  Ás veces a adherencia tamén se denota por $"Cl"(A)$
 
 - *Punto de acumulación*. $x_0 in A'$ se $forall r > 0$ $(B(x_0,r)-{x_0}) inter
   A eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre contén algún
