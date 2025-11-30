@@ -9,7 +9,7 @@
       <name>David Cotelo Varela</name>
     </author>
     <summary>Estilo que fixen porque me gusta</summary>
-    <updated>2025-08-05T21:37:18+00:00</updated>
+    <updated>2025-11-27T11:41:43+00:00</updated>
   </info>
   <citation>
     <layout font-variant="small-caps" font-weight="normal" delimiter=" ; " prefix="[" suffix="]">
@@ -24,7 +24,7 @@
           <text variable="title" strip-periods="false" quotes="false" font-style="italic" font-variant="normal" font-weight="normal"/>
           <choose>
             <if match="any" variable="edition">
-              <text variable="edition" font-variant="normal" font-weight="bold" prefix=", edición "/>
+              <text variable="edition" font-variant="normal" font-weight="bold" prefix=", ed. "/>
             </if>
           </choose>
           <choose>
