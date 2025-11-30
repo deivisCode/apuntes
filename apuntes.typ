@@ -27,3 +27,5 @@
 #include("/capitulos/02_ALXEBRA_10_estruturas.typ")
 
 #include("capitulos/03_GRUPOS_00_introducion.typ")
+
+#include("capitulos/04_MECANICA_00_introducion.typ")
