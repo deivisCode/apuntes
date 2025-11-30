@@ -2,4 +2,6 @@
 .aux/
 .pdf/
 
+fontes/*
+
 *.pdf

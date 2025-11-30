@@ -56,8 +56,8 @@
         #set text(font: "New Computer Modern Mono")
         INIC: #datetime(year:2025, month:8, day:1).display() \
         ACTU: #datetime.today().display() \
-        RAMA: #text(font : "FiraCode Nerd Font")[] #sys.inputs.at("rama") \
-        HASH: #text(font : "FiraCode Nerd Font")[] #sys.inputs.at("hash") \
+        RAMA: #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
+        HASH: #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
         DIRT: #sys.inputs.at("dirt")
     ]
 }
