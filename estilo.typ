@@ -51,14 +51,14 @@
     v(1em)
     align(center, smallcaps( context {document.author.join("\n")} ) )
     v(1fr)
+    set text(font: "New Computer Modern Mono")
     [
-        #v(1fr)
-        #set text(font: "New Computer Modern Mono")
-        INIC: #datetime(year:2025, month:8, day:1).display() \
-        ACTU: #datetime.today().display() \
-        RAMA: #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
-        HASH: #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
-        DIRT: #sys.inputs.at("dirt")
+        // :FACER: intervalo entre o inicio e a actualidade
+        INIC #datetime(year:2025, month:8, day:1).display() \
+        ACTU #datetime.today().display() \
+        RAMA #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
+        HASH #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
+        DIRT #sys.inputs.at("dirt")
     ]
 }
 
