@@ -7,13 +7,12 @@ SHELL := bash
 METODO := compile
 XERADOS := .pdf/*
 
-# Lista de nomes das figuras que queremos compilar. Podería facerse con
-# $(wildcard figuras/*.typ) pero prefiero ser explícito
-FIGURAS := \
-	proba \
-	proba2
-
-FIGURAS_PDF = $(patsubst %, .pdf/%.pdf, $(FIGURAS))
+# Lista de nomes das figuras que queremos compilar.
+# $(patsubst pattern,replacement,text)
+# https://www.gnu.org/software/make/manual/html_node/Text-Functions.html
+#
+# Os nomes das figuras en PDF
+FIGURAS_PDF = $(patsubst figuras/typ/%.typ, .pdf/%.pdf, $(wildcard figuras/typ/*.typ))
 
 # Opcions para compilar
 # :FACER: esto invoca Git 3 veces pra comprobar a info do repo, non é de todo ideal
@@ -46,6 +45,13 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
+#
+# https://www.gnu.org/software/make/manual/html_node/Static-Usage.html#index-_0025_002c-quoting-in-static-pattern
+# 4.12.1 Syntax of Static Pattern Rules
+# targets …: target-pattern: prereq-patterns …
+#
+# $@ -> target, e.g. .pdf/figura1.pdf
+# $^ -> prereq, e.g. figuras/typ/figura.typ
 $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 	typst $(METODO) $(OPCIONS_FIGURAS) $^ $@
 
