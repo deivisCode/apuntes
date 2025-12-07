@@ -46,20 +46,31 @@
 
 /// Funcion para crear a portada
 #let crear_portada() = {
+    set align(center)
     v(3em)
-    align(center, text(size:30pt, weight:"bold", title() ) )
+    text(size:30pt, weight:"bold", title() )
     v(1em)
-    align(center, smallcaps( context {document.author.join("\n")} ) )
-    v(1fr)
+    smallcaps( context {document.author.join("\n")} )
+    v(1em)
     set text(font: "New Computer Modern Mono")
-    [
-        // :FACER: intervalo entre o inicio e a actualidade
-        INIC #datetime(year:2025, month:8, day:1).display() \
-        ACTU #datetime.today().display() \
-        RAMA #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
-        HASH #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
-        DIRT #sys.inputs.at("dirt")
-    ]
+    link("https://github.com/deivisCode/apuntes")
+    v(1em)
+    grid(
+        align: left,
+        rows: (5em, 5em),
+        [
+            RAMA #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
+            HASH #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
+            DIRT #sys.inputs.at("dirt")
+        ],
+        [
+            #let inicio = datetime(year:2025, month:8, day:1)
+            #let actual = datetime.today()
+            INIC #inicio.display() \
+            ACTU #datetime.today().display() \
+            DURA #{ actual - inicio }.days() días \
+        ]
+    )
 }
 
 /// Funcion para crear a Bibliografía
