@@ -92,7 +92,6 @@
     // :FACER: biblio en cada capítulo? https://github.com/typst/typst/issues/1097
     bibliography(
         "/bibliografia.bib",
-        // :FACER: máis espazo entre o título e o corpo da bibliografía (falla con indice)
         title: text(font: "New Computer Modern Sans")[Bibliografía],
         style : "ebd.csl"
     )
@@ -368,6 +367,11 @@
 }
 
 #let estilo_backmatter(doc) = {
+    show bibliography: eso => {
+        // Espazo entre o título da bibliografía e as entradas
+        show heading.where(level: 1): set block(below: 1em)
+        eso
+    }
     doc
 }
 
