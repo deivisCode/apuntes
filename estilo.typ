@@ -109,6 +109,62 @@
     columns(2)[ #make-index(title: none) ]
 }
 
+// Funcion para crear o índice de teoremas
+#let crear_indice_teoremas() = {
+    show heading.where(level: 1): set block(below: 1em)
+    show outline.entry: eso => {
+        link(
+            eso.element.location(),
+            box[
+                #eso.element.supplement
+                #h(0.4em)
+                #box(width: 1fr,repeat([.], gap: 1pt))
+                #h(0.4em)
+                #eso.page()
+                \
+            ]
+        )
+    }
+    heading(
+        level: 1,
+        numbering: none,
+        text(font: "New Computer Modern Sans")[Índice de Teoremas],
+    )
+    outline(
+        title: none,
+        depth: 1,
+        target: figure.where(kind: "teorema")
+    )
+}
+
+// Funcion para crear o índice de definicions
+#let crear_indice_definicions() = {
+    show heading.where(level: 1): set block(below: 1em)
+    show outline.entry: eso => {
+        link(
+            eso.element.location(),
+            box[
+                #eso.element.supplement
+                #h(0.4em)
+                #box(width: 1fr,repeat([.], gap: 1pt))
+                #h(0.4em)
+                #eso.page()
+                \
+            ]
+        )
+    }
+    heading(
+        level: 1,
+        numbering: none,
+        text(font: "New Computer Modern Sans")[Índice de Definicións],
+    )
+    outline(
+        title: none,
+        depth: 1,
+        target: figure.where(kind: "definicion")
+    )
+}
+
 /// Funcion para crear a contraportada
 //
 // :FACER: crear unha contraportada decente
@@ -343,6 +399,8 @@
     indice_contidos    : crear_indice_contidos(),
     bibliografia       : crear_bibliografia(),
     indice_alfabetico  : crear_indice_alfabetico(),
+    indice_teoremas    : crear_indice_teoremas(),
+    indice_definicions : crear_indice_definicions(),
     contraportada      : crear_contraportada(),
     marco              : false,
     documento
@@ -412,6 +470,17 @@
             pagebreak()
             indice_alfabetico
         }
+
+        if crear_indice_teoremas != none {
+            pagebreak()
+            indice_teoremas
+        }
+
+        if crear_indice_definicions != none {
+            pagebreak()
+            indice_definicions
+        }
+
     }
 
     //// CONTRAPORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
