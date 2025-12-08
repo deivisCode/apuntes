@@ -270,13 +270,6 @@
         ),
     )
     set text(fill:black)
-    set heading(numbering: "1.")
-    set par(
-        justify              : true,
-        justification-limits : (tracking : (min: -0.04em, max: 0.02em)),
-        first-line-indent    : 1.5em,
-        linebreaks           : "optimized"
-    )
     show raw: set text( font: "New Computer Modern Mono" )
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
