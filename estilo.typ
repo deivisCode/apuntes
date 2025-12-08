@@ -270,6 +270,7 @@
         ),
     )
     set text(fill:black)
+    show math.equation.where(block: false): eso => { box(eso) }
     show raw: set text( font: "New Computer Modern Mono" )
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
