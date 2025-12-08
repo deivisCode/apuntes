@@ -50,7 +50,7 @@
         numbering  : none,
         outlined   : false,
         bookmarked : true,
-        text(font: "New Computer Modern Sans")[Índice de contidos],
+        sf[Índice de contidos],
     )
     outline(
         title: none,
@@ -92,7 +92,7 @@
     // :FACER: biblio en cada capítulo? https://github.com/typst/typst/issues/1097
     bibliography(
         "/bibliografia.bib",
-        title: text(font: "New Computer Modern Sans")[Bibliografía],
+        title: sf[Bibliografía],
         style : "ebd.csl"
     )
 }
@@ -102,7 +102,7 @@
     heading(
         level: 1,
         numbering: none,
-        text(font: "New Computer Modern Sans")[Índice Alfabético],
+        sf[Índice Alfabético],
     )
     v(1em)
     columns(2)[ #make-index(title: none) ]
@@ -127,7 +127,7 @@
     heading(
         level: 1,
         numbering: none,
-        text(font: "New Computer Modern Sans")[Índice de Teoremas],
+        sf[Índice de Teoremas],
     )
     outline(
         title: none,
@@ -155,7 +155,7 @@
     heading(
         level: 1,
         numbering: none,
-        text(font: "New Computer Modern Sans")[Índice de Definicións],
+        sf[Índice de Definicións],
     )
     outline(
         title: none,
