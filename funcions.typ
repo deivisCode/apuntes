@@ -171,13 +171,14 @@
         grid.cell(
             x:0, y:0,
             [
+                #show text: eso => sf[#eso]
                 #figure(
                     kind: "capitulo",
                     supplement: [Capítulo],
                     heading(
                         level: 1,
                         numbering: "1.",
-                        smallcaps[#nome],
+                        [#nome],
                     )
                 )
                 #label(ancora)
