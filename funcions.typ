@@ -75,17 +75,21 @@
 ) = {
     // Creo un rectangulo
     block(
-        stroke:(
-            top    : luma(20%) + 1pt,
-            bottom : luma(20%) + 1pt
+        stroke : (
+            top  : rgb("#FF0000").lighten(50%) + 2pt,
+            left : rgb("#FF0000").lighten(50%) + 2pt
+        ),
+        radius : (
+            top-left : 5pt,
+            bottom-right : 5pt
         ),
         fill: rgb("#FF0000").lighten(90%),
         width:100%,
         inset : (
-            top    : 0.5em,
-            bottom : 0.5em,
-            left   : 0.5em,
-            right  : 0.5em
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
         ),
         // Metolle contido dentro
         [
@@ -116,17 +120,21 @@
     corpo
 ) = {
     block(
-        stroke:(
-            top    : luma(20%) + 1pt,
-            bottom : luma(20%) + 1pt
+        stroke : (
+            top  : rgb("#0000FF").lighten(50%) + 2pt,
+            left : rgb("#0000FF").lighten(50%) + 2pt
+        ),
+        radius : (
+            top-left : 5pt,
+            bottom-right : 5pt
         ),
         fill: rgb("#0000FF").lighten(90%),
         width:100%,
         inset : (
-            top    : 0.5em,
-            bottom : 0.5em,
-            left   : 0.5em,
-            right  : 0.5em
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
         ),
         [
             #show figure: set align(left)
