@@ -202,6 +202,11 @@
     ancora : " -- SEN ÁNCORA -- "
 ) = {
     show figure: set align(left)
+    show heading.where(level: 2): eso => {
+        let HEA = counter(heading.where(level: 1)).at(here()).last()
+        let SEC = counter(heading.where(level: 2)).at(here()).last()
+        sf[#v(1.5em) #h(1fr) *$section$* #HEA.#SEC #eso.body #v(0.5em)]
+    }
     [
         #figure(
             kind: "seccion",
