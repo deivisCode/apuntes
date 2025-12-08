@@ -39,6 +39,25 @@
     )
 }
 
+/// Funcion para crear o Índice de materias
+#let crear_indice_contidos() = {
+    show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
+    show outline.entry.where( level: 1 ): set text(weight:"bold", size:15pt)
+    show outline.entry.where( level: 1 ): set outline.entry(fill: none)
+    show heading.where(level: 1): set block(below: 1em)
+    heading(
+        level      : 1,
+        numbering  : none,
+        outlined   : false,
+        bookmarked : true,
+        text(font: "New Computer Modern Sans")[Índice de contidos],
+    )
+    outline(
+        title: none,
+        depth: 2
+    )
+}
+
 /// Funcion para crear un encabezado
 //
 // :FACER: nome do capitulo ou seccion no encabezado
@@ -76,21 +95,6 @@
         // :FACER: máis espazo entre o título e o corpo da bibliografía (falla con indice)
         title: text(font: "New Computer Modern Sans")[Bibliografía],
         style : "ebd.csl"
-    )
-}
-
-/// Funcion para crear o Índice de materias
-//
-// :FACER: crear un Indice de cero, con 'query', máis personal
-#let crear_indice() = {
-    show outline.entry.where( level: 1 ): eso => {
-        set block(above: 1.2em)
-        set text(weight:"bold", size:15pt)
-        eso
-    }
-    outline(
-        title: text(font: "New Computer Modern Sans")[Índice de contidos #v(1em)],
-        depth: 2
     )
 }
 
