@@ -463,12 +463,6 @@
             bibliografia
         }
 
-        // Mostramos o índice alfabético
-        if crear_indice_alfabetico != none {
-            pagebreak()
-            indice_alfabetico
-        }
-
         if crear_indice_teoremas != none {
             pagebreak()
             indice_teoremas
@@ -477,6 +471,12 @@
         if crear_indice_definicions != none {
             pagebreak()
             indice_definicions
+        }
+
+        // Mostramos o índice alfabético
+        if crear_indice_alfabetico != none {
+            pagebreak()
+            indice_alfabetico
         }
 
     }
