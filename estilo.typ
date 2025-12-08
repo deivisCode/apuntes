@@ -259,7 +259,6 @@
         footer         : crear_pe(),
         header-ascent  : 10%,
         footer-descent : 10%,
-        fill           : rgb("#fdf9e6"),
         background     : none,
         margin         : (
             // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
