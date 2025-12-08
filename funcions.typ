@@ -94,7 +94,7 @@
             #set par(first-line-indent:0pt)
             #figure(
                 kind:"teorema",
-                supplement: "Teorema",
+                supplement: nome,
                 context {
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
@@ -134,7 +134,7 @@
             #set par(first-line-indent:0pt)
             #figure(
                 kind:"definicion",
-                supplement: "Definición",
+                supplement: nome,
                 context {
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
