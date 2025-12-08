@@ -10,40 +10,6 @@
 
 #import("/funcions.typ"): *
 
-/// Funcion para crear un encabezado
-//
-// :FACER: nome do capitulo ou seccion no encabezado
-#let crear_encabezado() = grid(
-    columns: 1,
-    align: (center + horizon),
-    line(length: 100%, stroke: 0.5pt),
-)
-
-/// Funcion para crear o pe de paxina
-//
-// :FACER: non sei se o pe de paxina se ve ben de todo. As notas ao pe
-// colocanse no corpo do documento, polo que quedan entre o texto do corpo e a
-// liña do pe de paxina. Non me convence, pero tampouco as uso...Esto vai da
-// man do 'footer-descent'
-#let crear_pe() = {
-    context {
-        let num = counter(page).get().first()
-        if calc.even(num) {
-            grid(
-                columns: (10%, 1fr),
-                align: (left + horizon, right + horizon),
-                [#num], line(length:100%, stroke:0.5pt)
-            )
-        } else {
-            grid(
-                columns: (1fr, 10%),
-                align: (left + horizon, right + horizon),
-                line(length:100%, stroke:0.5pt), [#num]
-            )
-        }
-    }
-}
-
 /// Funcion para crear a portada
 #let crear_portada() = {
     set align(center)
@@ -68,9 +34,38 @@
             #let actual = datetime.today()
             INIC #inicio.display() \
             ACTU #datetime.today().display() \
-            DURA #{ actual - inicio }.days() días \
+            DURA #{ actual - inicio }.days() días
         ]
     )
+}
+
+/// Funcion para crear un encabezado
+//
+// :FACER: nome do capitulo ou seccion no encabezado
+#let crear_encabezado() = grid(
+    columns: 1,
+    align: (center + horizon),
+    line(length: 100%, stroke: 0.5pt),
+)
+
+/// Funcion para crear o pe de paxina
+#let crear_pe() = {
+    context {
+        let num = counter(page).get().first()
+        if calc.even(num) {
+            grid(
+                columns: (10%, 1fr),
+                align: (left + horizon, right + horizon),
+                [#num], line(length:100%, stroke:0.5pt)
+            )
+        } else {
+            grid(
+                columns: (1fr, 10%),
+                align: (left + horizon, right + horizon),
+                line(length:100%, stroke:0.5pt), [#num]
+            )
+        }
+    }
 }
 
 /// Funcion para crear a Bibliografía
@@ -117,6 +112,60 @@
     v(1fr)
 }
 
+/// ESTILO xeral, que aplica a TODO
+#let estilo_xeral(
+    titulo  : none,
+    autoria : (),
+    doc,
+) = {
+    set document(
+        title  : titulo,
+        author : autoria.map(autor => autor.nome),
+        date   : datetime.today()
+    )
+    set page(
+        paper   : "a4",
+        binding : left,
+    )
+    set text(
+        size      : 12pt,
+        lang      : "gl",
+        font      : "New Computer Modern",
+        weight    : 550,
+        fallback  : false,
+        style     : "normal",
+        features  : (
+            // = 0: false
+            // >=1: true
+            // algunhas poden diferenciar valores como 1,2,3,4, etc.
+            // Outra posibilidade é cun array de cadeas ("ss05", "salt", etc)
+            // https://en.wikipedia.org/wiki/List_of_typographic_features
+            liga : 1,
+            kern : 1,
+        ),
+        overhang  : true,
+        costs     : (
+            hyphenation : 100%,
+            runt        : 100%,
+            widow       : 100%,
+            orphan      : 100%,
+        ),
+        region    : "ES",
+        script    : "latn",
+        dir       : ltr,
+        hyphenate : true,
+    )
+    set par(
+        justify              : true,
+        justification-limits : (tracking : (min: -0.04em, max: 0.02em)),
+        first-line-indent    : 1.5em,
+        spacing              : 0.65em,
+        leading              : 0.65em,
+        linebreaks           : "optimized"
+    )
+    doc
+}
+
 /// ESTILO da portada, fondos, cor por defecto, etc. Non ten contido, só estilo
 #let estilo_portada(doc) = {
     set page(
@@ -131,23 +180,12 @@
     doc
 }
 
-/// ESTILO da contraportada, idéntico á portada
-#let estilo_contraportada(doc) = {
-    set page(
-        header     : none,
-        footer     : none,
-        numbering  : none,
-        fill       : black,
-        margin     : (top: 3cm, inside: 3cm, outside: 3cm, bottom: 3cm),
-        background : rect(height: 90%, width: 90%, stroke: 3pt + red),
-    )
-    set text(fill: white)
+#let estilo_frontmatter(doc) = {
     doc
 }
 
-
 /// ESTILO do corpo, entre a portada e a contraportada
-#let estilo_corpo(doc) = {
+#let estilo_mainmatter(doc) = {
     show: marginalia.setup.with(
         inner  : ( far: 5mm, width: 2cm , sep: 5mm ),
         outer  : ( far: 5mm, width: 5cm , sep: 5mm ),
@@ -160,10 +198,6 @@
         numbering      : "1",
         header         : crear_encabezado(),
         footer         : crear_pe(),
-        // O texto comeza EXACTAMENTE onde están as marxes. Se queremos ter
-        // espazo entre encabezado e o texto, metemos o encabezado _dentro_ da
-        // marxe. Co pe de paxina é análogo. O de ascent/descent é canto os
-        // metemos nas marxes
         header-ascent  : 10%,
         footer-descent : 10%,
         fill           : rgb("#fdf9e6"),
@@ -185,13 +219,10 @@
         linebreaks           : "optimized"
     )
     show raw: set text( font: "New Computer Modern Mono" )
-    show quote: eso => {
-        set quote(block: true)
-        set text(style:"italic")
-        eso
-    }
+    show quote: set quote(block: true)
+    show quote: set text(style:"italic")
+    show figure.caption: set text(font:"New Computer Modern Sans")
     show figure.caption: eso => context {
-        set text(font:"New Computer Modern Sans")
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
     }
@@ -276,98 +307,118 @@
     doc
 }
 
+#let estilo_backmatter(doc) = {
+    doc
+}
+
+/// ESTILO da contraportada, idéntico á portada
+#let estilo_contraportada(doc) = {
+    set page(
+        header     : none,
+        footer     : none,
+        numbering  : none,
+        fill       : black,
+        margin     : (top: 3cm, inside: 3cm, outside: 3cm, bottom: 3cm),
+        background : rect(height: 90%, width: 90%, stroke: 3pt + red),
+    )
+    set text(fill: white)
+    doc
+}
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//     _    ____ _____ _____     ___    ____    _____ ____ _____ ___ _     ___  %
+//    / \  / ___|_   _|_ _\ \   / / \  |  _ \  | ____/ ___|_   _|_ _| |   / _ \ %
+//   / _ \| |     | |  | | \ \ / / _ \ | |_) | |  _| \___ \ | |  | || |  | | | |%
+//  / ___ \ |___  | |  | |  \ V / ___ \|  _ <  | |___ ___) || |  | || |__| |_| |%
+// /_/   \_\____| |_| |___|  \_/_/   \_\_| \_\ |_____|____/ |_| |___|_____\___/ %
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #let activar_estilo(
-    autoria           : (),
-    titulo            : none,
-    portada           : crear_portada(),
-    indice            : crear_indice(),
-    bibliografia      : crear_bibliografia(),
-    indice_alfabetico : crear_indice_alfabetico(),
-    contraportada     : crear_contraportada(),
-    marco             : false,
+    autoria            : (),
+    titulo             : none,
+    portada            : crear_portada(),
+    indice_contidos    : crear_indice_contidos(),
+    bibliografia       : crear_bibliografia(),
+    indice_alfabetico  : crear_indice_alfabetico(),
+    contraportada      : crear_contraportada(),
+    marco              : false,
     documento
 ) = {
 
-    set document(
-        title  : titulo,
-        author : autoria.map(autor => autor.nome),
-        date   : datetime.today()
-    )
-    set page(
-        paper   : "a4",
-        binding : left,
-    )
-    set text(
-        size      : 12pt,
-        lang      : "gl",
-        font      : "New Computer Modern",
-        // fallback  : false,
-        style     : "normal",
-        features  : (
-            // = 0: false
-            // >=1: true
-            // algunhas poden diferenciar valores como 1,2,3,4, etc.
-            // Outra posibilidade é cun array de cadeas ("ss05", "salt", etc)
-            // https://en.wikipedia.org/wiki/List_of_typographic_features
-            liga : 1,
-            kern : 1,
-        ),
-        overhang  : true,
-        costs     : (
-            hyphenation : 100%,
-            runt        : 100%,
-            widow       : 100%,
-            orphan      : 100%,
-        ),
-        region    : "ES",
-        script    : "latn",
-        dir       : ltr,
-        hyphenate : true,
+    //// ESTILO XERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // Estilo xeral que afecta a TODO o documento.
+    // Cousas como a tipografía básica, kerning,
+    // dirección do texto, idioma, etc
+    show: estilo_xeral.with(
+        autoria : autoria,
+        titulo  : titulo
     )
 
-    //// Montamos a portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    if portada != none {
-        show: estilo_portada
-        portada
-        pagebreak()
+    //// PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {
+
+        if portada != none {
+            show: estilo_portada
+            portada
+            pagebreak()
+        }
+
     }
 
-    //// As opcions para o corpo do documento %%%%%%%%%%%%%%%%%%%%%%%%%
-    show: estilo_corpo
+    //// FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // Cousas como o índice, agradecementos, dereitos, copyright, etc.
+    {
+        show: estilo_frontmatter
 
+        // Mostramos o índice
+        if indice_contidos != none {
+            indice_contidos
+        }
 
-    //// Mostramos o indice
-    if indice != none {
-        indice
     }
 
-    //// Devolvemos o contido do documento
-    // :FACER: separar en frontmatter, mainmatter, backmatter, etc.?
-    if marco == true {
-        // :FACER: crear un 'show-frame' independente
-        // :FACER: facer o frame condicional, cun argumento en activar_estilo
-        show: marginalia.show-frame
-        documento
-    } else {
-        documento
+    ////  MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // O corpo do documento. Capítulos e tal.
+    {
+        show: estilo_mainmatter
+
+        //// Devolvemos o contido do documento
+        if marco == true {
+            // :FACER: crear un 'show-frame' independente
+            show: marginalia.show-frame
+            documento
+        } else {
+            documento
+        }
+
     }
 
-    //// Mostramos a bibliografia
-    if bibliografia != none {
-        pagebreak()
-        bibliografia
+    //// BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // Fin do documento, apéndices, índice alfabético, biblio, etc.
+    {
+        show: estilo_backmatter
+
+        // Mostramos a bibliografía
+        if bibliografia != none {
+            pagebreak()
+            bibliografia
+        }
+
+        // Mostramos o índice alfabético
+        if crear_indice_alfabetico != none {
+            pagebreak()
+            indice_alfabetico
+        }
     }
 
-    //// Mostramos o índice alfabético
-    if crear_indice_alfabetico != none {
-        pagebreak()
-        indice_alfabetico
-    }
+    //// CONTRAPORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // Simplemente a contraportada
+    {
 
-    //// Mostramos a contraportada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    if contraportada != none {
-        show: estilo_contraportada
-        contraportada
+        if contraportada != none {
+            show: estilo_contraportada
+            contraportada
+        }
+
     }
 
 }

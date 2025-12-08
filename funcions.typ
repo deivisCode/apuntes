@@ -52,7 +52,12 @@
             // Engadimos o nome a lista
             lista_citas.update(eso => eso + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
-            note( side: "outer", numbering: none, text-style:(size:10pt), cite(label(nome), form: "full"))
+            note(
+                side: "outer",
+                numbering: none,
+                text-style:(size:10pt),
+                cite(label(nome), form: "full"),
+            )
         }
     }
 }
