@@ -248,8 +248,8 @@
     show: marginalia.setup.with(
         inner  : ( far: 5mm, width: 2cm , sep: 5mm ),
         outer  : ( far: 5mm, width: 5cm , sep: 5mm ),
-        top    : 4cm,
-        bottom : 4cm,
+        top    : 3cm,
+        bottom : 3cm,
         book   : true,
     )
     set page(
@@ -263,10 +263,10 @@
         background     : none,
         margin         : (
             // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
-            top     : 4cm,
+            top     : 3cm,
             inside  : 3cm,
             outside : 6cm,
-            bottom  : 4cm
+            bottom  : 3cm
         ),
     )
     set text(fill:black)
