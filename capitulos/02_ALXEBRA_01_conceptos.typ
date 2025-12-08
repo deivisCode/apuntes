@@ -32,8 +32,8 @@ senón que preferimos colocar o símbolo da operación entre eles. Ademais, non
 usamos letras para as operacións senón símbolos especiais. É dicir, os pasos:
 
 $
-    f(a,b) stretch(arrow.r, size: #110%)^"símb. entre argumentos"
-    a f b stretch(arrow.r, size: #110%)^"símb. especial" a plus.o b
+    f(a,b) stretch(arrow.r)^"símb. entre argumentos"
+    a f b stretch(arrow.r)^"símb. especial" a plus.o b
 $
 
 Onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
@@ -58,7 +58,7 @@ ambas notacións máis adiante ao falar de asociatividade.
 
 Nesta definición, digo _polo menos_ porque é posible ter máis conxuntos e máis
 operacións. Tamén é posible unha estrutura composta á sua vez de estruturas
-máis pequenas. Por exemplo, no caso dunha #underline[Álxebra de Lie]
+máis pequenas. Por exemplo, no caso dunha Álxebra de Lie
 #nota[
     Para o curioso, a estrutura é $((V,plus.o,[dot,dot]), (KK,+,dot),
     circle.stroked.small)$. Xa presentaremos todo no seu debido tempo
@@ -107,7 +107,7 @@ $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f $
 
 É común atoparse con situacións como a da
 @ec:alxebra:asociatividade_xeneralizada pero onde a operación se repite no
-mesmo elemento. Podemos simplificar a escritura usando *potencias*. En notación
+mesmo elemento. Podemos simplificar a escritura usando potencias. En notación
 multiplicativa #cita("delgado_2010")
 
 $ underbrace(a * a * a * dots, "n veces") $

@@ -11,8 +11,8 @@
 )
 
 O estudo da álxebra dende un punto de vista abstracto é sorprendentemente útil
-na física. O motivo, ironicamente, é que queremos *medir*, ou incluso de forma
-máis xeral, *asignar un número a un obxecto físico* e con este facer
+na física. O motivo, ironicamente, é que queremos _medir_, ou incluso de forma
+máis xeral, _asignar un número a un obxecto físico_ e con este facer
 operacións. En xeral facemos isto dicindo que certa magnitude física ten
 relacionado un número racional máis unha unidade. Por exemplo, a miña
 velocidade media ao ir dende casa á facultade en coche é de 46.7 km/h, a
@@ -35,7 +35,7 @@ A álxebra abstrae as relacións entre os números e constrúe estruturas basead
 nestas, paso a paso, dende aquelas máis simples, coma un monoide ou un grupo,
 ás máis mesturadas, coma unha álxebra de Lie. A relevancia da álxebra na física
 é esta: non nos chega con números para caracterizar a física, queremos algo
-*máis*, mentres mantemos as propiedades que nos son cómodas e coñecidas.
+máis, mentres mantemos as propiedades que nos son cómodas e coñecidas.
 #cita("shafarevich_1990")
 
 Usamos grupos para caracterizar a simetría; os aneis, e concretamente os
@@ -58,8 +58,8 @@ palabras grandes con tanta soltura e tan pouca formalidade. O único que importa
 é que calquera estudante de física desta nosa facultade vería algunha vez
 algunha de ditas palabras grandes. O que quero facer é comentar, con certa
 prudencia, como se constrúen todas elas dende a máis básica á máis complexa.
-Meu enfoque é máis pragmático ca os dos matemáticos. Impórtame *menos* seguir
-un fío totalmente lóxico e formal entre as partes, e impórtame *máis*
+Meu enfoque é máis pragmático ca os dos matemáticos. Impórtame menos seguir
+un fío totalmente lóxico e formal entre as partes, e impórtame máis
 motivalas, presentalas e finalmente definilas de xeito que nos resulten máis
 naturais na nosa ciencia. Inda así, é imposible esquivar o estudo de varios
 resultados en forma de teoremas, pero non hai que preocuparse, porque

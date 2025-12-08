@@ -40,7 +40,7 @@ Tipos de puntos nun conxunto A, supoñendo que temos definida unha distancia
   punto de $A$ distinto de $x_0$
 
 Topoloxías distintas da usual. Nestos casos non podemos usar a noción usual de
-'estar dentro dunha bola'. Ditas bolas son simplemente os abertos na topoloxía
+estar dentro dunha bola. Ditas bolas son simplemente os abertos na topoloxía
 usual, pero noutra topoloxía os abertos son distintos. Para saber se un punto
 pertence ou no á fronteira, adherencia, etc. hai que comprobar as definicións
 anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
@@ -49,13 +49,13 @@ anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
 - *Usual*: $tau_"U" := {(a,b), (-oo,c), (d, oo)}$. Ousexa, os intervalos
   abertos típicos en $RR$
 
-- *Trivial/Indiscreta*: $tau_"IND" := {emptyset, cal(X)}$. Unha topoloxía moi
-  simple na cal o único aberto ao que pode pertence un punto é o propio $RR$
+- *Trivial/Indiscreta*: $tau_"IND" := {emptyset, X}$. Unha topoloxía moi
+  simple na cal o único aberto ao que pode pertence un punto é o propio $X$
 
-- *Discreta*: $tau_"DIS" := scr(P)(X) := {A | A subset cal(X)}$. Neste caso, un
+- *Discreta*: $tau_"DIS" := scr(P)(X) := {A | A subset X}$. Neste caso, un
   conxunto dun so punto da forma ${x}$ é un aberto.
 
-- *Cofinita*: $tau_"COF" := {emptyset} union {A subset cal(X) "tal que" X - A
+- *Cofinita*: $tau_"COF" := {emptyset} union {A subset X "tal que" X - A
   "é finito"}$. Os abertos son os conxuntos cuxo complementario é finito. Por
   exemplo, $RR - {1,2,3}$ xa que o complementario é $RR - (RR - {1,2,3}) =
   {1,2,3}$
@@ -109,7 +109,7 @@ Distancias: [Def. 6.1]#cita("masa_2019")
     ancora : "def:topoloxia:funcion-continua"
 )[
     Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
-    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    calquera $f : (X,tau_X) arrow.r (Y,tau_Y)$. Dicimos que $f$ é unha
     #indice("Función")[Continua] función continua se
 
     $
@@ -137,7 +137,7 @@ $f$ non é continua.
     ancora : "def:topoloxia:funcion-aberta"
 )[
     Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
-    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    calquera $f : (X,tau_X) arrow.r (Y,tau_Y)$. Dicimos que $f$ é unha
     #indice("Función")[Aberta] función aberta se
 
     $
@@ -155,11 +155,7 @@ topoloxía usual. Calquera intervalo aberto $U = (a,b) in tau_u$ pasa a outro
 intervalo tamén aberto $f(U) = (f(a), f(b)) in tau_u $, polo que a función é
 aberta. #nota[Esto digoo a ollo, dame reparo probalo]
 
-A función
-
-$
-    f:(RR,tau_K) frecha (RR,tau_K)
-$
+A función $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por
 
 $
     f(x) = cases(
@@ -192,22 +188,16 @@ e en ningún caso é aberto.
     $
 ]
 
-A funcion
-
-$
-    f:(RR,tau_K) frecha (RR,tau_K) \
-    f(x) = abs(x)
-$
-
-non é pechada porque o caso concreto $U = (-oo,1] $ pechado ten como imaxe o
-conxunto $f(U) = [0,oo)$ que non é pechado.
+A funcion $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por $f(x) = abs(x)$ non é
+pechada porque o caso concreto $U = (-oo,1] $ pechado ten como imaxe o conxunto
+$f(U) = [0,oo)$ que non é pechado.
 
 #definicion(
     nome : "Homeomorfismo",
     ancora : "def:topoloxia:homeomorfismo"
 )[
     Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
-    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é un
+    calquera $f : (X,tau_X) arrow.r (Y,tau_Y)$. Dicimos que $f$ é un
     #indice("Homeomorfismo") homeomorfismo se
 
     + $f$ é bixectiva
