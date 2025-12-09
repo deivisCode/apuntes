@@ -61,11 +61,42 @@
 /// Funcion para crear un encabezado
 //
 // :FACER: nome do capitulo ou seccion no encabezado
-#let crear_encabezado() = grid(
-    columns: 1,
-    align: (center + horizon),
-    line(length: 100%, stroke: 0.5pt),
-)
+#let crear_encabezado() = context {
+    let num = counter(page).get().first()
+    if calc.even(num) {
+        set text(size: 9pt)
+        grid(
+            columns: (1fr, 1fr, 1fr),
+            rows: (1em, 1em),
+            align: (left + horizon, right + horizon, right + horizon),
+            grid.cell(
+                x: 0, y: 0,
+                tt[#datetime.today().display()],
+            ),
+            grid.cell(
+                x:0, y:1,
+                colspan: 3,
+                line(length: 100%, stroke: 0.5pt),
+            )
+        )
+    } else {
+        set text(size: 9pt)
+        grid(
+            columns: (1fr, 1fr, 1fr),
+            rows: (1em, 1em),
+            align: (left + horizon, right + horizon, right + horizon),
+            grid.cell(
+                x: 2, y: 0,
+                tt[ #nf[]#sys.inputs.rama:#nf[]#sys.inputs.hash ],
+            ),
+            grid.cell(
+                x:0, y:1,
+                colspan: 3,
+                line(length: 100%, stroke: 0.5pt),
+            )
+        )
+    }
+}
 
 /// Funcion para crear o pe de paxina
 #let crear_pe() = {
