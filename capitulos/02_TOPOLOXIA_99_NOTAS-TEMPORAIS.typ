@@ -303,6 +303,4 @@ Por exemplo
 - $(RR,tau_"DIS")$ Si é de Hausdorff. Sexan $x in {x} = U, y in {y} = V$, entón
   $U inter V = emptyset$.
 
-#nota2
-
 Ser de Hausdorff é unha propiedade topolóxica.
