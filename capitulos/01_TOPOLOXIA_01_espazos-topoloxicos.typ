@@ -30,6 +30,10 @@ O segundo caso é o seguinte: #cita("goldberg_1980")
         &{A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau
     $
 
+    Ollo, a intersección é dun número _finito_ de elementos, pero a unión dun
+    número arbitrario e pode que _infinito_. #nota[Non é de todo relevante para
+    nós a distinción dos casos finito e infinito.]
+
 ]
 
 A segunda propiedade dinos que a interescción dun número _finito_ de elementos
@@ -47,3 +51,23 @@ ou simplemente abertos.
     A parella $(X,tau)$ onde $X$ é un conxunto arbitrario e $tau$ unha
     topoloxía sobre $X$, é un #indice("Espazo")[Topolóxico] espazo topolóxico.
 ]
+
+#definicion(
+    nome : "Conxuntos pechados",
+    ancora : "def:topoloxia:pechados"
+)[
+    Sexa $X$ un conxunto calquera, e $F subset scr(P)(X)$. Dicimos que $F$
+    son conxuntos pechados se
+
+    $
+        &X,emptyset in F \
+        &A,B in F arrow.r.double A union B in F \
+        &{A_i | i in I} subset F arrow.r.double (inter_(i in I) A_i) in F
+    $
+
+]
+
+A definición é idéntica á de topoloxía (conxuntos abertos) pero mudando as
+condicións para a unión e a intersección de elementos. Outra condición
+equivalente para saber se un conxunto é pechado é que seu complementario sexa
+aberto, e viceversa. Un conxunto pode ser aberto, pechado, ambos o nada.

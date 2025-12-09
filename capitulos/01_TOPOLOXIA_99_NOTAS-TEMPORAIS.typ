@@ -29,7 +29,8 @@ Tipos de puntos nun conxunto A, supoñendo que temos definida unha distancia
 
 - *Punto fronteira*. $x_0 in "Fr"(A)$ se $forall r > 0$ $B(x_0,r) inter A
   eq.not emptyset, B(x_0,r) inter A^c eq.not emptyset$. É dicir, unha bola
-  centrada en $x_0$ sempre contén puntos de $A$ e do seu complementario $A^c$
+  centrada en $x_0$ sempre contén puntos de $A$ e do seu complementario $A^c$.
+  Ás veces, o conxunto de puntos da fronteira tamén se denota por $partial A$
 
 - *Punto adherente*. $x_0 in macron(A)$ se $forall r > 0$ $B(x_0,r) inter A
   eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre ten puntos de $A$.
@@ -61,6 +62,8 @@ anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
   {1,2,3}$
 
 - *Kolomogorov*: $tau_"K" := {emptyset, RR} union {(a,+oo) "con" a in RR}$
+
+- *Sen nome*. $tau_alpha := { [p, q) in RR | p < q, space.quad p,q in QQ}$
 
 Comparación de topoloxías:
 
@@ -250,7 +253,6 @@ Podemos usar esta definición á inversa. Se temos dous espazos topolóxicos con
 propiedades topolóxicas distintas (e.g. un deles é Hausdorff e outro non) entón
 temos asegurado que ditos espazos non son homeomorfos
 
-// :AQUI:
 #definicion(
     nome : "Topoloxía produto",
     ancora : "def:topoloxia:topoloxia-produto"
@@ -264,3 +266,43 @@ temos asegurado que ditos espazos non son homeomorfos
 )[
     FACER
 ]
+
+#definicion(
+    nome : "Espazo de Hausdorff",
+    ancora : "def:topoloxia:hausdorff"
+)[
+    Sexa $(X,tau)$ un espazo topolóxico calquera. Dicimos que é de _Hausdorff_
+    #indice("Espazo")[Hausdorff] se se cumpre que
+
+    $
+        (forall a,b in tau) "con" a eq.not b, space.quad \
+        exists U,V in tau, "onde"
+            a in U,
+            b in V
+        "e" (U inter V) = emptyset
+    $
+
+    É dicir, para calquera parella de puntos, podemos atopar dous abertos que
+    conteñen a cada un pero que non se intersecan.
+
+]
+
+Por exemplo
+
+- $(RR, tau_"U")$ é de Hausdorff. Para calquera parella de puntos $a,b in RR$
+  sempre podemos atopar sendas bólas abertas centradas neles e de radios $r =
+  |a - b|\/ 3$.
+
+- $(RR, tau_"IND")$ Non é de Hausdorf, porque os únicos abertos que poden
+  conter respectivamente a $a$ e $b$ son $RR$, polo que non hai $U$ e $V$
+  disxuntos.
+
+- $(RR,tau_"K")$ Non é de Hausdorff. Sexan $a in (x, oo) = U, b in (y,oo) = V$. Se $x > y$ entón $U
+  inter V = (x, oo) eq.not emptyset$
+
+- $(RR,tau_"DIS")$ Si é de Hausdorff. Sexan $x in {x} = U, y in {y} = V$, entón
+  $U inter V = emptyset$.
+
+#nota2
+
+Ser de Hausdorff é unha propiedade topolóxica.
