@@ -25,11 +25,14 @@ mesmo conxunto $A$.
         f: A times A & frecha A \
         a,b & mapea f(a,b)
     $
+
+    [Cap. 2]#cita("rotman_2000") [Cap.4 $section 4.1$]#cita("delgado_2010")
 ]
 
 En xeral non se usa a notación "funcional" cos argumentos entre paréntese,
 senón que preferimos colocar o símbolo da operación entre eles. Ademais, non
-usamos letras para as operacións senón símbolos especiais. É dicir, os pasos:
+usamos letras para as operacións senón símbolos especiais. É dicir, os pasos
+[Cap.2 ]#cita("rotman_2000"):
 
 $
     f(a,b) stretch(arrow.r)^"símb. entre argumentos"
@@ -130,6 +133,7 @@ Teo.2]#cita("kostrikin_1983")
     Dicimos que unha operación nunha estrutura calquera $(A,*)$ é conmutativa
     #indice("Operación")[conmutativa] se se cumpre que
     $ (forall a,b in A) space.quad a * b = b * a $
+    #cita("delgado_2010")
 ]
 
 É dicir, podemos operar cunha parella de elementos en calquera orde. É
@@ -201,6 +205,10 @@ na multiplicativa.
         a^(-1) = e*a^(-1) = (a'^(-1)*a)*a^(-1) = \
         a'^(-1)*(a*a^(-1)) = a'^(-1)*e = a'^(-1)
     $
+    // :FACER: MARGINALIA warning: value of `state("_note_extends_right")` did not converge
+    #cita("rotman_2000")
+    // #cita("delgado_2010")
+    // #cita("kostrikin_1983")
 ]
 
 O teorema @teo:alxebra:inverso_unico garante que podemos falar de $a^(-1)$,
