@@ -25,8 +25,8 @@
         align: left,
         rows: (5em, 5em),
         [
-            RAMA #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("rama") \
-            HASH #text(font : "Symbols Nerd Font Mono")[] #sys.inputs.at("hash") \
+            RAMA #nf[] #sys.inputs.at("rama") \
+            HASH #nf[] #sys.inputs.at("hash") \
             DIRT #sys.inputs.at("dirt")
         ],
         [

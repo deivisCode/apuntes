@@ -25,6 +25,7 @@
 // Pequena funcion pa usar texto en Sans e en Monoespaciado
 #let sf = eso => text(font: "New Computer Modern Sans")[#eso]
 #let tt = eso => text(font: "New Computer Modern Mono")[#eso]
+#let nf = eso => text(font: "Symbols Nerd Font Mono")[#eso]
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota = note.with( numbering: none, text-style:(size:10pt) )
