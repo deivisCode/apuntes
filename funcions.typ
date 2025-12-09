@@ -265,3 +265,8 @@
 #let card(eso) = text(
     box($"card"(eso)$)
 )
+
+#let emptyset = text(
+    features: ("cv01",),
+    box($emptyset$),
+)
