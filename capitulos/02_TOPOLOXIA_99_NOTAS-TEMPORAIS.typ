@@ -183,7 +183,7 @@ e en ningún caso é aberto.
     ancora : "def:topoloxia:funcion-pechada"
 )[
     Sexan os espazos topolóxicos $(X,tau_X)$ e $(Y,tau_Y)$ e unha función
-    calquera $f : (X,tau_X) frecha (Y,tau_Y)$. Dicimos que $f$ é unha
+    calquera $f : (X,tau_X) arrow.r (Y,tau_Y)$. Dicimos que $f$ é unha
     #indice("Función")[Pechada] función pechada se
 
     $
@@ -297,7 +297,7 @@ Por exemplo
   conter respectivamente a $a$ e $b$ son $RR$, polo que non hai $U$ e $V$
   disxuntos.
 
-- $(RR,tau_"K")$ Non é de Hausdorff. Sexan $a in (x, oo) = U, b in (y,oo) = V$. Se $x > y$ entón $U
+- $(RR,tau_"K")$ Non é de Hausdorff. Sexan $a in (x, oo) = U$, $b in (y,oo) = V$. Se $x > y$ entón $U
   inter V = (x, oo) eq.not emptyset$
 
 - $(RR,tau_"DIS")$ Si é de Hausdorff. Sexan $x in {x} = U, y in {y} = V$, entón

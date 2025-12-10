@@ -247,8 +247,7 @@ descalzarnos quitamos primeiro os calcetíns e logo os zapatos.
     nome : "Operación distributiva",
     ancora : "def:alxebra:distributiva"
 )[
-    Sexa $(A,dot,*)$ unha estrutura con dúas operacións calquera $dot$ e $*$
-
+    Sexa $(A,dot,*)$ unha estrutura con dúas operacións calquera $dot$ e $*$.
     Dicimos que a operación $dot$ #indice("Operación")[Distributiva] é
     distributiva respecto de $*$ se se cumpre que $(forall a,b,c in A)$
 

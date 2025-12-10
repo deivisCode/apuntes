@@ -132,7 +132,8 @@ anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 
 + $(forall a, b in A), space.quad (-a) dot (-b) = a dot b$
 
     $
-        (-a) dot (-b) = (-(-a)) dot b = a dot (-(-b)) = a dot b
+        (-a) dot (-b) &= (-(-a)) dot b \
+                      &= a dot (-(-b)) = a dot b
     $
 
 #definicion(
