@@ -7,6 +7,7 @@
 )
 
 #include("/capitulos/01_CONXUNTOS_00_introducion.typ")
+#include("/capitulos/01_CONXUNTOS_99_NOTAS-TEMPORAIS.typ")
 
 #include("/capitulos/02_TOPOLOXIA_00_introducion.typ")
 #include("/capitulos/02_TOPOLOXIA_01_espazos-topoloxicos.typ")
