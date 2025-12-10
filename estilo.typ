@@ -160,11 +160,13 @@
         numbering: none,
         sf[Índice de Teoremas],
     )
-    outline(
-        title: none,
-        depth: 1,
-        target: figure.where(kind: "teorema")
-    )
+    columns(2)[
+        #outline(
+            title: none,
+            depth: 1,
+            target: figure.where(kind: "teorema")
+        )
+    ]
 }
 
 // Funcion para crear o índice de definicions
@@ -188,11 +190,13 @@
         numbering: none,
         sf[Índice de Definicións],
     )
-    outline(
-        title: none,
-        depth: 1,
-        target: figure.where(kind: "definicion")
-    )
+    columns(2)[
+        #outline(
+            title: none,
+            depth: 1,
+            target: figure.where(kind: "definicion")
+        )
+    ]
 }
 
 /// Funcion para crear a contraportada
@@ -321,6 +325,7 @@
     // Esto é para customizar as referencias
     // :FACER: numeros para táboas
     // :FACER: pageref, incluso con nomes do teorema #context { query(<def:alxebra:subestrutura>).first().location().page() }
+    // :FACER: simplificar esto...
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
@@ -354,7 +359,6 @@
             let NUM = counter(figure.where(kind:"seccion")).at(eso.element.location()).last()
             link(
                 eso.element.location(),
-                // :FACER: o espazo nobreak debería ser zw
                 [#HEA.#SEC.#NUM]
             )
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
