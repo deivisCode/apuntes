@@ -99,28 +99,27 @@
 }
 
 /// Funcion para crear o pe de paxina
-#let crear_pe() = {
-    context {
-        let num = counter(page).get().first()
-        if calc.even(num) {
-            grid(
-                columns: (10%, 1fr),
-                align: (left + horizon, right + horizon),
-                [#num], line(length:100%, stroke:0.5pt)
-            )
-        } else {
-            grid(
-                columns: (1fr, 10%),
-                align: (left + horizon, right + horizon),
-                line(length:100%, stroke:0.5pt), [#num]
-            )
-        }
+#let crear_pe() = context {
+    let num = counter(page).get().first()
+    if calc.even(num) {
+        grid(
+            columns: (10%, 1fr),
+            align: (left + horizon, right + horizon),
+            [#num], line(length:100%, stroke:0.5pt)
+        )
+    } else {
+        grid(
+            columns: (1fr, 10%),
+            align: (left + horizon, right + horizon),
+            line(length:100%, stroke:0.5pt), [#num]
+        )
     }
 }
 
 /// Funcion para crear a Bibliografía
 #let crear_bibliografia() = {
     // :FACER: biblio en cada capítulo? https://github.com/typst/typst/issues/1097
+    show heading.where(level: 1): set block(below: 1em)
     bibliography(
         "/bibliografia.bib",
         title: sf[Bibliografía],
@@ -141,7 +140,6 @@
 
 // Funcion para crear o índice de teoremas
 #let crear_indice_teoremas() = {
-    show heading.where(level: 1): set block(below: 1em)
     show outline.entry: eso => {
         link(
             eso.element.location(),
@@ -160,6 +158,7 @@
         numbering: none,
         sf[Índice de Teoremas],
     )
+    v(1em)
     columns(2)[
         #outline(
             title: none,
@@ -171,7 +170,6 @@
 
 // Funcion para crear o índice de definicions
 #let crear_indice_definicions() = {
-    show heading.where(level: 1): set block(below: 1em)
     show outline.entry: eso => {
         link(
             eso.element.location(),
@@ -190,6 +188,7 @@
         numbering: none,
         sf[Índice de Definicións],
     )
+    v(1em)
     columns(2)[
         #outline(
             title: none,
@@ -251,7 +250,10 @@
     )
     set par(
         justify              : true,
-        justification-limits : (tracking : (min: -0.04em, max: 0.02em)),
+        justification-limits : (
+            tracking : (min: -0.04em, max: 0.02em),
+            spacing  : (min: 66.67% + 0pt, max: 150% + 0pt)
+        ),
         first-line-indent    : 1.5em,
         spacing              : 0.65em,
         leading              : 0.65em,
@@ -396,11 +398,6 @@
 }
 
 #let estilo_backmatter(doc) = {
-    show bibliography: eso => {
-        // Espazo entre o título da bibliografía e as entradas
-        show heading.where(level: 1): set block(below: 1em)
-        eso
-    }
     doc
 }
 
