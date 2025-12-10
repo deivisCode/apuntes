@@ -82,12 +82,12 @@
     } else {
         set text(size: 9pt)
         grid(
-            columns: (1fr, 1fr, 1fr),
+            columns: (1fr, 1fr, 2fr),
             rows: (1em, 1em),
             align: (left + horizon, right + horizon, right + horizon),
             grid.cell(
                 x: 2, y: 0,
-                tt[ #nf[]#sys.inputs.rama:#nf[]#sys.inputs.hash ],
+                tt[ #nf[]#sys.inputs.rama:(#sys.inputs.dirt):#nf[]#sys.inputs.hash ],
             ),
             grid.cell(
                 x:0, y:1,
