@@ -371,7 +371,7 @@
             let NUM = counter(math.equation).at(eso.element.location()).first()
             link(
                 eso.element.location(),
-                [#HEA.#SEC.#NUM)]
+                [#HEA.#SEC.#NUM]
             )
         // No resto de casos
         } else {
