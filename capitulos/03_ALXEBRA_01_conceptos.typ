@@ -30,14 +30,16 @@ mesmo conxunto $A$.
 ]
 
 En xeral non se usa a notación "funcional" cos argumentos entre paréntese,
-senón que preferimos colocar o símbolo da operación entre eles. Ademais, non
-usamos letras para as operacións senón símbolos especiais. É dicir, os pasos
+senón que preferimos colocar o símbolo da operación entre eles (semellante á
+expresión @exp:contuntos:posicion-simbolos). Ademais, non usamos letras para as
+operacións senón símbolos especiais. É dicir, os pasos
 [Cap.2 ]#cita("rotman_2000"):
 
 $
     f(a,b) stretch(arrow.r)^"símb. entre argumentos"
-    a f b stretch(arrow.r)^"símb. especial" a plus.o b
-$
+    a f b stretch(arrow.r)^"símb. especial"
+    a plus.o b
+$ <exp:alxebra:posicion-simbolos>
 
 Onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
 $+ * · dot.o diamond.stroked$ ou o que veña en mente ao escribir.
