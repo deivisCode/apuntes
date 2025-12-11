@@ -271,3 +271,8 @@
     features: ("cv01",),
     box($emptyset$),
 )
+
+#let rel = math.class(
+    "large",
+    $~$
+)
