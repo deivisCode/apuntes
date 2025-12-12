@@ -164,14 +164,18 @@ $1, bb(1)$ ou $I$. Podemos combinar todo e escribir $1_A, bb(1)_B, 0_A$, etc.
 )[
     Sexa $(A,*)$ unha estrutura alxébrica calquera. Se existe un elemento
     neutro, entón é único.
+]
 
+#demostracion(
+    ancora : "teo:alxebra:neutro_unico"
+)[
     Sexan $e,e'$ dous elementos neutros da operación $*$
 
     $ e = e * e' = e' $
 
     Temos que $e = e * e'$ por ser $e'$ neutro (multiplicalo por $e$ non cambia
     $e$). Como $e$ tamén é neutro, entón $e * e' = e'$. Finalmente, $e = e'$,
-    polo que realmente, só existe un elemento neutro
+    polo que realmente, só existe un elemento neutro.
 ]
 
 
@@ -199,6 +203,11 @@ na multiplicativa.
 )[
     Sexa $(A,*)$ unha estrutura alxébrica calquera ca propiedade de que $*$ é
     unha operación asociativa. Se existe un elemento inverso, entón é único.
+]
+
+#demostracion(
+    ancora : "teo:alxebra:inverso_unico"
+)[
 
     Sexa $a^(-1)$ o elemento inverso de $a$. Entón, $a*a^(-1) = e = a*a^(-1)$.
     Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a'^(-1)*a =
@@ -218,11 +227,17 @@ senón, poderíamos ter varios inversos de $a$ distintos, como $a_1,a_2$ etc.
 
 #teorema(
     nome : "Inverso dun produto",
-    ancora : "teo:alxebra:inverso_produto"
+    ancora : "teo:alxebra:inverso-produto"
 )[
     Sexa $(A,*)$ unha estrutura calqueira onde $*$ é asociativa, existe neutro
     $e$ máis todos os elementos son invertibles. Entón, o inverso $(a*b)^(-1) =
-    b^(-1)*a^(-1)$. Pode demostrarse multiplicando $a*b$ pola esquera e pola
+    b^(-1)*a^(-1)$.
+]
+
+#demostracion(
+    ancora : "teo:alxebra:inverso-produto"
+)[
+    Pode demostrarse multiplicando $a*b$ pola esquera e pola
     dereita por $a^(-1)*b^(-1)$, o cal nos debe dar o neutro según a definición
     @def:alxebra:inverso
 
@@ -360,13 +375,18 @@ espero que o vaia sendo nas seccións seguintes
 
 #teorema(
     nome : [$ker(f) = {e_A} sse f "é Inxectiva"$],
-    ancora : "teo:alxebra:nucleo_unidade"
+    ancora : "teo:alxebra:nucleo-unidade"
 )[
     Sexa $f:A arrow.r B$ un morfismo calquera entre as estruturas $(A,+)$ e
     $(B,+)$. #nota[Uso en ambas estruturas a mesma operación + por comodidade.]
     Entón $f$ é inxectiva $sse$ o núcleo de $f$ só contén o neutro de A.
+]
 
-    $arrow.r.double$
+#demostracion(
+    ancora : "teo:alxebra:nucleo-unidade"
+)[
+
+    "$arrow.r.double$" #v(1em)
 
     Partimos de que $f$ é inxectiva. $f(e_A) = f(a-a) = f(a)-f(a) = e_B$
     $implica f(e_A) = e_B implica e_A in ker(f)$ Pode ser que haxa outro

@@ -66,7 +66,6 @@
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
 //
 // :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
-// :FACER: entorno de demostracions
 // :FACER: usar outra palabra en lugar de 'teorema'
 // :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
 #let teorema(
@@ -155,6 +154,31 @@
         ]
     )
 }
+
+#let demostracion(
+    ancora : " -- SEN ÁNCORA -- ",
+    corpo
+) = {
+    set text(size: 0.8em)
+    set par(first-line-indent:0pt)
+    block(
+        stroke : (
+            left : 2pt + luma(90%),
+            // right: 2pt + luma(90%)
+        ),
+        fill: luma(96%),
+        width:100%,
+        inset : (
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
+        ),
+        [_Demostración_ #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
+    )
+}
+
+
 
 /// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.
 #let capitulo(
