@@ -186,6 +186,13 @@
     ancora   : " -- SEN ÁNCORA -- ",
     epigrafe : " -- SEN EPÍGRAFE -- "
 ) = {
+    show heading.where(level: 1): eso => {
+        show text: sf
+        set align(left)
+        let CAP = counter(heading.where(level: 1)).at(here()).last()
+        text(size: 0.7em, fill: luma(50%))[Capítulo #CAP\ ]
+        text(size: 1.8em)[#eso.body]
+    }
     pagebreak(to:"odd")
     counter(heading.where(level: 2)).update(0)
     grid(
