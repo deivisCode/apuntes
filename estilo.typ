@@ -298,15 +298,15 @@
     show raw: set text(font: _mono)
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
-    show figure.caption: eso => context {
     show figure.caption: set text(font: _sans)
+    show figure.caption: eso => {
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
     // :FACER: como referencio as ecuacións??
     set math.equation(
-        numbering: eso => context {
+        numbering: eso => {
             let HEA = counter(heading.where(level:1)).at(here()).last()
             let SEC = counter(heading.where(level:2)).at(here()).last()
             [(#HEA.#SEC.#eso)]
