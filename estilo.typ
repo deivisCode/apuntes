@@ -18,7 +18,7 @@
     v(1em)
     smallcaps( context {document.author.join("\n")} )
     v(1em)
-    set text(font: "New Computer Modern Mono")
+    show text: tt
     link("https://github.com/deivisCode/apuntes")
     v(1em)
     grid(
@@ -307,10 +307,10 @@
     )
     set text(fill:black)
     show math.equation.where(block: false): eso => { box(eso) }
-    show raw: set text( font: "New Computer Modern Mono" )
+    show raw: tt
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
-    show figure.caption: set text(font:"New Computer Modern Sans")
+    show figure.caption: sf
     show figure.caption: eso => context {
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
