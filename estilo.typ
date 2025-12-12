@@ -18,7 +18,7 @@
     v(1em)
     smallcaps( context {document.author.join("\n")} )
     v(1em)
-    show text: tt
+    set text(font: _mono)
     link("https://github.com/deivisCode/apuntes")
     v(1em)
     grid(
@@ -42,7 +42,7 @@
 /// Funcion para crear o Índice de materias
 #let crear_indice_contidos() = {
     show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
-    show outline.entry.where( level: 1 ): set text(weight:"bold", size:15pt)
+    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:15pt)
     show outline.entry.where( level: 1 ): set outline.entry(fill: none)
     show heading.where(level: 1): set block(below: 1em)
     heading(
@@ -295,11 +295,11 @@
     )
     set text(fill:black)
     show math.equation.where(block: false): eso => { box(eso) }
-    show raw: tt
+    show raw: set text(font: _mono)
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
-    show figure.caption: sf
     show figure.caption: eso => context {
+    show figure.caption: set text(font: _sans)
         strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
         eso.body
     }

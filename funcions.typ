@@ -27,6 +27,11 @@
 #let tt = eso => text(font: "New Computer Modern Mono")[#eso]
 #let nf = eso => text(font: "Symbols Nerd Font Mono")[#eso]
 
+// Cadeas para facer 'show this: set text(font: _sans)
+#let _sans = "New Computer Modern Sans"
+#let _mono = "New Computer Modern Mono"
+#let _nerd = "Symbols Nerd Font Mono"
+
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota = note.with( numbering: none, text-style:(size:10pt) )
 
@@ -177,13 +182,14 @@
     epigrafe : " -- SEN EPÍGRAFE -- "
 ) = {
     show heading.where(level: 1): eso => {
-        show text: sf
+        show text: set text(font: _sans)
         set align(left)
         let CAP = counter(heading.where(level: 1)).at(here()).last()
         text(size: 0.7em, fill: luma(50%))[Capítulo #CAP\ ]
         text(size: 1.8em)[#eso.body]
     }
     pagebreak(to:"odd")
+    // set page(header: none) // :FACER: encabezado baleiros ao inciar caps
     counter(heading.where(level: 2)).update(0)
     grid(
         columns : (auto,20%,1fr),
