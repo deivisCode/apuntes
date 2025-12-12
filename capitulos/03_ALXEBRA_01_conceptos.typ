@@ -187,7 +187,7 @@ $1, bb(1)$ ou $I$. Podemos combinar todo e escribir $1_A, bb(1)_B, 0_A$, etc.
     cumpre
 
     $
-        (forall a in A) space.quad a * y = y * a = e
+        a * y = y * a = e
     $
 
     dise que é o elemento inverso de $a$ #indice[Elemento Inverso], e que o
@@ -338,10 +338,11 @@ que precisemos.
     nome : "Núcleo dun morfismo",
     ancora : "def:alxebra:nucleo"
 )[
-    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.o)$. O
-    conxunto de elementos de $A$ que pasan ao neutro de $B$ a través de $f$
-    chámase #indice("Núcleo") núcleo ou #indice("Kernel") kernel de $f$ e
-    denótase por $"ker"(f)$. É dicir, é o conxunto
+    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.o)$, onde a
+    segunda estrutura ten un neutro $e$. O conxunto de elementos de $A$ que
+    pasan ao neutro de $B$ a través de $f$ chámase #indice("Núcleo") núcleo ou
+    #indice("Kernel") kernel de $f$ e denótase por $"ker"(f)$. É dicir, é o
+    conxunto
 
     $
         ker(f) = { a in A | f(a) = e_B }
@@ -351,27 +352,6 @@ que precisemos.
 Recordemos por un momento a noción de inxectividade. Unha función é inxectiva
 se se cumpre que $f(a) eq.not f(b) implica a eq.not b$, ou análogamente, $a = b
 implica f(a) = f(b)$.
-
-// :FACER: demostracion desto
-#teorema(
-    nome : "Inxectividade e Núcleo",
-    ancora : "teo:alxebra:inxectividade-nucleo"
-)[
-    Sexa $f: A arrow.r B$ un morfismo entre $(A,*)$ e $(B,plus.o)$.
-
-    $
-        f "é inxectiva" sse ker(f) = {e_A}
-    $
-]
-
-No caso da teoría de conxuntos non se pode presentar tal resultado porque non
-teríamos unha noción de _kernel_ ou sequera do que é un elemento neutro. Na
-álxebra varios teoremas gañan contido e é posible usar resultados novos que
-antes non eran posibles.
-
-Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
-que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
-espero que o vaia sendo nas seccións seguintes
 
 #teorema(
     nome : [$ker(f) = {e_A} sse f "é Inxectiva"$],
@@ -394,9 +374,18 @@ espero que o vaia sendo nas seccións seguintes
     $f$ é inxectiva, entón se $f(e_A) = f(a') = e_B implica a' = e_A$. Polo
     tanto, $ker(f) = {e_A}$
 
-    $arrow.l.double$
+    #v(1em) "$arrow.l.double$" #v(1em)
 
     Partimos de que $ker(f)={e_A}$. Supoñemos que $f(a) = f(b) implica f(a-b) =
     e_B$ polo que $a-b in ker(f) = {e_B}$. Entón, $a-b = e_B implica a=b$. Polo
     tanto, $f(a)=f(b) implica a=b$, que é a condición de inxectividade.
 ]
+
+No caso da teoría de conxuntos non se pode presentar tal resultado porque non
+teríamos unha noción de _kernel_ ou sequera do que é un elemento neutro. Na
+álxebra varios teoremas gañan contido e é posible usar resultados novos que
+antes non eran posibles.
+
+Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
+que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
+espero que o vaia sendo nas seccións seguintes

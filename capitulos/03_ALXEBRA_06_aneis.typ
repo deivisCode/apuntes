@@ -21,7 +21,7 @@ operacións.
     - A operación $dot$ é distributiva respecto de $+$
 
     dise que é un #indice("anel")anel. É dicir, unha terna $(A,+,dot)$ onde
-    $(A,+)$ é un grupo e $(A,dot)$ é un magma
+    $(A,+)$ é un grupo, $(A,dot)$ é un magma, e as operacións son distributivas.
 ]
 
 Podemos referirnos simplemente ao anel como $A$. Se a operación $dot$ é

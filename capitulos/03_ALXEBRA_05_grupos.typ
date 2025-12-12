@@ -56,7 +56,7 @@ Exemplos de grupos son:
   subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza simétrica_
   de dous subconxuntos $A,B in scr(P)(X)$ dada por $A + B = (A-B) union (B-A)$.
   A parella $(scr(P)(X), +)$ é un grupo. A identidade $A in scr(P)(X)$ é
-  $nothing$ e o inverso de $A$ é $A$. #cita("rotman_2000")
+  $emptyset$ e o inverso de $A$ é $A$. #cita("rotman_2000")
 
 + O conxunto de todas as matrices cadradas, invertibles de tamaño $n times n$ e
   con coeficientes en $RR$ é un grupo ca operación usual de multiplicación

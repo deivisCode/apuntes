@@ -40,10 +40,10 @@ Exemplos de monoides abstractos e nada visuais, pero útiles:
   arrow.r X, id(x) = x$, entón $(S(X),compose)$ é un monoide, sendo $id$ o seu
   neutro
 
-- Para un conxunta calquera $X$, denotamos como $scr(P)(X)$ o conxunto de todos os
+- Para un conxunto calquera $X$, denotamos como $scr(P)(X)$ o conxunto de todos os
   subconxuntos de $X$. Se $union$ e $inter$ son a unión e intersección de
   conxuntos, entón $( scr(P)(X), union )$ e $( scr(P)(X), inter )$ son monoides.
-  No primerio caso o neutro é $nothing$, e no segundo é $X$
+  No primerio caso o neutro é $emptyset$, e no segundo é $X$
 
 
 #definicion(
@@ -76,4 +76,5 @@ Nun monoide temos unha noción de neutro $e$, polo que podemos mencionar algo
 máis, os núcleos dos morfismos @def:alxebra:nucleo. No caso dos semigrupos esto
 non tiña sentido, porque non existía un elemento neutro.
 
+// :FACER: mencionar os nucleos!!
 // :FACER: Clases laterais de monoides?
