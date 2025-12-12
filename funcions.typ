@@ -76,12 +76,7 @@
     // Creo un rectangulo
     block(
         stroke : (
-            top  : rgb("#FF0000").lighten(50%) + 2pt,
             left : rgb("#FF0000").lighten(50%) + 2pt
-        ),
-        radius : (
-            top-left : 5pt,
-            bottom-right : 5pt
         ),
         fill: rgb("#FF0000").lighten(90%),
         width:100%,
@@ -121,12 +116,7 @@
 ) = {
     block(
         stroke : (
-            top  : rgb("#0000FF").lighten(50%) + 2pt,
             left : rgb("#0000FF").lighten(50%) + 2pt
-        ),
-        radius : (
-            top-left : 5pt,
-            bottom-right : 5pt
         ),
         fill: rgb("#0000FF").lighten(90%),
         width:100%,
