@@ -60,41 +60,29 @@
 
 /// Funcion para crear un encabezado
 //
-// :FACER: nome do capitulo ou seccion no encabezado
+// :FACER: nome do seccion no encabezado
 #let crear_encabezado() = context {
     let num = counter(page).get().first()
     if calc.even(num) {
-        set text(size: 9pt)
+        set text(size: 9pt, fill: luma(40%))
+        let cap = query(heading.where(level: 1).before(here()))
         grid(
-            columns: (1fr, 1fr, 1fr),
-            rows: (1em, 1em),
-            align: (left + horizon, right + horizon, right + horizon),
+            columns : (1fr, 1fr, 1fr),
+            rows    : (1em, 1em),
+            align   : (left + horizon, right + horizon, right + horizon),
             grid.cell(
-                x: 0, y: 0,
-                tt[#datetime.today().display()],
+                x:2, y:0,
+                upper[#cap.last().body]
             ),
             grid.cell(
                 x:0, y:1,
                 colspan: 3,
-                line(length: 100%, stroke: 0.5pt),
+                line(length: 100%, stroke: 0.5pt + luma(40%)),
             )
         )
     } else {
-        set text(size: 9pt)
-        grid(
-            columns: (1fr, 1fr, 2fr),
-            rows: (1em, 1em),
-            align: (left + horizon, right + horizon, right + horizon),
-            grid.cell(
-                x: 2, y: 0,
-                tt[ #nf[]#sys.inputs.rama:(#sys.inputs.dirt):#nf[]#sys.inputs.hash ],
-            ),
-            grid.cell(
-                x:0, y:1,
-                colspan: 3,
-                line(length: 100%, stroke: 0.5pt),
-            )
-        )
+        set text(size: 9pt, fill: luma(40%))
+        line(length: 100%, stroke: 0.5pt + luma(40%))
     }
 }
 
@@ -105,13 +93,13 @@
         grid(
             columns: (10%, 1fr),
             align: (left + horizon, right + horizon),
-            [#num], line(length:100%, stroke:0.5pt)
+            [*#num*], line(length:100%, stroke:0.5pt + luma(40%))
         )
     } else {
         grid(
             columns: (1fr, 10%),
             align: (left + horizon, right + horizon),
-            line(length:100%, stroke:0.5pt), [#num]
+            line(length:100%, stroke:0.5pt + luma(40%) ), [*#num*]
         )
     }
 }
