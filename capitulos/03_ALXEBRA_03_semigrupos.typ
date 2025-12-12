@@ -30,9 +30,10 @@ Veremos esto unhas seccións máis adiante.
     $
         (forall b_1, b_2 in B) space.quad b_1 * b_2 in B
     $
-    Non é necesario falar de asociatividade porque $*$ é asociativa con
-    calquera parella de elemenos de $A$, e polo tanto, de $B$.
 ]
+
+Non é necesario falar de asociatividade porque $*$ é asociativa con
+calquera parella de elemenos de $A$, e polo tanto, de $B$.
 
 Se temos dous semigrupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 semigrupos como o morfismo

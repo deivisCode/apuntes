@@ -14,9 +14,10 @@
     un elemento neutro $e in A$, dise que é un monoide#indice[monoide]. É
     dicir, un semigrupo onde tamén existe un neutro.
 
-    Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
-    _ou_ multiplicar pero non dividir.
 ]
+
+Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
+_ou_ multiplicar pero non dividir.
 
 Podemos referirnos simplemente ao monoide como $A$. Se a operación é
 conmutativa, diremos que é un monoide conmutativo.

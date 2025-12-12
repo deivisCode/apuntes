@@ -120,10 +120,10 @@ reducilo a unha sola co seguinte teorema.
     $
         B subgrupo A sse (forall b_1,b_2 in B) space.quad b_1*b_2^(-1) in B
     $
-
-    En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir, que un
-    elemento de $B$ calqueira, polo inverso doutro, está en $B$.
 ]
+
+En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir, que un
+elemento de $B$ calqueira, polo inverso doutro, está en $B$.
 
 Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010") O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se

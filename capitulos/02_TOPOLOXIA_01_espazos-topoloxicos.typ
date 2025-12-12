@@ -30,18 +30,14 @@ O segundo caso é o seguinte: #cita("goldberg_1980")
         &{A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau
     $
 
-    Ollo, a intersección é dun número _finito_ de elementos, pero a unión dun
-    número arbitrario e pode que _infinito_. #nota[Non é de todo relevante para
-    nós a distinción dos casos finito e infinito.]
-
 ]
 
-A segunda propiedade dinos que a interescción dun número _finito_ de elementos
-da topoloxía tamén pertence a $tau$, e a terceira que a unión _infinita_ tamén
-o fai.
-
-Os elementos de $tau$ chámanse #indice("Conxunto")[Aberto] conxuntos abertos,
-ou simplemente abertos.
+Ollo, a intersección é dun número _finito_ de elementos, pero a unión dun
+número arbitrario e pode que _infinito_. #nota[Non é de todo relevante para nós
+a distinción dos casos finito e infinito.] A segunda propiedade dinos que a
+interescción dun número _finito_ de elementos da topoloxía tamén pertence a
+$tau$, e a terceira que a unión _infinita_ tamén o fai. Os elementos de $tau$
+chámanse #indice("Conxunto")[Aberto] conxuntos abertos, ou simplemente abertos.
 // :FACER: como saber cando un conxunto é aberto?
 
 #definicion(
