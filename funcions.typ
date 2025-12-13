@@ -276,18 +276,21 @@
         let SEC = counter(heading.where(level: 2)).at(here()).last()
         sf[#v(1.5em) #h(1fr) *$section$* #HEA.#SEC #eso.body #v(0.5em)]
     }
-    [
-        #figure(
-            kind: "seccion",
-            supplement: [Sección],
-            heading(
-                level: 2,
-                numbering: "1.",
-                [#nome],
+    block(
+        sticky: true,
+        [
+            #figure(
+                kind: "seccion",
+                supplement: [Sección],
+                heading(
+                    level: 2,
+                    numbering: "1.",
+                    [#nome],
+                )
             )
-        )
-        #label(ancora)
-    ]
+            #label(ancora)
+        ]
+    )
 }
 
 /// Un bloque que ocupa a marxe grande tamén.
