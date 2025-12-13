@@ -45,7 +45,7 @@
 #let azul   = eso => text(fill: rgb(_azul)   , weight: "bold", font: _sans)[#eso]
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota = note.with( numbering: none, text-style:(size:10pt, fill: rgb(_verde), font: _sans) )
+#let nota = note.with(numbering: none, text-style:(size:10pt, fill: rgb(_verde), font: _sans_math))
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
