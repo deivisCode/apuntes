@@ -327,6 +327,29 @@
     )
 }
 
+#let imaxe(
+    nome   : "/figuras/svg/patata.svg",
+    pe     : " -- SEN PÉ -- ",
+    ancho  : auto,
+    alto   : auto
+) = {
+    figure(
+        rect(
+            fill   : luma(94%),
+            width  : 100%,
+            inset  : 0pt,
+            image(
+                height : alto,
+                width  : ancho,
+                nome,
+            )
+        ),
+        caption : pe,
+        kind : "imaxe",
+        supplement : "Figura"
+    )
+}
+
 /// Un bloque que ocupa a marxe grande tamén.
 #let bloque_ancho(contido) = {
     context {
