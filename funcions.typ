@@ -22,18 +22,30 @@
 // :FACER: Indice. como facer 'see ...'
 #import "@preview/in-dexter:0.7.2": index as indice, make-index
 
-// Pequena funcion pa usar texto en Sans e en Monoespaciado
-#let sf = eso => text(font: "New Computer Modern Sans")[#eso]
-#let tt = eso => text(font: "New Computer Modern Mono")[#eso]
-#let nf = eso => text(font: "Symbols Nerd Font Mono")[#eso]
-
-// Cadeas para facer 'show this: set text(font: _sans)
+// Tipos de letra
 #let _sans = "New Computer Modern Sans"
 #let _mono = "New Computer Modern Mono"
 #let _nerd = "Symbols Nerd Font Mono"
+#let sf = eso => text(font: _sans)[#eso]
+#let tt = eso => text(font: _mono)[#eso]
+#let nf = eso => text(font: _nerd)[#eso]
+#let nf = eso => text(font: _nerd)[#eso]
+
+#let _sans_math = "New Computer Modern Sans Math"
+#let sfm = eso => text(font: _sans_math)[#eso]
+
+// Cores que me gustan
+#let _verde  = "#008000"
+#let _morado = "#8000CC"
+#let _rosa   = "#f000f0"
+#let _azul   = "#00b8eb"
+#let verde  = eso => text(fill: rgb(_verde))[#eso]
+#let morado = eso => text(fill: rgb(_morado) , weight: "bold", font: _sans)[#eso]
+#let rosa   = eso => text(fill: rgb(_rosa)   , weight: "bold", font: _sans)[#eso]
+#let azul   = eso => text(fill: rgb(_azul)   , weight: "bold", font: _sans)[#eso]
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota = note.with( numbering: none, text-style:(size:10pt) )
+#let nota = note.with( numbering: none, text-style:(size:10pt, fill: rgb(_verde), font: _sans) )
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
@@ -61,7 +73,7 @@
             note(
                 side: "outer",
                 numbering: none,
-                text-style:(size:10pt),
+                text-style:(size:10pt, fill: rgb(_azul), weight: "bold", font: _sans),
                 cite(label(nome), form: "full"),
             )
         }
@@ -78,12 +90,12 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    // Creo un rectangulo
+    set par(first-line-indent:0pt)
     block(
         stroke : (
-            left : rgb("#FF0000").lighten(50%) + 2pt
+            left : rgb(_morado) + 2pt
         ),
-        fill  : rgb("#FF0000").lighten(90%),
+        fill  : rgb(_morado).lighten(90%),
         below : 0pt,
         width : 100%,
         inset : (
@@ -95,11 +107,9 @@
         outset : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
         breakable : false,
         sticky : true,
-        // Metolle contido dentro
         [
             #show figure: set align(left)
             #show figure: set block(breakable: false)
-            #set par(first-line-indent:0pt)
             #figure(
                 kind:"teorema",
                 supplement: nome,
@@ -117,9 +127,9 @@
     )
     block(
         stroke : (
-            left : rgb("#FF0000").lighten(50%) + 2pt
+            left : rgb(_morado) + 2pt
         ),
-        fill  : rgb("#FF0000").lighten(90%),
+        fill  : rgb(_morado).lighten(90%),
         width : 100%,
         inset : (
             top    : 0.9em,
@@ -138,11 +148,12 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
+    set par(first-line-indent:0pt)
     block(
         stroke : (
-            left : rgb("#0000FF").lighten(50%) + 2pt
+            left : rgb(_morado) + 2pt
         ),
-        fill  : rgb("#0000FF").lighten(90%),
+        fill  : rgb(_morado).lighten(90%),
         width : 100%,
         below : 0pt,
         inset : (
@@ -157,7 +168,6 @@
         [
             #show figure: set align(left)
             #show figure: set block(breakable: false)
-            #set par(first-line-indent:0pt)
             #figure(
                 kind:"definicion",
                 supplement: nome,
@@ -173,9 +183,9 @@
     )
     block(
         stroke : (
-            left : rgb("#0000FF").lighten(50%) + 2pt
+            left : rgb(_morado) + 2pt
         ),
-        fill  : rgb("#0000FF").lighten(90%),
+        fill  : rgb(_morado).lighten(90%),
         width : 100%,
         inset : (
             top    : 0.9em,
@@ -192,7 +202,7 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    set text(size: 0.8em)
+    set text(size: 0.9em, fill: luma(40%), font: _sans)
     set par(first-line-indent:0pt)
     block(
         stroke : (
@@ -209,10 +219,34 @@
         ),
         outset : ( top: 1pt ),
         breakable : true,
-        [_Demostración_ #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
+        [#underline[Demostración] #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
     )
 }
 
+#let exemplos(
+    corpo
+) = {
+    set text(size: 0.9em, fill: luma(40%), font: _sans)
+    set par(first-line-indent:0pt)
+    show math.equation: set text(font: _sans_math)
+    block(
+        stroke : (
+            left : 2pt + luma(90%),
+        ),
+        fill  : luma(96%),
+        width : 100%,
+        // above : 0pt,
+        inset : (
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
+        ),
+        outset : ( top: 1pt ),
+        breakable : true,
+        [ #underline[Exemplos]: #v(1em) #corpo]
+    )
+}
 
 
 /// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.

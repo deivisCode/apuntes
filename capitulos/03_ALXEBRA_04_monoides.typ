@@ -30,21 +30,20 @@ facemos aquí son os mesmos que ao construír aneis, espazos lineais, ou álxebr
 de Lie. Penso que ao coñecer os pasos é máis sinxelo entender as definicións
 máis complexas.
 
-Exemplos de monoides abstractos e nada visuais, pero útiles:
+#exemplos[
+    - Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A elección da
+      letra $S$ non é arbitraria. Máis adiante aparecerá o chamado grupo Simétrico,
+      e por certa similitude, denoto igual a este monoide] o conxunto de todas as
+      funcións $f: X arrow.r X$, é dicir, as funcións de $X$ en sí mesmo. Se
+      $compose$ denota a composición de funcións, e $e$ é a función identidade $id: X
+      arrow.r X, id(x) = x$, entón $(S(X),compose)$ é un monoide, sendo $id$ o seu
+      neutro
 
-- Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A elección da
-  letra $S$ non é arbitraria. Máis adiante aparecerá o chamado grupo Simétrico,
-  e por certa similitude, denoto igual a este monoide] o conxunto de todas as
-  funcións $f: X arrow.r X$, é dicir, as funcións de $X$ en sí mesmo. Se
-  $compose$ denota a composición de funcións, e $e$ é a función identidade $id: X
-  arrow.r X, id(x) = x$, entón $(S(X),compose)$ é un monoide, sendo $id$ o seu
-  neutro
-
-- Para un conxunto calquera $X$, denotamos como $scr(P)(X)$ o conxunto de todos os
-  subconxuntos de $X$. Se $union$ e $inter$ son a unión e intersección de
-  conxuntos, entón $( scr(P)(X), union )$ e $( scr(P)(X), inter )$ son monoides.
-  No primerio caso o neutro é $emptyset$, e no segundo é $X$
-
+    - Para un conxunto calquera $X$, denotamos como $scr(P)(X)$ o conxunto de todos os
+      subconxuntos de $X$. Se $union$ e $inter$ son a unión e intersección de
+      conxuntos, entón $( scr(P)(X), union )$ e $( scr(P)(X), inter )$ son monoides.
+      No primerio caso o neutro é $emptyset$, e no segundo é $X$
+]
 
 #definicion(
     nome : "Submonoide",

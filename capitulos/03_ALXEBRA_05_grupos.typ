@@ -29,42 +29,44 @@ diremos que o grupo é conmutativo, ou _abeliano_. #cita("rotman_2000")
 
 Exemplos de grupos son:
 
-+ Sexa o conxunto ${0,1}$ e a operación $plus.o$ dada pola porta lóxica
-  #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un so_ dos
-  argumentos é 1. Entón, dito conxunto ca operación $plus.o$ é un grupo. O
-  neutro é 0, xa que $0 plus.o 1 = 1$, $1 plus.o 0 = 1$, $0
-  plus.o 0 = 0$. O inverso de cada elemento é el mismo, $0 plus.o 0 =
-  0$ e $1 plus.o 1 = 0$
+#exemplos[
+    + Sexa o conxunto ${0,1}$ e a operación $plus.o$ dada pola porta lóxica
+      #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un so_ dos
+      argumentos é 1. Entón, dito conxunto ca operación $plus.o$ é un grupo. O
+      neutro é 0, xa que $0 plus.o 1 = 1$, $1 plus.o 0 = 1$, $0
+      plus.o 0 = 0$. O inverso de cada elemento é el mismo, $0 plus.o 0 =
+      0$ e $1 plus.o 1 = 0$
 
-+ Sexa $M_(2 times 2)$ o conxunto de matrices cadradas de tamaño $2 times 2$ da
-  forma
+    + Sexa $M_(2 times 2)$ o conxunto de matrices cadradas de tamaño $2 times 2$ da
+      forma
 
-    $ mat(a,a;a,a;) $ #label("ec:alxebra:matriz_aaaa")
+        $ mat(a,a;a,a;) $ #label("ec:alxebra:matriz_aaaa")
 
-    con $a in RR$. A operación é o produto usual de matrices, que é asociativo.
-    Multiplicar calquera parella de matrices $M,M'$ desta forma danos outra que
-    pertence ao noso conxunto. Ademáis, o neutro do produto para a matriz
-    @ec:alxebra:matriz_aaaa é a matriz
+        con $a in RR$. A operación é o produto usual de matrices, que é asociativo.
+        Multiplicar calquera parella de matrices $M,M'$ desta forma danos outra que
+        pertence ao noso conxunto. Ademáis, o neutro do produto para a matriz
+        @ec:alxebra:matriz_aaaa é a matriz
 
-    $ mat(1/(2a), 1/(2a);1/(2a), 1/(2a); ) $
+        $ mat(1/(2a), 1/(2a);1/(2a), 1/(2a); ) $
 
-    E o elemento inverso é
+        E o elemento inverso é
 
-    $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ) $
+        $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ) $
 
-+ Sexa $X$ un conxunto calquera e $scr(P)(X)$ o conxunto de todos os
-  subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza simétrica_
-  de dous subconxuntos $A,B in scr(P)(X)$ dada por $A + B = (A-B) union (B-A)$.
-  A parella $(scr(P)(X), +)$ é un grupo. A identidade $A in scr(P)(X)$ é
-  $emptyset$ e o inverso de $A$ é $A$. #cita("rotman_2000")
+    + Sexa $X$ un conxunto calquera e $scr(P)(X)$ o conxunto de todos os
+      subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza simétrica_
+      de dous subconxuntos $A,B in scr(P)(X)$ dada por $A + B = (A-B) union (B-A)$.
+      A parella $(scr(P)(X), +)$ é un grupo. A identidade $A in scr(P)(X)$ é
+      $emptyset$ e o inverso de $A$ é $A$. #cita("rotman_2000")
 
-+ O conxunto de todas as matrices cadradas, invertibles de tamaño $n times n$ e
-  con coeficientes en $RR$ é un grupo ca operación usual de multiplicación
-  matricial. A multiplicación de matrices é unha operación interna e
-  asociativa. O neutro é a matriz identidade $bb(1) = mat(1, 0; 0, 1)$. O
-  inverso existe (as matrices inversas dadas pola fórmula usual). Este grupo
-  adoita chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n, RR)$.
-  #nota[Veremos que outros moitos grupos de interese son subconxuntos deste.]
+    + O conxunto de todas as matrices cadradas, invertibles de tamaño $n times n$ e
+      con coeficientes en $RR$ é un grupo ca operación usual de multiplicación
+      matricial. A multiplicación de matrices é unha operación interna e
+      asociativa. O neutro é a matriz identidade $bb(1) = mat(1, 0; 0, 1)$. O
+      inverso existe (as matrices inversas dadas pola fórmula usual). Este grupo
+      adoita chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n, RR)$.
+      #nota[Veremos que outros moitos grupos de interese son subconxuntos deste.]
+]
 
 // :FACER: grupo afín?
 
@@ -72,7 +74,7 @@ Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
 multiplicar e dividir. Personalmente vou usar notación multiplicativa nesta
 sección. A diferenza dos monoides, agora temos noción de _elemento inverso_,
 polo que aparece unha propiedade importante, a
-*cancelación*. [Lema 2.18]#cita("rotman_2000") Por un lado
+#rosa[cancelación]. [Lema 2.18]#cita("rotman_2000") Por un lado
 // :FACER: propiedade de cancelación nun teorema?
 
 $

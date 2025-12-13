@@ -44,31 +44,31 @@ $(V,KK,+)$, un _$KK$-espazo lineal_ ou un _espazo lineal sobre $KK$_. No límite
 de abusar da notación, referirémonos ao espazo lineal só polo nome do grupo,
 $V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
 
-Exemplos de espazos lineais:
+#exemplos[
+    - O conxunto ${a cos(x), a in RR}$ ca suma de funcións usual $3cos(x) + 7cos(x)
+      = 10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se escollemos a
+      operación entre vectores e escalares de xeito que $k circle.stroked.tiny (a
+      dot cos(x)) = (k a) dot cos(x)$, entón dito conxunto de cosenos, co campo dos
+      reais e a operación indicada, é un espazo lineal. Evidentemente este espazo
+      non ten unha interpretación "gráfica" ou "visual" evidente, inda así cada
+      elemento da forma $3cos(x)$ é un vector.
 
-- O conxunto ${a cos(x), a in RR}$ ca suma de funcións usual $3cos(x) + 7cos(x)
-  = 10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se escollemos a
-  operación entre vectores e escalares de xeito que $k circle.stroked.tiny (a
-  dot cos(x)) = (k a) dot cos(x)$, entón dito conxunto de cosenos, co campo dos
-  reais e a operación indicada, é un espazo lineal. Evidentemente este espazo
-  non ten unha interpretación "gráfica" ou "visual" evidente, inda así cada
-  elemento da forma $3cos(x)$ é un vector.
-
-- O conxunto de ternas $(x,y,z)$ con $x,y,x in RR$ ca operación de suma usual,
-  é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$ é un grupo. Se temos o campo
-  dos reais $RR$, e a operación entre $RR$ e as ternas definida como $k (x,y,z) =
-  (k x,k y,k z)$ entón, temos un espazo vectorial
-  $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso, os vectores si teñen
-  unha interpretación xeométrica evidente.
+    - O conxunto de ternas $(x,y,z)$ con $x,y,x in RR$ ca operación de suma usual,
+      é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$ é un grupo. Se temos o campo
+      dos reais $RR$, e a operación entre $RR$ e as ternas definida como $k (x,y,z) =
+      (k x,k y,k z)$ entón, temos un espazo vectorial
+      $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso, os vectores si teñen
+      unha interpretación xeométrica evidente.
+]
 
 En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza ca
 xeometría (concretamente, frechas en $RR^3$). En física é común facer énfase no
 segundo caso, usándoo como exemplo para explicar conceptos en calquera nivel e
-situación. Eu, pra evitar confusións, vou seguir *sempre* unha notación
+situación. Eu, pra evitar confusións, vou seguir #rosa[sempre] unha notación
 concreta:
 
-+ *Vector* será un elemento dun espazo lineal no sentido presentado.
-+ *Vector xeométrico* será o concepto de vector que se usa na física, cunha
++ #rosa[Vector] será un elemento dun espazo lineal no sentido presentado.
++ #rosa[Vector xeométrico] será o concepto de vector que se usa na física, cunha
   clara compoñente xeométrica.
 
 A distinción será especialmente evidente no caso da álxebra multilineal, onde

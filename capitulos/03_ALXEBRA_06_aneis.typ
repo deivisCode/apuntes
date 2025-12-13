@@ -28,11 +28,12 @@ Podemos referirnos simplemente ao anel como $A$. Se a operación $dot$ é
 conmutativa dicimos que o anel é conmutativo.
 
 // :FACER: mais exemplos de aneis
-Algúns exemplos de aneis:
-
-+ Sexa $M_(n times n)$ o conxunto de matrices cadradas de tamaño $n times n$,
-  onde temos as operacións de suma $+$ e produto $dot$ usuais de matrices.
-  O conxunto $(M_(n times n), +, dot)$ é un anel
+// :FACER: nos exemplos usar + ou - nas listas??
+#exemplos[
+    + Sexa $M_(n times n)$ o conxunto de matrices cadradas de tamaño $n times n$,
+    onde temos as operacións de suma $+$ e produto $dot$ usuais de matrices.
+    O conxunto $(M_(n times n), +, dot)$ é un anel
+]
 
 Ca práctica acumulada presentando diferentes estruturas, non será nada
 sorprendente a definición de _subanel_.

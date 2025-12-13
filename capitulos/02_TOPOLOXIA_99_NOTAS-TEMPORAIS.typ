@@ -153,30 +153,32 @@ $f$ non é continua.
 Ollo! A definición é moi parecida á de función continua
 @def:topoloxia:funcion-continua !
 
-Por exemplo, sexa a funcion $f(x) = -abs(x)$ e ambos espazos topolóxicos $RR$ ca
-topoloxía usual. Calquera intervalo aberto $U = (a,b) in tau_u$ pasa a outro
-intervalo tamén aberto $f(U) = (f(a), f(b)) in tau_u $, polo que a función é
-aberta. #nota[Esto digoo a ollo, dame reparo probalo]
+#exemplos[
+    Sexa a funcion $f(x) = -abs(x)$ e ambos espazos topolóxicos $RR$ ca
+    topoloxía usual. Calquera intervalo aberto $U = (a,b) in tau_u$ pasa a outro
+    intervalo tamén aberto $f(U) = (f(a), f(b)) in tau_u $, polo que a función é
+    aberta. #nota[Esto digoo a ollo, dame reparo probalo]
 
-A función $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por
+    A función $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por
 
-$
-    f(x) = cases(
-        -x &"se" x lt 0,
-        2  &"se" x gt.eq 0
-    )
-$
+    $
+        f(x) = cases(
+            -x &"se" x lt 0,
+            2  &"se" x gt.eq 0
+        )
+    $
 
-non é aberta porque os abertos $U = (a, oo) in tau_K$ pasan a
+    non é aberta porque os abertos $U = (a, oo) in tau_K$ pasan a
 
-$
-    f(U) = cases(
-        (a, oo) union {2} "se" a lt 0,
-                      {2} "se" a gt.eq 0
-    )
-$
+    $
+        f(U) = cases(
+            (a, oo) union {2} "se" a lt 0,
+                          {2} "se" a gt.eq 0
+        )
+    $
 
-e en ningún caso é aberto.
+    e en ningún caso é aberto.
+]
 
 #definicion(
     nome : "Funcion Pechada",
@@ -191,9 +193,11 @@ e en ningún caso é aberto.
     $
 ]
 
-A funcion $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por $f(x) = abs(x)$ non é
-pechada porque o caso concreto $U = (-oo,1] $ pechado ten como imaxe o conxunto
-$f(U) = [0,oo)$ que non é pechado.
+#exemplos[
+    A funcion $f:(RR,tau_K) arrow.r (RR,tau_K)$ definida por $f(x) = abs(x)$ non é
+    pechada porque o caso concreto $U = (-oo,1] $ pechado ten como imaxe o conxunto
+    $f(U) = [0,oo)$ que non é pechado.
+]
 
 #definicion(
     nome : "Homeomorfismo",
@@ -287,20 +291,20 @@ temos asegurado que ditos espazos non son homeomorfos
 
 ]
 
-Por exemplo
+#exemplos[
+    - $(RR, tau_"U")$ é de Hausdorff. Para calquera parella de puntos $a,b in RR$
+      sempre podemos atopar sendas bólas abertas centradas neles e de radios $r =
+      |a - b|\/ 3$.
 
-- $(RR, tau_"U")$ é de Hausdorff. Para calquera parella de puntos $a,b in RR$
-  sempre podemos atopar sendas bólas abertas centradas neles e de radios $r =
-  |a - b|\/ 3$.
+    - $(RR, tau_"IND")$ Non é de Hausdorf, porque os únicos abertos que poden
+      conter respectivamente a $a$ e $b$ son $RR$, polo que non hai $U$ e $V$
+      disxuntos.
 
-- $(RR, tau_"IND")$ Non é de Hausdorf, porque os únicos abertos que poden
-  conter respectivamente a $a$ e $b$ son $RR$, polo que non hai $U$ e $V$
-  disxuntos.
+    - $(RR,tau_"K")$ Non é de Hausdorff. Sexan $a in (x, oo) = U$, $b in (y,oo) = V$. Se $x > y$ entón $U
+      inter V = (x, oo) eq.not emptyset$
 
-- $(RR,tau_"K")$ Non é de Hausdorff. Sexan $a in (x, oo) = U$, $b in (y,oo) = V$. Se $x > y$ entón $U
-  inter V = (x, oo) eq.not emptyset$
-
-- $(RR,tau_"DIS")$ Si é de Hausdorff. Sexan $x in {x} = U, y in {y} = V$, entón
-  $U inter V = emptyset$.
+    - $(RR,tau_"DIS")$ Si é de Hausdorff. Sexan $x in {x} = U, y in {y} = V$, entón
+      $U inter V = emptyset$.
+]
 
 Ser de Hausdorff é unha propiedade topolóxica.
