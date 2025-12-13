@@ -83,18 +83,22 @@
         stroke : (
             left : rgb("#FF0000").lighten(50%) + 2pt
         ),
-        fill: rgb("#FF0000").lighten(90%),
-        width:100%,
+        fill  : rgb("#FF0000").lighten(90%),
+        below : 0pt,
+        width : 100%,
         inset : (
             top    : 0.9em,
             bottom : 0.9em,
             left   : 0.9em,
             right  : 0.9em
         ),
+        outset : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
+        breakable : false,
+        sticky : true,
         // Metolle contido dentro
         [
             #show figure: set align(left)
-            #show figure: set block(breakable: false) // :FACER: non me convence como se ve entre páxinas
+            #show figure: set block(breakable: false)
             #set par(first-line-indent:0pt)
             #figure(
                 kind:"teorema",
@@ -103,13 +107,28 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"teorema")).get().first()
-                    [ *Teorema* #HEA.#SEC.#NUM: #smallcaps(nome) #v(0.3em) #corpo ]
+                    [*Teorema* #HEA.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
             // ánclase á figura anterior
             #label(ancora)
         ]
+    )
+    block(
+        stroke : (
+            left : rgb("#FF0000").lighten(50%) + 2pt
+        ),
+        fill  : rgb("#FF0000").lighten(90%),
+        width : 100%,
+        inset : (
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
+        ),
+        breakable : true,
+        [#corpo]
     )
 }
 
@@ -123,14 +142,18 @@
         stroke : (
             left : rgb("#0000FF").lighten(50%) + 2pt
         ),
-        fill: rgb("#0000FF").lighten(90%),
-        width:100%,
+        fill  : rgb("#0000FF").lighten(90%),
+        width : 100%,
+        below : 0pt,
         inset : (
             top    : 0.9em,
             bottom : 0.9em,
             left   : 0.9em,
             right  : 0.9em
         ),
+        outset : ( bottom: 1pt ),
+        breakable : false,
+        sticky : true,
         [
             #show figure: set align(left)
             #show figure: set block(breakable: false)
@@ -142,11 +165,26 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"definicion")).get().first()
-                    [ *Definición* #HEA.#SEC.#NUM: #smallcaps(nome) #v(0.3em) #corpo ]
+                    [*Definición* #HEA.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             #label(ancora)
         ]
+    )
+    block(
+        stroke : (
+            left : rgb("#0000FF").lighten(50%) + 2pt
+        ),
+        fill  : rgb("#0000FF").lighten(90%),
+        width : 100%,
+        inset : (
+            top    : 0.9em,
+            bottom : 0.9em,
+            left   : 0.9em,
+            right  : 0.9em
+        ),
+        breakable : true,
+        [#corpo]
     )
 }
 
@@ -159,16 +197,18 @@
     block(
         stroke : (
             left : 2pt + luma(90%),
-            // right: 2pt + luma(90%)
         ),
-        fill: luma(96%),
-        width:100%,
+        fill  : luma(96%),
+        width : 100%,
+        above : 0pt,
         inset : (
             top    : 0.9em,
             bottom : 0.9em,
             left   : 0.9em,
             right  : 0.9em
         ),
+        outset : ( top: 1pt ),
+        breakable : true,
         [_Demostración_ #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
     )
 }
