@@ -14,7 +14,7 @@
 #let crear_portada() = {
     set align(center)
     v(3em)
-    text(size:30pt, weight:"bold", title() )
+    text(size:3em, weight:"bold", title() )
     v(1em)
     smallcaps( context {document.author.join("\n")} )
     v(1em)
@@ -42,7 +42,7 @@
 /// Funcion para crear o Índice de materias
 #let crear_indice_contidos() = {
     show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
-    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:15pt)
+    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:1.4em)
     show outline.entry.where( level: 1 ): set outline.entry(fill: none)
     show heading.where(level: 1): set block(below: 1em)
     heading(
@@ -64,7 +64,7 @@
 #let crear_encabezado() = context {
     let num = counter(page).get().first()
     if calc.even(num) {
-        set text(size: 9pt, fill: luma(40%))
+        set text(size: 0.8em, fill: _gris_titulos)
         let cap = query(heading.where(level: 1).before(here()))
         grid(
             columns : (1fr, 1fr, 1fr),
@@ -77,12 +77,11 @@
             grid.cell(
                 x:0, y:1,
                 colspan: 3,
-                line(length: 100%, stroke: 0.5pt + luma(40%)),
+                line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
     } else {
-        set text(size: 9pt, fill: luma(40%))
-        line(length: 100%, stroke: 0.5pt + luma(40%))
+        line(length: 100%, stroke: _pt_fino + _gris_titulos)
     }
 }
 
@@ -93,13 +92,13 @@
         grid(
             columns: (10%, 1fr),
             align: (left + horizon, right + horizon),
-            [*#num*], line(length:100%, stroke:0.5pt + luma(40%))
+            [*#num*], line(length:100%, stroke: _pt_fino + _gris_titulos)
         )
     } else {
         grid(
             columns: (1fr, 10%),
             align: (left + horizon, right + horizon),
-            line(length:100%, stroke:0.5pt + luma(40%) ), [*#num*]
+            line(length:100%, stroke: _pt_fino + _gris_titulos ), [*#num*]
         )
     }
 }
@@ -134,7 +133,7 @@
             box[
                 #eso.element.supplement
                 #h(0.4em)
-                #box(width: 1fr,repeat([.], gap: 1pt))
+                #box(width: 1fr,repeat([.], gap: 0.4em))
                 #h(0.4em)
                 #eso.page()
                 \
@@ -164,7 +163,7 @@
             box[
                 #eso.element.supplement
                 #h(0.4em)
-                #box(width: 1fr,repeat([.], gap: 1pt))
+                #box(width: 1fr,repeat([.], gap: 0.4em))
                 #h(0.4em)
                 #eso.page()
                 \
@@ -209,9 +208,9 @@
         binding : left,
     )
     set text(
-        size      : 12pt,
+        size      : _pt_letra,
         lang      : "gl",
-        font      : "New Computer Modern",
+        font      : _norm,
         weight    : 550,
         fallback  : false,
         style     : "normal",
@@ -247,6 +246,8 @@
         leading              : 0.65em,
         linebreaks           : "optimized"
     )
+    show heading: set text(size: _pt_letra) // Un apaño
+    show math.equation: set text(font: _math)
     doc
 }
 

@@ -23,9 +23,11 @@
 #import "@preview/in-dexter:0.7.2": index as indice, make-index
 
 // Tipos de letra
+#let _norm = "New Computer Modern"
 #let _sans = "New Computer Modern Sans"
 #let _mono = "New Computer Modern Mono"
 #let _nerd = "Symbols Nerd Font Mono"
+#let _math = "New Computer Modern Math"
 #let sf = eso => text(font: _sans)[#eso]
 #let tt = eso => text(font: _mono)[#eso]
 #let nf = eso => text(font: _nerd)[#eso]
@@ -44,13 +46,37 @@
 #let rosa   = eso => text(fill: rgb(_rosa)   , weight: "bold", font: _sans)[#eso]
 #let azul   = eso => text(fill: rgb(_azul)   , weight: "bold", font: _sans)[#eso]
 
+#let _gris_bordos  = luma(90%)
+#let _gris_fondos  = luma(96%)
+#let _gris_notas   = luma(40%)
+#let _gris_textos  = luma(40%)
+#let _gris_titulos = luma(40%)
+
+#let _pt_letra = 12pt
+
+// Grosores dalguns bordes
+#let _pt_fino  = 0.6pt // bordes figuras, encabezados
+#let _pt_envs  = 2pt   // bordes teoremas, defs, exemplos, etc.
+
+// Espazos para teoremas, defs, exemplos, etc.
+#let _in_envs = (
+    top    : 0.9em,
+    bottom : 0.9em,
+    left   : 0.9em,
+    right  : 0.9em,
+)
+
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota = note.with(numbering: none, text-style:(
-    size:10pt,
-    // fill: rgb(_verde),
-    fill: luma(30%),
-    font: _sans_math,
-))
+#let nota(eso) = {
+    note.with(
+        numbering: none,
+        text-style: (
+            size: 0.8em,
+            fill: _gris_notas,
+            font: _sans,
+        ),
+    )(eso)
+}
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
@@ -66,7 +92,6 @@
         let repetido = lista_citas.get().contains(str(nome))
         // Se non o está
         if not repetido {
-            show math.equation: set text(font: _sans_math)
             // :FACER: cambiar idioma para as citas (así fai mellores hífens)?
             // Includo creando un parámetro (por defecto 'en' ou 'es') para
             // controlalo en cada cita. Ou incluso usar a info da cita?. CSL
@@ -76,17 +101,7 @@
             // Engadimos o nome a lista
             lista_citas.update(eso => eso + (str(nome),))
             // E engadimos unha nota ao marxe, ca cita completa
-            note(
-                side: "outer",
-                numbering: none,
-                text-style:(
-                    size:10pt,
-                    fill: luma(30%),
-                    // weight: "bold",
-                    font: _sans_math,
-                ),
-                cite(label(nome), form: "full"),
-            )
+            nota(cite(label(nome), form: "full"),)
         }
     }
 }
@@ -104,17 +119,12 @@
     set par(first-line-indent:0pt)
     block(
         stroke : (
-            left : rgb(_morado) + 2pt
+            left : rgb(_morado) + _pt_envs
         ),
         fill  : rgb(_morado).lighten(90%),
         below : 0pt,
         width : 100%,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         outset : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
         breakable : false,
         sticky : true,
@@ -138,16 +148,11 @@
     )
     block(
         stroke : (
-            left : rgb(_morado) + 2pt
+            left : rgb(_morado) + _pt_envs
         ),
         fill  : rgb(_morado).lighten(90%),
         width : 100%,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         breakable : true,
         [#corpo]
     )
@@ -162,17 +167,12 @@
     set par(first-line-indent:0pt)
     block(
         stroke : (
-            left : rgb(_morado) + 2pt
+            left : rgb(_morado) + _pt_envs
         ),
         fill  : rgb(_morado).lighten(90%),
         width : 100%,
         below : 0pt,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         outset : ( bottom: 1pt ),
         breakable : false,
         sticky : true,
@@ -194,16 +194,11 @@
     )
     block(
         stroke : (
-            left : rgb(_morado) + 2pt
+            left : rgb(_morado) + _pt_envs
         ),
         fill  : rgb(_morado).lighten(90%),
         width : 100%,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         breakable : true,
         [#corpo]
     )
@@ -213,21 +208,16 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    set text(size: 0.9em, fill: luma(40%), font: _sans)
+    set text(size: 0.9em, fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
         stroke : (
-            left : 2pt + luma(90%),
+            left : _gris_bordos + _pt_envs,
         ),
-        fill  : luma(96%),
+        fill  : _gris_fondos,
         width : 100%,
         above : 0pt,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         outset : ( top: 1pt ),
         breakable : true,
         [#underline[Demostración] #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
@@ -237,22 +227,16 @@
 #let exemplos(
     corpo
 ) = {
-    set text(size: 0.9em, fill: luma(40%), font: _sans)
+    set text(size: 0.9em, fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
-    show math.equation: set text(font: _sans_math)
     block(
         stroke : (
-            left : 2pt + luma(90%),
+            left : _gris_bordos + _pt_envs,
         ),
-        fill  : luma(96%),
+        fill  : _gris_fondos,
         width : 100%,
         // above : 0pt,
-        inset : (
-            top    : 0.9em,
-            bottom : 0.9em,
-            left   : 0.9em,
-            right  : 0.9em
-        ),
+        inset : _in_envs,
         outset : ( top: 1pt ),
         breakable : true,
         [ #underline[Exemplos]: #v(1em) #corpo]
@@ -270,8 +254,8 @@
         show text: set text(font: _sans)
         set align(left)
         let CAP = counter(heading.where(level: 1)).at(here()).last()
-        text(size: 0.7em, fill: luma(50%))[Capítulo #CAP\ ]
-        text(size: 1.8em)[#eso.body]
+        text(size: 1.2em, fill: _gris_titulos)[#v(0.4em)Capítulo #CAP\ ]
+        text(size: 3em)[#eso.body]
     }
     pagebreak(to:"odd")
     // set page(header: none) // :FACER: encabezado baleiros ao inciar caps
@@ -300,10 +284,10 @@
 
         grid.cell(
             x:2, y:1,
-            text(size:10pt)[
+            text(size:0.7em)[
                 #epigrafe
                 #v(1fr)
-                #line(length:20%, stroke:0.5pt)
+                #line(length:20%, stroke:_pt_fino)
             ]
         )
 
@@ -319,6 +303,7 @@
     show heading.where(level: 2): eso => {
         let HEA = counter(heading.where(level: 1)).at(here()).last()
         let SEC = counter(heading.where(level: 2)).at(here()).last()
+        set text(size: 1.5em)
         sf[#v(1.5em) #h(1fr) *$section$* #HEA.#SEC #eso.body #v(0.5em)]
     }
     block(
@@ -346,7 +331,8 @@
 ) = {
     figure(
         rect(
-            fill   : luma(94%),
+            fill   : _gris_fondos,
+            stroke : _gris_bordos + _pt_fino,
             width  : 100%,
             inset  : 0pt,
             image(

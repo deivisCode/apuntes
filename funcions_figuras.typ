@@ -1,3 +1,5 @@
+#import("/funcions.typ"): *
+
 #let estilo_figuras(
     doc,
     ancho : auto,
@@ -8,17 +10,17 @@
         width  : ancho
     )
     set text(
-        size     : 13pt,
+        size     : 1.1em,
         lang     : "gl",
-        font     : "New Computer Modern",
+        font     : _norm,
         weight   : 550,
         fallback : false,
         style    : "normal",
     )
 
     show math.equation: set math.text(
-        font     : "New Computer Modern Math",
-        size     : 13pt,
+        font     : _norm,
+        size     : 1.1em,
         lang     : "gl",
         weight   : 550,
         fallback : false,
