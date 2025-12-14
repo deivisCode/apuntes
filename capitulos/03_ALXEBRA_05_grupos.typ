@@ -49,9 +49,9 @@ Exemplos de grupos son:
 
         $ mat(1/(2a), 1/(2a);1/(2a), 1/(2a); ) $
 
-        E o elemento inverso é
+        e o elemento inverso é
 
-        $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ) $
+        $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ). $
 
     + Sexa $X$ un conxunto calquera e $scr(P)(X)$ o conxunto de todos os
       subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza simétrica_
@@ -100,7 +100,7 @@ inverso (único) de $a$, $a^(-1)$ obtendo $x = a^(-1) * b$
     $
         (forall b_1, b_2 in B) space.quad b_1 * b_2 in B \
         e in B \
-        (forall b in B) space.quad b^(-1) in B
+        (forall b in B) space.quad b^(-1) in B.
     $
 ]
 
@@ -120,7 +120,7 @@ reducilo a unha sola co seguinte teorema.
     Sexa $(A,*)$ un grupo con neutro $e$, e $B subset A$. Entón
 
     $
-        B subgrupo A sse (forall b_1,b_2 in B) space.quad b_1*b_2^(-1) in B
+        B subgrupo A sse (forall b_1,b_2 in B) space.quad b_1*b_2^(-1) in B.
     $
 ]
 
@@ -136,7 +136,7 @@ grupos como o morfismo
 
 $
     f: A frecha B \
-    f(a_1 * a_2) = f(a_1) dot f(a_2)
+    f(a_1 * a_2) = f(a_1) dot f(a_2).
 $
 
 Neste caso, chámase #indice("Homomorfismo") homomorfismo. No caso dos monoides
@@ -152,7 +152,7 @@ $
            &= (f(e_A) dot f(a)) dot f(a)^(-1) \
            &= f(e_A * a) dot f(a)^(-1) \
            &= f(a) dot f(a)^(-1) \
-           &= e_B \
+           &= e_B.
 $
 
 Ollo, pode existir algún outro $a$ tal que $f(a) = e_B$, se $f$ non é
@@ -164,7 +164,7 @@ $
     &f(a^(-1)) dot f(a) = f(a^(-1) * a) = f(e_A) = e_B \
     &implica f(a^(-1)) dot f(a) = f(a) dot f(a^(-1)) = e_B \
     &implica f(a^(-1)) "é o inverso de" f(a) \
-    &f(a^(-1)) = f(a)^(-1)
+    &f(a^(-1)) = f(a)^(-1).
 $
 
 // :FACER: Clases laterais de grupos? SI, EMPEZAR AQUI E SE TAL MOVOO DE SITIO

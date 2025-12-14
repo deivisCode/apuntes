@@ -24,11 +24,9 @@ O segundo caso é o seguinte: #cita("goldberg_1980")
     Sexa $X$ un conxunto calquera, e $tau subset scr(P)(X)$. Dicimos que $tau$
     é unha #indice("Topoloxía") topoloxía en $X$ se se cumpre:
 
-    $
-        &X,emptyset in tau \
-        &A,B in tau arrow.r.double A inter B in tau \
-        &{A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau
-    $
+    + $X,emptyset in tau$.
+    + $A,B in tau arrow.r.double A inter B in tau$.
+    + ${A_i | i in I} subset tau arrow.r.double (union_(i in I) A_i) in tau$.
 
 ]
 
@@ -55,11 +53,11 @@ chámanse #indice("Conxunto")[Aberto] conxuntos abertos, ou simplemente abertos.
     Sexa $X$ un conxunto calquera, e $F subset scr(P)(X)$. Dicimos que $F$
     son conxuntos pechados se
 
-    $
-        &X,emptyset in F \
-        &A,B in F arrow.r.double A union B in F \
-        &{A_i | i in I} subset F arrow.r.double (inter_(i in I) A_i) in F
-    $
+
+    + $X,emptyset in F$.
+    + $A,B in F arrow.r.double A union B in F$.
+    + ${A_i | i in I} subset F arrow.r.double (inter_(i in I) A_i) in F$.
+
 
 ]
 

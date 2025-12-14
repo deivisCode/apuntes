@@ -23,7 +23,7 @@ mesmo conxunto $A$.
     Unha operación binaria e interna é unha aplicación calquera
     $
         f: A times A & frecha A \
-        a,b & mapea f(a,b)
+        a,b & mapea f(a,b).
     $
 
     [Cap. 2]#cita("rotman_2000") [Cap.4 $section 4.1$]#cita("delgado_2010")
@@ -107,7 +107,7 @@ verse unha demostración en #cita("kostrikin_1983"). Isto significa que a
 asociatividade nos permite eliminar completamente os parénteses de calquera
 expresión como
 
-$ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f $
+$ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f. $
 #label("ec:alxebra:asociatividade_xeneralizada")
 
 É común atoparse con situacións como a da
@@ -134,7 +134,7 @@ Teo.2]#cita("kostrikin_1983")
 )[
     Dicimos que unha operación nunha estrutura calquera $(A,*)$ é conmutativa
     #indice("Operación")[conmutativa] se se cumpre que
-    $ (forall a,b in A) space.quad a * b = b * a $
+    $ (forall a,b in A) space.quad a * b = b * a. $
     #cita("delgado_2010")
 ]
 
@@ -147,7 +147,7 @@ independentes.
     ancora : "def:alxebra:neutro"
 )[
     Nunha estrutura $(A,*)$, un elemento $e$ que cumpre
-    $ (forall a in A) space.quad e * a = a * e = a  $
+    $ (forall a in A) space.quad e * a = a * e = a.  $
     dise que é un elemento neutro.#indice[Elemento Neutro]
 ]
 
@@ -187,7 +187,7 @@ $1, bb(1)$ ou $I$. Podemos combinar todo e escribir $1_A, bb(1)_B, 0_A$, etc.
     cumpre
 
     $
-        a * y = y * a = e
+        a * y = y * a = e.
     $
 
     dise que é o elemento inverso de $a$ #indice[Elemento Inverso], e que o
@@ -214,7 +214,7 @@ na multiplicativa.
     e = a*a'^(-1)$ (por que tamén é inverso). Entón
     $
         a^(-1) = e*a^(-1) = (a'^(-1)*a)*a^(-1) = \
-        a'^(-1)*(a*a^(-1)) = a'^(-1)*e = a'^(-1)
+        a'^(-1)*(a*a^(-1)) = a'^(-1)*e = a'^(-1).
     $
     // :FACER: MARGINALIA warning: value of `state("_note_extends_right")` did not converge
     #cita("rotman_2000")
@@ -244,16 +244,16 @@ senón, poderíamos ter varios inversos de $a$ distintos, como $a_1,a_2$ etc.
     Pola esquerda
     $
         (b^(-1)*a^(-1))*(a*b) = b^(-1)*(a*a^(-1))*b = \
-        b^(-1)*e*b = b^(-1)*b = e
+        b^(-1)*e*b = b^(-1)*b = e.
     $
 
     E pola dereita
     $
         (a*b)*(b^(-1)*a^(-1)) = a*(b*b^(-1))*a^(-1) = \
-        a*e*a^(-1) = a*a^(-1) = e
+        a*e*a^(-1) = a*a^(-1) = e.
     $
 
-    Polo tanto, $(b^(-1)*a^(-1))$ é o inverso de $a*b$
+    Polo tanto, $(b^(-1)*a^(-1))$ é o inverso de $a*b$.
 ]
 
 Este teorema ás veces chámase _teorema de zapatos e calcetíns_ por que para
@@ -270,7 +270,7 @@ descalzarnos quitamos primeiro os calcetíns e logo os zapatos.
 
     $
         &a dot (b * c) = a dot b * a dot c \
-        &(b * c) dot a = b dot a * c dot a
+        &(b * c) dot a = b dot a * c dot a.
     $
 ]
 
@@ -289,11 +289,11 @@ secas) se o é pola esquera e pola dereita.
     $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
     todas as condicións que se pedían para $(A,*)$
 
-    - $(forall a,b in B) space.quad a * b in B $ (a operación $*$ é interna en B)
-    - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$
-    - Se a operación $*$ é conmutativa en $(A,*)$, tamén o é en $(B,*)$
-    - Se existe un elemento neutro $e in (A,*)$, tamén está en $(B,*)$
-    - Se todo elemento ten inverso en $(A,*)$, tamén o ten en $(B,*)$
+    - $(forall a,b in B) space.quad a * b in B$. (A operación $*$ é interna en B)
+    - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$.
+    - Se a operación $*$ é conmutativa en $(A,*)$, tamén o é en $(B,*)$.
+    - Se existe un elemento neutro $e in (A,*)$, tamén está en $(B,*)$.
+    - Se todo elemento ten inverso en $(A,*)$, tamén o ten en $(B,*)$.
     - etc.
 ]
 
@@ -322,11 +322,11 @@ ninguén proba no campo de xogo nunca.
     arrow.r B$ que cumpre
 
     $
-        f(a*b) = f(a) plus.o f(b)
+        f(a*b) = f(a) plus.o f(b).
     $
 
-    Onde a operación $a*b$ ocorre en $A$, e logo se lle aplica $f$; e a
-    operación $plus.o$ ocorre en $B$, entre $f(a)$ e $f(b)$
+    A operación $a*b$ ocorre en $A$, e logo aplícaselle $f$; e a
+    operación $plus.o$ ocorre en $B$, entre $f(a)$ e $f(b)$.
 ]
 
 Dependendo da estrutura concreta ca que nos topemos, os morfismos ás veces
@@ -345,7 +345,7 @@ que precisemos.
     conxunto
 
     $
-        ker(f) = { a in A | f(a) = e_B }
+        ker(f) = { a in A | f(a) = e_B }.
     $
 ]
 
@@ -372,7 +372,7 @@ implica f(a) = f(b)$.
     $implica f(e_A) = e_B implica e_A in ker(f)$ Pode ser que haxa outro
     elemento $a' in A$ tal que $f(a') = e_B implica a' in ker(f)$, pero como
     $f$ é inxectiva, entón se $f(e_A) = f(a') = e_B implica a' = e_A$. Polo
-    tanto, $ker(f) = {e_A}$
+    tanto, $ker(f) = {e_A}$.
 
     #v(1em) "$arrow.l.double$" #v(1em)
 

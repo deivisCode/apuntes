@@ -8,17 +8,18 @@
 Agora imos dar un cambio radical e presentar varias estruturas con _varias_
 operacións.
 
+// :FACER: usar outra operacion que non sexa ., é confuso cos puntos do text
 #definicion(
     nome : "Anel",
     ancora : "def:alxebra:anel"
 )[
     Unha terna $(A,+,dot)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa
-    - Existe un elemento neutro da operación $+$
-    - Todos os elementos son invertibles respecto de $+$
-    - A operación $dot$ é interna
-    - A operación $dot$ é distributiva respecto de $+$
+    - $+$ é unha operación interna e asociativa.
+    - Existe un elemento neutro da operación $+$.
+    - Todos os elementos son invertibles respecto de $+$.
+    - A operación $dot$ é interna.
+    - A operación $dot$ é distributiva respecto de $+$.
 
     dise que é un #indice("anel")anel. É dicir, unha terna $(A,+,dot)$ onde
     $(A,+)$ é un grupo, $(A,dot)$ é un magma, e as operacións son distributivas.
@@ -32,7 +33,7 @@ conmutativa dicimos que o anel é conmutativo.
 #exemplos[
     + Sexa $M_(n times n)$ o conxunto de matrices cadradas de tamaño $n times n$,
     onde temos as operacións de suma $+$ e produto $dot$ usuais de matrices.
-    O conxunto $(M_(n times n), +, dot)$ é un anel
+    O conxunto $(M_(n times n), +, dot)$ é un anel.
 ]
 
 Ca práctica acumulada presentando diferentes estruturas, non será nada
@@ -48,10 +49,10 @@ sorprendente a definición de _subanel_.
         (forall b_1, b_2 in B) space.quad b_1 + b_2 in B \
         0 in B "(o neutro da suma)"\
         (forall b in B) space.quad -b in B\
-        (forall b_1, b_2 in B) space.quad b_1 dot b_2 in B
+        (forall b_1, b_2 in B) space.quad b_1 dot b_2 in B.
     $
     É dicir, $(B,+)$ é un subgrupo de $(A,+)$ e $(B,dot)$ é un submagma de
-    $(A,dot)$
+    $(A,dot)$.
 ]
 
 En realidade poderíamos falar ao final de subsemigrupo [Cap #math.section
@@ -71,13 +72,13 @@ conmutatividade, etc.
 )[
     Unha terna $(A,+,dot)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa
-    - Existe un elemento neutro da operación $+$
-    - Todos os elementos son invertibles respecto de $+$
-    - A operación $dot$ é interna, asociativa, e distributiva con $+$
+    - $+$ é unha operación interna e asociativa.
+    - Existe un elemento neutro da operación $+$.
+    - Todos os elementos son invertibles respecto de $+$.
+    - A operación $dot$ é interna, asociativa, e distributiva con $+$.
 
     dise que é un #indice("anel")[Asociativo]anel asociativo. É dicir, unha terna
-    $(A,+,dot)$ onde $(A,+)$ é un grupo e $(A,dot)$ é un semigrupo
+    $(A,+,dot)$ onde $(A,+)$ é un grupo e $(A,dot)$ é un semigrupo.
 ]
 
 A definición de subanel asociativo é idéntica á definicion
@@ -90,11 +91,11 @@ subsemigrupo de $(A,dot)$, en lugar dun submagma.
 )[
     Unha terna $(A,+,dot)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa
-    - Existe un elemento neutro da operación $+$
-    - Todos os elementos son invertibles respecto de $+$
-    - A operación $dot$ é interna, asociativa, e distributiva con $+$
-    - Existe neutro para a operación $dot$
+    - $+$ é unha operación interna e asociativa.
+    - Existe un elemento neutro da operación $+$.
+    - Todos os elementos son invertibles respecto de $+$.
+    - A operación $dot$ é interna, asociativa, e distributiva con $+$.
+    - Existe neutro para a operación $dot$.
 
     dise que é un #indice("anel")[Unitario]anel unitario. É dicir, unha terna
     $(A,+,dot)$ onde $(A,+)$ é un grupo e $(A,dot)$ é un monoide.
@@ -112,6 +113,7 @@ Podemos comentar varias propiedades dos aneis. Imos supoñer que tratamos cun
 anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 0.
 #cita("kostrikin_1983")
 
+// :FACER: separar demostracions de 3.7.49 etc.
 + $(forall a in A) space.quad a dot 0 = 0 dot a = 0$
 
     $
@@ -130,7 +132,7 @@ anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 
         &implica -(a dot b) = a dot (-b)
     $
 
-+ $(forall a, b in A), space.quad (-a) dot (-b) = a dot b$
++ $(forall a, b in A) space.quad (-a) dot (-b) = a dot b$
 
     $
         (-a) dot (-b) &= (-(-a)) dot b \
@@ -147,7 +149,7 @@ anel $(A,+,dot)$ asociativo e unitario. O neutro da operación $+$ denótoo por 
 ]
 
 Un exemplo no anel de matrices de tamaño $2 times 2$ son as matrices da forma $
-mat(0,a;0,0) $ #label("ec:alxebra:matriz_divisora") Estas matrices non son
+mat(0,a;0,0). $ #label("ec:alxebra:matriz_divisora") Estas matrices non son
 cero, pero o produto de dúas delas si o é.
 
 #definicion(
@@ -155,7 +157,7 @@ cero, pero o produto de dúas delas si o é.
     ancora : "def:alxebra:dominio_integridade"
 )[
     Un anel que non ten divisores do cero dicimos que é un
-    #indice("Dominio")[íntegro] dominio íntegro ou dominio de integridade
+    #indice("Dominio")[íntegro] dominio íntegro ou dominio de integridade.
     #indice("Dominio")[de integridade]
 ]
 
@@ -178,11 +180,11 @@ deberían ser invertibles, o cal inclúe o neutro da primera operación (chamém
 )[
     Unha terna $(A,+,dot)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa
-    - Existe un elemento neutro da operación $+$ (chámoo 0)
-    - Todos os elementos son invertibles respecto de $+$
-    - A operación $dot$ é interna e asociativa, e existe neutro (chámoo 1)
-    - Todos os elementos de $A - {0}$ teñen inverso #nota[É dicir, o conxunto $A$ menos o neutro da primeira operación. Nos número enteiros ca suma serían todos os numeros menos o 0.]
+    - $+$ é unha operación interna e asociativa.
+    - Existe un elemento neutro da operación $+$ (chámoo 0).
+    - Todos os elementos son invertibles respecto de $+$.
+    - A operación $dot$ é interna e asociativa, e existe neutro (chámoo 1).
+    - Todos os elementos de $A - {0}$ teñen inverso. #nota[É dicir, o conxunto $A$ menos o neutro da primeira operación. Nos número enteiros ca suma serían todos os numeros menos o 0.]
 
     dise que é un #indice("Corpo") corpo. É dicir, unha terna $(A,+,dot)$ onde
     ambos $(A,+)$ e $(A-{0},dot)$ son grupos.
@@ -199,13 +201,13 @@ $(B,plus.o,dot.o)$
 $
     f:A frecha B \
     f(a + b) = f(a) plus.o f(b) \
-    f(a dot b) = f(a) dot.o f(b)
+    f(a dot b) = f(a) dot.o f(b).
 $
 
 O núcleo do homomorfismo $f$ é o conxunto
 
 $
-    ker(f) = {a in A | f(a) = 0}
+    ker(f) = {a in A | f(a) = 0}.
 $
 
 // :FACER: sub  aneis e ideais, delgado_2010 + kos

@@ -15,10 +15,10 @@ operacións.
     Sexa $(E,plus.o)$ un grupo, $(A,+,dot)$ un anel, e
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
     arrow.r E$. A terna formada por ditos tres obxectos é un #indice("Módulo")
-    módulo:
+    módulo, é dicir
 
     $
-        ((E,plus.o),(A,+,dot),circle.stroked.tiny)
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
     $
 ]
 

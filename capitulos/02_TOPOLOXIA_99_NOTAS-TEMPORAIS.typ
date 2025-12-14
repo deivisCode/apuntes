@@ -84,15 +84,15 @@ Distancias: [Def. 6.1]#cita("masa_2019")
 
     $
         d: X times X &frecha RR \
-        (a,b) &mapea d(a,b)
+        (a,b) &mapea d(a,b).
     $
 
-    Unha función que cumpre
+    unha función que cumpre
 
-    + $d(a,b) gt.eq 0$
-    + $d(a,b) = 0 sse a = b $
-    + $d(a,b) = d(b,a)$
-    + $d(a,c) lt.eq d(a,b) + d(b,c)$ (Desigualdade triangular)
+    + $d(a,b) gt.eq 0$.
+    + $d(a,b) = 0 sse a = b $.
+    + $d(a,b) = d(b,a)$.
+    + $d(a,c) lt.eq d(a,b) + d(b,c)$. (Desigualdade triangular)
 
     dise que é unha #indice("Métrica") métrica ou #indice("Distancia")
     distancia en $X$
@@ -116,7 +116,7 @@ Distancias: [Def. 6.1]#cita("masa_2019")
     #indice("Función")[Continua] función continua se
 
     $
-        (forall U in tau_Y), space.quad f^(-1)(U) in tau_X
+        (forall U in tau_Y) space.quad f^(-1)(U) in tau_X.
     $
 
     É dicir, a antiimaxe de calquera aberto tamén é aberta
@@ -126,8 +126,8 @@ Por exemplo, sexa $f: (X,tau_X) arrow.r (Y,tau_Y)$ dada por
 
 $
     f(x) = cases(
-        x "se" x lt.eq 0,
-        0 "se" x gt 0
+        x "se" x lt.eq 0.,
+        0 "se" x gt 0.
     )
 $
 
@@ -144,7 +144,7 @@ $f$ non é continua.
     #indice("Función")[Aberta] función aberta se
 
     $
-        (forall U in tau_X), space.quad f(U) in tau_Y
+        (forall U in tau_X) space.quad f(U) in tau_Y.
     $
 
     É dicir, a imaxe de calquera aberto é aberta
@@ -163,8 +163,8 @@ Ollo! A definición é moi parecida á de función continua
 
     $
         f(x) = cases(
-            -x &"se" x lt 0,
-            2  &"se" x gt.eq 0
+            -x &"se" x lt 0.,
+            2  &"se" x gt.eq 0.
         )
     $
 
@@ -172,8 +172,8 @@ Ollo! A definición é moi parecida á de función continua
 
     $
         f(U) = cases(
-            (a, oo) union {2} "se" a lt 0,
-                          {2} "se" a gt.eq 0
+            (a, oo) union {2} "se" a lt 0.,
+                          {2} "se" a gt.eq 0.
         )
     $
 
@@ -189,7 +189,7 @@ Ollo! A definición é moi parecida á de función continua
     #indice("Función")[Pechada] función pechada se
 
     $
-        (forall U "pechado"), space.quad f(U) "é pechado en" (Y,tau_Y)
+        (forall U "pechado") space.quad f(U) "é pechado en" (Y,tau_Y).
     $
 ]
 
@@ -207,9 +207,9 @@ Ollo! A definición é moi parecida á de función continua
     calquera $f : (X,tau_X) arrow.r (Y,tau_Y)$. Dicimos que $f$ é un
     #indice("Homeomorfismo") homeomorfismo se
 
-    + $f$ é bixectiva
-    + $f$ é continua
-    + $f^(-1)$ é continua
+    + $f$ é bixectiva.
+    + $f$ é continua.
+    + $f^(-1)$ é continua.
 ]
 
 
@@ -220,14 +220,14 @@ Ollo! A definición é moi parecida á de función continua
     A definición @def:topoloxia:homeomorfismo é equivalente ás seguintes
 
     Por un lado:
-    + $f$ é bixectiva
-    + $f$ é continua
-    + $f^(-1)$ é aberta
+    + $f$ é bixectiva.
+    + $f$ é continua.
+    + $f^(-1)$ é aberta.
 
     Por outro:
-    + $f$ é bixectiva
-    + $f$ é continua
-    + $f^(-1)$ é pechada
+    + $f$ é bixectiva.
+    + $f$ é continua.
+    + $f^(-1)$ é pechada.
 ]
 
 #definicion(
@@ -283,7 +283,7 @@ temos asegurado que ditos espazos non son homeomorfos
         exists U,V in tau, "onde"
             a in U,
             b in V
-        "e" (U inter V) = emptyset
+        "e" (U inter V) = emptyset.
     $
 
     É dicir, para calquera parella de puntos, podemos atopar dous abertos que

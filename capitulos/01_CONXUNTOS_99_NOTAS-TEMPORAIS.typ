@@ -36,7 +36,7 @@ notacional parecido na álxebra, véxase a expresión
 $
     (a,b) in R stretch(arrow.r)^"símb. entre elementos"
     a R b stretch(arrow.r)^"símb. especial"
-    a rel^R b
+    a rel^R b.
 $ <exp:contuntos:posicion-simbolos>
 
 Tamén se soe escribir $a rel_R$ ou simplemente $a rel b$ no caso de
@@ -51,19 +51,19 @@ sobreentender cal é a relación $R$. Tamén se pode dicir directamente que $rel
     relación de equivalencia en $A$ é unha relación $R$ na que se cumpren
     as seguintes propiedades:
 
-    + Reflexividade (un elemento está sempre relacionado consigo mesmo)
-      $ (forall a in A), space.quad a rel a $
-    + Simetría (se un elemento está relacionado con outro, entón o outro está
+    + Reflexividade, (un elemento está sempre relacionado consigo mesmo)
+      $ (forall a in A) space.quad a rel a. $
+    + Simetría, (se un elemento está relacionado con outro, entón o outro está
       relacionado co un)
-      $ (forall a,b in A), space.quad a rel b implica b rel a $
-    + Transitividade
-      $ (forall a,b,c in A) space.quad a rel b, space b rel c implica a rel c $
+      $ (forall a,b in A) space.quad a rel b implica b rel a. $
+    + Transitividade,
+      $ (forall a,b,c in A) space.quad a rel b, space b rel c implica a rel c. $
 ]
 
 Usando a notación de conxuntos orixinal, as propiedades anteriores son
-+ $(forall a in A), space.quad (a,a) in R$
-+ $(forall a,b in A), space.quad (a,b) in R implica (b,a) in R$.
-+ $(forall a,b,c in A), space.quad (a,b) in R, (b,c) in R implica (a,c) in R$
++ $(forall a in A) space.quad (a,a) in R$
++ $(forall a,b in A) space.quad (a,b) in R implica (b,a) in R$.
++ $(forall a,b,c in A) space.quad (a,b) in R, (b,c) in R implica (a,c) in R$
 
 Se temos unha relación de equivalencia, podemos falar de _clases de
 equivalencia_ que son os conxuntos formados polos elementos que están
@@ -79,7 +79,7 @@ relacionados.
     equivalencia de $a$ e denótase por $[a]$. É dicir, o conxunto
 
     $
-        [a] := {b in A | b rel a}
+        [a] := {b in A | b rel a}.
     $
 ]
 
@@ -100,7 +100,7 @@ cociente_.
     dicir, o conxunto
 
     $
-        A\/rel := { [b] | b in A }
+        A\/rel := { [b] | b in A }.
     $
 ]
 

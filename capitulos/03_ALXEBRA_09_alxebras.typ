@@ -21,7 +21,7 @@ mundo cuántico onde se usa unha estrutura semellante.
     #indice("Álxebra") álxebra
 
     $
-        ((V,plus.o,*),(A,+,dot),circle.stroked.tiny)
+        ((V,plus.o,*),(A,+,dot),circle.stroked.tiny).
     $
 
     É dicir, un espazo lineal, pero o primeiro elemento é un anel.
@@ -35,7 +35,7 @@ mundo cuántico onde se usa unha estrutura semellante.
 
     No caso de que a operación $*$ sexa bilineal, antisimétrica e cumpra a
     identidade de Jacobi, entón falamos dunha #indice("Álxebra")[De Lie]
-    álxebra de Lie
+    álxebra de Lie.
 ]
 
 En realidade a notación típica para o produto do primeiro anel é o dunha

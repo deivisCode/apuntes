@@ -28,10 +28,10 @@ operación é conmutativa, entón é un magma conmutativo.
     Sexa $(A,*)$ un magma e $B subset A$. Se se cumpre que
 
     $
-        (forall b_1,b_2 in B) space.quad b_1 * b_2 in B
+        (forall b_1,b_2 in B) space.quad b_1 * b_2 in B,
     $
 
-    Entón dicimos que $(B,*)$ é un submagma de $(A,*)$
+    entón dicimos que $(B,*)$ é un submagma de $(A,*)$
 ]
 
 En realidade non hai nada máis que comentar desta estrutura. Pode parecer que

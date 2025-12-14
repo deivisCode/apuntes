@@ -19,10 +19,10 @@ en casos moi concretos, polo que prefiro esquivalo.]
     $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
     arrow.r E$. A terna formada por ditos tres obxectos é un
     #indice("Espazo")[lineal] espazo lineal ou #indice("Espazo")[Vectorial]
-    vectorial:
+    vectorial,
 
     $
-        ((E,plus.o),(A,+,dot),circle.stroked.tiny)
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
     $
 
     É dicir, un módulo, pero en lugar do anel temos un campo.
@@ -45,20 +45,21 @@ de abusar da notación, referirémonos ao espazo lineal só polo nome do grupo,
 $V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
 
 #exemplos[
-    - O conxunto ${a cos(x), a in RR}$ ca suma de funcións usual $3cos(x) + 7cos(x)
-      = 10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se escollemos a
-      operación entre vectores e escalares de xeito que $k circle.stroked.tiny (a
-      dot cos(x)) = (k a) dot cos(x)$, entón dito conxunto de cosenos, co campo dos
-      reais e a operación indicada, é un espazo lineal. Evidentemente este espazo
-      non ten unha interpretación "gráfica" ou "visual" evidente, inda así cada
-      elemento da forma $3cos(x)$ é un vector.
+    - O conxunto ${a cos(x), a in RR}$ ca suma de funcións usual $3cos(x) +
+      7cos(x) = 10cos(x)$ é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se
+      escollemos a operación entre vectores e escalares de xeito que $k
+      circle.stroked.tiny (a dot cos(x)) = (k a) dot cos(x)$, entón dito
+      conxunto de cosenos, co campo dos reais e a operación indicada, é un
+      espazo lineal. Evidentemente este espazo non ten unha interpretación
+      "gráfica" ou "visual" evidente, inda así cada elemento da forma $3cos(x)$
+      é un vector.
 
-    - O conxunto de ternas $(x,y,z)$ con $x,y,x in RR$ ca operación de suma usual,
-      é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$ é un grupo. Se temos o campo
-      dos reais $RR$, e a operación entre $RR$ e as ternas definida como $k (x,y,z) =
-      (k x,k y,k z)$ entón, temos un espazo vectorial
-      $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso, os vectores si teñen
-      unha interpretación xeométrica evidente.
+    - O conxunto de ternas $(x,y,z)$ con $x,y,x in RR$ ca operación de suma
+      usual, é dicir $(x,y,z) + (a,b,c) = (x+a, y+b, c+z)$ é un grupo. Se temos
+      o campo dos reais $RR$, e a operación entre $RR$ e as ternas definida
+      como $k (x,y,z) = (k x,k y,k z)$ entón, temos un espazo vectorial
+      $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso, os vectores si
+      teñen unha interpretación xeométrica evidente.
 ]
 
 En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza ca
@@ -80,12 +81,8 @@ xeral dos vectores xeométricos.
     ancora : "def:alxebra:subesapazo-lineal"
 )[
     Sexa $((V,+),(KK,+,dot),circle.stroked.tiny)$ un espazo lineal calquera, e
-    $W subset V$. Se se cumpre que
-
-    $
-        ((W,+),(KK,+,dot),circle.stroked.tiny) "é un espazo lineal" \
-        (W,+) subgrupo (V,+)
-    $
+    $W subset V$. Se se cumpre que $((W,+),(KK,+,dot),circle.stroked.tiny)$ é
+    un espazo lineal. entón $(W,+) subgrupo (V,+)$.
 ]
 
 Neste caso só nos interesa que $(W,+)$ é un subgrupo de $(V,+)$, e que o propio

@@ -28,7 +28,7 @@ Veremos esto unhas seccións máis adiante.
     Sexa $(A,*)$ un semigrupo, e $B subset A$. Entón, $(B,*)$ é un subsemigrupo de
     $(A,*)$ se
     $
-        (forall b_1, b_2 in B) space.quad b_1 * b_2 in B
+        (forall b_1, b_2 in B) space.quad b_1 * b_2 in B.
     $
 ]
 
@@ -40,7 +40,7 @@ semigrupos como o morfismo
 
 $
     f: A frecha B \
-    f(a_1 * a_2) = f(a_1) dot f(a_2)
+    f(a_1 * a_2) = f(a_1) dot f(a_2).
 $
 
 Nun semigrupo non temos noción de neutro ou simétrico, polo que non podemos
