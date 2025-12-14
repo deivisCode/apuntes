@@ -45,7 +45,12 @@
 #let azul   = eso => text(fill: rgb(_azul)   , weight: "bold", font: _sans)[#eso]
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota = note.with(numbering: none, text-style:(size:10pt, fill: rgb(_verde), font: _sans_math))
+#let nota = note.with(numbering: none, text-style:(
+    size:10pt,
+    // fill: rgb(_verde),
+    fill: luma(30%),
+    font: _sans_math,
+))
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
@@ -61,6 +66,7 @@
         let repetido = lista_citas.get().contains(str(nome))
         // Se non o está
         if not repetido {
+            show math.equation: set text(font: _sans_math)
             // :FACER: cambiar idioma para as citas (así fai mellores hífens)?
             // Includo creando un parámetro (por defecto 'en' ou 'es') para
             // controlalo en cada cita. Ou incluso usar a info da cita?. CSL
@@ -73,7 +79,12 @@
             note(
                 side: "outer",
                 numbering: none,
-                text-style:(size:10pt, fill: rgb(_azul), weight: "bold", font: _sans),
+                text-style:(
+                    size:10pt,
+                    fill: luma(30%),
+                    // weight: "bold",
+                    font: _sans_math,
+                ),
                 cite(label(nome), form: "full"),
             )
         }

@@ -45,9 +45,9 @@ Onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
 $+ * · dot.o diamond.stroked$ ou o que veña en mente ao escribir.
 
 A pesar de que existen infinidade de símbolos, úsanse 2 estilos claramente
-diferenciados. Na notación #rosa[aditiva] úsanse símbolos que asemellan os da suma,
+diferenciados. Na notación *aditiva* úsanse símbolos que asemellan os da suma,
 como $+ plus.o$, e as operacións escríbense completas, como $a+b$ ou $a
-plus.o b$. Na notación #rosa[multiplicativa] úsanse símbolos que asemellan a
+plus.o b$. Na notación *multiplicativa* úsanse símbolos que asemellan a
 multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
 explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
 ambas notacións máis adiante ao falar de asociatividade.

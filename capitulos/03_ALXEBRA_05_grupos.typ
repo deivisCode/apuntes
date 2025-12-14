@@ -74,7 +74,7 @@ Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
 multiplicar e dividir. Personalmente vou usar notación multiplicativa nesta
 sección. A diferenza dos monoides, agora temos noción de _elemento inverso_,
 polo que aparece unha propiedade importante, a
-#rosa[cancelación]. [Lema 2.18]#cita("rotman_2000") Por un lado
+*cancelación*. [Lema 2.18]#cita("rotman_2000") Por un lado
 // :FACER: propiedade de cancelación nun teorema?
 
 $

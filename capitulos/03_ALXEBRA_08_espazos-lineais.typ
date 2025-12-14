@@ -64,11 +64,11 @@ $V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
 En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza ca
 xeometría (concretamente, frechas en $RR^3$). En física é común facer énfase no
 segundo caso, usándoo como exemplo para explicar conceptos en calquera nivel e
-situación. Eu, pra evitar confusións, vou seguir #rosa[sempre] unha notación
+situación. Eu, pra evitar confusións, vou seguir *sempre* unha notación
 concreta:
 
-+ #rosa[Vector] será un elemento dun espazo lineal no sentido presentado.
-+ #rosa[Vector xeométrico] será o concepto de vector que se usa na física, cunha
++ *Vector* será un elemento dun espazo lineal no sentido presentado.
++ *Vector xeométrico* será o concepto de vector que se usa na física, cunha
   clara compoñente xeométrica.
 
 A distinción será especialmente evidente no caso da álxebra multilineal, onde
