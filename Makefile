@@ -41,6 +41,7 @@ OPCIONS_FIGURAS := \
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
 # Xeramos os apuntes
+# :FACER: dependencias nunha variable aparte
 .pdf/apuntes.pdf: apuntes.typ estilo.typ funcions.typ $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
 	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
@@ -52,6 +53,7 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 #
 # $@ -> target, e.g. .pdf/figura1.pdf
 # $^ -> prereq, e.g. figuras/typ/figura.typ
+# :FACER: non podo poñer funcions_figuras como prerequisito..
 $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 	typst $(METODO) $(OPCIONS_FIGURAS) $^ $@
 

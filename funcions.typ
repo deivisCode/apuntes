@@ -68,6 +68,7 @@
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota(eso) = {
+    set par(justify: false)
     note.with(
         numbering: none,
         text-style: (
