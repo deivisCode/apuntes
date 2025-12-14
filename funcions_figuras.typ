@@ -19,10 +19,9 @@
     )
 
     show math.equation: set math.text(
-        font     : _norm,
+        font     : _math,
         size     : 1.1em,
         lang     : "gl",
-        weight   : 550,
         fallback : false,
         style    : "normal",
     )
