@@ -68,7 +68,8 @@
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota(eso) = {
-    set par(justify: false)
+    // :FACER: usar esto aqui fai que me separe o propio texto..?
+    // set par(justify: false)
     note.with(
         numbering: none,
         text-style: (
