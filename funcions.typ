@@ -381,7 +381,8 @@
     box($arrow.r.double$)
 )
 
-#let sse = text(
+#let sse = math.class(
+    "relation",
     box($arrow.r.l.double$)
 )
 
