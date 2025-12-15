@@ -17,7 +17,7 @@ Dicimos que o diagrama _é conmutativo_ se podemos ir dun vértice a outro por
 calquera serie de frechas, sempre e cando respectemos a súa orientación. Na
 figura anterior, esto significa que podemos pasar de $A$ a $C$ usando a función
 $h$, ou ben indo de $A$ a $B$ con $f$ e logo de $B$ a $C$ con $g$. Visualmente,
-esto significa que a composición de traxectorias verde é igual á traxectoria
+esto significa que a composición de traxectorias vermellas é igual á traxectoria
 azul:
 
 #imaxe(

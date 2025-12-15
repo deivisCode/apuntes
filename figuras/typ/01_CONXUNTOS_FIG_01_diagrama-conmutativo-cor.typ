@@ -16,8 +16,8 @@
     node((1, 0), $B$, name: "B"),
     node((1, 1), $C$, name: "C"),
 
-    edge( vertices: ((0, 0), (1, 0)), marks: "->", label: $f$, stroke: rgb(_verde)),
-    edge( vertices: ((1, 0), (1, 1)), marks: "->", label: $g$, label-side: left, stroke: rgb(_verde)),
+    edge( vertices: ((0, 0), (1, 0)), marks: "->", label: $f$, stroke: rgb(_roxo)),
+    edge( vertices: ((1, 0), (1, 1)), marks: "->", label: $g$, label-side: left, stroke: rgb(_roxo)),
     edge( vertices: ((0, 0), (1, 1)), marks: "->", label: $h$, bend: -45deg, stroke: rgb(_azul)),
 
 )

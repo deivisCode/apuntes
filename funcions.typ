@@ -41,6 +41,7 @@
 #let _morado = "#8000CC"
 #let _rosa   = "#f000f0"
 #let _azul   = "#00b8eb"
+#let _roxo   = "#ff0000"
 #let verde  = eso => text(fill: rgb(_verde))[#eso]
 #let morado = eso => text(fill: rgb(_morado) , weight: "bold", font: _sans)[#eso]
 #let rosa   = eso => text(fill: rgb(_rosa)   , weight: "bold", font: _sans)[#eso]
