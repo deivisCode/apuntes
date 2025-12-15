@@ -13,7 +13,10 @@
 // :FACER: usar arrow.r.tip máis a miudo
 
 #include("/capitulos/01_CONXUNTOS_00_introducion.typ")
-#include("/capitulos/01_CONXUNTOS_99_NOTAS-TEMPORAIS.typ")
+#include("/capitulos/01_CONXUNTOS_01_conceptos.typ")
+#include("/capitulos/01_CONXUNTOS_02_relacions.typ")
+#include("/capitulos/01_CONXUNTOS_03_funcions.typ")
+#include("/capitulos/01_CONXUNTOS_04_diagramas.typ")
 
 #include("/capitulos/02_TOPOLOXIA_00_introducion.typ")
 #include("/capitulos/02_TOPOLOXIA_01_espazos-topoloxicos.typ")
