@@ -370,7 +370,8 @@
     box($cal(eso)$),
 )
 
-#let frecha = text(
+#let frecha = math.class(
+    "relation",
     box($stretch(arrow.r, size: #300%)$)
 )
 
