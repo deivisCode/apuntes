@@ -1,71 +1,19 @@
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//  _____ _   _ _   _  ____ ___ ___  _   _ ____  %
-// |  ___| | | | \ | |/ ___|_ _/ _ \| \ | / ___| %
-// | |_  | | | |  \| | |    | | | | |  \| \___ \ %
-// |  _| | |_| | |\  | |___ | | |_| | |\  |___) |%
-// |_|    \___/|_| \_|\____|___\___/|_| \_|____/ %
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//  _____ _______  _______ ___
+// |_   _| ____\ \/ /_   _/ _ \
+//   | | |  _|  \  /  | || | | |
+//   | | | |___ /  \  | || |_| |
+//   |_| |_____/_/\_\ |_| \___/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //
-// Outras funcions que son algo mais pequechas e non teñen que ver co estilo
-// xeral
+// Funcións para incluir no texto, como capítulo, seccións, énfases, notas,
+// citas, teoremas, etc.
 
-// :FACER: Palabras clave (en comentarios) en cada arquivo. Logo con python ler
-//         todo o diretorio e crear un grafo das relacións entre temas. Usar
-//         #metadata() ou comentrios especiais. OU typat eval --in apuntes.typ "$(cat queries.typ)"
-// :FACER: concordancia https://en.wikipedia.org/wiki/Concordance_(publishing) tal vez con typst eval tamén
-// :FACER: notas á marxe a man
 #import "@preview/marginalia:0.2.3" as marginalia: note
-// :FACER: indice a man
-// :FACER: Indice. Debería poder ir á palabra exacta, en vez de só a paxina
-// :FACER: Indice. Resaltar a palabra no texto
-// :FACER: Indice. non separar alfabeticamente a - á
-// :FACER: Indice. como facer 'see ...'
-#import "@preview/in-dexter:0.7.2": index as indice, make-index
+#import "@preview/in-dexter:0.7.2": index as indice
 
-// Tipos de letra
-#let _norm = "New Computer Modern"
-#let _sans = "New Computer Modern Sans"
-#let _mono = "New Computer Modern Mono"
-#let _nerd = "Symbols Nerd Font Mono"
-#let _math = "New Computer Modern Math"
-#let sf = eso => text(font: _sans)[#eso]
-#let tt = eso => text(font: _mono)[#eso]
-#let nf = eso => text(font: _nerd)[#eso]
-#let nf = eso => text(font: _nerd)[#eso]
-
-#let _sans_math = "New Computer Modern Sans Math"
-#let sfm = eso => text(font: _sans_math)[#eso]
-
-// Cores que me gustan
-#let _verde  = "#008000"
-#let _morado = "#8000CC"
-#let _rosa   = "#f000f0"
-#let _azul   = "#00b8eb"
-#let _roxo   = "#ff0000"
-#let verde  = eso => text(fill: rgb(_verde))[#eso]
-#let morado = eso => text(fill: rgb(_morado) , weight: "bold", font: _sans)[#eso]
-#let rosa   = eso => text(fill: rgb(_rosa)   , weight: "bold", font: _sans)[#eso]
-#let azul   = eso => text(fill: rgb(_azul)   , weight: "bold", font: _sans)[#eso]
-
-#let _gris_bordos  = luma(90%)
-#let _gris_fondos  = luma(96%)
-#let _gris_notas   = luma(40%)
-#let _gris_textos  = luma(40%)
-#let _gris_titulos = luma(40%)
-
-#let _pt_letra = 12pt
-
-// Grosores dalguns bordes
-#let _pt_fino  = 0.6pt // bordes figuras, encabezados
-#let _pt_envs  = 2pt   // bordes teoremas, defs, exemplos, etc.
-
-// Espazos para teoremas, defs, exemplos, etc.
-#let _in_envs = (
-    top    : 0.9em,
-    bottom : 0.9em,
-    left   : 0.9em,
-    right  : 0.9em,
-)
+#import("/funcions/variables.typ"): *
+#import("/funcions/simbolos.typ"): *
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota(eso) = {
@@ -363,45 +311,3 @@
         }
     }
 }
-
-// Letras moi reviradas
-#let scr(eso) = text(
-    features: ("ss01",),
-    box($cal(eso)$),
-)
-
-#let frecha = math.class(
-    "relation",
-    box($stretch(arrow.r, size: #300%)$)
-)
-
-#let mapea = text(
-    box($stretch(mapsto, size: #300%)$)
-)
-
-#let implica = text(
-    box($arrow.r.double$)
-)
-
-#let sse = math.class(
-    "relation",
-    box($arrow.r.l.double$)
-)
-
-#let subgrupo = text(
-    box($lt.eq.slant$)
-)
-
-#let card(eso) = text(
-    box($"card"(eso)$)
-)
-
-#let emptyset = text(
-    features: ("cv01",),
-    box($emptyset$),
-)
-
-#let rel = math.class(
-    "large",
-    $~$
-)

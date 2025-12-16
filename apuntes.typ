@@ -1,5 +1,4 @@
-#import("/estilo.typ"): *   // funcións de estilo
-#import("/funcions.typ"): * // funcións xerais e algúns paquetes
+#import("/funcions/estilo.typ"): *
 
 #show: activar_estilo.with(
     titulo  : "APUNTES",

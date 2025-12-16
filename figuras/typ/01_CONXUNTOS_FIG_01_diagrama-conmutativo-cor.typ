@@ -1,6 +1,6 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
-#import "/funcions.typ": *
-#import "/funcions_figuras.typ": *
+#import "/funcions/texto.typ": *
+#import "/funcions/figuras.typ": *
 
 #show: estilo_figuras.with(
     alto  : 5cm,

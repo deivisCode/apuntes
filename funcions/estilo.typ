@@ -7,8 +7,31 @@
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //
 // Este é o arquivo cas funcións e estilos de todos os apuntes.
+//
+// Defínense:
+//
+// - Funcións para crear distintas partes do documento:
+//     crear_portada()
+//     crear_indice_contidos()
+//     crear_encabezado()
+//     crear_bibliografia()
+//     crear_indice_alfabetico()
+//     crear_indice_teoremas()
+//     crear_indice_definicions()
+//     crear_contraportada()
+// - Funcións para aplicar estilos concretos, as cales aceptan contido:
+//     estilo_xeral()
+//     estilo_portada()
+//     estilo_frontmatter()
+//     estilo_mainmatter()
+//     estilo_backmatter()
+//     estilo_contraportada()
 
-#import("/funcions.typ"): *
+
+#import "@preview/in-dexter:0.7.2": make-index
+
+#import("/funcions/texto.typ"): *
+#import("/funcions/variables.typ"): *
 
 /// Funcion para crear a portada
 #let crear_portada() = {
@@ -110,7 +133,7 @@
     bibliography(
         "/bibliografia.bib",
         title: sf[Bibliografía],
-        style : "ebd.csl"
+        style : "/ebd.csl"
     )
 }
 

@@ -1,5 +1,5 @@
 #pagebreak()
-#import("/funcions.typ"): *
+#import("/funcions/texto.typ"): *
 
 #seccion(
     nome : "NOTAS",

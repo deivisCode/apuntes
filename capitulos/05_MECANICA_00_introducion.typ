@@ -1,4 +1,4 @@
-#import("/funcions.typ"): *
+#import("/funcions/texto.typ"): *
 
 #capitulo(
     nome : "Mecánica",

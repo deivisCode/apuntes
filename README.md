@@ -2,6 +2,26 @@
 
 Uns apuntes persoais do que estiven estudando ultimamente.
 
+## FACER
+
+- [ ] Índice a man
+    - [ ] Ir á palabra exacta
+    - [ ] Resaltar a palabra no texto
+    - [ ] Non diferenciar til e sen til
+    - [ ] Grupos, 'véxase..'
+
+- [ ] Depuración
+    - [ ] boxes
+    - [ ] marxes
+
+- [ ] Notas na marxe a man
+
+- [ ] Esquema
+    - [ ] Palabras clave ou metadatos
+    - [ ] Consultas con 'typst eval'
+    - [ ] Filtrado
+    - [ ] Graficado
+
 ## Decisións tipográficas e de deseño
 
 - A estrutura é de

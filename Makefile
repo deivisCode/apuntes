@@ -42,7 +42,7 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
 # Xeramos os apuntes
 # :FACER: dependencias nunha variable aparte
-.pdf/apuntes.pdf: apuntes.typ estilo.typ funcions.typ $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
+.pdf/apuntes.pdf: apuntes.typ funcions/* $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
 	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
