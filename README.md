@@ -4,18 +4,19 @@ Uns apuntes persoais do que estiven estudando ultimamente.
 
 ## FACER
 
+- [ ] Notas na marxe a man
 - [ ] Índice a man
     - [ ] Ir á palabra exacta
     - [ ] Resaltar a palabra no texto
     - [ ] Non diferenciar til e sen til
     - [ ] Grupos, 'véxase..'
-
 - [ ] Depuración
     - [ ] boxes
     - [ ] marxes
-
-- [ ] Notas na marxe a man
-
+- [ ] Tipografías
+    - [ ] Remirar a lista
+- [ ] Explicacións
+    - [ ] Cap de decisións
 - [ ] Esquema
     - [ ] Palabras clave ou metadatos
     - [ ] Consultas con 'typst eval'

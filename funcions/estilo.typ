@@ -80,10 +80,12 @@
 /// Funcion para crear un encabezado
 //
 // :FACER: nome do seccion no encabezado
+// :FACER: controlar BEN onde se mostra e onde non
 #let crear_encabezado() = context {
     let num = counter(page).get().first()
     if calc.even(num) {
         set text(size: 0.8em, fill: _gris_titulos)
+        // :FACER: facer probas minimais con query(), counter e tal
         let cap = query(heading.where(level: 1).before(here()))
         grid(
             columns : (1fr, 1fr, 1fr),
@@ -155,7 +157,6 @@
                 #box(width: 1fr,repeat([.], gap: 0.4em))
                 #h(0.4em)
                 #eso.page()
-                \
             ]
         )
     }
@@ -185,7 +186,6 @@
                 #box(width: 1fr,repeat([.], gap: 0.4em))
                 #h(0.4em)
                 #eso.page()
-                \
             ]
         )
     }
@@ -234,10 +234,8 @@
         fallback  : false,
         style     : "normal",
         features  : (
-            // = 0: false
-            // >=1: true
+            // = 0: false, >=1: true
             // algunhas poden diferenciar valores como 1,2,3,4, etc.
-            // Outra posibilidade é cun array de cadeas ("ss05", "salt", etc)
             // https://en.wikipedia.org/wiki/List_of_typographic_features
             liga : 1,
             kern : 1,
@@ -265,7 +263,8 @@
         leading              : 0.65em,
         linebreaks           : "optimized"
     )
-    show heading: set text(size: _pt_letra) // Un apaño
+    // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
+    show heading: set text(size: _pt_letra)
     show math.equation: set text(font: _math)
     doc
 }
@@ -306,14 +305,14 @@
             bottom  : 3cm
         ),
     )
-    set text(fill:black)
+    set text(fill: black)
     show math.equation.where(block: false): eso => { box(eso) }
     show raw: set text(font: _mono)
     show quote: set quote(block: true)
     show quote: set text(style:"italic")
     show figure.caption: set text(font: _sans)
     show figure.caption: eso => {
-        strong[ #eso.supplement~#eso.counter.display() #eso.separator ]
+        strong[#eso.supplement~#eso.counter.display() #eso.separator]
         eso.body
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
@@ -379,8 +378,9 @@
             eso
         }
     }
+    // :FACER: que fago cas notas ao pe? Nunca as uso...
     show footnote: eso => {
-        super([[#text(fill: rgb("#bb0000"), weight:"bold", eso)]])
+        super[[#text(fill: rgb("#bb0000"), weight:"bold", eso)]]
     }
     show footnote.entry: eso => {
         let loc = eso.note.location()
@@ -388,9 +388,7 @@
         link(
             loc,
             [
-                #super(
-                    [[#text(fill: rgb("#bb0000"), weight:"bold", [#num])]]
-                )
+                #super[[#text(fill: rgb("#bb0000"), weight:"bold", [#num])]]
                 #eso.note.body
             ]
         )
@@ -484,6 +482,7 @@
 
         // Mostramos a bibliografía
         if bibliografia != none {
+            // :FACER: todos to: odd
             pagebreak()
             bibliografia
         }

@@ -11,34 +11,26 @@
 
 #import("/funcions/variables.typ"): *
 
-/// Unha nota ao marxe. Depende do paquete 'marginalia'
-#let nota(eso) = {
-    // :FACER: usar esto aqui fai que me separe o propio texto..?
-    // set par(justify: false)
-    // []
-}
+/// Unha nota ao marxe.
+#let nota(eso) = {}
 
+/// Engadir unha palabra ao índice alfabético
 #let indice(..args) = {}
 
-/// Usado para citar unha referencia. Coloca a cita no texto e outra versión
-// completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
-// engadimos no texto pero NON na marxe
-#let lista_citas = state("citas", ())
-// :FACER: as citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
-// :FACER: pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
-// :FACER: cambiar idioma para as citas (así fai mellores hífens)? Includo
+/// Usado para citar unha referencia.
+// :FACER: As citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
+// :FACER: Pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
+// :FACER: Cambiar idioma para as citas (así fai mellores hífens)? Includo
 //         creando un parámetro (por defecto 'en' ou 'es') para controlalo en cada
 //         cita. Ou incluso usar a info da cita?. CSL debería ter un valor tipo 'lang'
 //         set text(lang: "en")
 #let cita(nome) = {
-    // Primeiro cítase no propio texto
     cite(label(nome))
 }
 
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
 //
-// :FACER: meter automaticamente esto no indice? BLOQUEADO por in-dexter, api non me gusta
-// :FACER: usar outra palabra en lugar de 'teorema'
+// :FACER: meter automaticamente esto no indice?
 // :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
 #let teorema(
     nome   : " -- SEN NOME -- ",
@@ -47,16 +39,14 @@
 ) = {
     set par(first-line-indent:0pt)
     block(
-        stroke : (
-            left : rgb(_morado) + _pt_envs
-        ),
-        fill  : rgb(_morado).lighten(90%),
-        below : 0pt,
-        width : 100%,
-        inset : _in_envs,
-        outset : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
+        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        fill      : rgb(_morado).lighten(90%),
+        below     : 0pt,
+        width     : 100%,
+        inset     : _in_envs,
+        outset    : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
         breakable : false,
-        sticky : true,
+        sticky    : true,
         [
             #show figure: set align(left)
             #show figure: set block(breakable: false)
@@ -76,12 +66,10 @@
         ]
     )
     block(
-        stroke : (
-            left : rgb(_morado) + _pt_envs
-        ),
-        fill  : rgb(_morado).lighten(90%),
-        width : 100%,
-        inset : _in_envs,
+        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        fill      : rgb(_morado).lighten(90%),
+        width     : 100%,
+        inset     : _in_envs,
         breakable : true,
         [#corpo]
     )
@@ -95,16 +83,14 @@
 ) = {
     set par(first-line-indent:0pt)
     block(
-        stroke : (
-            left : rgb(_morado) + _pt_envs
-        ),
-        fill  : rgb(_morado).lighten(90%),
-        width : 100%,
-        below : 0pt,
-        inset : _in_envs,
-        outset : ( bottom: 1pt ),
+        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        fill      : rgb(_morado).lighten(90%),
+        width     : 100%,
+        below     : 0pt,
+        inset     : _in_envs,
+        outset    : ( bottom: 1pt ),
         breakable : false,
-        sticky : true,
+        sticky    : true,
         [
             #show figure: set align(left)
             #show figure: set block(breakable: false)
@@ -122,12 +108,10 @@
         ]
     )
     block(
-        stroke : (
-            left : rgb(_morado) + _pt_envs
-        ),
-        fill  : rgb(_morado).lighten(90%),
-        width : 100%,
-        inset : _in_envs,
+        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        fill      : rgb(_morado).lighten(90%),
+        width     : 100%,
+        inset     : _in_envs,
         breakable : true,
         [#corpo]
     )
@@ -140,14 +124,12 @@
     set text(size: 0.9em, fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
-        stroke : (
-            left : _gris_bordos + _pt_envs,
-        ),
-        fill  : _gris_fondos,
-        width : 100%,
-        above : 0pt,
-        inset : _in_envs,
-        outset : ( top: 1pt ),
+        stroke    : ( left : _gris_bordos + _pt_envs ),
+        fill      : _gris_fondos,
+        width     : 100%,
+        above     : 0pt,
+        inset     : _in_envs,
+        outset    : ( top: 1pt ),
         breakable : true,
         [#underline[Demostración] #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
     )
@@ -159,14 +141,11 @@
     set text(size: 0.9em, fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
-        stroke : (
-            left : _gris_bordos + _pt_envs,
-        ),
-        fill  : _gris_fondos,
-        width : 100%,
-        // above : 0pt,
-        inset : _in_envs,
-        outset : ( top: 1pt ),
+        stroke    : ( left : _gris_bordos + _pt_envs ),
+        fill      : _gris_fondos,
+        width     : 100%,
+        inset     : _in_envs,
+        outset    : ( top: 1pt ),
         breakable : true,
         [ #underline[Exemplos]: #v(1em) #corpo]
     )
@@ -179,6 +158,7 @@
     ancora   : " -- SEN ÁNCORA -- ",
     epigrafe : " -- SEN EPÍGRAFE -- "
 ) = {
+    // :FACER: simplificar esto. Capitulo, Nome e celdas diferentes do grid...
     show heading.where(level: 1): eso => {
         show text: set text(font: _sans)
         set align(left)
@@ -197,14 +177,13 @@
         grid.cell(
             x:0, y:0,
             [
-                #show text: eso => sf[#eso]
                 #figure(
                     kind: "capitulo",
                     supplement: [Capítulo],
                     heading(
                         level: 1,
                         numbering: "1.",
-                        [#nome],
+                        sf[#nome],
                     )
                 )
                 #label(ancora)
@@ -277,6 +256,7 @@
 }
 
 /// Un bloque que ocupa a marxe grande tamén.
+// :FACER: marxes en variables
 #let bloque_ancho(contido) = {
     context {
         let num = counter(page).get().first()

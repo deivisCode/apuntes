@@ -7,11 +7,10 @@ SHELL := bash
 METODO := compile
 XERADOS := .pdf/*
 
-# Lista de nomes das figuras que queremos compilar.
+# Os nomes das figuras en PDF
+#
 # $(patsubst pattern,replacement,text)
 # https://www.gnu.org/software/make/manual/html_node/Text-Functions.html
-#
-# Os nomes das figuras en PDF
 FIGURAS_PDF = $(patsubst figuras/typ/%.typ, .pdf/%.pdf, $(wildcard figuras/typ/*.typ))
 
 # Opcions para compilar
@@ -41,9 +40,11 @@ OPCIONS_FIGURAS := \
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
 # Xeramos os apuntes
-# :FACER: dependencias nunha variable aparte
 .pdf/apuntes.pdf: apuntes.typ funcions/* $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
-	typst $(METODO) $(OPCIONS) apuntes.typ .pdf/apuntes.pdf
+	@echo -e "\nCompilando apuntes...\n"
+	typst $(METODO) \
+		$(OPCIONS) \
+		apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
 #
@@ -53,9 +54,12 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 #
 # $@ -> target, e.g. .pdf/figura1.pdf
 # $^ -> prereq, e.g. figuras/typ/figura.typ
-# :FACER: non podo poñer funcions_figuras como prerequisito..
+# :FACER: non podo poñer funcions/figuras.typ como prerequisito..
 $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
-	typst $(METODO) $(OPCIONS_FIGURAS) $^ $@
+	@echo -e "\nCompilando figuras...\n"
+	typst $(METODO) \
+		$(OPCIONS_FIGURAS) \
+		$^ $@
 
 descargar_fontes:
 

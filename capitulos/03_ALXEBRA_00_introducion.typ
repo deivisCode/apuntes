@@ -11,6 +11,11 @@
     ancora : "sec:alxebra:introducion"
 )
 
+// :FACER: ollada ao Dean
+// :FACER: ollada ao Jacobson
+// :FACER: estandarizar a notación para as operacions, + o * etc
+// :FACER: logo de facer o capitulo de conxuntos, mencionar inxectividade, sobrexectividade, etc
+
 O estudo da álxebra dende un punto de vista abstracto é sorprendentemente útil
 na física. O motivo, ironicamente, é que queremos _medir_, ou incluso de forma
 máis xeral, _asignar un número a un obxecto físico_ e con este facer
