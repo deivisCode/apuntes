@@ -6,11 +6,11 @@
 
 #let frecha = math.class(
     "relation",
-    box($stretch(arrow.r, size: #300%)$)
+    $stretch(arrow.r, size: #300%)$
 )
 
 #let mapea = text(
-    box($stretch(mapsto, size: #300%)$)
+    $stretch(mapsto, size: #300%)$
 )
 
 #let implica = text(
@@ -19,7 +19,7 @@
 
 #let sse = math.class(
     "relation",
-    box($arrow.r.l.double$)
+    $arrow.r.l.double$
 )
 
 #let subgrupo = text(
