@@ -8,7 +8,7 @@
 //
 // Aqui vai a configuracion para compilar as figuras de CeTZ
 
-#import("/funcions/texto.typ"): *
+#import("/funcions/variables.typ"): *
 
 #let estilo_figuras(
     doc,

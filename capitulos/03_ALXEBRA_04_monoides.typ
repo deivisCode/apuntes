@@ -1,4 +1,5 @@
 #import("/funcions/texto.typ"): *
+#import("/funcions/simbolos.typ"): *
 
 #seccion(
     nome : "Monoides",

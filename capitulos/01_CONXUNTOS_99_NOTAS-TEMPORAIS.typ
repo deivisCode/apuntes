@@ -1,1 +1,2 @@
 
+#import("/funcions/simbolos.typ"): *

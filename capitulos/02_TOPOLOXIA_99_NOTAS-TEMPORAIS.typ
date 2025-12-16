@@ -1,4 +1,5 @@
 #pagebreak()
+#import("/funcions/simbolos.typ"): *
 #import("/funcions/texto.typ"): *
 
 #seccion(

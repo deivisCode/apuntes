@@ -27,7 +27,6 @@
 //     estilo_backmatter()
 //     estilo_contraportada()
 
-#import("/funcions/texto.typ"): *
 #import("/funcions/variables.typ"): *
 
 /// Funcion para crear a portada

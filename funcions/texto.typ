@@ -10,7 +10,6 @@
 // citas, teoremas, etc.
 
 #import("/funcions/variables.typ"): *
-#import("/funcions/simbolos.typ"): *
 
 /// Unha nota ao marxe. Depende do paquete 'marginalia'
 #let nota(eso) = {
