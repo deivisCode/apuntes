@@ -9,9 +9,6 @@
 // Funcións para incluir no texto, como capítulo, seccións, énfases, notas,
 // citas, teoremas, etc.
 
-#import "@preview/marginalia:0.2.3" as marginalia: note
-#import "@preview/in-dexter:0.7.2": index as indice
-
 #import("/funcions/variables.typ"): *
 #import("/funcions/simbolos.typ"): *
 
@@ -19,15 +16,10 @@
 #let nota(eso) = {
     // :FACER: usar esto aqui fai que me separe o propio texto..?
     // set par(justify: false)
-    note.with(
-        numbering: none,
-        text-style: (
-            size: 0.8em,
-            fill: _gris_notas,
-            font: _sans,
-        ),
-    )(eso)
+    // []
 }
+
+#let indice(..args) = {}
 
 /// Usado para citar unha referencia. Coloca a cita no texto e outra versión
 // completa da cita na marxe. Se a cita xa apareciu algunha vez, entón só a
@@ -35,26 +27,13 @@
 #let lista_citas = state("citas", ())
 // :FACER: as citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
 // :FACER: pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
+// :FACER: cambiar idioma para as citas (así fai mellores hífens)? Includo
+//         creando un parámetro (por defecto 'en' ou 'es') para controlalo en cada
+//         cita. Ou incluso usar a info da cita?. CSL debería ter un valor tipo 'lang'
+//         set text(lang: "en")
 #let cita(nome) = {
     // Primeiro cítase no propio texto
     cite(label(nome))
-    context {
-        // Comprobo se a chave da cita, e.g. 'goldberg_1980', xa está na lista.
-        let repetido = lista_citas.get().contains(str(nome))
-        // Se non o está
-        if not repetido {
-            // :FACER: cambiar idioma para as citas (así fai mellores hífens)?
-            // Includo creando un parámetro (por defecto 'en' ou 'es') para
-            // controlalo en cada cita. Ou incluso usar a info da cita?. CSL
-            // debería ter un valor tipo 'lang'
-            // set text(lang: "en")
-            //
-            // Engadimos o nome a lista
-            lista_citas.update(eso => eso + (str(nome),))
-            // E engadimos unha nota ao marxe, ca cita completa
-            nota(cite(label(nome), form: "full"),)
-        }
-    }
 }
 
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]

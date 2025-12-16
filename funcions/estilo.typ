@@ -27,9 +27,6 @@
 //     estilo_backmatter()
 //     estilo_contraportada()
 
-
-#import "@preview/in-dexter:0.7.2": make-index
-
 #import("/funcions/texto.typ"): *
 #import("/funcions/variables.typ"): *
 
@@ -145,7 +142,7 @@
         sf[Índice Alfabético],
     )
     v(1em)
-    columns(2)[ #make-index(title: none) ]
+    columns(2)[ ]
 }
 
 // Funcion para crear o índice de teoremas
@@ -294,13 +291,6 @@
 
 /// ESTILO do corpo, entre a portada e a contraportada
 #let estilo_mainmatter(doc) = {
-    show: marginalia.setup.with(
-        inner  : ( far: 5mm, width: 2cm , sep: 5mm ),
-        outer  : ( far: 5mm, width: 5cm , sep: 5mm ),
-        top    : 3cm,
-        bottom : 3cm,
-        book   : true,
-    )
     set page(
         // :FACER: comezar en 1 no corpo do documento
         numbering      : "1",
@@ -444,7 +434,6 @@
     indice_teoremas    : crear_indice_teoremas(),
     indice_definicions : crear_indice_definicions(),
     contraportada      : crear_contraportada(),
-    marco              : false,
     documento
 ) = {
 
@@ -486,14 +475,7 @@
         show: estilo_mainmatter
 
         //// Devolvemos o contido do documento
-        if marco == true {
-            // :FACER: crear un 'show-frame' independente
-            show: marginalia.show-frame
-            documento
-        } else {
-            documento
-        }
-
+        documento
     }
 
     //// BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
