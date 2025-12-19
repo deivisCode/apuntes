@@ -13,8 +13,30 @@ Uns apuntes persoais do que estiven estudando ultimamente.
 - [ ] Depuración
     - [ ] boxes
     - [ ] marxes
-- [ ] Tipografías
-    - [ ] Remirar a lista
+- [ ] Tipografía
+    - [ ] Acrónimos con 'tracking: 0.05/0.1em'
+    - [ ] Espacios entre palabras
+        - [ ] Non Xustificado 'spacing: 0.5em'
+        - [ ] Justificado '(min: 0.85em, max:1.5em)'
+    - [ ] Medir 'abcdefghijklmnñopqrstuvwxyx', e axustar longo de liña
+    - [ ] Números e ecuacións con 'pnum': `show math.equation: set text(font:"New Computer Modern Math", features: (pnum: 1))
+    - [ ] Leading: e.g. 12/15? (texto 12pt, lead 12+3 pt). Mirar o +3
+    - [ ] TODAS as liñas en blanco deben ser proporcionales, e.g. en 12/15 unha liña en branco debe medir n*15pt
+    - [ ] Sangrías de 1em
+    - [ ] Seguir esquema progresión roman lc -> SC/FC/italic lc -> etc
+    - [ ] Cambiar parámetros un a un. lc -> bold -> bold + size -> bold + size + sans
+    - [ ] Número de páxinas múltiplo de 16.
+    - [ ] Midpoint (·) máis a miúdo
+- [ ] Fontes
+    - [ ] Remirar a lista, facer comparativa de PDFs
+        - NewCM        : https://download.gnu.org.ua/release/newcm/
+        - Caslon       : https://github.com/impallari/Libre-Caslon-Text
+        - Baskervville : https://fonts.google.com/specimen/Baskervville
+        - Bembo        : https://www.ctan.org/tex-archive/fonts/fbb/
+        - Garamond     : https://fonts.google.com/specimen/EB+Garamond
+        - Crimson      : https://www.ctan.org/pkg/crimsonpro
+                       : https://www.ctan.org/pkg/crimson
+                       : https://fonts.google.com/specimen/Crimson+Text
 - [ ] Explicacións
     - [ ] Cap de decisións
 - [ ] Esquema
