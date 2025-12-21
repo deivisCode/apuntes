@@ -132,6 +132,23 @@ Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010") O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
 algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
+// :FACER: equivalencias, aB=Ba
+#definicion(
+    nome : "Subgrupo Normal",
+    ancora : "def:alxebra:subgrupo-normal"
+)[
+    Sexa $(A, *)$ un grupo e $(B, *) subgrupo (A,*)$. Dicimos que o $B$ é un
+    #indice("Subgrupo")[Normal] subgrupo normal, e escribimos $B lt.tri A$ se
+
+    $
+        (forall a in A, b in B) space.quad a b a^(-1) in  B.
+    $
+]
+
+A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
+_conxugación_, polo que tamén se pode dicir que un subgrupo é normal se todos
+os seus elementos son invariantes baixo conxugación (siguen pertencendo a $B$).
+
 Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 grupos como o morfismo
 
@@ -168,4 +185,90 @@ $
     &f(a^(-1)) = f(a)^(-1).
 $
 
-// :FACER: Clases laterais de grupos? SI, EMPEZAR AQUI E SE TAL MOVOO DE SITIO
+Tamén podemos falar do kérnel dun homomorfismo $f$,
+$ ker(f) = { a in A | f(a) = 0_B}. $
+
+// :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
+#teorema(
+    nome : "O kérnel dun homomorfismo é un subgrupo normal",
+    ancora : "teo:alxebra:kernel-normal"
+)[
+    Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
+
+    $
+        ker(f) lt.tri A
+    $
+]
+
+// #demostracion(
+//     ancora : "teo:alxebra:kernel-normal"
+// )[
+//     Queremos demostrar que se $f$ é un homomorfismo entre os grupos $A$ e $B$
+//     entón $ker(f) lt.tri A$. Sexa $k in ker(f)$ e $a in A$. Seguindo a
+//     definición @def:alxebra:subgrupo-normal construímos $a k a^(-1)$
+// ]
+
+#definicion(
+    nome : "Clase lateral",
+    ancora : "def:alxebra:clase-lateral"
+)[
+    // :FACER: Onde empezo a simplificar (A, +) por A ?
+    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$. Ao conxunto formado polo
+    produto de $a$ con todos os elementos de $B$, escrito $a B$ chámase
+    // :FACER: nalgun sitio lin unha boa motivacion de esqueda <-> dereita
+    #indice("Clase")[Lateral] clase lateral pola esquerda. É dicir, o conxunto
+
+    $
+        a B := { a b | b in B}.
+    $
+]
+
+Pode definirse análogamente unha clase lateral _pola dereita_, $B a$.
+
+#definicion(
+    nome : "Cociente de grupos",
+    ancora : "def:alxebra:cociente-grupos"
+)[
+    Sexan $A,B$ dous grupos, $a in A$ e $f: A arrow.r B$ un homomorfismo de
+    grupos. Entón, o conxunto de todas as clases laterais pola esqueda $a B$
+    chámase #indice("Grupo")[Cociente] grupo cociente, e escríbese $A\/B$. É
+    dicir, o conxunto
+
+    $
+        A\/B := { a B | a in A } = {a_1B, a_2B, ...}
+    $
+]
+
+#teorema(
+    nome : "Primeiro teorema de isomorfismos de grupos",
+    ancora : "teo:alxebra:isomorfismos-primeiro"
+)[
+    Sexan $A,B$ grupos e $f: A arrow.r B$ un homomorfismo de grupos. Entón,
+
+    $
+        A\/ker(f) tilde.equiv f^"im" (A).
+    $
+
+    É dicir, o cociente de $A$ co kérnel de $f$ é isomorfo á imaxe de $f$.
+]
+
+#imaxe(
+    nome : "/.pdf/03_ALXEBRA_FIG_01_teorema-isomorfismos.pdf",
+    pe : [
+        Cun diagrama, Polo teorema @teo:alxebra:isomorfismos-primeiro podemos
+        dicir que existe a función $phi$ e que é un isomorfismo.
+    ]
+)
+
+// :FACER: esto está ben?
+// :FACER: meter esto en capitulo de álxebra. O actual sería 'intro á alxebra'. Ou tel vez, continuar con seccións logo da de estruturas
+#exemplos[
+
+    - Sexa $cal(C)^oo (RR)$ o conxunto de funcións reais, continuas e
+      derivables, e sexa $cal(L): cal(C)^oo arrow.r cal(C)^oo$ dada por
+      $cal(L)(y) = y'' + y + 1$. O kérnel é $cal(L)(y) = y'' + y + 1 = 0$. Polo
+      teorema @teo:alxebra:isomorfismos-primeiro sabemos que $cal(C)^oo \/
+      ker(cal(L)) tilde.equiv L^"IM" (cal(C)^oo)$. O cociente na esquerda son
+      as clases laterais $y, y^H$,
+
+]

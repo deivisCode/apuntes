@@ -117,6 +117,7 @@
     )
 }
 
+// :FACER: cambiar 'ancora' -> 'teorema'?
 #let demostracion(
     ancora : " -- SEN ÁNCORA -- ",
     corpo
