@@ -188,18 +188,16 @@ $
 Tamén podemos falar do kérnel dun homomorfismo $f$,
 $ ker(f) = { a in A | f(a) = 0_B}. $
 
-// :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
-#teorema(
-    nome : "O kérnel dun homomorfismo é un subgrupo normal",
-    ancora : "teo:alxebra:kernel-normal"
-)[
-    Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
-
-    $
-        ker(f) lt.tri A
-    $
-]
-
+// // :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
+// #teorema(
+//     nome : "O kérnel dun homomorfismo é un subgrupo normal",
+//     ancora : "teo:alxebra:kernel-normal"
+// )[
+//     Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
+//     $
+//         ker(f) lt.tri A
+//     $
+// ]
 // #demostracion(
 //     ancora : "teo:alxebra:kernel-normal"
 // )[
@@ -213,17 +211,90 @@ $ ker(f) = { a in A | f(a) = 0_B}. $
     ancora : "def:alxebra:clase-lateral"
 )[
     // :FACER: Onde empezo a simplificar (A, +) por A ?
-    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$. Ao conxunto formado polo
-    produto de $a$ con todos os elementos de $B$, escrito $a B$ chámase
+    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$ un elementoo fixo. Ao
+    conxunto formado polo produto de $a$ con todos os elementos de $B$, escrito
+    $a B$ chámase
     // :FACER: nalgun sitio lin unha boa motivacion de esqueda <-> dereita
-    #indice("Clase")[Lateral] clase lateral pola esquerda. É dicir, o conxunto
+    #indice("Clase")[Lateral] clase lateral pola esquerda de B. É dicir, o
+    conxunto
 
     $
         a B := { a b | b in B}.
     $
 ]
 
-Pode definirse análogamente unha clase lateral _pola dereita_, $B a$.
+Pode definirse análogamente unha clase lateral _pola dereita_, $B a$. O
+elemento $a$ chámase _representante_ da clase $a B$.
+
+// :FACER: demostracion desto
+#teorema(
+    nome : "As clases laterais coinciden ou son disxuntas",
+    ancora : "teo:alxebra:clases-particion"
+)[
+    Sexan as clases laterais pola esquerda $a_1 B$ e $a_2 B$. Entón,
+    $
+        a_1 B inter a_2 B = emptyset "ou" a_1 B = a_2 B.
+    $
+]
+
+É importante ver que as clases laterais non son, en xeral, subgrupos (nin
+grupos de ningún modo). En efecto, sendo $e$ o neutro de $A$, como $e in e B =
+B$ entón $e in.not a B$ se $a eq.not e$. É dicir, a única clase lateral de B
+que é un subgrupo é o propio B.
+
+#teorema(
+    nome : "Un grupo é a unión de clases laterais",
+    ancora : "teo:alxebra:union-clases"
+)[
+    Sexa $A$ un grupo e $B subgrupo A$. Entón, $A$ é a unión de clases laterais
+    pola esquerda de $B$. É dicir,
+    $
+        A = union.big_(a in A) a B.
+    $
+]
+
+#demostracion(
+    ancora : "teo:alxebra:union-clases"
+)[
+    // :FACER: neutros con subindice antes..?
+    // :FACER: notacion algo confusa
+    A demostración é máis ou menos evidente, pero por aburrimento escribo algo
+    máis. Sabemos que $e_A in B$ (por ser $B$ un subgrupo), polo que $a = a e_A
+    in a B$. Entón,
+    $
+        a in A implica a in union.big_(a in A) a B,
+    $
+    ousexa que $A subset.eq union_(a in A) a B$.
+
+    A maiores, $x in union.big_(a in A) a B$, polo que $exists a in A | x in a
+    B$, é dicir, $x = a b implica x in A$.
+    $
+        a in union.big_(a in A) a B implica a in A,
+    $
+    ousexa, $union_(a in A) a B subset.eq A$.
+
+    Finalmente, $ A = union.big_(a in A) a B $
+
+]
+
+#exemplos[
+    - Sexa o espazo euclídeo $E^3$, onde os elementos son vectores xeometricos
+      usuais que podemos pensar como frechas e denotamos por $arrow(v)$. A
+      operación de interese é a suma usual de vectores $+$, que ten como neutro
+      o vector $arrow(0)$ e na cal todo elemento $arrow(v)$ ten inverso
+      $(-arrow(v))$. Entón, a parella $(E^3, +)$ é un grupo.
+
+      Un subgrupo $W$, gráficamente, non é máis ca un plano que interseca a
+      orixe, ousexa un plano que contén o elemento neutro $arrow(0)$. As clases
+      laterais $arrow(v) + W$ son ditos planos pero desprazados polo vector
+      $arrow(v)$. Evidentemente, ditos planos xa non conteñen a orixe (se
+      $arrow(v) eq.not arrow(0)$) polo que non son subgrupos. Tamén é evidente
+      que ditos planos ou son disxuntos entre si, e que a unión de todos eles é
+      igual ao grupo completo $E$.
+
+      Máis adiante, veremos que esto é análogo ás variedades lineais dun certo
+      espazo vectorial.
+]
 
 #definicion(
     nome : "Cociente de grupos",
@@ -237,38 +308,4 @@ Pode definirse análogamente unha clase lateral _pola dereita_, $B a$.
     $
         A\/B := { a B | a in A } = {a_1B, a_2B, ...}
     $
-]
-
-#teorema(
-    nome : "Primeiro teorema de isomorfismos de grupos",
-    ancora : "teo:alxebra:isomorfismos-primeiro"
-)[
-    Sexan $A,B$ grupos e $f: A arrow.r B$ un homomorfismo de grupos. Entón,
-
-    $
-        A\/ker(f) tilde.equiv f^"im" (A).
-    $
-
-    É dicir, o cociente de $A$ co kérnel de $f$ é isomorfo á imaxe de $f$.
-]
-
-#imaxe(
-    nome : "/.pdf/03_ALXEBRA_FIG_01_teorema-isomorfismos.pdf",
-    pe : [
-        Cun diagrama, Polo teorema @teo:alxebra:isomorfismos-primeiro podemos
-        dicir que existe a función $phi$ e que é un isomorfismo.
-    ]
-)
-
-// :FACER: esto está ben?
-// :FACER: meter esto en capitulo de álxebra. O actual sería 'intro á alxebra'. Ou tel vez, continuar con seccións logo da de estruturas
-#exemplos[
-
-    - Sexa $cal(C)^oo (RR)$ o conxunto de funcións reais, continuas e
-      derivables, e sexa $cal(L): cal(C)^oo arrow.r cal(C)^oo$ dada por
-      $cal(L)(y) = y'' + y + 1$. O kérnel é $cal(L)(y) = y'' + y + 1 = 0$. Polo
-      teorema @teo:alxebra:isomorfismos-primeiro sabemos que $cal(C)^oo \/
-      ker(cal(L)) tilde.equiv L^"IM" (cal(C)^oo)$. O cociente na esquerda son
-      as clases laterais $y, y^H$,
-
 ]
