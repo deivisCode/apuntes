@@ -138,3 +138,6 @@ esquecernos da súa individualidade e tratar cos conxuntos de elementos
 equivalentes como se ditos conxuntos fosen elementos en si.
 
 // :FACER: Relacions de orde
+// :FACER: mencionar que hai cocientes doutras cousas onde se engaden
+//         requisitos adicionais, como no caso dos cocientes de grupos (que se fan
+//         sobre subgrupos normais)

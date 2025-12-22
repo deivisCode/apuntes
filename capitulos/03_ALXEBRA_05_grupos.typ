@@ -132,7 +132,8 @@ Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010") O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
 algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
-// :FACER: equivalencias, aB=Ba
+// :FACER: equivalencias, aB=Ba en rotman p.190
+// :FACER: citar kostrikin ~p.188, rotman p.103
 #definicion(
     nome : "Subgrupo Normal",
     ancora : "def:alxebra:subgrupo-normal"
@@ -143,6 +144,9 @@ algo é un subgrupo cun so paso, en lugar de 3 distintos.
     $
         (forall a in A, b in B) space.quad a b a^(-1) in  B.
     $
+    Ou, $a B a^(-1) = B$
+    // [Cap.3 $section$ 4]#cita("kostrikin_1983")
+    // [Cap.2]#cita("rotman_2000")
 ]
 
 A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
@@ -188,45 +192,48 @@ $
 Tamén podemos falar do kérnel dun homomorfismo $f$,
 $ ker(f) = { a in A | f(a) = 0_B}. $
 
-// // :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
-// #teorema(
-//     nome : "O kérnel dun homomorfismo é un subgrupo normal",
-//     ancora : "teo:alxebra:kernel-normal"
-// )[
-//     Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
-//     $
-//         ker(f) lt.tri A
-//     $
-// ]
-// #demostracion(
-//     ancora : "teo:alxebra:kernel-normal"
-// )[
-//     Queremos demostrar que se $f$ é un homomorfismo entre os grupos $A$ e $B$
-//     entón $ker(f) lt.tri A$. Sexa $k in ker(f)$ e $a in A$. Seguindo a
-//     definición @def:alxebra:subgrupo-normal construímos $a k a^(-1)$
-// ]
+// :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
+#teorema(
+    nome : "O kérnel dun homomorfismo é un subgrupo normal",
+    ancora : "teo:alxebra:kernel-normal"
+)[
+    Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
+    $
+        ker(f) lt.tri A
+    $
+]
+// :FACER: demostracion
 
+O teorema @teo:alxebra:kernel-normal non era posible no caso dos monoides (ou
+estruturas anteriores) porque dependen da noción de elemento inverso.
+
+// :FACER: Onde empezo a simplificar (A, +) por A ?
+// :FACER: nalgún sitio lin unha boa motivación de esquerda <-> dereita
+// :FACER: citar kostrikin ~p190, dean def 3.4.2,
 #definicion(
     nome : "Clase lateral",
     ancora : "def:alxebra:clase-lateral"
 )[
-    // :FACER: Onde empezo a simplificar (A, +) por A ?
     Sexa $A$ un grupo, $B subgrupo A$, e $a in A$ un elementoo fixo. Ao
     conxunto formado polo produto de $a$ con todos os elementos de $B$, escrito
-    $a B$ chámase
-    // :FACER: nalgun sitio lin unha boa motivacion de esqueda <-> dereita
-    #indice("Clase")[Lateral] clase lateral pola esquerda de B. É dicir, o
-    conxunto
+    $a B$ chámase #indice("Clase")[Lateral] clase lateral pola esquerda de B. É
+    dicir, o conxunto
 
     $
         a B := { a b | b in B}.
     $
 ]
 
-Pode definirse análogamente unha clase lateral _pola dereita_, $B a$. O
-elemento $a$ chámase _representante_ da clase $a B$.
+Pode definirse analogamente unha clase lateral _pola dereita_, $B a$. O
+elemento $a$ chámase _representante_ da clase $a B$. En realidade, na
+definición @def:alxebra:clase-lateral non estamos a usar ningunha propiedade
+exclusiva dos grupos, polo que é posible unha definición análoga para monoides,
+por exemplo. O único motivo polo que non presento ese caso é que nos casos dos
+monoides (e semigrupos, etc.) nunca xamais lle vin uso ao concepto de clase
+lateral. Pero ser, é posible definilo.
 
 // :FACER: demostracion desto
+// :FACER: citar kos ~p190, dean lemma 3.4.4
 #teorema(
     nome : "As clases laterais coinciden ou son disxuntas",
     ancora : "teo:alxebra:clases-particion"
@@ -242,6 +249,7 @@ grupos de ningún modo). En efecto, sendo $e$ o neutro de $A$, como $e in e B =
 B$ entón $e in.not a B$ se $a eq.not e$. É dicir, a única clase lateral de B
 que é un subgrupo é o propio B.
 
+// :FACER: citar kos ~p190, dean lemma 3.4.4
 #teorema(
     nome : "Un grupo é a unión de clases laterais",
     ancora : "teo:alxebra:union-clases"
@@ -296,6 +304,8 @@ que é un subgrupo é o propio B.
       espazo vectorial.
 ]
 
+// :FACER: fai falla que B <= A, para que o cociente teña estrutura de grupo.
+//         Está explicado en gowers e rotman 109
 #definicion(
     nome : "Cociente de grupos",
     ancora : "def:alxebra:cociente-grupos"
