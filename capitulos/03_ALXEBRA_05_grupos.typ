@@ -305,7 +305,7 @@ que é un subgrupo é o propio B.
 ]
 
 // :FACER: fai falla que B <= A, para que o cociente teña estrutura de grupo.
-//         Está explicado en gowers e rotman 109
+//         Está explicado en gowers, rotman 109, kostrik 192
 #definicion(
     nome : "Cociente de grupos",
     ancora : "def:alxebra:cociente-grupos"
