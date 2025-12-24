@@ -308,7 +308,7 @@
     set text(fill: black)
     show math.equation.where(block: false): eso => { box(eso) }
     show raw: set text(font: _mono)
-    show quote: set quote(block: true)
+    show quote: set quote(block: true) // :FACER: apenas uso isto..?
     show quote: set text(style:"italic")
     show figure.caption: set text(font: _sans)
     show figure.caption: eso => {

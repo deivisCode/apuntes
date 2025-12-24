@@ -7,7 +7,17 @@
 )
 
 Unha noción de gran interese na teoría de conxuntos e, por extensión, en todas
-as matemáticas é a de relación de equivalencia.
+as matemáticas é a de relación de equivalencia. A grandes trazos é unha maneira
+de dicir se dous obxectos son os mesmos baixo algunha restrición concreta. Por
+exemplo, podemos inventarnos unha certa relación de equivalencia (máis adiante
+veremos que deben satisfacer certas propiedades) entre dous obxectos físicos se
+están en equilibrio térmico entre eles. Os obxectos non son iguais, pero
+podemos esquecernos e pensar exclusivamente na relación ca que esteamos a
+tratar. A igualdade usual, escrita $=$, tamén é unha relación de equivalencia,
+polo que dalgún modo estas xeneralizan o que significa que dúas cousas sexan
+iguais.
+
+Antes de nada, unha definición preliminar.
 
 #definicion(
     nome : "Relación Binaria",
@@ -33,6 +43,10 @@ $ <exp:contuntos:posicion-simbolos>
 Tamén se soe escribir $a rel_R$ ou simplemente $a rel b$ no caso de
 sobreentender cal é a relación $R$. Tamén se pode dicir directamente que $rel$
 é o mesmo que $R$.
+
+Existen moitos tipos de relacións, como as de _orde_ que dan lugar ao estudo de
+retícular, pero nós centraremos o noso interese (polo de agora) nas de
+equivalencia.
 
 #definicion(
     nome : "Relación de equivalencia",

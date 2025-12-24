@@ -32,6 +32,7 @@
 //
 // :FACER: meter automaticamente esto no indice?
 // :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
+// :FACER: Notación: definimos 'a' como noseque. FUNCION PA ESTAS COUSAS
 #let teorema(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",

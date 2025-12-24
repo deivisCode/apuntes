@@ -24,7 +24,7 @@ podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
 Pra mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$ escribimos
 $a mapsto b$ ou $a mapsto b=f(a)$.
 
-+ Grafos e tal..?
+// :FACER: Grafos e tal..?
 
 #definicion(
     nome : "Dominio dunha función",
@@ -44,9 +44,6 @@ $a mapsto b$ ou $a mapsto b=f(a)$.
     función $f$.
 ]
 
-Nalgúns contextos os nomes de _codominio_ e _rango_ mestúranse, pero eu
-manterei esta distinción.
-
 #definicion(
     nome : "Imaxe",
     ancora : "def:conxuntos:imaxe"
@@ -62,7 +59,9 @@ manterei esta distinción.
 ]
 
 Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función $f$, é dicir,
-$b = f(a)$. A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$.
+$b = f(a)$. A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$. Nalgúns
+contextos os nomes de _codominio_ e _rango_ mestúranse, pero eu manterei esta
+distinción.
 
 #definicion(
     nome : "Preimaxe",
@@ -109,6 +108,24 @@ gusta.
 Ás veces pode enfatizarse que unha función é sobrexectiva usando a frecha
 $->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
 
+A noción de sobrexectividade é algo confusa. Por exemplo, por que a función
+$f:RR->RR$ dada por
+
+$
+    f(x) = cases(
+        1 "se" x < 1,
+        2 "se" x >= 1
+    )
+$
+
+non é sobrexectiva? Evidentemente, a imaxe de $f$ é simplemente o conxunto
+${1,2}$, entón por qué molestarse sequera en definir $f:RR->RR$ (que non é
+sobrexectiva) en lugar de $f:RR->>{1,2}$ (que si é sobrexectiva)? Sin embargo,
+ao falar do conxunto de chegada a notación é máis estricta, e sempre usamos o
+espazo exacto. Non se escribe $f:RR->RR$ se a función se define como
+$f(x)=sqrt(x)$ xa que só valen $x>=0$. Escribimos o espazo de partida (dominio)
+sempre $RR^+$. Este é un pequeno detalle notacional que ás veces é confuso.
+
 #definicion(
     nome : "Función inxectiva",
     ancora : "def:conxuntos:inxectividade"
@@ -144,6 +161,23 @@ ousexa función $f:A arrow.r.hook B$ é inxectiva.
     #indice("Función")[Bixectiva] bixectiva.
 ]
 
+As definicións de sobrexectividade, inxectividade e bixectividade soen
+presentarse sempre xuntas, e é típico memorizar que boxectividade é o mesmo que
+sobrexectividade e inxectividade. É correcto, pero pode ser algo confuso. Como
+comentara antes logo da definición @def:conxuntos:sobrexectividade o concepto
+de sobrexectividade ás veces parece un detalle notacional máis ca outra cousa.
+Sempre podemos facer unha función sobrexectiva limitando o codomino á imaxe de
+$f$, e xa estaría. A inxectividade, en cambio, é algo máis delicada, e
+realmente o punto máis importante. Recordemos que unha función é unha relación
+que a cada elemento do espazo de partida lle asigna un, e só un, elemento do
+espazo de chegada. Por outro lado, dita función é inxectiva se os elementos do
+espazo de partida se asocian a elementos diferentes no de chegada. É dicir, a
+función é _un a un_, ou o que é o mesmo, por cada elemento nun conxunto hai un
+único no outro. A sobrexectividade é necesaria por se escribimos un espazo de
+chegada máis grande do que debería, para asegurarnos de que non quedan
+elementos sen preimaxe. Pero a idea relevante está na propia definición de
+función e de inxectividade.
+
 #definicion(
     nome : "Función identidade",
     ancora : "def:conxuntos:identidade"
@@ -171,4 +205,35 @@ ousexa función $f:A arrow.r.hook B$ é inxectiva.
 
     chámase #indice("Función")[Composta] composición de $f$ e $g$, e polo xeral
     denótase por $g compose f$ #nota[Léase como "gee of eff"]
+]
+
+#definicion(
+    nome : "Función Inversa",
+    ancora : "def:conxuntos:inversa"
+)[
+    Sexan $A,B$ conxuntos calquera e $f:A->B$. Unha función $g:B->A$ que cumpre
+    $
+        g compose f = id_A \
+        f compose g = id_B
+    $
+    dicimos que é a función inversa de $f$, e en xeral escríbese como $f^(-1)$.
+]
+
+Ollo, $id_A$ é a identidade $id_A:A->A$ e $id_B$ é a identidade $id_B:B->B$. A
+función inversa de $f$, entón, pode compoñerse con $f$ para dar a identidade.
+
+// :FACER: demostración
+#teorema(
+    nome : "A función inversa é única",
+    ancora : "teo:conxuntos:inversa-unica"
+)[
+    Se a función $f$ ten inversa, $f^(-1)$, entón esta é única.
+]
+
+// :FACER: demostración
+#teorema(
+    nome : "Bixectividade é o mesmo que ter inversa",
+    ancora : "teo:conxuntos:bixectividade-invesas"
+)[
+    $f$ é bixectiva $sse$ $f$ ten inversa.
 ]

@@ -367,7 +367,7 @@ implica f(a) = f(b)$.
     ancora : "teo:alxebra:nucleo-unidade"
 )[
 
-    "$arrow.r.double$" #v(1em)
+    "$arrow.r.double$" #v(1em) // :FACER: atallo para isto
 
     Partimos de que $f$ é inxectiva. $f(e_A) = f(a-a) = f(a)-f(a) = e_B$
     $implica f(e_A) = e_B implica e_A in ker(f)$ Pode ser que haxa outro

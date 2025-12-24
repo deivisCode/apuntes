@@ -6,15 +6,20 @@
     ancora : "sec:conxuntos:conceptos"
 )
 
+Evidentemente comezamos ca definición de conxunto. En realidade este é un punto
+delicado, faría falla entrar máis no tema da lóxica para xustificar ben esta
+sección, concretamente a definición @def:conxuntos:conxunto, pero agora mesmo
+non o vexo necesario.
+
 #definicion(
     nome : "Conxunto",
     ancora : "def:conxuntos:conxunto"
 )[
     // :FACER: axiomas
-    Un #indice[Conxunto] conxunto é unha colección arbitraria de obxetos (que
-    chamaremos _elementos_) que cumplen unha serie de axiomas (que agora mesmo
-    non necesitamos mencionar). Ademáis, #nota[Seguramente debería explicar
-    esto mellor... pero polo de agora a idea intuitiva é dabondo]
+    Un #indice[Conxunto] conxunto é unha colección arbitraria de obxectos (que
+    chamaremos _elementos_) que cumpren unha serie de axiomas (que agora mesmo
+    non necesitamos mencionar). Ademais, #nota[Seguramente debería explicar
+    isto mellor... pero polo de agora a idea intuitiva é dabondo]
 
     + Debe existir un criterio claro para determinar se un elemento pertence ou
       no a dito conxunto.
@@ -40,11 +45,18 @@ $
     A = { a_i in U | P_U},
 $
 
-o cal significa que os elementos de $A$ son elementos de $U$ que cumpren o
-predicado #nota[Un predicado é unha propiedade dun conxunto calquera $U$ que
-pode volverse verdadeira ou falsa dependendo do valor concreto $u in U$.]
-$P_U$. En calquera caso, usamos parénteses recurvos pra indicar que estamos a
-construír un conxunto.
+que se lee #quote(block: false)[os elementos $a_i$ de $U$ tales que o predicado
+$P_U$ é certo]. #nota[Un predicado é unha propiedade dun conxunto calquera $U$
+que pode volverse verdadeira ou falsa dependendo do valor concreto $u in U$.]
+Un exemplo de conxunto por extensión é o conxunto de dous elementos $A = {1,
+2}$ ou o conxunto de números enteiros $ZZ = {dots, -1, 0, 1, 2, dots}$ onde a
+pesar de ter infinitos elementos podemos usar unha elipsis (os puntos $dots$)
+se se sobreentende o que se quere dicir. Un exemplo de conxunto por compresión
+son os números racionais $QQ = { a/b | a,b in ZZ}$.
+
+
+En calquera caso, usamos parénteses recurvos pra indicar que
+estamos a construír un conxunto.
 
 #definicion(
     nome : "Conxunto baleiro",
@@ -85,8 +97,8 @@ in RR | 0x = 7}$.
     $
 ]
 
-O símbolo $subset.eq$ indica que $B$ é un subconxunto, ou pode ser un conxunto
-igual. Se descartamos a posibilidade de que $A=B$ entón dicimos que $B$ é un
+O símbolo $subset.eq$ indica que $B$ é un subconxunto de $A$, igual ou non a
+$A$. Se descartamos a posibilidade de que $A=B$ entón dicimos que $B$ é un
 subconxunto propio de $A$, e escribimos $B subset.neq A$ ou simplemente $B
 subset A$. Por comodidade ás veces úsase $subset$ para ambos casos.
 
@@ -97,7 +109,22 @@ subset A$. Por comodidade ás veces úsase $subset$ para ambos casos.
     Dous conxuntos $A,B$ son iguais se $A subset.eq B$ e $B subset.eq A$.
 ]
 
-Este teorema é o método típico para probar que dous conxuntos son iguais.
+#demostracion(
+    ancora : "teo:conxuntos:conxuntos-iguais"
+)[
+    $
+        A=B arrow.r.l.double &(forall x in A) space.quad x in B, \
+                             &(forall x in B) space.quad x in A, \
+
+            arrow.r.l.double &A subset.eq B \
+                             &B subset.eq A \
+
+    $
+]
+
+Este teorema é o método típico para probar que dous conxuntos son iguais,
+comprobando se se conteñen mutuamente, é dicir, se un certo elemento $x$
+pertence a un deles tamén o fai no outro, e viceversa.
 
 #definicion(
     nome : "Conxunto potencia",
@@ -111,6 +138,11 @@ Este teorema é o método típico para probar que dous conxuntos son iguais.
         scr(P)(A) := {B | B subset.eq A}.
     $
 ]
+
+O conxunto potencia non é máis que todos os subconxuntos posibles. Este
+constructo aparece a miúdo en topoloxía onde se van construir conxuntos
+concretos apartires del e tamén como exemplo de topoloxías concretas, por
+exemplo a topoloxía _discreta_.
 
 #definicion(
     nome : "Conxunto complementario",
@@ -169,8 +201,10 @@ Este teorema é o método típico para probar que dous conxuntos son iguais.
     $
 ]
 
-Ás veces, o conxunto diferenza tamén se indica como $A\\B$.
+Ás veces, o conxunto diferenza tamén se indica como $A\\B$, inda que me parece
+algo confuso logo cando aparecen os conceptos de _cocientes_ de conxuntos,
+grupos, ... que tamén se denotan deste modo.
 
-+ Union, interseccion arbitrarias
-+ Cartesiano
-+ Cuantificadores
+// :FACER: Union, interseccion arbitrarias
+// :FACER: Cartesiano
+// :FACER: Cuantificadores
