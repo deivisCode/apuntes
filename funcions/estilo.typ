@@ -90,13 +90,19 @@
         set text(size: 0.8em, fill: _gris_titulos)
 
         // Todas as seccións definidas na páxina actual. Depende da función
-        // 'sección' que crea unha figura baleira de tipo "seccions-49"
+        // 'sección' que crea unha figura baleira de tipo "seccions-49" con
+        // metadata("nome seccion") dentro
         let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
 
         let seccion_ultima = if seccions.len() != 0 {
             // Se hai seccións nesta páxina, mostrámola e actualizamos a lista global
-            seccions.last().body.body
-            _seccions.update(s => s + (seccions.last().body.body,) )
+            // Recordemos que:
+            // seccions                   -> array
+            // seccions.last()            -> ultimo elemento, unha figura
+            // seccions.last().body       -> o corpo da figura (#metadata)
+            // seccions.last().body.value -> o valor da metadata (o nome da seccion)
+            seccions.last().body.value
+            _seccions.update(s => s + (seccions.last().body.value,) )
         } else {
             // Se non hai, usamos a sección da lista global
             _seccions.get().last()
@@ -123,8 +129,8 @@
         let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
 
         let seccion_ultima = if seccions.len() != 0 {
-            seccions.last().body.body
-            _seccions.update(s => s + (seccions.last().body.body,) )
+            seccions.last().body.value
+            _seccions.update(s => s + (seccions.last().body.value,) )
         } else {
             _seccions.get().last()
         }

@@ -169,7 +169,6 @@
         text(size: 3em)[#eso.body]
     }
     pagebreak(to:"odd")
-    // set page(header: none) // :FACER: encabezado baleiros ao inciar caps
     counter(heading.where(level: 2)).update(0)
     grid(
         columns : (auto,20%,1fr),
@@ -224,12 +223,14 @@
         grid(
             columns: (1em, 1fr),
             // Esta figura ten un 'kind' concreto que logo podo coller con
-            // query pa saber que seccións teño nunha certa páxina
+            // query pa saber que seccións teño nunha certa páxina. O corpo da
+            // figura ten un 'metadata' co nome da sección, o cal non ocupa
+            // espazo visual algún.
             context {
                 figure(
                     kind : "seccions-" + str(here().page()),
                     supplement : "figura_auxiliar_seccions",
-                    hide(nome)
+                    metadata(nome)
                 )
             },
             [
