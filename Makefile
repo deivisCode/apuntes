@@ -2,8 +2,6 @@ SHELL := bash
 .DEFAULT_GOAL := .pdf/apuntes.pdf
 .PHONY: limpa descargar_fontes comprobar_fontes
 
-# :FACER: poder elixir se usar compile ou watch con 'make metodo=watch'. Polo
-# de agora, ao cancelar con CTRL-C, make da erro
 METODO := compile
 XERADOS := .pdf/*
 
@@ -40,6 +38,10 @@ OPCIONS_FIGURAS := \
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 
 # Xeramos os apuntes
+#
+# Esto é pa que Make non borre os PDF se o quito con CTRL-C
+.PRECIOUS: .pdf/apuntes.pdf $(FIGURAS_PDF)
+
 .pdf/apuntes.pdf: apuntes.typ funcions/* $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
 	@echo -e "\nCompilando apuntes...\n"
 	typst $(METODO) \
@@ -57,7 +59,7 @@ $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
 # :FACER: non podo poñer funcions/figuras.typ como prerequisito..
 $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 	@echo -e "\nCompilando figuras...\n"
-	typst $(METODO) \
+	typst compile \
 		$(OPCIONS_FIGURAS) \
 		$^ $@
 
