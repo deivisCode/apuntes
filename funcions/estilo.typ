@@ -79,21 +79,36 @@
 
 /// Funcion para crear un encabezado
 //
-// :FACER: nome do seccion no encabezado
-// :FACER: controlar BEN onde se mostra e onde non
+// Este estado garda todas as seccións do libro
+#let _seccions = state("seccions", ([ ],))
 #let crear_encabezado() = context {
+
     let num = counter(page).get().first()
+
     if calc.even(num) {
+
         set text(size: 0.8em, fill: _gris_titulos)
-        // :FACER: facer probas minimais con query(), counter e tal
-        let cap = query(heading.where(level: 1).before(here()))
+
+        // Todas as seccións definidas na páxina actual. Depende da función
+        // 'sección' que crea unha figura baleira de tipo "seccions-49"
+        let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
+
+        let seccion_ultima = if seccions.len() != 0 {
+            // Se hai seccións nesta páxina, mostrámola e actualizamos a lista global
+            seccions.last().body.body
+            _seccions.update(s => s + (seccions.last().body.body,) )
+        } else {
+            // Se non hai, usamos a sección da lista global
+            _seccions.get().last()
+        }
+
         grid(
             columns : (1fr, 1fr, 1fr),
             rows    : (1em, 1em),
             align   : (left + horizon, right + horizon, right + horizon),
             grid.cell(
-                x:2, y:0,
-                upper[#cap.last().body]
+                x:0, y:0,
+                upper[#seccion_ultima]
             ),
             grid.cell(
                 x:0, y:1,
@@ -101,8 +116,34 @@
                 line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
+
     } else {
-        line(length: 100%, stroke: _pt_fino + _gris_titulos)
+
+        set text(size: 0.8em, fill: _gris_titulos)
+        let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
+
+        let seccion_ultima = if seccions.len() != 0 {
+            seccions.last().body.body
+            _seccions.update(s => s + (seccions.last().body.body,) )
+        } else {
+            _seccions.get().last()
+        }
+
+        grid(
+            columns : (1fr, 1fr, 1fr),
+            rows    : (1em, 1em),
+            align   : (left + horizon, right + horizon, right + horizon),
+            grid.cell(
+                x:2, y:0,
+                upper[#seccion_ultima]
+            ),
+            grid.cell(
+                x:0, y:1,
+                colspan: 3,
+                line(length: 100%, stroke: _pt_fino + _gris_titulos),
+            )
+        )
+
     }
 }
 

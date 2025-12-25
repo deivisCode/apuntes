@@ -209,27 +209,42 @@
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- "
 ) = {
-    show figure: set align(left)
+    show figure: set align(right)
     show heading.where(level: 2): eso => {
+        // :FACER: limpar esto. Fai falla o show?
         let HEA = counter(heading.where(level: 1)).at(here()).last()
         let SEC = counter(heading.where(level: 2)).at(here()).last()
         set text(size: 1.5em)
-        sf[#v(1.5em) #h(1fr) *$section$* #HEA.#SEC #eso.body #v(0.5em)]
+        sf[*$section$* #HEA.#SEC #eso.body]
     }
     block(
         sticky: true,
-        [
-            #figure(
-                kind: "seccion",
-                supplement: [Sección],
-                heading(
-                    level: 2,
-                    numbering: "1.",
-                    [#nome],
+        above: 2em,
+        below: 1em,
+        grid(
+            columns: (1em, 1fr),
+            // Esta figura ten un 'kind' concreto que logo podo coller con
+            // query pa saber que seccións teño nunha certa páxina
+            context {
+                figure(
+                    kind : "seccions-" + str(here().page()),
+                    supplement : "figura_auxiliar_seccions",
+                    hide(nome)
                 )
-            )
-            #label(ancora)
-        ]
+            },
+            [
+                #figure(
+                    kind: "seccion",
+                    supplement: [Sección],
+                    heading(
+                        level: 2,
+                        numbering: "1.",
+                        [#nome],
+                    )
+                )
+                #label(ancora)
+            ]
+        )
     )
 }
 
