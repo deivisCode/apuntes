@@ -5,6 +5,8 @@
     autoria : ((nome: "David Cotelo Varela"),),
 )
 
+// :FACER: TODOS os sf,bold,sc, usando text(features:("smcp")) etc.
+
 #include("/capitulos/01_CONXUNTOS_00_introducion.typ")
 #include("/capitulos/01_CONXUNTOS_01_conceptos.typ")
 #include("/capitulos/01_CONXUNTOS_02_relacions.typ")

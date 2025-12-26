@@ -18,7 +18,6 @@
 #let indice(..args) = {}
 
 /// Usado para citar unha referencia.
-// :FACER: As citas deben poder usar 'pre/post notes', e.g. [cap.1 Sha90]
 // :FACER: Pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
 // :FACER: Cambiar idioma para as citas (así fai mellores hífens)? Includo
 //         creando un parámetro (por defecto 'en' ou 'es') para controlalo en cada
@@ -29,10 +28,6 @@
 }
 
 /// Un teorema simple, e.g. '#teorema("fermat", "teo:fermat")[$a+b=0$]
-//
-// :FACER: meter automaticamente esto no indice?
-// :FACER: explicar que uso a palabra 'teorema' máis laxa que en matemáticas, e.g.delgado_2010
-// :FACER: Notación: definimos 'a' como noseque. FUNCION PA ESTAS COUSAS
 #let teorema(
     nome   : " -- SEN NOME -- ",
     ancora : " -- SEN ÁNCORA -- ",
@@ -66,6 +61,8 @@
             #label(ancora)
         ]
     )
+    // O Título do teorema e o corpo son dous bloques, o primero irrompible e o
+    // segundo non. O primeiro é 'sticky' para que vaia pegado ao segundo
     block(
         stroke    : ( left : rgb(_morado) + _pt_envs ),
         fill      : rgb(_morado).lighten(90%),
@@ -249,6 +246,7 @@
     )
 }
 
+// :FACER: áncora para esto
 #let imaxe(
     nome   : "/figuras/svg/patata.svg",
     pe     : " -- SEN PÉ -- ",
@@ -274,7 +272,7 @@
 }
 
 /// Un bloque que ocupa a marxe grande tamén.
-// :FACER: marxes en variables
+// :FACER: marxes en variables ou con here().page().margin()..?
 #let bloque_ancho(contido) = {
     context {
         let num = counter(page).get().first()

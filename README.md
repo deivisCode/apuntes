@@ -4,12 +4,15 @@ Uns apuntes persoais do que estiven estudando ultimamente.
 
 ## FACER
 
-- [ ] Notas na marxe a man
-- [ ] Índice a man
-    - [ ] Ir á palabra exacta
-    - [ ] Resaltar a palabra no texto
-    - [ ] Non diferenciar til e sen til
-    - [ ] Grupos, 'véxase..'
+- [ ] Funcións
+    - [ ] Notas na marxe a man. Depende de https://github.com/typst/typst/issues/5233
+    - [ ] Índice a man
+        - [ ] Ir á palabra exacta
+        - [ ] Resaltar a palabra no texto
+        - [ ] Non diferenciar til e sen til
+        - [ ] Grupos, 'véxase..'
+        - [ ] Meter automáticamente cousas de definicións
+    - [ ] Notación
 - [ ] Depuración
     - [ ] boxes
     - [ ] marxes
@@ -27,6 +30,14 @@ Uns apuntes persoais do que estiven estudando ultimamente.
     - [ ] Cambiar parámetros un a un. lc -> bold -> bold + size -> bold + size + sans
     - [ ] Número de páxinas múltiplo de 16.
     - [ ] Midpoint (·) máis a miúdo
+- [ ] Estrutura
+    - [ ] Comezar en 1 no corpo do documento
+- [ ] Referencias
+    - [ ] A táboas
+    - [ ] A ecuacións
+    - [ ] En xeral, estilos
+    - [ ] `pageref`, incluso con nomes do teorema `#context { query(<def:alxebra:subestrutura>).first().location().page() }`
+    - [ ] Citas bibliográficas deben usar pre-post notes
 - [ ] Fontes
     - [ ] Remirar a lista, facer comparativa de PDFs
         - NewCM        : https://download.gnu.org.ua/release/newcm/
@@ -37,6 +48,8 @@ Uns apuntes persoais do que estiven estudando ultimamente.
         - Crimson      : https://www.ctan.org/pkg/crimsonpro
                        : https://www.ctan.org/pkg/crimson
                        : https://fonts.google.com/specimen/Crimson+Text
+- [ ] Portada
+- [ ] Contraportada
 - [ ] Explicacións
     - [ ] Cap de decisións
 - [ ] Esquema

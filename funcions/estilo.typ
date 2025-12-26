@@ -27,9 +27,11 @@
 //     estilo_backmatter()
 //     estilo_contraportada()
 
+
+// Importo variables como o tamaño de letra, cores, funcións para escribir en Sans, etc.
 #import("/funcions/variables.typ"): *
 
-/// Funcion para crear a portada
+// Funcion para crear a portada
 #let crear_portada() = {
     set align(center)
     v(3em)
@@ -58,22 +60,24 @@
     )
 }
 
-/// Funcion para crear o Índice de materias
+// Funcion para crear o Índice de materias
 #let crear_indice_contidos() = {
     show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
     show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:1.4em)
     show outline.entry.where( level: 1 ): set outline.entry(fill: none)
     show heading.where(level: 1): set block(below: 1em)
+    // Encabezado de Nivel 1 para o propio índice de contidos
     heading(
         level      : 1,
-        numbering  : none,
-        outlined   : false,
-        bookmarked : true,
+        numbering  : none,  // Non está numerado
+        outlined   : false, // Non aparece no propio índice
+        bookmarked : true,  // Pero si nos marcadores
         sf[Índice de contidos],
     )
     outline(
         title: none,
-        depth: 2
+        depth: 2 // Colle todos os de nivel 1 (Capítulos) e 2 (Seccións).
+                 // Ollo, tamén inclúe cousas do backmatter
     )
 }
 
@@ -81,19 +85,19 @@
 //
 // Este estado garda todas as seccións do libro
 #let _seccions = state("seccions", ([ ],))
+
+// Ollo, este 'context' é extremadamente grande
 #let crear_encabezado() = context {
-
+    // Páxina actual
     let num = counter(page).get().first()
-
+    // Páxinas pares (esquerda)
     if calc.even(num) {
-
         set text(size: 0.8em, fill: _gris_titulos)
-
         // Todas as seccións definidas na páxina actual. Depende da función
         // 'sección' que crea unha figura baleira de tipo "seccions-49" con
         // metadata("nome seccion") dentro
         let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
-
+        // A última sección que hai na páxina
         let seccion_ultima = if seccions.len() != 0 {
             // Se hai seccións nesta páxina, mostrámola e actualizamos a lista global
             // Recordemos que:
@@ -107,7 +111,7 @@
             // Se non hai, usamos a sección da lista global
             _seccions.get().last()
         }
-
+        // Mostrar o encabezado. 2 filas, 3 columnas. 2ª fila toda xunta cunha liña
         grid(
             columns : (1fr, 1fr, 1fr),
             rows    : (1em, 1em),
@@ -122,19 +126,16 @@
                 line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
-
+    // Páxinas impares (dereita)
     } else {
-
         set text(size: 0.8em, fill: _gris_titulos)
         let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
-
         let seccion_ultima = if seccions.len() != 0 {
             seccions.last().body.value
             _seccions.update(s => s + (seccions.last().body.value,) )
         } else {
             _seccions.get().last()
         }
-
         grid(
             columns : (1fr, 1fr, 1fr),
             rows    : (1em, 1em),
@@ -149,23 +150,25 @@
                 line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
-
     }
 }
 
 /// Funcion para crear o pe de paxina
 #let crear_pe() = context {
+    // Páxina actual
     let num = counter(page).get().first()
+    // Páxinas pares (esquerda)
     if calc.even(num) {
         grid(
-            columns: (10%, 1fr),
-            align: (left + horizon, right + horizon),
+            columns : (10%, 1fr),
+            align   : (left + horizon, right + horizon),
             [*#num*], line(length:100%, stroke: _pt_fino + _gris_titulos)
         )
+    // Páxinas impares (dereita)
     } else {
         grid(
-            columns: (1fr, 10%),
-            align: (left + horizon, right + horizon),
+            columns : (1fr, 10%),
+            align   : (left + horizon, right + horizon),
             line(length:100%, stroke: _pt_fino + _gris_titulos ), [*#num*]
         )
     }
@@ -173,8 +176,9 @@
 
 /// Funcion para crear a Bibliografía
 #let crear_bibliografia() = {
-    // :FACER: biblio en cada capítulo? https://github.com/typst/typst/issues/1097
+    // Encabezados nivel 1 con máis espaciado
     show heading.where(level: 1): set block(below: 1em)
+    // Mostrar a bibliografía
     bibliography(
         "/bibliografia.bib",
         title: sf[Bibliografía],
@@ -195,6 +199,7 @@
 
 // Funcion para crear o índice de teoremas
 #let crear_indice_teoremas() = {
+    // Refacer o outline case de cero
     show outline.entry: eso => {
         link(
             eso.element.location(),
@@ -252,8 +257,6 @@
 }
 
 /// Funcion para crear a contraportada
-//
-// :FACER: crear unha contraportada decente
 #let crear_contraportada() = {
     v(1fr)
 }
@@ -311,6 +314,9 @@
         linebreaks           : "optimized"
     )
     // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
+    // :FACER: cando deixe de ser necesario sobreescribir os valores dos
+    // encabezados estaría ben unificar todos os 'show heading' que hai
+    // desperdigados, como os dos indices, biblio, etc.
     show heading: set text(size: _pt_letra)
     show math.equation: set text(font: _math)
     doc
@@ -330,14 +336,14 @@
     doc
 }
 
+// ESTILO do frontmatter. Agradecementos, índice de contido, prólogo, etc.
 #let estilo_frontmatter(doc) = {
     doc
 }
 
-/// ESTILO do corpo, entre a portada e a contraportada
+/// ESTILO do corpo. O propio documento con matemáticas e física
 #let estilo_mainmatter(doc) = {
     set page(
-        // :FACER: comezar en 1 no corpo do documento
         numbering      : "1",
         header         : crear_encabezado(),
         footer         : crear_pe(),
@@ -353,7 +359,9 @@
         ),
     )
     set text(fill: black)
+    // As ecuacions no texto deben ser 'box' para que non se rompan
     show math.equation.where(block: false): eso => { box(eso) }
+    // :FACER: esto debería ir no estilo xeral
     show raw: set text(font: _mono)
     show quote: set quote(block: true) // :FACER: apenas uso isto..?
     show quote: set text(style:"italic")
@@ -363,7 +371,6 @@
         eso.body
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
-    // :FACER: como referencio as ecuacións??
     set math.equation(
         numbering: eso => {
             let HEA = counter(heading.where(level:1)).at(here()).last()
@@ -372,8 +379,6 @@
         }
     )
     // Esto é para customizar as referencias
-    // :FACER: numeros para táboas
-    // :FACER: pageref, incluso con nomes do teorema #context { query(<def:alxebra:subestrutura>).first().location().page() }
     // :FACER: simplificar esto...
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
@@ -425,7 +430,7 @@
             eso
         }
     }
-    // :FACER: que fago cas notas ao pe? Nunca as uso...
+    // :FACER: que fago cas notas ao pe? NUNCA as uso...
     show footnote: eso => {
         super[[#text(fill: rgb("#bb0000"), weight:"bold", eso)]]
     }
@@ -478,10 +483,12 @@
     indice_teoremas    : crear_indice_teoremas(),
     indice_definicions : crear_indice_definicions(),
     contraportada      : crear_contraportada(),
+    // :FACER:ERRO: (véxase máis abaixo) Non debería meter o mainmatter como o
+    // 'documento' xa que entón tamén inclue o backmatter...
     documento
 ) = {
 
-    //// ESTILO XERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // ESTILO XERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // Estilo xeral que afecta a TODO o documento.
     // Cousas como a tipografía básica, kerning,
     // dirección do texto, idioma, etc
@@ -501,7 +508,7 @@
 
     }
 
-    //// FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // Cousas como o índice, agradecementos, dereitos, copyright, etc.
     {
         show: estilo_frontmatter
@@ -513,16 +520,20 @@
 
     }
 
-    ////  MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //  MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // O corpo do documento. Capítulos e tal.
     {
         show: estilo_mainmatter
 
         //// Devolvemos o contido do documento
+        // :FACER:ERRO: en realidade esto afecta a todo. Debería facelo para
+        // que so afecte ao mainmatter como tal. Tal vez, facendo 'include' a
+        // dentro dunha función, e metendo eso como meto a biblio, indices,
+        // etc.
         documento
     }
 
-    //// BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // Fin do documento, apéndices, índice alfabético, biblio, etc.
     {
         show: estilo_backmatter

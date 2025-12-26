@@ -4,11 +4,13 @@
     box($cal(eso)$),
 )
 
+// Frecha para matemáticas de bloque. A ------> B
 #let frecha = math.class(
     "relation",
     $stretch(arrow.r, size: #300%)$
 )
 
+// Mapea para matemáticas de bloque. a |--------> f(a)
 #let mapea = text(
     $stretch(mapsto, size: #300%)$
 )
