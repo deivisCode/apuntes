@@ -274,6 +274,8 @@
     )
     set page(
         paper   : "a4",
+        height  : 841.89pt,    // Altura A4 usual
+        width   : 729.0981pt , // Altura * (sqrt(3)/2) "Turned Hexagon Page", ratio ~1:1.155
         binding : left,
     )
     set text(
