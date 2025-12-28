@@ -272,16 +272,15 @@
 }
 
 /// Un bloque que ocupa a marxe grande tamén.
-// :FACER: marxes en variables ou con here().page().margin()..?
 #let bloque_ancho(contido) = {
     context {
         let num = counter(page).get().first()
         if calc.even(num) {
             set align(right)
-            block(width: 100% + 3cm, contido)
+            block(width: 100% + (_marxe_ext - _marxe_int), contido)
         } else {
             set align(left)
-            block(width: 100% + 3cm, contido)
+            block(width: 100% + (_marxe_ext - _marxe_int), contido)
         }
     }
 }

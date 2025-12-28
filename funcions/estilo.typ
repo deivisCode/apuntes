@@ -274,8 +274,8 @@
     )
     set page(
         paper   : "a4",
-        height  : 841.89pt,    // Altura A4 usual
-        width   : 729.0981pt , // Altura * (sqrt(3)/2) "Turned Hexagon Page", ratio ~1:1.155
+        height  : _alto_pax,
+        width   : _ancho_pax,
         binding : left,
     )
     set text(
@@ -306,13 +306,10 @@
     )
     set par(
         justify              : true,
-        justification-limits : (
-            tracking : (min: -0.04em, max: 0.02em),
-            spacing  : (min: 66.67% + 0pt, max: 150% + 0pt)
-        ),
-        first-line-indent    : 1.5em,
-        spacing              : 0.65em,
-        leading              : 0.65em,
+        justification-limits : _tamaños_xustificacion,
+        first-line-indent    : _par_ind,
+        spacing              : _spacing,
+        leading              : _leading,
         linebreaks           : "optimized"
     )
     // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
@@ -353,11 +350,10 @@
         footer-descent : 10%,
         background     : none,
         margin         : (
-            // Ollo, se se cambia esto hai que cambiar tamén o 'bloque_ancho'
-            top     : 3cm,
-            inside  : 3cm,
-            outside : 6cm,
-            bottom  : 3cm
+            top     : _marxe_sup,
+            inside  : _marxe_int,
+            outside : _marxe_ext,
+            bottom  : _marxe_inf
         ),
     )
     set text(fill: black)

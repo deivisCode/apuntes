@@ -1,3 +1,35 @@
+// Tamaño da páxina
+#let _alto_pax  = 841.89pt   // Altura A4 usual
+#let _ancho_pax = _alto_pax * ( calc.sqrt(3) / 2 ) // Altura * (sqrt(3)/2) "Turned Hexagon Page", ratio ~1:1.155
+
+// Tamaños de marxes
+#let _marxe_sup = 3cm
+#let _marxe_int = 3cm
+#let _marxe_ext = 6cm
+#let _marxe_inf = 3cm
+
+// Tamaños dalguns espaciados varios
+#let _par_ind = 1.5em  // Indentación inicio parágrafo
+#let _leading = 0.65em // Espazo entre liñas consecutivas (bottom edge -> top edge)
+#let _spacing = 0.65em // Espazo entre parágrafos
+
+// Tamaños para axustar xustificación
+#let _tamaños_xustificacion = (
+    // Entre caracteres
+    tracking : (
+        min: -0.04em,
+        max: 0.02em,
+    ),
+    // Entre palabras
+    spacing  : (
+        min: 66.67% + 0pt,
+        max: 150% + 0pt,
+    )
+)
+
+// Tamaño de letra
+#let _pt_letra = 12pt
+
 // Tipos de letra
 #let _norm = "New Computer Modern"
 #let _sans = "New Computer Modern Sans"
@@ -18,6 +50,7 @@
 #let _rosa   = "#f000f0"
 #let _azul   = "#00b8eb"
 #let _roxo   = "#ff0000"
+
 #let verde  = eso => text(fill: rgb(_verde))[#eso]
 #let morado = eso => text(fill: rgb(_morado) , weight: "bold", font: _sans)[#eso]
 #let rosa   = eso => text(fill: rgb(_rosa)   , weight: "bold", font: _sans)[#eso]
@@ -28,8 +61,6 @@
 #let _gris_notas   = luma(40%)
 #let _gris_textos  = luma(40%)
 #let _gris_titulos = luma(40%)
-
-#let _pt_letra = 12pt
 
 // Grosores dalguns bordes
 #let _pt_fino  = 0.6pt // bordes figuras, encabezados
