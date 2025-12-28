@@ -3,10 +3,10 @@
 #let _ancho_pax = _alto_pax * ( calc.sqrt(3) / 2 ) // Altura * (sqrt(3)/2) "Turned Hexagon Page", ratio ~1:1.155
 
 // Tamaños de marxes
-#let _marxe_sup = 3cm
-#let _marxe_int = 3cm
-#let _marxe_ext = 6cm
-#let _marxe_inf = 3cm
+#let _marxe_sup = _alto_pax  * (1/9)
+#let _marxe_inf = _alto_pax  * (1/9)
+#let _marxe_int = _ancho_pax * (1.6/9)
+#let _marxe_ext = _ancho_pax * (2.6/9)
 
 // Tamaños dalguns espaciados varios
 #let _par_ind = 1.5em  // Indentación inicio parágrafo

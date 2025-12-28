@@ -21,7 +21,7 @@ Uns apuntes persoais do que estiven estudando ultimamente.
     - [ ] Espacios entre palabras
         - [ ] Non Xustificado 'spacing: 0.5em'
         - [ ] Justificado '(min: 0.85em, max:1.5em)'
-    - [ ] Medir 'abcdefghijklmnñopqrstuvwxyx', e axustar longo de liña
+    - [x] Medir 'abcdefghijklmnñopqrstuvwxyx', e axustar longo de liña
     - [ ] Números e ecuacións con 'pnum': `show math.equation: set text(font:"New Computer Modern Math", features: (pnum: 1))
     - [ ] Leading: e.g. 12/15? (texto 12pt, lead 12+3 pt). Mirar o +3
     - [ ] TODAS as liñas en blanco deben ser proporcionales, e.g. en 12/15 unha liña en branco debe medir n*15pt
