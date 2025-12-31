@@ -6,6 +6,7 @@ Uns apuntes persoais do que estiven estudando ultimamente.
 
 - [ ] Funcións
     - [ ] Notas na marxe a man. Depende de https://github.com/typst/typst/issues/5233
+        - [ ] Ecuacions/Seccions nas marxes
     - [ ] Índice a man
         - [ ] Ir á palabra exacta
         - [ ] Resaltar a palabra no texto
@@ -23,8 +24,8 @@ Uns apuntes persoais do que estiven estudando ultimamente.
         - [ ] Justificado '(min: 0.85em, max:1.5em)'
     - [x] Medir 'abcdefghijklmnñopqrstuvwxyx', e axustar longo de liña
     - [ ] Números e ecuacións con 'pnum': `show math.equation: set text(font:"New Computer Modern Math", features: (pnum: 1))
-    - [ ] Leading: e.g. 12/15? (texto 12pt, lead 12+3 pt). Mirar o +3
-    - [ ] TODAS as liñas en blanco deben ser proporcionales, e.g. en 12/15 unha liña en branco debe medir n*15pt
+    - [ ] Leading: e.g. 12/15? (texto 12pt, lead 12+3 pt). Mirar o +3. Á espera de que mellore a API: https://github.com/typst/typst/issues/4224
+    - [ ] TODAS as liñas en blanco deben ser proporcionales, e.g. en 12/15 unha liña en branco debe medir n*15pt. Á espera de typst#4224
     - [ ] Sangrías de 1em
     - [ ] Seguir esquema progresión roman lc -> SC/FC/italic lc -> etc
     - [ ] Cambiar parámetros un a un. lc -> bold -> bold + size -> bold + size + sans

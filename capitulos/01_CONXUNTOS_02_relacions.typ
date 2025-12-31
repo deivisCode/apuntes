@@ -74,6 +74,9 @@ Se temos unha relación de equivalencia, podemos falar de _clases de
 equivalencia_ que son os conxuntos formados polos elementos que están
 relacionados.
 
+// :FACER: unha propiedade é unha clase de cousas que están relacionadas. Vai
+// da man do feito que as unicas cousas en matemáticas son conxuntos.
+// Un isomorfismo deixa cousas dentro da súa clase
 #definicion(
     nome : "Clases de equivalencia",
     ancora : "def:conxuntos:clases-equivalencia"

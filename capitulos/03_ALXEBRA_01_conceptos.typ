@@ -314,6 +314,7 @@ ninguén proba no campo de xogo nunca.
 // :FACER: o Sebas di que hai que ter en conta que existen outras
 // transformacións que tamén son morfismos pero eu digo que morfismos son só os
 // que cumplen f(a+b) = f(a) * f(b) (structure preserving maps)
+// :FACER: isomorfismos. homomorfismos con inversa homomorfismo. Ou bixección.
 #definicion(
     nome : "Morfismo",
     ancora : "def:alxebra:morfismo"
