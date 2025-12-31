@@ -474,16 +474,14 @@
 #let activar_estilo(
     autoria            : (),
     titulo             : none,
-    portada            : crear_portada(),
-    indice_contidos    : crear_indice_contidos(),
-    bibliografia       : crear_bibliografia(),
-    indice_alfabetico  : crear_indice_alfabetico(),
-    indice_teoremas    : crear_indice_teoremas(),
-    indice_definicions : crear_indice_definicions(),
-    contraportada      : crear_contraportada(),
-    // :FACER:ERRO: (véxase máis abaixo) Non debería meter o mainmatter como o
-    // 'documento' xa que entón tamén inclue o backmatter...
-    documento
+    portada            : true,
+    indice_contidos    : true,
+    bibliografia       : true,
+    indice_alfabetico  : true,
+    indice_teoremas    : true,
+    indice_definicions : true,
+    contraportada      : true,
+    documento          : none
 ) = {
 
     // ESTILO XERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -498,9 +496,9 @@
     //// PORTADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     {
 
-        if portada != none {
+        if portada {
             show: estilo_portada
-            portada
+            crear_portada()
             pagebreak()
         }
 
@@ -512,8 +510,8 @@
         show: estilo_frontmatter
 
         // Mostramos o índice
-        if indice_contidos != none {
-            indice_contidos
+        if indice_contidos {
+            crear_indice_contidos()
         }
 
     }
@@ -524,10 +522,6 @@
         show: estilo_mainmatter
 
         //// Devolvemos o contido do documento
-        // :FACER:ERRO: en realidade esto afecta a todo. Debería facelo para
-        // que so afecte ao mainmatter como tal. Tal vez, facendo 'include' a
-        // dentro dunha función, e metendo eso como meto a biblio, indices,
-        // etc.
         documento
     }
 
@@ -537,26 +531,25 @@
         show: estilo_backmatter
 
         // Mostramos a bibliografía
-        if bibliografia != none {
-            // :FACER: todos to: odd
+        if bibliografia {
             pagebreak()
-            bibliografia
+            crear_bibliografia()
         }
 
-        if crear_indice_teoremas != none {
+        if indice_teoremas {
             pagebreak()
-            indice_teoremas
+            crear_indice_teoremas()
         }
 
-        if crear_indice_definicions != none {
+        if indice_definicions {
             pagebreak()
-            indice_definicions
+            crear_indice_definicions()
         }
 
         // Mostramos o índice alfabético
-        if crear_indice_alfabetico != none {
+        if indice_alfabetico {
             pagebreak()
-            indice_alfabetico
+            crear_indice_alfabetico()
         }
 
     }
@@ -565,9 +558,9 @@
     // Simplemente a contraportada
     {
 
-        if contraportada != none {
+        if contraportada {
             show: estilo_contraportada
-            contraportada
+            crear_contraportada()
         }
 
     }
