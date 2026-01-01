@@ -1,4 +1,4 @@
-#import("/funcions/estilo.typ"): activar_estilo
+#import("/funcions/estilo.typ"): crear_apuntes
 
 // :FACER: TODOS os sf,bold,sc, usando text(features:("smcp")) etc.
 
@@ -33,7 +33,7 @@
     include("/capitulos/05_MECANICA_00_introducion.typ")
 }
 
-#activar_estilo(
+#crear_apuntes(
     titulo    : "APUNTES",
     autoria   : ((nome: "David Cotelo Varela"),),
     documento : documento,

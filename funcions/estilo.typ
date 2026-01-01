@@ -26,6 +26,7 @@
 //     estilo_mainmatter()
 //     estilo_backmatter()
 //     estilo_contraportada()
+// - Función para crear os apuntes
 
 
 // Importo variables como o tamaño de letra, cores, funcións para escribir en Sans, etc.
@@ -33,13 +34,11 @@
 
 // Funcion para crear a portada
 #let crear_portada() = {
-    set align(center)
     v(3em)
     text(size:3em, weight:"bold", title() )
     v(1em)
     smallcaps( context {document.author.join("\n")} )
     v(1em)
-    set text(font: _mono)
     link("https://github.com/deivisCode/apuntes")
     v(1em)
     grid(
@@ -62,10 +61,6 @@
 
 // Funcion para crear o Índice de materias
 #let crear_indice_contidos() = {
-    show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
-    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:1.4em)
-    show outline.entry.where( level: 1 ): set outline.entry(fill: none)
-    show heading.where(level: 1): set block(below: 1em)
     // Encabezado de Nivel 1 para o propio índice de contidos
     heading(
         level      : 1,
@@ -75,9 +70,8 @@
         sf[Índice de contidos],
     )
     outline(
-        title: none,
-        depth: 2 // Colle todos os de nivel 1 (Capítulos) e 2 (Seccións).
-                 // Ollo, tamén inclúe cousas do backmatter
+        title : none,
+        depth : 2
     )
 }
 
@@ -176,12 +170,10 @@
 
 /// Funcion para crear a Bibliografía
 #let crear_bibliografia() = {
-    // Encabezados nivel 1 con máis espaciado
-    show heading.where(level: 1): set block(below: 1em)
     // Mostrar a bibliografía
     bibliography(
         "/bibliografia.bib",
-        title: sf[Bibliografía],
+        title : sf[Bibliografía],
         style : "/ebd.csl"
     )
 }
@@ -312,10 +304,12 @@
         leading              : _leading,
         linebreaks           : "optimized"
     )
+    show raw: set text(font: _mono)
     // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
     // :FACER: cando deixe de ser necesario sobreescribir os valores dos
     // encabezados estaría ben unificar todos os 'show heading' que hai
-    // desperdigados, como os dos indices, biblio, etc.
+    // desperdigados, como os dos indices, biblio, etc. Tamén depende de que
+    // haxa máis cousas seleccionables, como 'show heading/footer, etc,'
     show heading: set text(size: _pt_letra)
     show math.equation: set text(font: _math)
     doc
@@ -323,6 +317,7 @@
 
 /// ESTILO da portada, fondos, cor por defecto, etc. Non ten contido, só estilo
 #let estilo_portada(doc) = {
+    set align(center)
     set page(
         header     : none,
         footer     : none,
@@ -332,11 +327,17 @@
         background : rect(height: 90%, width: 90%, stroke: 3pt + red),
     )
     set text(fill: white)
+    show grid: set text(font: _mono)
+    show link: set text(font: _mono)
     doc
 }
 
 // ESTILO do frontmatter. Agradecementos, índice de contido, prólogo, etc.
 #let estilo_frontmatter(doc) = {
+    show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
+    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:1.4em)
+    show outline.entry.where( level: 1 ): set outline.entry(fill: none)
+    show heading.where(level: 1): set block(below: 1em)
     doc
 }
 
@@ -356,19 +357,18 @@
             bottom  : _marxe_inf
         ),
     )
-    set text(fill: black)
     // As ecuacions no texto deben ser 'box' para que non se rompan
     show math.equation.where(block: false): eso => { box(eso) }
-    // :FACER: esto debería ir no estilo xeral
-    show raw: set text(font: _mono)
-    show quote: set quote(block: true) // :FACER: apenas uso isto..?
     show quote: set text(style:"italic")
     show figure.caption: set text(font: _sans)
     show figure.caption: eso => {
         strong[#eso.supplement~#eso.counter.display() #eso.separator]
         eso.body
     }
-    // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion), #ec_lin (en liña), etc
+    // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion),
+    // #ec_lin (en liña), etc. Véxase:
+    // https://github.com/typst/typst/issues/3031
+    // https://github.com/typst/typst/issues/380
     set math.equation(
         numbering: eso => {
             let HEA = counter(heading.where(level:1)).at(here()).last()
@@ -447,6 +447,8 @@
 }
 
 #let estilo_backmatter(doc) = {
+    // Encabezados nivel 1 con máis espaciado
+    show heading.where(level: 1): set block(below: 1em)
     doc
 }
 
@@ -465,13 +467,13 @@
 }
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//     _    ____ _____ _____     ___    ____    _____ ____ _____ ___ _     ___  %
-//    / \  / ___|_   _|_ _\ \   / / \  |  _ \  | ____/ ___|_   _|_ _| |   / _ \ %
-//   / _ \| |     | |  | | \ \ / / _ \ | |_) | |  _| \___ \ | |  | || |  | | | |%
-//  / ___ \ |___  | |  | |  \ V / ___ \|  _ <  | |___ ___) || |  | || |__| |_| |%
-// /_/   \_\____| |_| |___|  \_/_/   \_\_| \_\ |_____|____/ |_| |___|_____\___/ %
+//   ____ ____  _____    _    ____       _    ____  _   _ _   _ _____ _____ ____
+//  / ___|  _ \| ____|  / \  |  _ \     / \  |  _ \| | | | \ | |_   _| ____/ ___|
+// | |   | |_) |  _|   / _ \ | |_) |   / _ \ | |_) | | | |  \| | | | |  _| \___ \
+// | |___|  _ <| |___ / ___ \|  _ <   / ___ \|  __/| |_| | |\  | | | | |___ ___) |
+//  \____|_| \_\_____/_/   \_\_| \_\ /_/   \_\_|    \___/|_| \_| |_| |_____|____/
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#let activar_estilo(
+#let crear_apuntes(
     autoria            : (),
     titulo             : none,
     portada            : true,
@@ -485,9 +487,8 @@
 ) = {
 
     // ESTILO XERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    // Estilo xeral que afecta a TODO o documento.
-    // Cousas como a tipografía básica, kerning,
-    // dirección do texto, idioma, etc
+    // Estilo xeral que afecta a TODO o documento. Cousas como a tipografía
+    // básica, kerning, dirección do texto, idioma, etc
     show: estilo_xeral.with(
         autoria : autoria,
         titulo  : titulo

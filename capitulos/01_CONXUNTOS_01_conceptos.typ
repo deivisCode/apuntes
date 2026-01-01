@@ -45,7 +45,7 @@ $
     A = { a_i in U | P_U},
 $
 
-que se lee #quote(block: false)[os elementos $a_i$ de $U$ tales que o predicado
+que se lee #quote[os elementos $a_i$ de $U$ tales que o predicado
 $P_U$ é certo]. #nota[Un predicado é unha propiedade dun conxunto calquera $U$
 que pode volverse verdadeira ou falsa dependendo do valor concreto $u in U$.]
 Un exemplo de conxunto por extensión é o conxunto de dous elementos $A = {1,
