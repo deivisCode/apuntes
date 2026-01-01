@@ -428,21 +428,6 @@
             eso
         }
     }
-    // :FACER: que fago cas notas ao pe? NUNCA as uso...
-    show footnote: eso => {
-        super[[#text(fill: rgb("#bb0000"), weight:"bold", eso)]]
-    }
-    show footnote.entry: eso => {
-        let loc = eso.note.location()
-        let num = counter(footnote).at(loc).first()
-        link(
-            loc,
-            [
-                #super[[#text(fill: rgb("#bb0000"), weight:"bold", [#num])]]
-                #eso.note.body
-            ]
-        )
-    }
     doc
 }
 
