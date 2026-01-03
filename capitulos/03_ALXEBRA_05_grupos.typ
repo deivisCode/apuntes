@@ -28,8 +28,6 @@ diremos que o grupo é conmutativo, ou _abeliano_. #cita("rotman_2000")
     lugar de conmutativas, pero eu personalmente non o suelo ver.
 ]
 
-Exemplos de grupos son:
-
 #exemplos[
     + Sexa o conxunto ${0,1}$ e a operación $plus.o$ dada pola porta lóxica
       #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un so_ dos
@@ -72,9 +70,8 @@ Exemplos de grupos son:
 // :FACER: grupo afín?
 
 Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
-multiplicar e dividir. Personalmente vou usar notación multiplicativa nesta
-sección. A diferenza dos monoides, agora temos noción de _elemento inverso_,
-polo que aparece unha propiedade importante, a
+multiplicar e dividir. A diferenza dos monoides, agora temos noción de
+_elemento inverso_, polo que aparece unha propiedade importante, a
 *cancelación*. [Lema 2.18]#cita("rotman_2000") Por un lado
 // :FACER: propiedade de cancelación nun teorema?
 
@@ -126,12 +123,129 @@ reducilo a unha sola co seguinte teorema.
 ]
 
 En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir, que un
-elemento de $B$ calqueira, polo inverso doutro, está en $B$.
+elemento de $B$ calqueira, polo inverso doutro, está en $B$. Pode verse unha
+demostración na proposición 4.14 de #cita("delgado_2010"). O relevante do
+teorema @teo:alxebra:test_subgrupo é que nos permite probar se algo é un
+subgrupo cun so paso, en lugar de 3 distintos.
 
-Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010") O
-relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
-algo é un subgrupo cun so paso, en lugar de 3 distintos.
+*Notación*: Podemos falar do produto de subconxuntos dun certo grupo. Sexa $G$
+un grupo, $scr(P)(G)$ o conxunto de todos os subconxuntos de $G$, e $A,B in
+scr(P)(G)$. Entón denotamos por $A B$ ao conxunto dado pola operación (en
+notación multiplicativa)
 
+$
+    A B := {a b | a in A, b in B}
+$
+
+Un caso concreto deste produto de subconxuntos é cando un dos conxuntos ten un
+so elemento, ousexa ${a}B$ ou $A{b}$. Neste caso, simplificamos a notación a $a
+B$ e $A b$.
+
+// :FACER: Onde empezo a simplificar (A, +) por A ?
+// :FACER: nalgún sitio lin unha boa motivación de esquerda <-> dereita
+// :FACER: citar kostrikin ~p190, dean def 3.4.2,
+#definicion(
+    nome : "Clase lateral",
+    ancora : "def:alxebra:clase-lateral"
+)[
+    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$ un elementoo fixo. Ao
+    conxunto formado polo produto de $a$ con todos os elementos de $B$, escrito
+    $a B$ chámase #indice("Clase")[Lateral] clase lateral pola esquerda de B. É
+    dicir, o conxunto
+
+    $
+        a B := { a b | b in B}.
+    $
+]
+
+[Def 3.4.2]#cita("dean_1990") [Páx. 146]#cita("kostrikin_1983")
+
+Pode definirse analogamente unha clase lateral _pola dereita_, $B a$. O
+elemento $a$ chámase _representante_ da clase $a B$.
+
+Evidentemente, unha clase lateral non é máis co caso concreto mencionado antes
+dun produto de subconxuntos de grupos. En realidade, na definición
+@def:alxebra:clase-lateral non estamos a usar ningunha propiedade exclusiva dos
+grupos, polo que é posible unha definición análoga para monoides, por exemplo.
+O único motivo polo que non presento ese caso é que nos casos dos monoides (e
+semigrupos, etc.) nunca xamais lle vin uso ao concepto de clase lateral. Pero
+ser, é posible definilo.
+
+#exemplos[
+    - Sexa o espazo euclídeo $E^3$, onde os elementos son vectores xeometricos
+      usuais que podemos pensar como frechas e denotamos por $arrow(v)$. A
+      operación de interese é a suma usual de vectores $+$, que ten como neutro
+      o vector $arrow(0)$ e na cal todo elemento $arrow(v)$ ten inverso
+      $(-arrow(v))$. Entón, a parella $(E^3, +)$ é un grupo.
+
+      Un subgrupo $W$, gráficamente, non é máis ca un plano que interseca a
+      orixe, ousexa un plano que contén o elemento neutro $arrow(0)$. As clases
+      laterais $arrow(v) + W$ son ditos planos pero desprazados polo vector
+      $arrow(v)$. Evidentemente, ditos planos xa non conteñen a orixe (se
+      $arrow(v) eq.not arrow(0)$) polo que non son subgrupos. Tamén é evidente
+      que ditos planos ou son disxuntos entre si, e que a unión de todos eles é
+      igual ao grupo completo $E$.
+
+      Máis adiante, veremos que esto é análogo ás variedades lineais dun certo
+      espazo vectorial.
+]
+
+// :FACER: demostracion desto
+#teorema(
+    nome : "As clases laterais coinciden ou son disxuntas",
+    ancora : "teo:alxebra:clases-particion"
+)[
+    Sexan as clases laterais pola esquerda $a_1 B$ e $a_2 B$. Entón,
+    $
+        a_1 B inter a_2 B = emptyset "ou" a_1 B = a_2 B.
+    $
+]
+
+É importante ver que as clases laterais non son, en xeral, subgrupos (nin
+grupos de ningún modo). En efecto, sendo $e$ o neutro de $A$, como $e in e B =
+B$ entón $e in.not a B$ se $a eq.not e$. É dicir, a única clase lateral de B
+que é un subgrupo é o propio B xa que o resto non contén o neutro.
+
+
+#teorema(
+    nome : "Un grupo é a unión de clases laterais",
+    ancora : "teo:alxebra:union-clases"
+)[
+    Sexa $A$ un grupo e $B subgrupo A$. Entón, $A$ é a unión de clases laterais
+    pola esquerda de $B$. É dicir,
+    $
+        A = union.big_(a in A) a B.
+    $
+]
+// :FACER: Pode atoparse unha demostración en [Lema 3.4.4]#cita("dean_1990") ou
+// en [Páx. 146]#cita("kostrikin_1983")
+
+#demostracion(
+    ancora : "teo:alxebra:union-clases"
+)[
+    // :FACER: neutros con subindice antes..?
+    // :FACER: notacion algo confusa
+    A demostración é máis ou menos evidente, pero por aburrimento escribo algo
+    máis. Sabemos que $e_A in B$ (por ser $B$ un subgrupo), polo que $a = a e_A
+    in a B$. Entón,
+    $
+        a in A implica a in union.big_(a in A) a B,
+    $
+    ousexa que $A subset.eq union_(a in A) a B$.
+
+    A maiores, $x in union.big_(a in A) a B$, polo que $exists a in A | x in a
+    B$, é dicir, $x = a b implica x in A$.
+    $
+        a in union.big_(a in A) a B implica a in A,
+    $
+    ousexa, $union_(a in A) a B subset.eq A$.
+
+    Finalmente, $ A = union.big_(a in A) a B $
+
+]
+
+
+// :FACER: todo o de clases e grupo cociente nesta sección?
 // :FACER: equivalencias, aB=Ba en rotman p.190
 // :FACER: citar kostrikin ~p.188, rotman p.103
 #definicion(
@@ -142,11 +256,44 @@ algo é un subgrupo cun so paso, en lugar de 3 distintos.
     #indice("Subgrupo")[Normal] subgrupo normal, e escribimos $B lt.tri A$ se
 
     $
-        (forall a in A, b in B) space.quad a b a^(-1) in  B.
+        (forall a in A) space.quad a B = B a
     $
-    Ou, $a B a^(-1) = B$
-    // [Cap.3 $section$ 4]#cita("kostrikin_1983")
-    // [Cap.2]#cita("rotman_2000")
+    // Ou, $a B a^(-1) = B$
+]
+
+#teorema(
+    nome : "Equivalencia subgrupo normal",
+    ancora : "teo:alxebra:equivalencia-subgrupo-normal"
+)[
+    $
+        B lt.tri A sse (forall a in A, b in B) space.quad a b a^(-1) in B
+    $
+]
+
+#demostracion(
+    ancora : "teo:alxebra:equivalencia-subgrupo-normal"
+)[
+    // :FACER: demostración no outro sentido
+    Demostración parcial, so do caso
+
+    $
+        a b a^(-1) in B implica a B = B a
+    $
+
+    Primeiro, demostramos que $a B subset.eq B a$. Escollemos un elemento
+    calquera $a b$ de $a B$. Por ser $B$ normal, $a b a^(-1) in B$, polo que $a
+    b a^(-1) = b'$ para algún $b' in B$. Reordenando, temos que $a b = b'
+    a^(-1) in B a$, polo que o noso elemento $a b in a B$ tamén pertence a $B
+    a$, é dicir $a B subset.eq B a$.
+
+    A outra pertenza, $B a subset.eq a B$. Escollemos un elemento calquera $b
+    a$ de $B a$. Por ser $B$ normal, $a^(-1) b (a^(-1))^(-1) = a^(-1) b a in
+    B$, polo que $a^(-1) b a = b'$ para algún $b' in B$. Reordenando, temos que
+    $b a = a b' in a B$, polo que o noso elemento $b a in B a$ tamén pertence a
+    $B a$, é dicir $B a subset.eq a B$.
+
+    Finalmente, $a b a^(-1) in B implica a B = B a$
+
 ]
 
 A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
@@ -189,10 +336,6 @@ $
     &f(a^(-1)) = f(a)^(-1).
 $
 
-Tamén podemos falar do kérnel dun homomorfismo $f$,
-$ ker(f) = { a in A | f(a) = 0_B}. $
-
-// :FACER: mellor, teorema de que un subrupo normal é núcleo dalgún morfismo
 #teorema(
     nome : "O kérnel dun homomorfismo é un subgrupo normal",
     ancora : "teo:alxebra:kernel-normal"
@@ -202,110 +345,67 @@ $ ker(f) = { a in A | f(a) = 0_B}. $
         ker(f) lt.tri A
     $
 ]
-// :FACER: demostracion
-
-O teorema @teo:alxebra:kernel-normal non era posible no caso dos monoides (ou
-estruturas anteriores) porque dependen da noción de elemento inverso.
-
-// :FACER: Onde empezo a simplificar (A, +) por A ?
-// :FACER: nalgún sitio lin unha boa motivación de esquerda <-> dereita
-// :FACER: citar kostrikin ~p190, dean def 3.4.2,
-#definicion(
-    nome : "Clase lateral",
-    ancora : "def:alxebra:clase-lateral"
-)[
-    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$ un elementoo fixo. Ao
-    conxunto formado polo produto de $a$ con todos os elementos de $B$, escrito
-    $a B$ chámase #indice("Clase")[Lateral] clase lateral pola esquerda de B. É
-    dicir, o conxunto
-
-    $
-        a B := { a b | b in B}.
-    $
-]
-
-Pode definirse analogamente unha clase lateral _pola dereita_, $B a$. O
-elemento $a$ chámase _representante_ da clase $a B$. En realidade, na
-definición @def:alxebra:clase-lateral non estamos a usar ningunha propiedade
-exclusiva dos grupos, polo que é posible unha definición análoga para monoides,
-por exemplo. O único motivo polo que non presento ese caso é que nos casos dos
-monoides (e semigrupos, etc.) nunca xamais lle vin uso ao concepto de clase
-lateral. Pero ser, é posible definilo.
-
-// :FACER: demostracion desto
-// :FACER: citar kos ~p190, dean lemma 3.4.4
-#teorema(
-    nome : "As clases laterais coinciden ou son disxuntas",
-    ancora : "teo:alxebra:clases-particion"
-)[
-    Sexan as clases laterais pola esquerda $a_1 B$ e $a_2 B$. Entón,
-    $
-        a_1 B inter a_2 B = emptyset "ou" a_1 B = a_2 B.
-    $
-]
-
-É importante ver que as clases laterais non son, en xeral, subgrupos (nin
-grupos de ningún modo). En efecto, sendo $e$ o neutro de $A$, como $e in e B =
-B$ entón $e in.not a B$ se $a eq.not e$. É dicir, a única clase lateral de B
-que é un subgrupo é o propio B.
-
-// :FACER: citar kos ~p190, dean lemma 3.4.4
-#teorema(
-    nome : "Un grupo é a unión de clases laterais",
-    ancora : "teo:alxebra:union-clases"
-)[
-    Sexa $A$ un grupo e $B subgrupo A$. Entón, $A$ é a unión de clases laterais
-    pola esquerda de $B$. É dicir,
-    $
-        A = union.big_(a in A) a B.
-    $
-]
 
 #demostracion(
-    ancora : "teo:alxebra:union-clases"
+    ancora : "teo:alxebra:kernel-normal"
 )[
-    // :FACER: neutros con subindice antes..?
-    // :FACER: notacion algo confusa
-    A demostración é máis ou menos evidente, pero por aburrimento escribo algo
-    máis. Sabemos que $e_A in B$ (por ser $B$ un subgrupo), polo que $a = a e_A
-    in a B$. Entón,
-    $
-        a in A implica a in union.big_(a in A) a B,
-    $
-    ousexa que $A subset.eq union_(a in A) a B$.
+    Sexa $x in ker(f)$. Entón
 
-    A maiores, $x in union.big_(a in A) a B$, polo que $exists a in A | x in a
-    B$, é dicir, $x = a b implica x in A$.
     $
-        a in union.big_(a in A) a B implica a in A,
+        f(a x a^(-1)) &= f(a) f(x) f(a^(-1)) \
+                      &= f(a) e_B (f(a))^(-1) \
+                      &= f(a) f(a)^(-1) \
+                      &= e_B,
     $
-    ousexa, $union_(a in A) a B subset.eq A$.
 
-    Finalmente, $ A = union.big_(a in A) a B $
-
+    e $a x a^(-1) in ker(f)$, polo que $ker(f) lt.tri A$
 ]
 
-#exemplos[
-    - Sexa o espazo euclídeo $E^3$, onde os elementos son vectores xeometricos
-      usuais que podemos pensar como frechas e denotamos por $arrow(v)$. A
-      operación de interese é a suma usual de vectores $+$, que ten como neutro
-      o vector $arrow(0)$ e na cal todo elemento $arrow(v)$ ten inverso
-      $(-arrow(v))$. Entón, a parella $(E^3, +)$ é un grupo.
 
-      Un subgrupo $W$, gráficamente, non é máis ca un plano que interseca a
-      orixe, ousexa un plano que contén o elemento neutro $arrow(0)$. As clases
-      laterais $arrow(v) + W$ son ditos planos pero desprazados polo vector
-      $arrow(v)$. Evidentemente, ditos planos xa non conteñen a orixe (se
-      $arrow(v) eq.not arrow(0)$) polo que non son subgrupos. Tamén é evidente
-      que ditos planos ou son disxuntos entre si, e que a unión de todos eles é
-      igual ao grupo completo $E$.
+// :FACER: que operación estou usando?
+Agora presentamos unha construción con grupos de suma importancia, o grupo
+cociente.
 
-      Máis adiante, veremos que esto é análogo ás variedades lineais dun certo
-      espazo vectorial.
-]
+A priori, se $B subgrupo A$ podemos definir o conxunto de todas as clases
+laterais como ${a B}$. É posible facer unha estrutura con dito conxunto máis a
+mesma operación de grupo que en $A$, ca excepción de que agora o produto de
+elementos terá a forma $(a_i B)(a_j B)$, onde uso moitos parénteses para deixar
+claro que $a_i B$ e $a_j B$ son elementos concretos. Por desgraza esto non
+forma un grupo xa que a operación non é necesariamente interna. Non podemos
+asegurar que
 
-// :FACER: fai falla que B <= A, para que o cociente teña estrutura de grupo.
-//         Está explicado en gowers, rotman 109, kostrik 192
+$
+    a_i B space a_j B = a_k B
+$
+
+para algún $a_k$. Sin embargo, se $B$ é un subgrupo normal entón $a B = B a$
+polo que na expresión anterior
+
+$
+    a_i B space a_j B = a_i (B a_j) B = a_i a_j B B,
+$
+
+e chamando $a_k = a_i a_j$, e como $B B = B$, entón a operación si é interna,
+
+$
+    a_i B space a_j B = a_k B.
+$
+
+A maiores, o neutro do conxunto ${a_i B}$ con esta operación é o elemento $e B
+= B$ sendo $e$ o neutro de $A$, xa que
+
+$
+    a_i B space e B = (a_i e) B = a_i B
+$
+
+(pode facerse igual $B e$). Finalmente, o inverso de $a_i B$ ven dado por
+$a^(-1) B$ porque
+
+$
+    a^(-1) B space a B = (a^(-1)a) B = e B = B
+$
+
+// Está explicado en gowers, rotman 109, kostrik 192
 #definicion(
     nome : "Cociente de grupos",
     ancora : "def:alxebra:cociente-grupos"
@@ -319,3 +419,6 @@ que é un subgrupo é o propio B.
         A\/B := { a B | a in A } = {a_1B, a_2B, ...}
     $
 ]
+
+Nesta definición requírese que $B$ sexa un subgrupo normal precisamente para
+que $A\/B$ sexa un grupo ca operación antes descrita $(a_i B)(a_j B)$.
