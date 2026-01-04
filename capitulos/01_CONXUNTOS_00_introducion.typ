@@ -1,9 +1,6 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
-// :FACER: seccions de invariantes. Seguindo Diestel https://www.youtube.com/watch?v=BiGxzBLdgkM&t=522s
-//         Quitar cousas de invariantes topolóxicas
-
 #capitulo(
     nome : "Conxuntos",
     ancora : "cap:conxuntos",

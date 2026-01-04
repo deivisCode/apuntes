@@ -7,10 +7,11 @@
     include("/capitulos/01_CONXUNTOS_01_conceptos.typ")
     include("/capitulos/01_CONXUNTOS_02_relacions.typ")
     include("/capitulos/01_CONXUNTOS_03_funcions.typ")
-    include("/capitulos/01_CONXUNTOS_04_diagramas.typ")
-    include("/capitulos/01_CONXUNTOS_05_grafos.typ")
-    // :FACER: seccion de retículas
+    include("/capitulos/01_CONXUNTOS_04_invariantes.typ")
+    include("/capitulos/01_CONXUNTOS_05_diagramas.typ")
+    include("/capitulos/01_CONXUNTOS_06_grafos.typ")
 
+    // :FACER: seccion de retículas
     include("/capitulos/02_TOPOLOXIA_00_introducion.typ")
     include("/capitulos/02_TOPOLOXIA_01_espazos-topoloxicos.typ")
     include("/capitulos/02_TOPOLOXIA_99_NOTAS-TEMPORAIS.typ")
