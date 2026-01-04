@@ -16,18 +16,15 @@ concreto na sección @sec:alxebra:grupos vimos o concepto de grupo. Esto foi
 unha presentación pouco motivada e posiblemente abstracta en exceso. Os grupos
 son estruturas que aparecen de xeito natural na física, polo que inda que unha
 presentación abstracta é útil para coñecer vocabulario e conceptos básicos, ou
-para ter unha idea xeral da álxebra, dita abstracción elimina case todo o
-contido físico que a nós nos interesa.
+para afianzar as ideas para traballar en conceptos máis avanzados no futuro,
+dita abstracción elimina case todo o contido físico que a nós nos interesa.
 
-O primeiro é recordar de que un grupo é un conxunto no cal podemos sumar e
-restar, multiplicar e dividir... Ou en xeral operar nun sentido e no oposto
-#nota[Falta mencionar asociatividade, etc. Pero so e algo cualitativo] e sempre
-podemos volver a onde comezamos.
+// O resumo pode facerse nunha soa frase, #quote[os grupos permiten estudar a
+// simetría].
 
-- ABSTRACTO
-    - Propiedades abstractas. Clases laterais, cocientes, Lagrande, Cayley, permutacións, Sn, An, Homomorfismos, etc
-- SIMETRIA
-    - Grupos de transformacións
-    - Caso transformacións espazo euclideo, afin, proxectivo. Klein Program
-    - Grupos de transformacións de simetría
-    - Acción dun grupo nun conxunto. KOS + MASA
+// O primeiro é recordar de que un grupo é un conxunto no cal podemos sumar e
+// restar ou multiplicar e dividir. Ou en xeral operar nun sentido e no oposto
+// #nota[Falta mencionar asociatividade, etc. Pero so e algo cualitativo] e
+// onde sempre podemos volver a onde comezamos. Inda que non sexa de todo
+// evidente, esta propiedade é a que outorga aos grupos a súa famosa capacidade
+// de identificar simetrías.

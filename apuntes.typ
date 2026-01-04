@@ -29,6 +29,10 @@
     include("/capitulos/03_ALXEBRA_11_alxebra.typ")
 
     include("/capitulos/04_GRUPOS_00_introducion.typ")
+    include("/capitulos/04_GRUPOS_01_conceptos.typ")
+    include("/capitulos/04_GRUPOS_02_transformacions.typ")
+    include("/capitulos/04_GRUPOS_02_xeometria.typ")
+    include("/capitulos/04_GRUPOS_03_accions.typ")
 
     include("/capitulos/05_MECANICA_00_introducion.typ")
 }
