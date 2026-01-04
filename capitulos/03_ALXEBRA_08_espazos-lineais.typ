@@ -34,10 +34,10 @@ en casos moi concretos, polo que prefiro esquivalo.]
 
 // :FACER: k circ v -> v debe ser pola esquerda e pola dereita
 
-No caso xeral soe denotarse ao conxunto do grupo como $V$, en alusión ao
-concepto de vector; e ao conxunto do campo usando unha letra dobre, como $KK$.
-Ademais, a operación do grupo soe ser $+$ e a primeira do campo $+$ tamén,
-abusando da notación (son operacións distintas). A operación
+*Notación*: No caso xeral soe denotarse ao conxunto do grupo como $V$, en
+alusión ao concepto de vector; e ao conxunto do campo usando unha letra dobre,
+como $KK$. Ademais, a operación do grupo soe ser $+$ e a primeira do campo $+$
+tamén, abusando da notación (son operacións distintas). A operación
 $circle.stroked.tiny$ soe omitirse, polo que $k circle.stroked.tiny v, v in V,
 k in KK$ escríbese simplemente como $k v$. Finalmente, referímonos a
 $((V,+),(KK,+,dot),circle.stroked.tiny)$ simplemente como o espazo lineal
@@ -63,16 +63,14 @@ $V$, ou ás veces dito nome e o campo como subíndice $V_KK$.
       teñen unha interpretación xeométrica evidente.
 ]
 
-En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza ca
+*Vocabulario*: En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza ca
 xeometría (concretamente, frechas en $RR^3$). En física é común facer énfase no
 segundo caso, usándoo como exemplo para explicar conceptos en calquera nivel e
 situación. Eu, pra evitar confusións, vou seguir *sempre* unha notación
 concreta:
-
 + *Vector* será un elemento dun espazo lineal no sentido presentado.
 + *Vector xeométrico* será o concepto de vector que se usa na física, cunha
   clara compoñente xeométrica.
-
 A distinción será especialmente evidente no caso da álxebra multilineal, onde
 aparecerá o concepto de _tensor_, que é un caso concreto dos vectores, pero
 xeral dos vectores xeométricos.

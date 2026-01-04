@@ -16,11 +16,13 @@
     $*$ tamén é asociativa
 ]
 
-Podemos referirnos simplemente ao semigrupo como $A$. Se a operación é
-conmutativa, diremos que é un semigrupo conmutativo.
+*Notación*: Podemos referirnos simplemente ao semigrupo como $A$.
+
+*Vocabulario*: Se a operación é conmutativa, diremos que é un semigrupo
+conmutativo.
 
 Os semigrupos si aparecen de cando en vez de forma explícita na álxebra.
-Veremos esto unhas seccións máis adiante.
+Veremos esto unhas seccións máis adiante ao falar de aneis.
 
 #definicion(
     nome : "Subsemigrupo",
@@ -36,13 +38,5 @@ Veremos esto unhas seccións máis adiante.
 Non é necesario falar de asociatividade porque $*$ é asociativa con
 calquera parella de elemenos de $A$, e polo tanto, de $B$.
 
-Se temos dous semigrupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
-semigrupos como o morfismo
-
-$
-    f: A frecha B \
-    f(a_1 * a_2) = f(a_1) dot f(a_2).
-$
-
-Nun semigrupo non temos noción de neutro ou simétrico, polo que non podemos
-traballar moito máis cos morfismos neste caso.
+Nun semigrupo non temos noción de neutro ou inverso, polo que non podemos
+traballar moito máis.

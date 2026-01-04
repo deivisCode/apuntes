@@ -6,9 +6,7 @@
     ancora : "sec:alxebra:magmas"
 )
 
-Xa é o momento de presentar algunhas estruturas de interese. Moitas delas non
-son útiles na física pero, na miña opinión, permiten entender outras que si o
-son. Nesta sección mencionamos unha das máis simples posibles.
+Nesta sección mencionamos unha das estruturas máis simples posibles.
 
 #definicion(
     nome : "Magma",
@@ -19,8 +17,9 @@ son. Nesta sección mencionamos unha das máis simples posibles.
     magma#indice[Magma]
 ]
 
-Podemos referirnos simplemente ao magma como $A$. Adicionalmente, se a
-operación é conmutativa, entón é un magma conmutativo.
+*Notación*: Podemos referirnos simplemente ao magma como $A$.
+
+*Vocabulario*: Se a operación é conmutativa, entón é un magma conmutativo.
 
 #definicion(
     nome : "Submagma",

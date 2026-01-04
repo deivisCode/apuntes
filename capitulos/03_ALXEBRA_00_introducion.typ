@@ -11,8 +11,6 @@
     ancora : "sec:alxebra:introducion"
 )
 
-// :FACER: ollada ao Dean
-// :FACER: ollada ao Jacobson
 // :FACER: estandarizar a notación para as operacions, + o * etc
 // :FACER: logo de facer o capitulo de conxuntos, mencionar inxectividade, sobrexectividade, etc
 
@@ -48,15 +46,14 @@ Usamos grupos para caracterizar a simetría; os aneis, e concretamente os
 corpos, son os números cos que medimos as magnitudes escalares como as que
 mencionei antes; a combinación de grupos e aneis danos os espazos lineais
 omnipresentes en calquera rama de traballo; se tivésemos varios aneis
-falaríamos dunha #underline[álxebra]
+falaríamos dunha _álxebra_;
 #nota[
     Coidado con isto: Na álxebra existe unha estrutura concreta que tamén se
     chama _álxebra_.
 ]
-se un de ditos aneis é asociativo temos unha álxebra
-asociativa; se en vez de asociatividade fose unha operación bilineal que cumpre
-a identidade de Jacobi, temos unha álxebra de Lie, de uso tamén ubicuo na
-cuántica ou na gravitación.
+se un de ditos aneis é asociativo temos unha álxebra asociativa; se en vez de
+asociatividade fose unha operación bilineal que cumpre a identidade de Jacobi,
+temos unha álxebra de Lie, de uso tamén ubicuo na cuántica ou na gravitación.
 
 Neste punto non é relevante explicar ningunha desas estruturas, de feito, o
 lector cunha base matemática quererá tirarme dos pelos por mencionar tantas

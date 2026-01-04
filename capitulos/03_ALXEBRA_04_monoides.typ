@@ -20,16 +20,10 @@
 Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
 _ou_ multiplicar pero non dividir.
 
-Podemos referirnos simplemente ao monoide como $A$. Se a operación é
-conmutativa, diremos que é un monoide conmutativo.
+*Notación*: Podemos referirnos simplemente ao monoide como $A$.
 
-Tal vez comezamos a ver un patrón. Partimos dunha estrutura sinxela (un magma)
-e imos engadindo detalles pouco a pouco construíndo outras estruturas máis
-complexas. Algún dos pasos intermedios son intrinsecamente irrelevantes. A
-ninguén lle importa o que é un semigrupo. Pero imos ver que os pasos que
-facemos aquí son os mesmos que ao construír aneis, espazos lineais, ou álxebras
-de Lie. Penso que ao coñecer os pasos é máis sinxelo entender as definicións
-máis complexas.
+*Vocabulario*: Se a operación é conmutativa, diremos que é un monoide
+conmutativo.
 
 #exemplos[
     - Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A
@@ -46,6 +40,14 @@ máis complexas.
       inter )$ son monoides. No primerio caso o neutro é $emptyset$, e no
       segundo é $X$.
 ]
+
+Tal vez comezamos a ver un patrón ao definir as estruturas. Partimos dunha
+estrutura sinxela e imos engadindo detalles pouco a pouco construíndo outras
+estruturas máis complexas. Algún dos pasos intermedios son intrinsecamente
+irrelevantes: a ninguén lle importa o que é un magma ou un semigrupo. Pero imos
+ver que os pasos que facemos aquí son os mesmos que ao construír aneis, espazos
+lineais, ou álxebras de Lie, que si son de gran interese. Penso que ao coñecer
+os pasos é máis sinxelo entender as definicións máis complexas.
 
 #definicion(
     nome : "Submonoide",
@@ -65,17 +67,4 @@ asociatividade, polo que pedíamos eso a un subconxunto dun semigrupo para que
 fose subsemigrupo. Nos monoides existe un elemento neutro, polo que é un
 requisito adicional para un submonoide.
 
-Se temos dous monoides $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
-monoides como o morfismo
-
-$
-    f: A frecha B \
-    f(a_1 * a_2) = f(a_1) dot f(a_2).
-$
-
-Nun monoide temos unha noción de neutro $e$, polo que podemos mencionar algo
-máis, os núcleos dos morfismos @def:alxebra:nucleo. No caso dos semigrupos esto
-non tiña sentido, porque non existía un elemento neutro.
-
-// :FACER: mencionar os nucleos!!
 // :FACER: Clases laterais de monoides?

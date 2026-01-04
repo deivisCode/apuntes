@@ -1,7 +1,6 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
-
 #seccion(
     nome : "Grupos",
     ancora : "sec:alxebra:grupos"
@@ -21,8 +20,14 @@ agora.
     todos os elementos son invertibles.
 ]
 
-Podemos referirnos simplemente ao grupo como $A$. Se a operación é conmutativa,
-diremos que o grupo é conmutativo, ou _abeliano_. #cita("rotman_2000")
+Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
+multiplicar e dividir.
+
+*Notación*: Podemos referirnos simplemente ao grupo como $A$.
+
+*Vocabulario*: Se a operación é conmutativa, diremos que o grupo é conmutativo,
+ou _abeliano_.
+#cita("rotman_2000")
 #nota[
     Supoño que as estruturas anteriores tamén se poden chamar _abelianas_ en
     lugar de conmutativas, pero eu personalmente non o suelo ver.
@@ -30,49 +35,51 @@ diremos que o grupo é conmutativo, ou _abeliano_. #cita("rotman_2000")
 
 #exemplos[
     + Sexa o conxunto ${0,1}$ e a operación $plus.o$ dada pola porta lóxica
-      #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un so_ dos
-      argumentos é 1. Entón, dito conxunto ca operación $plus.o$ é un grupo. O
-      neutro é 0, xa que $0 plus.o 1 = 1$, $1 plus.o 0 = 1$, $0
-      plus.o 0 = 0$. O inverso de cada elemento é el mismo, $0 plus.o 0 =
-      0$ e $1 plus.o 1 = 0$
+      #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un
+      so_ dos argumentos é 1. Entón, dito conxunto ca operación $plus.o$ é un
+      grupo. O neutro é 0, xa que $0 plus.o 1 = 1$, $1 plus.o 0 = 1$, $0 plus.o
+      0 = 0$ e o inverso de cada elemento é el mismo, $0 plus.o 0 = 0$ e $1
+      plus.o 1 = 0$
 
-    + Sexa $M_(2 times 2)$ o conxunto de matrices cadradas de tamaño $2 times 2$ da
-      forma
+    + Sexa $M_(2 times 2)$ o conxunto de matrices cadradas de tamaño $2 times
+      2$ da forma
 
-        $ mat(a,a;a,a;) $ #label("ec:alxebra:matriz_aaaa")
+      $ mat(a,a;a,a;) $ #label("ec:alxebra:matriz_aaaa")
 
-        con $a in RR$. A operación é o produto usual de matrices, que é asociativo.
-        Multiplicar calquera parella de matrices $M,M'$ desta forma danos outra que
-        pertence ao noso conxunto. Ademáis, o neutro do produto para a matriz
-        @ec:alxebra:matriz_aaaa é a matriz
+      con $a in RR$. A operación é o produto usual de matrices, que é asociativo.
+      Multiplicar calquera parella de matrices $M,M'$ desta forma danos outra que
+      pertence ao noso conxunto. Ademáis, o neutro do produto para a matriz
+      @ec:alxebra:matriz_aaaa é a matriz
 
-        $ mat(1/(2a), 1/(2a);1/(2a), 1/(2a); ) $
+      $ mat(1/(2a), 1/(2a);1/(2a), 1/(2a); ) $
 
-        e o elemento inverso é
+      e o elemento inverso é
 
-        $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ). $
+      $ mat(1/(4a), 1/(4a);1/(4a), 1/(4a); ). $
 
     + Sexa $X$ un conxunto calquera e $scr(P)(X)$ o conxunto de todos os
-      subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza simétrica_
-      de dous subconxuntos $A,B in scr(P)(X)$ dada por $A + B = (A-B) union (B-A)$.
-      A parella $(scr(P)(X), +)$ é un grupo. A identidade $A in scr(P)(X)$ é
-      $emptyset$ e o inverso de $A$ é $A$. #cita("rotman_2000")
+      subconxuntos de $X$. Sexa tamén operación $+$ chamada _diferenza
+      simétrica_ de dous subconxuntos $A,B in scr(P)(X)$ dada por $A + B =
+      (A-B) union (B-A)$. A parella $(scr(P)(X), +)$ é un grupo. A identidade
+      $A in scr(P)(X)$ é $emptyset$ e o inverso de $A$ é $A$.
+      #cita("rotman_2000")
 
-    + O conxunto de todas as matrices cadradas, invertibles de tamaño $n times n$ e
-      con coeficientes en $RR$ é un grupo ca operación usual de multiplicación
-      matricial. A multiplicación de matrices é unha operación interna e
-      asociativa. O neutro é a matriz identidade $bb(1) = mat(1, 0; 0, 1)$. O
-      inverso existe (as matrices inversas dadas pola fórmula usual). Este grupo
-      adoita chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n, RR)$.
-      #nota[Veremos que outros moitos grupos de interese son subconxuntos deste.]
+    + O conxunto de todas as matrices cadradas, invertibles de tamaño $n times
+      n$ e con coeficientes en $RR$ é un grupo ca operación usual de
+      multiplicación matricial. A multiplicación de matrices é unha operación
+      interna e asociativa. O neutro é a matriz identidade $bb(1) = mat(1, 0;
+      0, 1)$. O inverso existe (as matrices inversas dadas pola fórmula usual).
+      Este grupo adoita chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n,
+      RR)$. #nota[Veremos que outros moitos grupos de interese son subconxuntos
+      deste.]
+
 ]
 
 // :FACER: grupo afín?
 
-Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
-multiplicar e dividir. A diferenza dos monoides, agora temos noción de
-_elemento inverso_, polo que aparece unha propiedade importante, a
-*cancelación*. [Lema 2.18]#cita("rotman_2000") Por un lado
+A diferenza dos monoides, agora temos noción de _elemento inverso_, polo que
+aparece unha propiedade importante, a *cancelación*. [Lema
+2.18]#cita("rotman_2000") Por un lado
 // :FACER: propiedade de cancelación nun teorema?
 
 $
@@ -89,6 +96,9 @@ $
 ten solución única sempre, dado que podemos multiplicar pola esquerda polo
 inverso (único) de $a$, $a^(-1)$ obtendo $x = a^(-1) * b$
 
+Como fixemos cos magmas, semigrupos e monoides, podemos definir unha
+subestrutura.
+
 #definicion(
     nome : "Subgrupo",
     ancora : "def:alxebra:subgrupo"
@@ -102,7 +112,8 @@ inverso (único) de $a$, $a^(-1)$ obtendo $x = a^(-1) * b$
     $
 ]
 
-Cando $B$ é un subgrupo de $A$ podemos escribir simplemente que $B subgrupo A$.
+*Notación*: Cando $B$ é un subgrupo de $A$ podemos escribir simplemente que $B
+subgrupo A$.
 
 Outra vez, esta definición é análoga á @def:alxebra:subsemigrupo e
 @def:alxebra:submonoide. Agora nosa estrutura é algo máis rica e podemos falar
@@ -122,11 +133,12 @@ reducilo a unha sola co seguinte teorema.
     $
 ]
 
-En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir, que un
-elemento de $B$ calqueira, polo inverso doutro, está en $B$. Pode verse unha
-demostración na proposición 4.14 de #cita("delgado_2010"). O relevante do
-teorema @teo:alxebra:test_subgrupo é que nos permite probar se algo é un
-subgrupo cun so paso, en lugar de 3 distintos.
+*Notación*: En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir,
+que un elemento de $B$ calqueira, polo inverso doutro, está en $B$.
+
+Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010"). O
+relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
+algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
 *Notación*: Podemos falar do produto de subconxuntos dun certo grupo. Sexa $G$
 un grupo, $scr(P)(G)$ o conxunto de todos os subconxuntos de $G$, e $A,B in
@@ -143,7 +155,6 @@ B$ e $A b$.
 
 // :FACER: Onde empezo a simplificar (A, +) por A ?
 // :FACER: nalgún sitio lin unha boa motivación de esquerda <-> dereita
-// :FACER: citar kostrikin ~p190, dean def 3.4.2,
 #definicion(
     nome : "Clase lateral",
     ancora : "def:alxebra:clase-lateral"
@@ -160,15 +171,16 @@ B$ e $A b$.
 
 [Def 3.4.2]#cita("dean_1990") [Páx. 146]#cita("kostrikin_1983")
 
-Pode definirse analogamente unha clase lateral _pola dereita_, $B a$. O
-elemento $a$ chámase _representante_ da clase $a B$.
+Pode definirse analogamente unha clase lateral _pola dereita_, $B a$.
+
+*Vocabulario*: O elemento $a$ chámase _representante_ da clase $a B$.
 
 Evidentemente, unha clase lateral non é máis co caso concreto mencionado antes
 dun produto de subconxuntos de grupos. En realidade, na definición
 @def:alxebra:clase-lateral non estamos a usar ningunha propiedade exclusiva dos
 grupos, polo que é posible unha definición análoga para monoides, por exemplo.
 O único motivo polo que non presento ese caso é que nos casos dos monoides (e
-semigrupos, etc.) nunca xamais lle vin uso ao concepto de clase lateral. Pero
+semigrupos e magmas) nunca xamais lle vin uso ao concepto de clase lateral. Pero
 ser, é posible definilo.
 
 #exemplos[
@@ -296,9 +308,10 @@ que é un subgrupo é o propio B xa que o resto non contén o neutro.
 
 ]
 
-A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
-_conxugación_, polo que tamén se pode dicir que un subgrupo é normal se todos
-os seus elementos son invariantes baixo conxugación (siguen pertencendo a $B$).
+*Vocabulario*: A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces
+chámase _conxugación_, polo que tamén se pode dicir que un subgrupo é normal se
+todos os seus elementos son invariantes baixo conxugación (siguen pertencendo a
+$B$).
 
 Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 grupos como o morfismo
@@ -308,12 +321,12 @@ $
     f(a_1 * a_2) = f(a_1) dot f(a_2).
 $
 
-Neste caso, chámase #indice("Homomorfismo") homomorfismo. No caso dos monoides
-gañábamos a noción de elemento neutro respecto do caso dos semigrupos, o cal
-nos permite falar do núcleo dun morfismo de monoides. Agora traballamos cun
-grupo, polo que existe o concepto de _elemento inverso_ polo que podemos dicir
-algo máis. En concreto, o neutro transformase como $f(e_A) = e_B$
-#cita("delgado_2010") (usando notación multiplicativa por comodidade)
+No caso dos monoides gañábamos a noción de elemento neutro respecto do caso dos
+semigrupos, o cal nos permitiría falar do núcleo dun morfismo de monoides.
+Agora traballamos cun grupo, polo que existe o concepto de _elemento inverso_
+polo que podemos dicir algo máis. En concreto, o neutro transformase como
+$f(e_A) = e_B$ #cita("delgado_2010") (usando notación multiplicativa por
+comodidade)
 
 $
     f(e_A) &= f(e_A) dot e_B \

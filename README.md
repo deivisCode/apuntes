@@ -49,6 +49,7 @@ Uns apuntes persoais do que estiven estudando ultimamente.
         - Crimson      : https://www.ctan.org/pkg/crimsonpro
                        : https://www.ctan.org/pkg/crimson
                        : https://fonts.google.com/specimen/Crimson+Text
+        - Libertinus
 - [ ] Portada
 - [ ] Contraportada
 - [ ] Explicacións
