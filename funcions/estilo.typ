@@ -107,16 +107,15 @@
         }
         // Mostrar o encabezado. 2 filas, 3 columnas. 2ª fila toda xunta cunha liña
         grid(
-            columns : (1fr, 1fr, 1fr),
+            columns : 1,
             rows    : (1em, 1em),
-            align   : (left + horizon, right + horizon, right + horizon),
+            align   : left + horizon,
             grid.cell(
                 x:0, y:0,
                 upper[#seccion_ultima]
             ),
             grid.cell(
                 x:0, y:1,
-                colspan: 3,
                 line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
@@ -131,16 +130,15 @@
             _seccions.get().last()
         }
         grid(
-            columns : (1fr, 1fr, 1fr),
+            columns : 1,
             rows    : (1em, 1em),
-            align   : (left + horizon, right + horizon, right + horizon),
+            align   : right + horizon,
             grid.cell(
-                x:2, y:0,
+                x:0, y:0,
                 upper[#seccion_ultima]
             ),
             grid.cell(
                 x:0, y:1,
-                colspan: 3,
                 line(length: 100%, stroke: _pt_fino + _gris_titulos),
             )
         )
