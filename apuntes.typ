@@ -9,7 +9,8 @@
     include("/capitulos/01_CONXUNTOS_03_funcions.typ")
     include("/capitulos/01_CONXUNTOS_04_invariantes.typ")
     include("/capitulos/01_CONXUNTOS_05_diagramas.typ")
-    include("/capitulos/01_CONXUNTOS_06_grafos.typ")
+
+    include("/capitulos/02_GRAFOS_00_introducion.typ")
 
     // :FACER: seccion de retículas
     include("/capitulos/02_TOPOLOXIA_00_introducion.typ")
