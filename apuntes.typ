@@ -34,9 +34,10 @@
     include("/capitulos/04_GRUPOS_01_conceptos.typ")
     include("/capitulos/04_GRUPOS_02_transformacions.typ")
     include("/capitulos/04_GRUPOS_02_xeometria.typ")
-    include("/capitulos/04_GRUPOS_03_accions.typ")
 
-    include("/capitulos/05_MECANICA_00_introducion.typ")
+    include("/capitulos/05_XEOMETRIA-DIFERENCIAL_00_introducion.typ")
+
+    include("/capitulos/06_MECANICA_00_introducion.typ")
 }
 
 #crear_apuntes(
