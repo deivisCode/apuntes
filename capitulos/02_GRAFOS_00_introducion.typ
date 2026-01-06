@@ -12,3 +12,6 @@
     nome : "Introdución",
     ancora : "sec:grafos:introducion"
 )
+
+#cita("adam_2021")
+#cita("diestel_2025")
