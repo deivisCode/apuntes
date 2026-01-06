@@ -19,8 +19,8 @@
     $
 ]
 
-En realidade usase a notación _funcional_ e escríbese $f(a) = b$. Tamén
-podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
+*Notación*: En realidade usase a notación _funcional_ e escríbese $f(a) = b$.
+Tamén podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
 Pra mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$ escribimos
 $a mapsto b$ ou $a mapsto b=f(a)$.
 
@@ -44,6 +44,8 @@ $a mapsto b$ ou $a mapsto b=f(a)$.
     función $f$.
 ]
 
+_Rango_ é un sinónimo para codominio.
+
 #definicion(
     nome : "Imaxe",
     ancora : "def:conxuntos:imaxe"
@@ -58,10 +60,15 @@ $a mapsto b$ ou $a mapsto b=f(a)$.
     $
 ]
 
-Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función $f$, é dicir,
-$b = f(a)$. A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$. Nalgúns
-contextos os nomes de _codominio_ e _rango_ mestúranse, pero eu manterei esta
-distinción.
+*Vocabulario*: Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función
+$f$, é dicir, $b = f(a)$.
+
+*Notación*: A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$.
+
+Nalgúns contextos os nomes de _codominio_ e _imaxe_  mestúranse, pero eu
+manterei esta distinción. Codominio (ou rango) é o conxunto _xeral_ ao que
+pasan os elementos do dominio, e a Imaxe da función é o resultado de aplicar
+$f$ ao dominio. Polo xeral, $f^"IM"(A) subset.eq "Codominio"$.
 
 #definicion(
     nome : "Preimaxe",
@@ -77,20 +84,19 @@ distinción.
     $
 ]
 
-Ademais, dicimos que $a$ é a antiimaxe de $b$ a través de $f$, é dicir, $a =
-f^(-1) (b)$ onde usamos $f^(-1)$ en lugar de $f^"PRE"$ ao traballar cun valor
-individual en lugar de con conxuntos completos. Moitas veces a notación
-$f^(-1)$ é a que se usa para as antiimaxes de conxuntos, pero a min non me
-gusta.
+*Notación*: Ademais, dicimos que $a$ é a antiimaxe de $b$ a través de $f$, é
+dicir, $a = f^(-1) (b)$ onde usamos $f^(-1)$ en lugar de $f^"PRE"$ ao traballar
+cun valor individual en lugar de con conxuntos completos. Moitas veces a
+notación $f^(-1)$ é a que se usa para as antiimaxes de conxuntos, pero a min
+non me gusta.
 
-// :FACER: mirar o de rotman
 #definicion(
     nome : "Función sobrexectiva",
     ancora : "def:conxuntos:sobrexectividade"
 )[
     Sexan $A$ e $B$ dous conxuntos calquera e $f: A arrow.r B$. Se todos os
     elementos de  $B$ teñen antiimaxe, entón dicimos que $f$ é
-    #indice("Función")[Sobrexectiva]. É dicir,
+    #indice("Función")[Sobrexectiva] sobrexectiva. É dicir,
 
     $
         f "sobrexectiva" \
@@ -105,8 +111,8 @@ gusta.
     $
 ]
 
-Ás veces pode enfatizarse que unha función é sobrexectiva usando a frecha
-$->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
+*Notación*: Ás veces pode enfatizarse que unha función é sobrexectiva usando a
+frecha $->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
 
 A noción de sobrexectividade é algo confusa. Por exemplo, por que a función
 $f:RR->RR$ dada por
@@ -120,11 +126,24 @@ $
 
 non é sobrexectiva? Evidentemente, a imaxe de $f$ é simplemente o conxunto
 ${1,2}$, entón por qué molestarse sequera en definir $f:RR->RR$ (que non é
-sobrexectiva) en lugar de $f:RR->>{1,2}$ (que si é sobrexectiva)? Sin embargo,
-ao falar do conxunto de chegada a notación é máis estricta, e sempre usamos o
-espazo exacto. Non se escribe $f:RR->RR$ se a función se define como
-$f(x)=sqrt(x)$ xa que só valen $x>=0$. Escribimos o espazo de partida (dominio)
-sempre $RR^+$. Este é un pequeno detalle notacional que ás veces é confuso.
+sobrexectiva) en lugar de $f:RR->>{1,2}$ (que si é sobrexectiva)? Por outro
+lado, ao falar do conxunto de partida a notación é máis estricta, e sempre
+usamos o espazo exacto. Non se escribe $f:RR->RR$ se a función se define como
+$f(x)=sqrt(x)$ xa que só valen $x>=0$, en cambio escribimos o espazo de partida
+(dominio) sempre $RR^+$. Este é un pequeno detalle notacional que ás veces é
+confuso (para min foino). En xeral resulta simple saber o conxunto de partida
+pero non tanto o conxunto de valores de chegada (a imaxe). Por exemplo, na
+función $f:RR arrow.r RR^2$ definida por
+
+$
+    f(t) = (a exp(b t) cos(t),a exp(b t) sin(t) ) \
+    a > 0, b<0
+$
+
+temos claro o dominio pero o mellor que podemos dicir da imaxe é que debe
+pertencer a $RR^2$. Coñecer exactamente a imaxe é un exercicio en si mesmo
+#nota[Neste caso a imaxe chámase _traza_, e é unha espiral.], polo que en xeral
+se é flexible e non hai que _atinar_ co espazo de chegada.
 
 #definicion(
     nome : "Función inxectiva",
@@ -150,8 +169,8 @@ sempre $RR^+$. Este é un pequeno detalle notacional que ás veces é confuso.
 
 ]
 
-Pode enfatizarse que unha función é inxectiva usando a frecha $arrow.r.hook$,
-ousexa función $f:A arrow.r.hook B$ é inxectiva.
+*Notación*: Pode enfatizarse que unha función é inxectiva usando a frecha
+$arrow.r.hook$, ousexa función $f:A arrow.r.hook B$ é inxectiva.
 
 #definicion(
     nome : "Función bixectiva",
@@ -162,21 +181,32 @@ ousexa función $f:A arrow.r.hook B$ é inxectiva.
 ]
 
 As definicións de sobrexectividade, inxectividade e bixectividade soen
-presentarse sempre xuntas, e é típico memorizar que boxectividade é o mesmo que
-sobrexectividade e inxectividade. É correcto, pero pode ser algo confuso. Como
-comentara antes logo da definición @def:conxuntos:sobrexectividade o concepto
-de sobrexectividade ás veces parece un detalle notacional máis ca outra cousa.
-Sempre podemos facer unha función sobrexectiva limitando o codomino á imaxe de
-$f$, e xa estaría. A inxectividade, en cambio, é algo máis delicada, e
-realmente o punto máis importante. Recordemos que unha función é unha relación
-que a cada elemento do espazo de partida lle asigna un, e só un, elemento do
-espazo de chegada. Por outro lado, dita función é inxectiva se os elementos do
-espazo de partida se asocian a elementos diferentes no de chegada. É dicir, a
-función é _un a un_, ou o que é o mesmo, por cada elemento nun conxunto hai un
-único no outro. A sobrexectividade é necesaria por se escribimos un espazo de
-chegada máis grande do que debería, para asegurarnos de que non quedan
-elementos sen preimaxe. Pero a idea relevante está na propia definición de
-función e de inxectividade.
+presentarse sempre xuntas, e é típico memorizar que bixectividade é cas dúas
+primeiras. Isto é correcto, pero non ven nada mmotivado. Como comentara antes
+logo da definición @def:conxuntos:sobrexectividade o concepto de
+sobrexectividade é unha comodidade notacional xa que é complexo saber
+exactamente cal é a imaxe de certa función. Pero sempre podemos facer unha
+función sobrexectiva limitando o codomino á imaxe de $f$, e xa estaría. A
+inxectividade, en cambio, é algo máis delicada. Pode verse que a definción de
+inxectividade @def:conxuntos:inxectividade non é simplemente un apaño
+notacional, é algo totalmente distinto a unha función sobrexectiva.
+
+Recordemos que unha función é unha relación que a cada elemento do espazo de
+partida lle asigna un, e só un, elemento do espazo de chegada. Por outro lado,
+dita función é inxectiva se os elementos do espazo de partida se asocian a
+elementos diferentes no de chegada. É dicir, a función é _un a un_, ou o que é
+o mesmo, por cada elemento do espazo de partida hai un único no outro. A
+sobrexectividade é necesaria por se escribimos un espazo de chegada máis grande
+do que debería, para asegurarnos de que non quedan elementos sen preimaxe. Pero
+a idea relevante está na propia definición de función e de inxectividade.
+
+Máis adiante, no capítulo @cap:alxebra e concretamente no teorema
+@teo:alxebra:isomorfismos-primeiro veremos sempre que coñezamos unha función de
+certo tipo (un homomorfismo de grupos) que non é bixectiva, temos garantizado
+que existe outra que si o é, e a idea resúmese en acotar o espazo de chegada á
+imaxe para ter sobrexectividade e en eliminar os elementos do dominio que se
+van ao mesmo valor para ter inxectividade. A primeira propiedade é inmediata,
+e para a segunda veremos que fan falla multitude de conceptos e pasos a maiores.
 
 #definicion(
     nome : "Función identidade",

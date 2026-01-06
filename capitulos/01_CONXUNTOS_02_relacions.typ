@@ -28,10 +28,12 @@ Antes de nada, unha definición preliminar.
     subset A times B$.
 ]
 
-Se $A = B$ dicimos simplemente que $R$ é unha relación en $A$. Dicimos que dous
-elementos $a in A, b in B$ están _relacionados_ pola relación $R$ se $(a, b) in
-R$. Se $a$ e $b$ están relacionados, tamén se soe escribir #nota[Faise un truco
-notacional parecido na álxebra, véxase a expresión
+*Vocabulario*: Se $A = B$ dicimos simplemente que $R$ é unha relación en $A$.
+Dicimos que dous elementos $a in A, b in B$ están _relacionados_ pola relación
+$R$ se $(a, b) in R$.
+
+*Notación*: Se $a$ e $b$ están relacionados, tamén se soe escribir #nota[Faise
+un truco notacional parecido na álxebra, véxase a expresión
 @exp:alxebra:posicion-simbolos]
 
 $
@@ -91,12 +93,10 @@ relacionados.
     $
 ]
 
-Diremos que $a$ é o representante da clase de equivalencia $[a]$.
-
 // :FACER: PROPIEDADES. PARTICIÓNS E TAL.
-
-En concreto, ao conxunto de todas as clases de equivalencia chámase _conxunto
-cociente_.
+*Vocabulario*: Diremos que $a$ é o representante da clase de equivalencia
+$[a]$. En concreto, ao conxunto de todas as clases de equivalencia chámase
+_conxunto cociente_.
 
 #definicion(
     nome : "Conxunto cociente",
