@@ -173,14 +173,16 @@
 
 #let notacion( corpo ) = {
     block(
-        inset : _in_envs,
+        stroke : ( left : _gris_bordos + _pt_envs),
+        inset  : _in_envs,
         [*Notación*: #corpo]
     )
 }
 
 #let vocabulario( corpo ) = {
     block(
-        inset : _in_envs,
+        stroke : ( left : _gris_bordos + _pt_envs),
+        inset  : _in_envs,
         [*Vocabulario*: #corpo]
     )
 }
