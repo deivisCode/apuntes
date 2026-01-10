@@ -19,10 +19,12 @@
     $
 ]
 
-*Notación*: En realidade usase a notación _funcional_ e escríbese $f(a) = b$.
-Tamén podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
-Pra mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$ escribimos
-$a mapsto b$ ou $a mapsto b=f(a)$.
+#notacion[
+    En realidade usase a notación _funcional_ e escríbese $f(a) = b$. Tamén
+    podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
+    Pra mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$
+    escribimos $a mapsto b$ ou $a mapsto b=f(a)$.
+]
 
 // :FACER: Grafos e tal..?
 
@@ -60,10 +62,14 @@ _Rango_ é un sinónimo para codominio.
     $
 ]
 
-*Vocabulario*: Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función
-$f$, é dicir, $b = f(a)$.
+#vocabulario[
+    Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función $f$, é
+    dicir, $b = f(a)$.
+]
 
-*Notación*: A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$.
+#notacion[
+    A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$ .
+]
 
 Nalgúns contextos os nomes de _codominio_ e _imaxe_  mestúranse, pero eu
 manterei esta distinción. Codominio (ou rango) é o conxunto _xeral_ ao que
@@ -84,11 +90,13 @@ $f$ ao dominio. Polo xeral, $f^"IM"(A) subset.eq "Codominio"$.
     $
 ]
 
-*Notación*: Ademais, dicimos que $a$ é a antiimaxe de $b$ a través de $f$, é
-dicir, $a = f^(-1) (b)$ onde usamos $f^(-1)$ en lugar de $f^"PRE"$ ao traballar
-cun valor individual en lugar de con conxuntos completos. Moitas veces a
-notación $f^(-1)$ é a que se usa para as antiimaxes de conxuntos, pero a min
-non me gusta.
+#notacion[
+    Ademais, dicimos que $a$ é a antiimaxe de $b$ a través de $f$, é dicir, $a
+    = f^(-1) (b)$ onde usamos $f^(-1)$ en lugar de $f^"PRE"$ ao traballar cun
+    valor individual en lugar de con conxuntos completos. Moitas veces a
+    notación $f^(-1)$ é a que se usa para as antiimaxes de conxuntos, pero a
+    min non me gusta.
+]
 
 #definicion(
     nome : "Función sobrexectiva",
@@ -111,8 +119,10 @@ non me gusta.
     $
 ]
 
-*Notación*: Ás veces pode enfatizarse que unha función é sobrexectiva usando a
-frecha $->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
+#notacion[
+    Ás veces pode enfatizarse que unha función é sobrexectiva usando a frecha
+    $->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
+]
 
 A noción de sobrexectividade é algo confusa. Por exemplo, por que a función
 $f:RR->RR$ dada por
@@ -169,8 +179,10 @@ se é flexible e non hai que _atinar_ co espazo de chegada.
 
 ]
 
-*Notación*: Pode enfatizarse que unha función é inxectiva usando a frecha
-$arrow.r.hook$, ousexa función $f:A arrow.r.hook B$ é inxectiva.
+#notacion[
+    Pode enfatizarse que unha función é inxectiva usando a frecha
+    $arrow.r.hook$, ousexa función $f:A arrow.r.hook B$ é inxectiva.
+]
 
 #definicion(
     nome : "Función bixectiva",

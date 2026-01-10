@@ -28,10 +28,12 @@ mundo cuántico onde se usa unha estrutura semellante.
     É dicir, un espazo lineal, pero o primeiro elemento é un anel.
 ]
 
-*Notación*: En realidade a notación típica para o produto do primeiro anel é o
-dunha parella de parénteses, como $[dot,dot]$ ou ${dot, dot}$, é dicir, a
-operación entre dous elementos $a,b in V$ escríbese como $[a,b]$ ou ${a,b}$. Os
-parénteses soen chamarse _parénteses de Lie_.
+#notacion[
+    En realidade a notación típica para o produto do primeiro anel é o dunha
+    parella de parénteses, como $[dot,dot]$ ou ${dot, dot}$, é dicir, a
+    operación entre dous elementos $a,b in V$ escríbese como $[a,b]$ ou
+    ${a,b}$. Os parénteses soen chamarse _parénteses de Lie_.
+]
 
 Outra forma de ver esta estrutura é como un espazo lineal usual, pero engadimos
 a operación $[dot,dot]$ que cumpre as propiedades antes mencionadas. Esta soe

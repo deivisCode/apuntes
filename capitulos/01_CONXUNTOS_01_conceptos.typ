@@ -27,33 +27,38 @@ non o vexo necesario.
     + A colección de todos os conxuntos non é un conxunto.
 ]
 
-*Notación*: En xeral nomeamos un conxunto cunha letra maiúscula e seus
-elementos ca mesma letra en minúscula. Dado o conxunto $A$, se un elemento $a$
-pertence a $A$ escribimos $a in A$, e $a in.not A$ no caso contrario.
+#notacion[
+    En xeral nomeamos un conxunto cunha letra maiúscula e seus elementos ca
+    mesma letra en minúscula. Dado o conxunto $A$, se un elemento $a$ pertence
+    a $A$ escribimos $a in A$, e $a in.not A$ no caso contrario.
+]
 
-*Vocabulario*: Os conxuntos poden definirse _por extensión_, nomeando todos os
-elementos que contén dentro parénteses recurvos (ou chaves),
+#vocabulario[
+    Os conxuntos poden definirse _por extensión_, nomeando todos os elementos
+    que contén dentro parénteses recurvos (ou chaves),
 
-$
-    A = {a_1, a_2, a_3, ...};
-$
+    $
+        A = {a_1, a_2, a_3, ...};
+    $
 
-ou _por comprensión_, se dicimos que propiedades deben ter os seus
-elementos,
+    ou _por comprensión_, se dicimos que propiedades deben ter os seus
+    elementos,
 
-$
-    A = { a_i in U | P_U},
-$
+    $
+        A = { a_i in U | P_U},
+    $
 
-que se lee #quote[os elementos $a_i$ de $U$ tales que o predicado $P_U$ é
-certo]. #nota[Un predicado é unha propiedade dun conxunto calquera $U$ que pode
-volverse verdadeira ou falsa dependendo do valor concreto $u in U$.] Un exemplo
-de conxunto por extensión é o conxunto de dous elementos $A = {1, 2}$ ou o
-conxunto de números enteiros $ZZ = {dots, -1, 0, 1, 2, dots}$ onde a pesar de
-ter infinitos elementos podemos usar unha elipsis (os puntos $dots$) se se
-sobreentende o que se quere dicir. Un exemplo de conxunto por compresión son os
-números racionais $QQ = { a/b | a,b in ZZ}$. En calquera caso, usamos
-parénteses recurvos pra indicar que estamos a construír un conxunto.
+    que se lee #quote[os elementos $a_i$ de $U$ tales que o predicado $P_U$ é
+    certo]. #nota[Un predicado é unha propiedade dun conxunto calquera $U$ que
+    pode volverse verdadeira ou falsa dependendo do valor concreto $u in U$.]
+    Un exemplo de conxunto por extensión é o conxunto de dous elementos $A =
+    {1, 2}$ ou o conxunto de números enteiros $ZZ = {dots, -1, 0, 1, 2, dots}$
+    onde a pesar de ter infinitos elementos podemos usar unha elipsis (os
+    puntos $dots$) se se sobreentende o que se quere dicir. Un exemplo de
+    conxunto por compresión son os números racionais $QQ = { a/b | a,b in ZZ}$.
+    En calquera caso, usamos parénteses recurvos pra indicar que estamos a
+    construír un conxunto.
+]
 
 #definicion(
     nome : "Conxunto baleiro",
@@ -94,10 +99,12 @@ in RR | 0x = 7}$.
     $
 ]
 
-*Notación*: O símbolo $subset.eq$ indica que $B$ é un subconxunto de $A$, igual
-ou non a $A$. Se descartamos a posibilidade de que $A=B$ entón dicimos que $B$
-é un subconxunto propio de $A$, e escribimos $B subset.neq A$ ou simplemente $B
-subset A$. Por comodidade ás veces úsase $subset$ para ambos casos.
+#notacion[
+    O símbolo $subset.eq$ indica que $B$ é un subconxunto de $A$, igual ou non
+    a $A$. Se descartamos a posibilidade de que $A=B$ entón dicimos que $B$ é
+    un subconxunto propio de $A$, e escribimos $B subset.neq A$ ou simplemente
+    $B subset A$. Por comodidade ás veces úsase $subset$ para ambos casos.
+]
 
 #teorema(
     nome : "Conxuntos iguais contéñense mutuamente",

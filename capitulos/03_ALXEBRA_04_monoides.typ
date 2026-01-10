@@ -20,10 +20,13 @@
 Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
 _ou_ multiplicar pero non dividir.
 
-*Notación*: Podemos referirnos simplemente ao monoide como $A$.
+#notacion[
+    Podemos referirnos simplemente ao monoide como $A$.
+]
 
-*Vocabulario*: Se a operación é conmutativa, diremos que é un monoide
-conmutativo.
+#vocabulario[
+    Se a operación é conmutativa, diremos que é un monoide conmutativo.
+]
 
 #exemplos[
     - Para un conxunto calquera $X$, podemos denotar por $S(X)$ #nota[A

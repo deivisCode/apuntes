@@ -28,23 +28,27 @@ Antes de nada, unha definición preliminar.
     subset A times B$.
 ]
 
-*Vocabulario*: Se $A = B$ dicimos simplemente que $R$ é unha relación en $A$.
-Dicimos que dous elementos $a in A, b in B$ están _relacionados_ pola relación
-$R$ se $(a, b) in R$.
+#vocabulario[
+    Se $A = B$ dicimos simplemente que $R$ é unha relación en $A$. Dicimos que
+    dous elementos $a in A, b in B$ están _relacionados_ pola relación $R$ se
+    $(a, b) in R$.
+]
 
-*Notación*: Se $a$ e $b$ están relacionados, tamén se soe escribir #nota[Faise
-un truco notacional parecido na álxebra, véxase a expresión
-@exp:alxebra:posicion-simbolos]
+#notacion[
+    Se $a$ e $b$ están relacionados, tamén se soe escribir #nota[Faise un truco
+    notacional parecido na álxebra, véxase a expresión
+    @exp:alxebra:posicion-simbolos]
 
-$
-    (a,b) in R stretch(arrow.r)^"símb. entre elementos"
-    a R b stretch(arrow.r)^"símb. especial"
-    a rel^R b.
-$ <exp:contuntos:posicion-simbolos>
+    $
+        (a,b) in R stretch(arrow.r)^"símb. entre elementos"
+        a R b stretch(arrow.r)^"símb. especial"
+        a rel^R b.
+    $ <exp:contuntos:posicion-simbolos>
 
-Tamén se soe escribir $a rel_R$ ou simplemente $a rel b$ no caso de
-sobreentender cal é a relación $R$. Tamén se pode dicir directamente que $rel$
-é o mesmo que $R$.
+    Tamén se soe escribir $a rel_R$ ou simplemente $a rel b$ no caso de
+    sobreentender cal é a relación $R$. Tamén se pode dicir directamente que
+    $rel$ é o mesmo que $R$.
+]
 
 Existen moitos tipos de relacións, como as de _orde_ que dan lugar ao estudo de
 retícular, pero nós centraremos o noso interese (polo de agora) nas de
@@ -94,9 +98,11 @@ relacionados.
 ]
 
 // :FACER: PROPIEDADES. PARTICIÓNS E TAL.
-*Vocabulario*: Diremos que $a$ é o representante da clase de equivalencia
-$[a]$. En concreto, ao conxunto de todas as clases de equivalencia chámase
-_conxunto cociente_.
+#vocabulario[
+    Diremos que $a$ é o representante da clase de equivalencia $[a]$. En
+    concreto, ao conxunto de todas as clases de equivalencia chámase _conxunto
+    cociente_.
+]
 
 #definicion(
     nome : "Conxunto cociente",

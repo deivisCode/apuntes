@@ -17,9 +17,13 @@ Nesta sección mencionamos unha das estruturas máis simples posibles.
     magma#indice[Magma]
 ]
 
-*Notación*: Podemos referirnos simplemente ao magma como $A$.
+#notacion[
+    Podemos referirnos simplemente ao magma como $A$.
+]
 
-*Vocabulario*: Se a operación é conmutativa, entón é un magma conmutativo.
+#vocabulario[
+    Se a operación é conmutativa, entón é un magma conmutativo.
+]
 
 #definicion(
     nome : "Submagma",

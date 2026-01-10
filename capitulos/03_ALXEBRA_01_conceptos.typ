@@ -33,11 +33,13 @@ mesmo conxunto $A$.
 
 [Cap. 2]#cita("rotman_2000") [Cap.4 $section 4.1$]#cita("delgado_2010")
 
-*Notación*: En xeral non se usa a notación _funcional_ cos argumentos entre
-paréntese, senón que preferimos colocar o símbolo da operación entre eles
-(semellante á expresión @exp:contuntos:posicion-simbolos). Ademais, non usamos
-letras para as operacións senón símbolos especiais. É dicir, os pasos [Cap.2
-]#cita("rotman_2000")
+#notacion[
+    En xeral non se usa a notación _funcional_ cos argumentos entre paréntese,
+    senón que preferimos colocar o símbolo da operación entre eles (semellante
+    á expresión @exp:contuntos:posicion-simbolos). Ademais, non usamos letras
+    para as operacións senón símbolos especiais. É dicir, os pasos [Cap.2
+    ]#cita("rotman_2000")
+]
 
 $
     f(a,b) stretch(arrow.r)^"símb. entre argumentos"
@@ -77,18 +79,20 @@ estruturas máis pequenas. Por exemplo, no caso dunha Álxebra de Lie
 , o número ascende a 5 operacións en 2 conxuntos diferentes, que se relacionan
 en un grupo, un anel e unha operación aparte.
 
-*Notación*: Cando hai varias operacións soe usarse notación aditiva para a
-primeira e multiplicativa para a segunda. No caso de ter nas mans varias
-estruturas do mesmo tipo, gústame a idea de notar as operacións da segunda
-engadindo círculos ás operacións da primeira. É dicir, se teño dúas estruturas
-sendo a primeira $(A,+,dot)$, entón na segunda usarei as operacións $plus.o$ e
-$dot.o$, i.e. $(B,plus.o,dot.o)$. Hai que ter en conta que isto non é unha
-norma, senón un gusto. Un detalle notacional máis, cando unha estrutura é
-coñecida soe abusarse da notación e simplificar todo co nome do seu conxunto.
-De haber varios, é típico que haxa un máis _interesante_ e usarase ese. Por
-exemplo, o grupo $(G, +)$ simplifícase por $G$, e o espazo lineal
-$((V,+),(KK,+,dot),compose)$ por $V$. A medida que aparezan estruturas
-concretas recordarei este detalle.
+#notacion[
+    Cando hai varias operacións soe usarse notación aditiva para a primeira e
+    multiplicativa para a segunda. No caso de ter nas mans varias estruturas do
+    mesmo tipo, gústame a idea de notar as operacións da segunda engadindo
+    círculos ás operacións da primeira. É dicir, se teño dúas estruturas sendo
+    a primeira $(A,+,dot)$, entón na segunda usarei as operacións $plus.o$ e
+    $dot.o$, i.e. $(B,plus.o,dot.o)$. Hai que ter en conta que isto non é unha
+    norma, senón un gusto. Un detalle notacional máis, cando unha estrutura é
+    coñecida soe abusarse da notación e simplificar todo co nome do seu
+    conxunto. De haber varios, é típico que haxa un máis _interesante_ e
+    usarase ese. Por exemplo, o grupo $(G, +)$ simplifícase por $G$, e o espazo
+    lineal $((V,+),(KK,+,dot),compose)$ por $V$. A medida que aparezan
+    estruturas concretas recordarei este detalle.
+]
 
 #definicion(
     nome : "Cardinalidade",
@@ -100,10 +104,12 @@ concretas recordarei este detalle.
     $RR$ dependendo do caso (véxase [Def. 3.63]#cita("delgado_2010")).
 ]
 
-*Notación*: No caso de que a estrutura teña varios conxuntos, como un espazo
-lineal, soe falarse da cardinalidade do conxunto máis relevante, polo que a
-cardinalidade do espazo vectorial $((V,+),(KK,+,dot),compose)$ é simplemente
-$|V|$.
+#notacion[
+    No caso de que a estrutura teña varios conxuntos, como un espazo lineal,
+    soe falarse da cardinalidade do conxunto máis relevante, polo que a
+    cardinalidade do espazo vectorial $((V,+),(KK,+,dot),compose)$ é
+    simplemente $|V|$.
+]
 
 A cardinalidade é especialmente importante cando é finita xa que, como veremos
 no caso de grupos de pequenas dimensións, é posible obter todo tipo de
@@ -139,11 +145,13 @@ expresión como
 $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f. $
 #label("ec:alxebra:asociatividade_xeneralizada")
 
-*Notación*: É común atoparse con situacións como a da
-@ec:alxebra:asociatividade_xeneralizada pero onde a operación se repite no
-mesmo elemento. Podemos simplificar a escritura usando o concepto de
-_potencias_, repetir a mesma operación varias veces. En notación multiplicativa
-#cita("delgado_2010")
+#notacion[
+    É común atoparse con situacións como a da
+    @ec:alxebra:asociatividade_xeneralizada pero onde a operación se repite no
+    mesmo elemento. Podemos simplificar a escritura usando o concepto de
+    _potencias_, repetir a mesma operación varias veces. En notación
+    multiplicativa #cita("delgado_2010")
+]
 
 $ underbrace(a * a * a * dots, "n veces") $
 
@@ -194,13 +202,15 @@ _regra do camelo_, que se resume en sumar 0 ou multiplicar por 1. Moitas veces
 en matemáticas é útil esta conta porque nos permite cambiar a forma das
 expresións.
 
-*Notación*: Nunha situación na que teñamos varios conxuntos $A, B, C, dots$ con
-respectivos neutros, podemos identificalos con subíndices para poder
-diferencialos, ousexa $e_A, e_B, e_C, dots$ Ás veces, na notación aditiva
-esribimos o neutro como $0$, e na notación multiplicativa como $1, bb(1)$ ou
-$I$, evidentemente aludindo en ambos casos ao neutro da suma de números reais,
-0, e ao do produto, 1. Podemos combinar notacións e escribir $1_A, bb(1)_B, 0_A
-dots$ como nos conveña.
+#notacion[
+    Nunha situación na que teñamos varios conxuntos $A, B, C, dots$ con
+    respectivos neutros, podemos identificalos con subíndices para poder
+    diferencialos, ousexa $e_A, e_B, e_C, dots$ Ás veces, na notación aditiva
+    esribimos o neutro como $0$, e na notación multiplicativa como $1, bb(1)$
+    ou $I$, evidentemente aludindo en ambos casos ao neutro da suma de números
+    reais, 0, e ao do produto, 1. Podemos combinar notacións e escribir $1_A,
+    bb(1)_B, 0_A dots$ como nos conveña.
+]
 
 #teorema(
     nome : "Elemento neutro é único",
@@ -239,9 +249,11 @@ dots$ como nos conveña.
     elemento $a$ é invertible.
 ]
 
-*Notación*: O elemento inverso de $a$ denótase como $-a$ na notación aditiva e
-por $a^(-1)$ na multiplicativa, aludindo, como sempre, aos casos numéricos
-coñecidos.
+#notacion[
+    O elemento inverso de $a$ denótase como $-a$ na notación aditiva e por
+    $a^(-1)$ na multiplicativa, aludindo, como sempre, aos casos numéricos
+    coñecidos.
+]
 
 #teorema(
     nome : "Elemento inverso é único",
@@ -333,10 +345,12 @@ operacións, en lugar dunha soa como na asociatividade.
     $
 ]
 
-*Vocabulario*: Ás veces podemos referirnos a distributiva _pola esquerda_ ou
-_pola dereita_, no caso de que só se cumpra unha das condicións de
-#ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a
-secas) se o é pola esquerda e pola dereita.
+#vocabulario[
+    Ás veces podemos referirnos a distributiva _pola esquerda_ ou _pola
+    dereita_, no caso de que só se cumpra unha das condicións de
+    #ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a
+    secas) se o é pola esquerda e pola dereita.
+]
 
 Do mesmo modo que na teoría de conxuntos existe o concepto de subconxunto, en
 álxebra temos _subestruturas_. $B$ é un subconxunto de $A$ se calquera elemento
@@ -362,9 +376,11 @@ mesmas propiedades ás subestruturas.
     - etc.
 ]
 
-*Vocabulario*: Cando a operación tamén é interna no subconxunto B soe dicirse
-que é #indice("Operación")[Cerrada] _cerrada_ ou que _cerra_ en B, que é o
-primeiro punto da definición @def:alxebra:subestrutura.
+#vocabulario[
+    Cando a operación tamén é interna no subconxunto B soe dicirse que é
+    #indice("Operación")[Cerrada] _cerrada_ ou que _cerra_ en B, que é o
+    primeiro punto da definición @def:alxebra:subestrutura.
+]
 
 A definición @def:alxebra:subestrutura dinos que se sabemos as condicións que
 satisfai unha estrutura de certo tipo, coma un monoide ou un anel, entón non
@@ -397,16 +413,19 @@ importancia as que teñen a seguinte propiedade, os chamados _homomorfismos_.
     operación $plus.o$ ocorre en $B$, entre $f(a)$ e $f(b)$.
 ]
 
-*Vocabulario*: Dise que a aplicación $f$ é un homomorfismo ou que é unha
-aplicación _homomorfa_. Ás veces poden cambiar algo os nomes dependendo das
-estruturas de traballo. No caso de ter unha parella de grupos ou aneis a un
-homomorfismo engadímoslle o apelido _de grupos_ ou _de aneis_ respectivamente;
-no caso de espazos lineais os homomorfismos chámanse _aplicacións lineais_. No
-caso de tratar cun homomorfismo dunha estrutura en si mesma, é dicir $f:A
-arrow.r A$, dicimos que $f$ é un _endomorfismo_. En xeral, un homomorfismo
-sobrexectivo (@def:conxuntos:sobrexectividade) chámase _epimorfismo_; se fose
-inxectivo (@def:conxuntos:inxectividade), _monomorfismo_; e se fose ambos
-(@def:conxuntos:bixectividade), _isomorfismo_.
+#vocabulario[
+    Dise que a aplicación $f$ é un homomorfismo ou que é unha aplicación
+    _homomorfa_. Ás veces poden cambiar algo os nomes dependendo das estruturas
+    de traballo. No caso de ter unha parella de grupos ou aneis a un
+    homomorfismo engadímoslle o apelido _de grupos_ ou _de aneis_
+    respectivamente; no caso de espazos lineais os homomorfismos chámanse
+    _aplicacións lineais_. No caso de tratar cun homomorfismo dunha estrutura
+    en si mesma, é dicir $f:A arrow.r A$, dicimos que $f$ é un _endomorfismo_.
+    En xeral, un homomorfismo sobrexectivo (@def:conxuntos:sobrexectividade)
+    chámase _epimorfismo_; se fose inxectivo (@def:conxuntos:inxectividade),
+    _monomorfismo_; e se fose ambos (@def:conxuntos:bixectividade),
+    _isomorfismo_.
+]
 
 #definicion(
     nome : "Núcleo dun morfismo",

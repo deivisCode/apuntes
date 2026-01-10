@@ -171,6 +171,20 @@
     )
 }
 
+#let notacion( corpo ) = {
+    block(
+        inset : _in_envs,
+        [*Notación*: #corpo]
+    )
+}
+
+#let vocabulario( corpo ) = {
+    block(
+        inset : _in_envs,
+        [*Vocabulario*: #corpo]
+    )
+}
+
 
 /// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.
 #let capitulo(

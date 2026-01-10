@@ -26,10 +26,13 @@ operacións.
     $(A,+)$ é un grupo, $(A,*)$ é un magma, e as operacións son distributivas.
 ]
 
-*Notación*: Podemos referirnos simplemente ao anel como $A$.
+#notacion[
+    Podemos referirnos simplemente ao anel como $A$.
+]
 
-*Vocabulario*: Se a operación $*$ é conmutativa dicimos que o anel é
-conmutativo.
+#vocabulario[
+    Se a operación $*$ é conmutativa dicimos que o anel é conmutativo.
+]
 
 // :FACER: mais exemplos de aneis
 // :FACER: nos exemplos usar + ou - nas listas??
@@ -195,8 +198,10 @@ deberían ser invertibles, o cal inclúe o neutro da primera operación (chamém
 
 Nun corpo non hai divisores do 0.
 
-*Vocabulario*: No caso de que a operación $*$ sexa conmutativa entón falamos
-dun #indice("Campo") campo. [Cap.4 #math.section 4]#cita("kostrikin_1983")
+#vocabulario[
+    No caso de que a operación $*$ sexa conmutativa entón falamos dun
+    #indice("Campo") campo. [Cap.4 #math.section 4]#cita("kostrikin_1983")
+]
 
 Como sempre, podemos falar de morfismos de aneis, e naturalmente de
 homomorfismos, que é unha aplicación entre os aneis $(A,+,*)$ e

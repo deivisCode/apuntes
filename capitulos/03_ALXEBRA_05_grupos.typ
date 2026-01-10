@@ -23,14 +23,17 @@ agora.
 Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
 multiplicar e dividir.
 
-*Notación*: Podemos referirnos simplemente ao grupo como $A$.
+#notacion[
+    Podemos referirnos simplemente ao grupo como $A$.
+]
 
-*Vocabulario*: Se a operación é conmutativa, diremos que o grupo é conmutativo,
-ou _abeliano_.
-#cita("rotman_2000")
-#nota[
-    Supoño que as estruturas anteriores tamén se poden chamar _abelianas_ en
-    lugar de conmutativas, pero eu personalmente non o suelo ver.
+#vocabulario[
+    Se a operación é conmutativa, diremos que o grupo é conmutativo, ou
+    _abeliano_. #cita("rotman_2000")
+    #nota[
+        Supoño que as estruturas anteriores tamén se poden chamar _abelianas_
+        en lugar de conmutativas, pero eu personalmente non o suelo ver.
+    ]
 ]
 
 #exemplos[
@@ -112,8 +115,10 @@ subestrutura.
     $
 ]
 
-*Notación*: Cando $B$ é un subgrupo de $A$ podemos escribir simplemente que $B
-subgrupo A$.
+#notacion[
+    Cando $B$ é un subgrupo de $A$ podemos escribir simplemente que $B subgrupo
+    A$.
+]
 
 Outra vez, esta definición é análoga á @def:alxebra:subsemigrupo e
 @def:alxebra:submonoide. Agora nosa estrutura é algo máis rica e podemos falar
@@ -133,25 +138,29 @@ reducilo a unha sola co seguinte teorema.
     $
 ]
 
-*Notación*: En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir,
-que un elemento de $B$ calqueira, polo inverso doutro, está en $B$.
+#notacion[
+    En notación aditiva a condición sería $b_1 - b_2 in B$, é dicir, que un
+    elemento de $B$ calqueira, polo inverso doutro, está en $B$.
+]
 
 Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010"). O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
 algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
-*Notación*: Podemos falar do produto de subconxuntos dun certo grupo. Sexa $G$
-un grupo, $scr(P)(G)$ o conxunto de todos os subconxuntos de $G$, e $A,B in
-scr(P)(G)$. Entón denotamos por $A B$ ao conxunto dado pola operación (en
-notación multiplicativa)
+#notacion[
+    Podemos falar do produto de subconxuntos dun certo grupo. Sexa $G$ un
+    grupo, $scr(P)(G)$ o conxunto de todos os subconxuntos de $G$, e $A,B in
+    scr(P)(G)$. Entón denotamos por $A B$ ao conxunto dado pola operación (en
+    notación multiplicativa)
 
-$
-    A B := {a b | a in A, b in B}
-$
+    $
+        A B := {a b | a in A, b in B}
+    $
 
-Un caso concreto deste produto de subconxuntos é cando un dos conxuntos ten un
-so elemento, ousexa ${a}B$ ou $A{b}$. Neste caso, simplificamos a notación a $a
-B$ e $A b$.
+    Un caso concreto deste produto de subconxuntos é cando un dos conxuntos ten
+    un so elemento, ousexa ${a}B$ ou $A{b}$. Neste caso, simplificamos a
+    notación a $a B$ e $A b$.
+]
 
 // :FACER: Onde empezo a simplificar (A, +) por A ?
 // :FACER: nalgún sitio lin unha boa motivación de esquerda <-> dereita
@@ -173,7 +182,9 @@ B$ e $A b$.
 
 Pode definirse analogamente unha clase lateral _pola dereita_, $B a$.
 
-*Vocabulario*: O elemento $a$ chámase _representante_ da clase $a B$.
+#vocabulario[
+    O elemento $a$ chámase _representante_ da clase $a B$.
+]
 
 Evidentemente, unha clase lateral non é máis co caso concreto mencionado antes
 dun produto de subconxuntos de grupos. En realidade, na definición
@@ -308,10 +319,12 @@ que é un subgrupo é o propio B xa que o resto non contén o neutro.
 
 ]
 
-*Vocabulario*: A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces
-chámase _conxugación_, polo que tamén se pode dicir que un subgrupo é normal se
-todos os seus elementos son invariantes baixo conxugación (siguen pertencendo a
-$B$).
+#vocabulario[
+    A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
+    _conxugación_, polo que tamén se pode dicir que un subgrupo é normal se
+    todos os seus elementos son invariantes baixo conxugación (siguen
+    pertencendo a $B$).
+]
 
 Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
 grupos como o morfismo

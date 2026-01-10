@@ -16,10 +16,13 @@
     $*$ tamén é asociativa
 ]
 
-*Notación*: Podemos referirnos simplemente ao semigrupo como $A$.
+#notacion[
+    Podemos referirnos simplemente ao semigrupo como $A$.
+]
 
-*Vocabulario*: Se a operación é conmutativa, diremos que é un semigrupo
-conmutativo.
+#vocabulario[
+    Se a operación é conmutativa, diremos que é un semigrupo conmutativo.
+]
 
 Os semigrupos si aparecen de cando en vez de forma explícita na álxebra.
 Veremos esto unhas seccións máis adiante ao falar de aneis.
