@@ -120,7 +120,7 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    set text(size: 0.9em, fill: _gris_textos, font: _sans)
+    set text(fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
         stroke    : ( left : _gris_bordos + _pt_envs ),
@@ -137,8 +137,9 @@
 #let exemplos(
     corpo
 ) = {
-    set text(size: 0.9em, fill: _gris_textos, font: _sans)
+    set text(fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
+    // :FACER: 2 bloques para evitar orfos
     block(
         stroke    : ( left : _gris_bordos + _pt_envs ),
         fill      : _gris_fondos,
