@@ -127,10 +127,20 @@
         fill      : _gris_fondos,
         width     : 100%,
         above     : 0pt,
+        below     : 0pt,
         inset     : _in_envs,
-        outset    : ( top: 1pt ),
+        outset    : ( top: 1pt, bottom: 1pt ),
+        breakable : false,
+        sticky    : true,
+        [#underline[Demostración] #ref(label(ancora)):]
+    )
+    block(
+        stroke    : ( left : _gris_bordos + _pt_envs ),
+        fill      : _gris_fondos,
+        width     : 100%,
+        inset     : _in_envs,
         breakable : true,
-        [#underline[Demostración] #ref(label(ancora)): #v(1em) #corpo #h(1fr) $qed$]
+        [#corpo #h(1fr) $qed$]
     )
 }
 
@@ -139,15 +149,25 @@
 ) = {
     set text(fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
-    // :FACER: 2 bloques para evitar orfos
+    block(
+        stroke    : ( left : _gris_bordos + _pt_envs),
+        fill      : _gris_fondos,
+        width     : 100%,
+        above     : 5pt, // :FACER: esto debería ser o interliñado
+        below     : 0pt,
+        inset     : _in_envs,
+        outset    : ( bottom: 1pt ),
+        breakable : false,
+        sticky    : true,
+        [ #underline[Exemplos]:]
+    )
     block(
         stroke    : ( left : _gris_bordos + _pt_envs ),
         fill      : _gris_fondos,
         width     : 100%,
         inset     : _in_envs,
-        outset    : ( top: 1pt ),
         breakable : true,
-        [ #underline[Exemplos]: #v(1em) #corpo]
+        [#corpo]
     )
 }
 
