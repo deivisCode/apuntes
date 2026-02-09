@@ -1,6 +1,15 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
+// Meter GRUPOS nalgures:
+// - Todo o que non metín no capítulo de álxebra.
+// - Grupos cíclicos
+// - Orde de elementos
+// - Lagrange
+// - Cayley
+// - Permutacións
+// - Sn, An
+
 #seccion(
     nome : "Grupos",
     ancora : "sec:alxebra:grupos"

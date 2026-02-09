@@ -2,13 +2,13 @@
 #import("/funcions/simbolos.typ"): *
 
 #capitulo(
-    nome : "Grupos",
-    ancora : "cap:grupos"
+    nome : "Simetría",
+    ancora : "cap:simetria"
 )
 
 #seccion(
     nome : "Introdución",
-    ancora : "sec:grupos:introduccion"
+    ancora : "sec:simetria:introduccion"
 )
 
 No capítulo @cap:alxebra presentamos variedade de estruturas alxébricas e en
