@@ -33,7 +33,8 @@
     include("/capitulos/04_SIMETRIA_00_introducion.typ")
     include("/capitulos/04_SIMETRIA_01_transformacions.typ")
     include("/capitulos/04_SIMETRIA_02_accions-grupos.typ")
-    include("/capitulos/04_SIMETRIA_03_xeometria.typ")
+    include("/capitulos/04_SIMETRIA_03_homoxeneidade.typ")
+    include("/capitulos/04_SIMETRIA_04_xeometria.typ")
 
     include("/capitulos/05_XEOMETRIA-DIFERENCIAL_00_introducion.typ")
 
