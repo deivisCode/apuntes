@@ -7,8 +7,6 @@
 // - Orde de elementos
 // - Lagrange
 // - Cayley
-// - Permutacións
-// - Sn, An
 
 #seccion(
     nome : "Grupos",
