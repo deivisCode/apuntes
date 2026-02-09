@@ -7,6 +7,12 @@
 // - Orde de elementos
 // - Lagrange
 // - Cayley
+// A maiores:
+// Onde meto
+// - Simples
+// - Libres
+// - Orde P
+// - Divisores, etc
 
 #seccion(
     nome : "Grupos",
