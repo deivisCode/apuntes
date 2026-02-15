@@ -1,6 +1,7 @@
 #import("/funcions/estilo.typ"): crear_apuntes
 
 // :FACER: TODOS os sf,bold,sc, usando text(features:("smcp")) etc.
+// :FACER: unificar <exp:>, <ec:>, etc. Facer tests?
 
 #let documento = {
     include("/capitulos/01_CONXUNTOS_00_introducion.typ")
@@ -37,6 +38,7 @@
     include("/capitulos/04_SIMETRIA_04_xeometria.typ")
 
     include("/capitulos/05_XEOMETRIA-DIFERENCIAL_00_introducion.typ")
+    include("/capitulos/05_XEOMETRIA-DIFERENCIAL_01_curvas.typ")
 
     include("/capitulos/06_MECANICA_00_introducion.typ")
 }
