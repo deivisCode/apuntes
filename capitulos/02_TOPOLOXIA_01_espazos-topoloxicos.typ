@@ -47,6 +47,40 @@ chámanse #indice("Conxunto")[Aberto] conxuntos abertos, ou simplemente abertos.
     topoloxía sobre $X$, é un #indice("Espazo")[Topolóxico] espazo topolóxico.
 ]
 
+Exemplos de topoloxías. Nestos casos non podemos usar a noción usual de
+estar dentro dunha bola. Ditas bolas son simplemente os abertos na topoloxía
+usual, pero noutra topoloxía os abertos son distintos. Para saber se un punto
+pertence ou no á fronteira, adherencia, etc. hai que comprobar as definicións
+anteriores pero cos abertos da topoloxía concreta en lugar de cas bolas
+// :FACER: Casos xerais destas topos? e.g. sen RR
+
+- *Usual*: $tau_"U" := {(a,b), (-oo,c), (d, oo)}$. Ousexa, os intervalos
+  abertos típicos en $RR$
+
+- *Trivial/Indiscreta*: $tau_"IND" := {emptyset, X}$. Unha topoloxía moi
+  simple na cal o único aberto ao que pode pertence un punto é o propio $X$
+
+- *Discreta*: $tau_"DIS" := scr(P)(X) := {A | A subset X}$. Neste caso, un
+  conxunto dun so punto da forma ${x}$ é un aberto.
+
+- *Cofinita*: $tau_"COF" := {emptyset} union {A subset X "tal que" X - A
+  "é finito"}$. Os abertos son os conxuntos cuxo complementario é finito. Por
+  exemplo, $RR - {1,2,3}$ xa que o complementario é $RR - (RR - {1,2,3}) =
+  {1,2,3}$
+
+- *Kolomogorov*: $tau_"K" := {emptyset, RR} union {(a,+oo) "con" a in RR}$
+
+- *Sen nome*. $tau_alpha := { [p, q) in RR | p < q, space.quad p,q in QQ}$
+
+Comparación de topoloxías:
+
+Podemos comparar topoloxías comprobando se unha está contida noutra. Sexan
+$tau_U$, $tau_("COF")$ e $tau_K$ as topoloxías Usual, Cofinita e Kolmogorov
+respectivamente. Entón $tau_K subset tau_U$, $tau_"COF" subset tau_U$, etc.
+Dicimos que $tau$ é _mais fina_ ca $beta$, escribimos $tau lt.eq beta$, se $tau
+subset beta$ [Def. 7.53]#cita("masa_2019"), e de xeito similar, que $beta$ é
+_menos fina_ ca $tau$
+
 #definicion(
     nome : "Conxuntos pechados",
     ancora : "def:topoloxia:pechados"
@@ -66,3 +100,49 @@ A definición é idéntica á de topoloxía (conxuntos abertos) pero mudando as
 condicións para a unión e a intersección de elementos. Outra condición
 equivalente para saber se un conxunto é pechado é que seu complementario sexa
 aberto, e viceversa. Un conxunto pode ser aberto, pechado, ambos o nada.
+
+Tipos de puntos nun conxunto A, supoñendo que temos definida unha distancia
+
+- *Punto interior*. $x_0 in angstrom$ se $exists r > 0$ tal que $B(x_0,r)
+  subset A$. É dicir, sempre podemos centrar unha bola en $x_0$ completamente
+  contida en A. Por exemplo, en $QQ$, ningún punto pertence ao interior de
+  $QQ$, xa que ao colocar unha bola en $x_0$, _sempre_ imos ter puntos $x in.not
+  QQ$ para calqueira $r$. Ás veces o interior tamén se denota por $"Int"(A)$
+
+- *Punto aislado*. $x_0 in "Aisl"(A)$ se $exists r > 0$ tal que
+  $(B(x_0,r)-{x_0}) inter A = emptyset$. É dicir, o único punto de $A$ nunha
+  bola centrada en $x_0$ é o propio punto $x_0$.
+
+- *Punto fronteira*. $x_0 in "Fr"(A)$ se $forall r > 0$ $B(x_0,r) inter A
+  eq.not emptyset, B(x_0,r) inter A^c eq.not emptyset$. É dicir, unha bola
+  centrada en $x_0$ sempre contén puntos de $A$ e do seu complementario $A^c$.
+  Ás veces, o conxunto de puntos da fronteira tamén se denota por $partial A$
+
+- *Punto adherente*. $x_0 in macron(A)$ se $forall r > 0$ $B(x_0,r) inter A
+  eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre ten puntos de $A$.
+  Ás veces a adherencia tamén se denota por $"Cl"(A)$
+
+- *Punto de acumulación*. $x_0 in A'$ se $forall r > 0$ $(B(x_0,r)-{x_0}) inter
+  A eq.not emptyset$. É dicir, unha bola centrada en $x_0$ sempre contén algún
+  punto de $A$ distinto de $x_0$
+
+#definicion(
+    nome : "Topoloxía produto",
+    ancora : "def:topoloxia:topoloxia-produto"
+)[
+    FACER
+]
+
+#definicion(
+    nome : "Continuidade na topoloxia produto",
+    ancora : "def:topoloxia:continuidade-produto"
+)[
+    FACER
+]
+
+#definicion(
+    nome : "Topoloxía Inducida",
+    ancora : "def:topoloxia:topoloxia-inducida"
+)[
+    FACER
+]

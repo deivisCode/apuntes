@@ -16,7 +16,9 @@
     // :FACER: seccion de retículas
     include("/capitulos/02_TOPOLOXIA_00_introducion.typ")
     include("/capitulos/02_TOPOLOXIA_01_espazos-topoloxicos.typ")
-    include("/capitulos/02_TOPOLOXIA_99_NOTAS-TEMPORAIS.typ")
+    include("/capitulos/02_TOPOLOXIA_02_continuidade.typ")
+    include("/capitulos/02_TOPOLOXIA_03_homeomorfismos.typ")
+    include("/capitulos/02_TOPOLOXIA_04_espazos-metricos.typ")
 
     include("/capitulos/03_ALXEBRA_00_introducion.typ")
     include("/capitulos/03_ALXEBRA_01_conceptos.typ")
