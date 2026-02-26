@@ -33,16 +33,13 @@ definicón. [Cap.11$section$3]@masa_2019 [Cap.16$section$1]@napkin
 ]
 
 #notacion[
-    Simplificamos a acción nunha parella de elementos calquera $alpha (g, x) =
-    x$ como simplemente por $g x$.
-
-    Se o grupo $G$ actúa sobre $A$ podemos escribir simplemente $G arrow.cw.half A$,
-    e tamén dicimos que $A$ é un $G$-conxunto.
-
-    A definición @def:simetria:accion é a dunha acción _pola esquerda_, dada a
-    orde dos argumentos $g, a$. Pode definirse unha acción _pola dereita_ de
-    xeito totalmente análogo como $alpha: A times G arrow A$, $(x,g) mapsto
-    alpha (x,g)$.
+    Simplificamos a acción nunha parella de elementos calquera $alpha (g, x)$
+    simplemente por $g x$. Se o grupo $G$ actúa sobre $A$ podemos escribir $G
+    arrow.cw.half A$, e tamén dicimos que $A$ é un $G$-conxunto. A definición
+    @def:simetria:accion é a dunha acción _pola esquerda_, dada a orde dos
+    argumentos $g, a$. Pode definirse unha acción _pola dereita_ de xeito
+    totalmente análogo como $alpha: A times G arrow A$, $(x,g) mapsto alpha
+    (x,g)$.
 ]
 
 // :FACER: explicar mellor esto
@@ -208,7 +205,7 @@ Un subconxunto invariante é a unión de órbitas
     $
 ]
 
-// :FACER: motivar esto
+// :FACER: motivar esto, e revistar N(H) =st(H) ? meter en grupos?
 // [Cap.7$section$2.3]@kostrikin_1983
 #definicion(
     nome : "Normalizador",

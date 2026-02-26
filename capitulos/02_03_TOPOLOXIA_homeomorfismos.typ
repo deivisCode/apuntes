@@ -6,6 +6,7 @@
     ancora : "sec:topoloxia:homeomorfismos"
 )
 
+// :FACER: motivalo
 #definicion(
     nome : "Homeomorfismo",
     ancora : "def:topoloxia:homeomorfismo"
@@ -46,6 +47,7 @@
     #indice("Espazo")[Homeomorfo] homeomorfos.
 ]
 
+// :FACER: reescribir baseandose en sec:conxuntos:invariantes
 #definicion(
     nome : "Invariante topolóxica",
     ancora : "def:topoloxia:invariante-topoloxica"
@@ -55,7 +57,6 @@
     conexión, Hausdorf, etc. que se cumple en $(X,tau_X)$. Se ao cumplirse $P$
     en $(X,tau_X)$ tamén se cumple $P$ en $(Y,tau_Y)$, entón dicimos que $P$ é
     unha #indice("Invariante")[Topolóxica] invariante topolóxica.
-
     É dicir, son propiedades dun espazo topolóxico que se preservan entre
     espazos homeomorfos.
 ]
@@ -64,6 +65,7 @@ Podemos usar esta definición á inversa. Se temos dous espazos topolóxicos con
 propiedades topolóxicas distintas (e.g. un deles é Hausdorff e outro non) entón
 temos asegurado que ditos espazos non son homeomorfos
 
+// :FACER: T0, T1, conexo, convexo (Penn), etc.
 #definicion(
     nome : "Espazo de Hausdorff",
     ancora : "def:topoloxia:hausdorff"

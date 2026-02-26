@@ -16,8 +16,8 @@ non o vexo necesario.
     ancora : "def:conxuntos:conxunto"
 )[
     // :FACER: axiomas
-    Un #indice[Conxunto] conxunto é unha colección arbitraria de obxectos (que
-    chamaremos _elementos_) que cumpren unha serie de axiomas (que agora mesmo
+    Un #indice[Conxunto] conxunto é unha colección arbitraria de obxectos, que
+    chamaremos _elementos_ que cumpren unha serie de axiomas (que agora mesmo
     non necesitamos mencionar). Ademais, #nota[Seguramente debería explicar
     isto mellor... pero polo de agora a idea intuitiva é dabondo]
 
@@ -49,6 +49,10 @@ non o vexo necesario.
     que se lee #quote[os elementos $a_i$ de $U$ tales que o predicado $P_U$ é
     certo]. #nota[Un predicado é unha propiedade dun conxunto calquera $U$ que
     pode volverse verdadeira ou falsa dependendo do valor concreto $u in U$.]
+    Ás veces o conxunto $U$ pode sobreentenderse polo contexto, e ás veces
+    abusamos máis da notación e simplemente escribimos algo coma ${x | P}$
+    ignorando a pertenza a $U$ e simplemente usando unha proposición $P$ que
+    nos comunique o que queremos.
     Un exemplo de conxunto por extensión é o conxunto de dous elementos $A =
     {1, 2}$ ou o conxunto de números enteiros $ZZ = {dots, -1, 0, 1, 2, dots}$
     onde a pesar de ter infinitos elementos podemos usar unha elipsis (os
@@ -127,6 +131,22 @@ in RR | 0x = 7}$.
 Este teorema é o método típico para probar que dous conxuntos son iguais,
 comprobando se se conteñen mutuamente, é dicir, se un certo elemento $x$
 pertence a un deles tamén o fai no outro, e viceversa.
+Sempre que teñamos unha igualdade entre conxuntos p.e. $A = B$ so temos que
+probar
+
+$
+    space.quad x in A sse x in B
+$
+
+ou, análogamente,
+
+$
+    A subset.eq B "máis" B subset.eq A.
+$
+
+Pode que o segundo caso sexa máis simple nunha situación na que teñamos
+información adicional sobre os conxuntos, pode que a inclusión sexa inmediata
+de probar. Ou pode que teñamos que usar a primeira relación.
 
 #definicion(
     nome : "Conxunto potencia",
@@ -143,23 +163,25 @@ pertence a un deles tamén o fai no outro, e viceversa.
 
 O conxunto potencia non é máis que todos os subconxuntos posibles. Este
 constructo aparece a miúdo en topoloxía onde se van construir conxuntos
-concretos apartires del e tamén como exemplo de topoloxías concretas, por
+concretos a partires del e tamén como exemplo de topoloxías concretas, por
 exemplo a topoloxía _discreta_.
 
 #definicion(
     nome : "Conxunto complementario",
     ancora : "def:conxuntos:complementario"
 )[
-    Sexa $A$ un conxunto e $B subset.eq A$. O conxunto complementario,
-    $macron(B)$ de $B$ en $A$ son os elementos de $A$ que non están en $B$, é
-    dicir,
+    Sexa $A$ un conxunto e $B subset.eq A$. O conxunto complementario
+    de $B$ en $A$, denotado por $macron(B)$, son os elementos de $A$ que
+    non están en $B$, é dicir,
 
     $
         macron(B) = {x in A | x in.not B}
     $
 ]
 
-Ás veces ao conxunto complementario tamén se lle denota por $B^c$.
+#notacion[
+    Ás veces ao conxunto complementario tamén se lle denota por $B^c$.
+]
 
 // :FACER: distributibas Union e Inter
 #definicion(
@@ -196,7 +218,7 @@ exemplo a topoloxía _discreta_.
     Sexan $A$ e $B$ dous conxuntos calquera. O
     #indice("Conxunto")[Diferenza] conxunto diferenza de $A$ menos $B$,
     denotado por $A - B$, é o conxunto formado por todos os elementos
-    comúns entre $A$ que non están en $B$. É dicir,
+    de $A$ que non están en $B$. É dicir,
 
     $
         A - B := {x in A | x in.not B}.
@@ -204,8 +226,8 @@ exemplo a topoloxía _discreta_.
 ]
 
 Ás veces, o conxunto diferenza tamén se indica como $A\\B$, inda que me parece
-algo confuso logo cando aparecen os conceptos de _cocientes_ de conxuntos,
-grupos, ... que tamén se denotan deste modo.
+algo confuso logo cando aparecen os conceptos de _cocientes_ doutros obxectos
+matemáticos que tamén se denotan deste modo.
 
 // :FACER: Union, interseccion arbitrarias
 // :FACER: Cartesiano

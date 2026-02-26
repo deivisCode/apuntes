@@ -50,9 +50,7 @@ Agora miraremos en maior detalle varios resultados máis elaborados.
       $ <ec:alxebra:derivada-noninxectiva>
 
       onde $C_i$ son constantes, polo que $D$ non é inxectiva e polo tanto non
-      é un isomorfismo.
-
-      Podemos aplicar directamente o teorema
+      é un isomorfismo. Podemos aplicar directamente o teorema
       @teo:alxebra:isomorfismos-primeiro
 
       $
@@ -88,10 +86,9 @@ Agora miraremos en maior detalle varios resultados máis elaborados.
       $
 
       Que sexan isomorfos significa que a cada elemento dun dos conxuntos
-      correspóndelle un, e so un, elemento do outro.
-
-      Que curioso, esto non é máis que dicir que para calquera función $f$, a
-      súa antiderivada é $F$ máis unha constante $C$.
+      correspóndelle un, e so un, elemento do outro. Que curioso, esto non é
+      máis que dicir que para calquera función $f$, a súa antiderivada é $F$
+      máis unha constante $C$.
 
 ]
 

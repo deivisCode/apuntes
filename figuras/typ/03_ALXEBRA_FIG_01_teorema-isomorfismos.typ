@@ -15,10 +15,9 @@
     node((0, 0), $A$, name: "A"),
     node((1, 0), $B$, name: "B"),
     node((0, 1), $A\/ker(f)$),
-    node((1, 1), $f^"IM" (A) subset.eq B$),
 
     edge( vertices: ((0, 0), (0, 1)), marks: "->", label: $pi$),
-    edge( vertices: ((0, 0), (1, 0)), marks: "->", label: $f$),
-    edge( vertices: ((0, 1), (1, 1)), marks: "->", label: $phi$),
+    edge( vertices: ((0, 0), (1, 0)), marks: "->>", label: $f$),
+    edge( vertices: ((0, 1), (1, 0)), marks: "-->", label: $phi$, label-side: right),
 
 )

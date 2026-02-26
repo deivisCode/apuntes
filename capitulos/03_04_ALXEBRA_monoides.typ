@@ -17,8 +17,9 @@
 
 ]
 
-Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar,
-_ou_ multiplicar pero non dividir.
+Intuitivamente, os monoides son estruturas nas que podes sumar pero non restar;
+multiplicar pero non dividir; ou simplemente operar nun sentido, pero non no
+oposto.
 
 #notacion[
     Podemos referirnos simplemente ao monoide como $A$.
@@ -39,7 +40,7 @@ _ou_ multiplicar pero non dividir.
       todos os subconxuntos de $X$. Se $union$ e $inter$ son a unión e
       intersección de conxuntos, entón $( scr(P)(X), union )$ e $( scr(P)(X),
       inter )$ son monoides. No primerio caso o neutro é $emptyset$, e no
-      segundo é $X$.
+      segundo é $X$. #cita("kostrikin_1983")
 ]
 
 Tal vez comezamos a ver un patrón ao definir as estruturas. Partimos dunha
@@ -48,7 +49,8 @@ estruturas máis complexas. Algún dos pasos intermedios son intrinsecamente
 irrelevantes: a ninguén lle importa o que é un magma ou un semigrupo. Pero imos
 ver que os pasos que facemos aquí son os mesmos que ao construír aneis, espazos
 lineais, ou álxebras de Lie, que si son de gran interese. Penso que ao coñecer
-os pasos é máis sinxelo entender as definicións máis complexas.
+os pasos é máis sinxelo entender as definicións máis complexas (pero supoño que
+outra persoa pode pensar doutro modo).
 
 #definicion(
     nome : "Submonoide",
@@ -66,6 +68,7 @@ A definición desta subestrutura é totalmente análoga á definición
 @def:alxebra:subsemigrupo. Antes só tiñamos a noción de operación interna e
 asociatividade, polo que pedíamos eso a un subconxunto dun semigrupo para que
 fose subsemigrupo. Nos monoides existe un elemento neutro, polo que é un
-requisito adicional para un submonoide.
+requisito adicional para un submonoide, seguindo a definición
+@def:alxebra:subestrutura.
 
 // :FACER: Clases laterais de monoides?

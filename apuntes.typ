@@ -6,6 +6,7 @@
 #let documento = {
     include("/capitulos/01_00_CONXUNTOS_introducion.typ")
     include("/capitulos/01_01_CONXUNTOS_conceptos.typ")
+    // :FACER: sección de símbolos
     include("/capitulos/01_02_CONXUNTOS_relacions.typ")
     include("/capitulos/01_03_CONXUNTOS_funcions.typ")
     include("/capitulos/01_04_CONXUNTOS_invariantes.typ")
@@ -27,11 +28,10 @@
     include("/capitulos/03_04_ALXEBRA_monoides.typ")
     include("/capitulos/03_05_ALXEBRA_grupos.typ")
     include("/capitulos/03_06_ALXEBRA_aneis.typ")
-    include("/capitulos/03_07_ALXEBRA_modulos.typ")
-    include("/capitulos/03_08_ALXEBRA_espazos-lineais.typ")
-    include("/capitulos/03_09_ALXEBRA_alxebras.typ")
-    include("/capitulos/03_10_ALXEBRA_estruturas.typ")
-    include("/capitulos/03_11_ALXEBRA_alxebra.typ")
+    include("/capitulos/03_07_ALXEBRA_espazos-lineais.typ")
+    include("/capitulos/03_08_ALXEBRA_alxebras.typ")
+    include("/capitulos/03_09_ALXEBRA_estruturas.typ")
+    include("/capitulos/03_10_ALXEBRA_alxebra.typ")
 
     include("/capitulos/04_00_SIMETRIA_introducion.typ")
     include("/capitulos/04_01_SIMETRIA_transformacions.typ")

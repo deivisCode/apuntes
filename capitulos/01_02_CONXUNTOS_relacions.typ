@@ -6,16 +6,13 @@
     ancora : "sec:conxuntos:relacions"
 )
 
-Unha noción de gran interese na teoría de conxuntos e, por extensión, en todas
-as matemáticas é a de relación de equivalencia. A grandes trazos é unha maneira
-de dicir se dous obxectos son os mesmos baixo algunha restrición concreta. Por
-exemplo, podemos inventarnos unha certa relación de equivalencia (máis adiante
-veremos que deben satisfacer certas propiedades) entre dous obxectos físicos se
-están en equilibrio térmico entre eles. Os obxectos non son iguais, pero
-podemos esquecernos e pensar exclusivamente na relación ca que esteamos a
-tratar. A igualdade usual, escrita $=$, tamén é unha relación de equivalencia,
-polo que dalgún modo estas xeneralizan o que significa que dúas cousas sexan
-iguais.
+// :FACER: presentar outros tipos de relacións
+Existen moitos tipos de relacións, como as de _orde_ que dan lugar ao estudo de
+retículas, pero nós centraremos o noso interese (polo de agora) nas de
+equivalencia.
+
+// Unha noción de gran interese na teoría de conxuntos e, por extensión, en todas
+// as matemáticas é a de relación de equivalencia.
 
 Antes de nada, unha definición preliminar.
 
@@ -43,14 +40,15 @@ Antes de nada, unha definición preliminar.
         a rel^R b.
     $ <exp:contuntos:posicion-simbolos>
 
-    Tamén se soe escribir $a rel_R$ ou simplemente $a rel b$ no caso de
+    Tamén se soe escribir $a rel_R b$ ou simplemente $a rel b$ no caso de
     sobreentender cal é a relación $R$. Tamén se pode dicir directamente que
-    $rel$ é o mesmo que $R$.
+    $rel$ é o mesmo que $R$. Persoalmente, prefiro usar a notación con $rel$.
 ]
 
-Existen moitos tipos de relacións, como as de _orde_ que dan lugar ao estudo de
-retícular, pero nós centraremos o noso interese (polo de agora) nas de
-equivalencia.
+Si, unha _relación_ é un conxunto. En realidade non é nada raro, en matemáticas
+hai poucas maneiras de definir cousa: algo é un conxunto, un elemento dun
+conxunto, ou unha aplicación entre conxuntos; nalgún destes casos poden existir
+propiedades adicionais, pero seguimos limitados a tres opcións.
 
 #definicion(
     nome : "Relación de equivalencia",
@@ -73,6 +71,16 @@ Usando a notación de conxuntos orixinal, as propiedades anteriores son
 + $(forall a in A) space.quad (a,a) in R$
 + $(forall a,b in A) space.quad (a,b) in R implica (b,a) in R$.
 + $(forall a,b,c in A) space.quad (a,b) in R, (b,c) in R implica (a,c) in R$
+
+A grandes trazos é unha maneira de dicir se dous obxectos son os mesmos baixo
+algunha restrición concreta. Por exemplo, podemos inventarnos unha certa
+relación de equivalencia (máis adiante veremos que deben satisfacer certas
+propiedades) entre dous obxectos físicos se están en equilibrio térmico entre
+eles. Os obxectos non son iguais, pero podemos esquecernos e pensar
+exclusivamente na relación ca que esteamos a tratar. A igualdade usual, escrita
+$=$, tamén é unha relación de equivalencia, polo que dalgún modo estas
+xeneralizan o que significa que dúas cousas sexan iguais.
+
 
 Se temos unha relación de equivalencia, podemos falar de _clases de
 equivalencia_ que son os conxuntos formados polos elementos que están
@@ -107,7 +115,7 @@ relacionados.
     ancora : "def:conxuntos:conxunto-cociente"
 )[
     Sexa $A$ un conxunto calquera e $rel$ unha relación de equivalencia en $A$.
-    O conxunto de todas as clases laterais chámase
+    O conxunto de todas as clases de equivalencia chámase
     #indice("Conxunto")[Cociente] conxunto cociente e denótase por $A\/rel$. É
     dicir, o conxunto
 
@@ -121,7 +129,7 @@ sorte, podemos recorrer á física para obter algunha motivación. Supoñamos qu
 temos unha serie de sistemas termodinámicos #nota[Agora mesmo non importa a
 definición exacta do que é un sistema termodinámico.] calquera que podemos
 denotar por comodidade con letras do alfabeto (engadindo máis se fose preciso)
-$A, B, C, dots, Z, A A, B B, dots $. Ditos sistemas poden ter variedade de
+$A, B, C, dots, Z, A A, A B, A C dots $. Ditos sistemas poden ter variedade de
 propiedades termodinámicas como distintas presións, volumes, molaridades,
 concentracións, etc. Imos supoñer que de todas elas so nos interesan as súas
 temperaturas. Podemos inventarnos unha relación de equivalencia $rel$ dicindo

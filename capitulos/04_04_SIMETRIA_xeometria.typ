@@ -3,10 +3,11 @@
 
 #seccion(
     nome : "Xeometría",
-    ancora : "sec:grupos:xeometria"
+    ancora : "sec:simetria:xeometria"
 )
 
 - Caso transformacións espazo euclidiano
 - Afín
 - Proxectivo.
 - Klein Program. Grupos de transformacións de simetría
+- Onde comezo con teoría de representacións

@@ -16,19 +16,26 @@
     ancora : "sec:topoloxia:introducion"
 )
 
-Encantaríame presentar este capítulo cunha xustificación fermosa de por que a
-topoloxía é relevante na física, como o é a álxebra abstracta
-@sec:alxebra:introducion, por desgraza non me vexo capacitado, polo que
-simplemente mencionarei varias ideas.
+Calquera obxecto que usemos en física necesita algún tipo de _soporte_ no
+sentido máis intuitivo da palabra. Por exemplo, e sen ir máis lexos, podemos
+asignar a cada punto do espazo un vector obtendo un campo vectorial. Pero que é
+este espazo que usamos de _soporte_? Pode polo xeral é o espazo Euclídeo
+$RR^3$, pola contra no campo da gravitación pasamos a traballar cun espazo
+$RR^4$ (con algunha propiedade adicional). Cal é o caso xeral? Queremos unha
+noción de _espazo_ que sexa simple pero que nos permita falar sobre as nocións
+usuais de localidade (estar moi preto dalgures); que nos permita pasar dun
+punto a outro (continuidade); que nos permita saber se dito espazo está xunto
+ou está separado en partes (conexión); nalgúns casos que nos ofreza unha noción
+de distancia; e no caso xeral, que teña as nocións que intuitivamente lle
+requeriríamos a un #quote[espazo] no cal podemos _colocar_ outros obxectos.
 
-Ao estudar física eventualmente nos encontramos co concepto de _variedade_, que
-é un caso concreto dun _espazo topolóxico_. Ditas variedades forman, dalgún
-xeito, o soporte básico para física. Soe dicirse que as variedades son unha
-_xeneralización das superficies_, signifique isto o que signifique. Por
-exemplo, no campo da gravitación, un dos primeiros pasos é definir (sen
-ningunha rigorosidade nin xustificación) o que é unha variedade
-_diferenciable_, e o resto do curso trabállase baixo o suposto de que calquera
-punto do espazo é un punto de tal variedade.
+Unha forma de velo (que entenderemos mellor na sección @sec:simetria:xeometria)
+é como o resultado do espazo Euclídeo pero se lle quitamos as propiedades
+euclídeas, ousexa $RR^3$ usual pero sen nocións de distancia ou ángulos. O
+espazo de interese é un _espazo topolóxico_ que dalgún modo é un espazo
+xeométrico usual pero sin nocións de xeometría.
 
-A idea de que son xeneralizacións das superficies non é de todo equivocada,
-pero tampouco é de todo útil.
+A maiores vannos interesar uns espazos con propiedades engadidas, as chamadas
+_variedades topolóxicas_, que son espazos topolóxicos nos cales se pode falar
+de que, localmente, o espazo é parecido a $RR^d$, o cal é moi útil porque
+$RR^d$ é un espazo co que se pode tratar fácilmente.

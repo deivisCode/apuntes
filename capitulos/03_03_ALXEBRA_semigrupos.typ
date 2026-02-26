@@ -18,7 +18,6 @@
 
 #notacion[
     Podemos referirnos simplemente ao semigrupo como $A$.
-
     Se a operación é conmutativa, diremos que é un semigrupo conmutativo.
 ]
 

@@ -16,14 +16,15 @@ operacións.
 )[
     Unha terna $(A,+,*)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa.
-    - Existe un elemento neutro da operación $+$.
-    - Todos os elementos son invertibles respecto de $+$.
-    - A operación $*$ é interna.
-    - A operación $*$ é distributiva respecto de $+$.
+    + $+$ é unha operación interna e asociativa.
+    + Existe un elemento neutro da operación $+$.
+    + Todos os elementos son invertibles respecto de $+$.
+    + A operación $*$ é interna.
+    + A operación $*$ é distributiva respecto de $+$.
 
     dise que é un #indice("anel")anel. É dicir, unha terna $(A,+,*)$ onde
-    $(A,+)$ é un grupo, $(A,*)$ é un magma, e as operacións son distributivas.
+    $(A,+)$ é un grupo (propiedades 1,2 e 3), $(A,*)$ é un magma (propiedades 4
+    e 5), e as operacións son distributivas.
 ]
 
 #notacion[
@@ -49,6 +50,7 @@ sorprendente a definición de _subanel_.
 )[
     Sexa $(A,+,*)$ un anel e $B subset A$. Entón, $(B,+,*)$ é un subanel de
     $(A,+,*)$ se
+    // :FACER: lista desto?
     $
         (forall b_1, b_2 in B) space.quad b_1 + b_2 in B \
         0 in B "(o neutro da suma)"\
@@ -64,7 +66,10 @@ En realidade poderíamos falar ao final de subsemigrupo [Cap #math.section
 asociatividade; a extensión é directa. Poden simplifcarse as 3 primeiras
 condicións e dicir simplemente que $b_1 - b_2 in B$ e que $b_1 * b_2 in B$,
 onde a primeira condición non é máis que o test de subgrupo do teorema
-@teo:alxebra:test_subgrupo con notación aditiva. A diferenza das seccións cunha
+@teo:alxebra:test_subgrupo con notación aditiva.
+
+// :FACER: aqui os ideais e os cocientes
+A diferenza das seccións cunha
 soa operación, non me vou molestar en crear unha sección por cada nova
 propiedade que presente, inda que a idea é a mesma que nas seccións
 @sec:alxebra:magmas ata @sec:alxebra:grupos, por exemplo cas subestruturas,
@@ -76,13 +81,15 @@ conmutatividade, etc.
 )[
     Unha terna $(A,+,*)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa.
-    - Existe un elemento neutro da operación $+$.
-    - Todos os elementos son invertibles respecto de $+$.
-    - A operación $*$ é interna, asociativa, e distributiva con $+$.
+    + $+$ é unha operación interna e asociativa.
+    + Existe un elemento neutro da operación $+$.
+    + Todos os elementos son invertibles respecto de $+$.
+    + A operación $*$ é interna e asociativa
+    + A operación $*$ é distributiva con $+$.
 
     dise que é un #indice("anel")[Asociativo]anel asociativo. É dicir, unha terna
-    $(A,+,*)$ onde $(A,+)$ é un grupo e $(A,*)$ é un semigrupo.
+    $(A,+,*)$ onde $(A,+)$ é un grupo (propiedades 1,2 e 3) e $(A,*)$ é un
+    semigrupo (propiedade 4).
 ]
 
 A definición de subanel asociativo é idéntica á definicion
@@ -95,11 +102,11 @@ subsemigrupo de $(A,*)$, en lugar dun submagma.
 )[
     Unha terna $(A,+,*)$ onde as operación cumpren
 
-    - $+$ é unha operación interna e asociativa.
-    - Existe un elemento neutro da operación $+$.
-    - Todos os elementos son invertibles respecto de $+$.
-    - A operación $*$ é interna, asociativa, e distributiva con $+$.
-    - Existe neutro para a operación $*$.
+    + $+$ é unha operación interna e asociativa.
+    + Existe un elemento neutro da operación $+$.
+    + Todos os elementos son invertibles respecto de $+$.
+    + A operación $*$ é interna, asociativa, e ten neutro.
+    + A operación $*$ é distributiva con $+$.
 
     dise que é un #indice("anel")[Unitario]anel unitario. É dicir, unha terna
     $(A,+,*)$ onde $(A,+)$ é un grupo e $(A,*)$ é un monoide.
@@ -117,31 +124,70 @@ Podemos comentar varias propiedades dos aneis. Imos supoñer que tratamos cun
 anel $(A,+,*)$ asociativo e unitario. O neutro da operación $+$ denótoo por 0.
 #cita("kostrikin_1983")
 
-// :FACER: separar demostracions de 3.7.49 etc.
-+ $(forall a in A) space.quad a * 0 = 0 * a = 0$
+#teorema(
+    nome: "Multiplicar por cero",
+    ancora : "teo:alxebra:multiplicar-cero"
+)[
+    $
+        (forall a in A) space.quad a * 0 = 0 * a = 0.
+    $
+]
+
+#demostracion(
+    ancora : "teo:alxebra:multiplicar-cero",
+)[
+    Podemos expandir $a = a$ sumando $0$, ousexa $a = a + 0$. Multiplicando por
+    ambos lados por $a$,
 
     $
-        &a = a + 0 \
-        &implica a * a = a * (a + 0) = a^2 + a * 0 \
+        &a * a = a * (a + 0) = a^2 + a * 0 \
         &implica a^2 = a^2 + a * 0 \
         &implica 0 = a * 0
     $
 
-    (pode facerse análogo para o caso $0 * a$)
+    (pode facerse análogo para o caso $0 * a$).
+]
 
-+ $(forall a, b in A) space.quad a * (-b) = (-a) * b = -(a * b) $
-
+#teorema(
+    nome : "Movemento do signo menos",
+    ancora : "teo:alxebra:movemento-menos"
+)[
     $
-        &0 = a * 0 = a * (b - b) = a * b + a * (-b) \
-        &implica -(a * b) = a * (-b)
+        (forall a, b in A) space.quad a * (-b) = (-a) * b = -(a * b).
     $
+]
 
-+ $(forall a, b in A) space.quad (-a) * (-b) = a * b$
+#demostracion(
+    ancora : "teo:alxebra:movemento-menos"
+)[
+    Partimos de que
+    $
+        &0 = a * 0 = a * (b - b) = a * b + a * (-b),
+    $
+    polo que
+    $
+            &implica -(a * b) = a * (-b)
+    $
+]
 
+#teorema(
+    nome : "Menos por menos é máis",
+    ancora : "teo:alxebra:menos-menos"
+)[
+    $
+        (forall a, b in A) space.quad (-a) * (-b) = a * b
+    $
+]
+
+#demostracion(
+    ancora : "teo:alxebra:menos-menos"
+)[
     $
         (-a) * (-b) &= (-(-a)) * b \
-                      &= a * (-(-b)) = a * b
+                    &= a * (-(-b)) \
+                    &= a * b.
     $
+]
 
 #definicion(
     nome : "Divisor de Cero",
@@ -152,9 +198,13 @@ anel $(A,+,*)$ asociativo e unitario. O neutro da operación $+$ denótoo por 0.
     que $a$ e $b$ son divisores de 0.
 ]
 
-Un exemplo no anel de matrices de tamaño $2 times 2$ son as matrices da forma $
-mat(0,a;0,0). $ #label("ec:alxebra:matriz_divisora") Estas matrices non son
-cero, pero o produto de dúas delas si o é.
+#exemplos[
+    O anel de matrices de tamaño $2 times 2$ inclúe o subanel da forma
+    $
+        mat(0,a;0,0).
+    $ #label("ec:alxebra:matriz_divisora")
+    Estas matrices non son cero, pero o produto de dúas delas si o é.
+]
 
 #definicion(
     nome : "Dominio de Integridade",
@@ -165,9 +215,11 @@ cero, pero o produto de dúas delas si o é.
     #indice("Dominio")[de integridade]
 ]
 
-Por exemplo, o anel de matrices de tamaño $2 times 2$ non é un dominio de
-integridade, xa que existen as matrices da forma @ec:alxebra:matriz_divisora
-que son divisores de 0.
+#exemplos[
+    Por exemplo, o anel de matrices de tamaño $2 times 2$ non é un dominio de
+    integridade, xa que existen as matrices da forma
+    @ec:alxebra:matriz_divisora que son divisores de 0.
+]
 
 Para as últimas estruturas desta sección imos proseguir ca idea de engadir
 propiedades á estrutura anterior. Un anel unitario é a terna $(A,+,*)$ onde
@@ -175,8 +227,8 @@ $(A,+)$ é un grupo e $(A,*)$ é un monoide. Agora sería razonable engadir que
 $(A,*)$ fose un grupo, pero hai un problema: en tal caso todos os elementos
 deberían ser invertibles, o cal inclúe o neutro da primera operación (chamémolo
 0). Entón, $0^(-1) * 0 = 1$, pero esto é un absurdo porque sabemos que $a *
-0 = 0$ sempre. Polo tanto, neste caso só pedimos que os elementos distintos de
-0 sexan invertibles.
+0 = 0$ sempre (véxase o teorema @teo:alxebra:multiplicar-cero). Polo tanto,
+neste caso só pedimos que os elementos distintos de 0 sexan invertibles.
 
 #definicion(
     nome : "Corpo",
@@ -191,7 +243,8 @@ deberían ser invertibles, o cal inclúe o neutro da primera operación (chamém
     - Todos os elementos de $A - {0}$ teñen inverso. #nota[É dicir, o conxunto $A$ menos o neutro da primeira operación. Nos número enteiros ca suma serían todos os numeros menos o 0.]
 
     dise que é un #indice("Corpo") corpo. É dicir, unha terna $(A,+,*)$ onde
-    ambos $(A,+)$ e $(A-{0},*)$ son grupos.
+    ambos $(A,+)$ e $(A-{0},*)$ son grupos (propiedades 1,2,3 e 4,5
+    respectivamente).
 ]
 
 Nun corpo non hai divisores do 0.
@@ -202,14 +255,11 @@ Nun corpo non hai divisores do 0.
 ]
 
 Como sempre, podemos falar de morfismos de aneis, e naturalmente de
-homomorfismos, que é unha aplicación entre os aneis $(A,+,*)$ e
-$(B,plus.o,*.o)$
+homomorfismos, que é unha aplicación entre os aneis $(A,+,dot)$ e
+$(B,plus.o,dot.o)$
 
 $
-    f:A frecha B \
-    f(a + b) = f(a) plus.o f(b) \
-    f(a * b) = f(a) *.o f(b).
+    f:A &frecha B \
+    f(a + b)   &= f(a) plus.o f(b) \
+    f(a dot b) &= f(a) dot.o f(b).
 $
-
-// :FACER: sub  aneis e ideais, delgado_2010 + kos
-// :FACER: Clases laterais de aneis? Ideais?

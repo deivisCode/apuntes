@@ -1,0 +1,138 @@
+#import("/funcions/texto.typ"): *
+#import("/funcions/simbolos.typ"): *
+
+#seccion(
+    nome : "Espazos Lineais",
+    ancora : "sec:alxebra:espazos"
+)
+
+Case no final deste camiño damos un gran salto e presentamos unha das
+estruturas máis ubicuas, o espazo lineal (ou _vectorial_). #nota[Persoalmente
+prefiro falar de espazo _lineal_ en lugar de _vectorial_. En moitos casos o
+segundo nome suxire unha interpretación xeométrica (as típicas _frechas_), o
+cal só é razoable en casos moi concretos, polo que prefiro esquivalo.]
+
+#definicion(
+    nome : "Módulo",
+    ancora : "def:alxebra:modulo"
+)[
+    Sexa $(E,plus.o)$ un grupo, $(A,+,dot)$ un anel, e
+    $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
+    arrow.r E$. A terna formada por ditos tres obxectos é un #indice("Módulo")
+    módulo, é dicir
+
+    $
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
+    $
+]
+
+En realidade interésanos o caso no que $(A,+,dot)$ é un corpo, o que nos leva á
+definición de espazo lineal.
+
+#definicion(
+    nome : "Espazo Lineal",
+    ancora : "def:alxebra:espazo-lineal"
+)[
+    Sexa $(E,plus.o)$ un grupo abeliano, $(A,+,dot)$ un campo, e
+    $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
+    arrow.r E$. A terna formada por ditos tres obxectos é un
+    #indice("Espazo")[lineal] espazo lineal ou #indice("Espazo")[Vectorial]
+    vectorial,
+
+    $
+        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
+    $
+
+    É dicir, un módulo, pero en lugar do anel temos un campo.
+
+    Os elementos de $E$ chamámolos #indice("Vector") vectores e os de $A$
+    #indice("Escalar") escalares.
+]
+
+// :FACER: k circ v -> v debe ser pola esquerda e pola dereita
+
+#notacion[
+    No caso xeral (que a min non me gusta demasiado) soe denotarse ao conxunto
+    do grupo como $V$, en alusión ao concepto de vector; e ao conxunto do campo
+    usando unha letra dobre, como $KK$. Ademais, a operación do grupo denotase
+    por $+$ e a primeira do campo $+$ tamén, abusando da notación (son
+    operacións distintas). A operación $circle.stroked.tiny$ soe omitirse, polo
+    que $k circle.stroked.tiny v, v in V, k in KK$ escríbese simplemente como
+    $k v$ (multiplicativamente). Finalmente, referímonos a
+    $((V,+),(KK,+,dot),circle.stroked.tiny)$ simplemente como o espazo lineal
+    $(V,KK,+)$; un _$KK$-espazo lineal_; ou como o _espazo lineal $V$ sobre
+    $KK$_. No límite de abusar da notación, referirémonos ao espazo lineal só
+    polo nome do conxunto do grupo, $V$, ou ás veces dito nome e o campo como
+    subíndice $V_KK$.
+]
+
+#exemplos[
+    - O conxunto de funcións da forma
+      $
+          {a cos(x), a in RR}
+      $
+      ca suma de funcións usual
+      $
+          3cos(x) + 7cos(x) = 10cos(x)
+      $
+      é un grupo. Ademais, $(RR,+,dot)$ é un campo. Se
+      escollemos a operación entre vectores e escalares de xeito que $k
+      circle.stroked.tiny (a dot cos(x)) = (k a) dot cos(x)$, entón dito
+      conxunto de cosenos, co campo dos reais e a operación indicada, é un
+      espazo lineal. Evidentemente este espazo non ten unha interpretación
+      "gráfica" ou "visual" evidente, inda así cada elemento da forma $3cos(x)$
+      é un vector.
+
+    - O conxunto de ternas
+      $
+          (x,y,z), space.quad x,y,x in RR
+      $
+      ca operación de suma usual, é dicir
+      $
+          (x,y,z) + (a,b,c) = (x+a, y+b, c+z)
+      $
+      é un grupo. Se temos o campo dos reais $RR$, e a operación entre $RR$ e
+      as ternas definida como $k (x,y,z) = (k x,k y,k z)$ entón, temos un
+      espazo vectorial $((RR^3,+),(KK,+,dot),circle.stroked.tiny)$. Neste caso,
+      os vectores si teñen unha interpretación xeométrica evidente.
+
+    - Sexa o conxunto de tensores 3 veces contravariantes e 1 vez covariantes,
+      e $Gamma^(a b c)_d$ e $Gamma'^(a' b' c')_(d')$ dous tensores concretos.
+      Sabemos que podemos multiplicalos por escalares linealmente; existea suma
+      de tensores ca que forman un grupo; e en realidade teñen todas as
+      propiedades antes descritas en @def:alxebra:espazo-lineal. Polo tanto,
+      dito conxunto de tensores é un espazo vectorial e seus elementos,
+      vectores.
+]
+
+#notacion[
+    Algúns dos exemplos anteriores son abstractos e outros teñen unha
+    semellanza ca xeometría (concretamente, frechas en $RR^3$). En física é
+    común facer énfase no segundo caso, usándoo como exemplo para explicar
+    conceptos en calquera nivel e situación. Eu, pra evitar confusións, vou
+    seguir *sempre* unha notación concreta:
+    + *Vector* será un elemento dun espazo lineal no sentido presentado.
+    + *Vector xeométrico* será o concepto de vector que se usa na física, cunha
+      clara compoñente xeométrica. A distinción será especialmente evidente no
+      caso da álxebra multilineal, onde aparecerá o concepto de _tensor_, que é
+      un caso concreto dos vectores, pero xeral dos vectores xeométricos.
+]
+
+#definicion(
+    nome : "Subespazo lineal",
+    ancora : "def:alxebra:subesapazo-lineal"
+)[
+    Sexa $((V,+),(KK,+,dot),circle.stroked.tiny)$ un espazo lineal calquera, e
+    $W subset V$. Se se cumpre que $(W,+) subgrupo (V,+)$, entón
+    $((W,+),(KK,+,dot),circle.stroked.tiny)$ é un subespazo lineal.
+]
+
+Neste caso só nos interesa que $(W,+)$ é un subgrupo de $(V,+)$.
+// :FACER: exemplos
+
+Os espazos lineais merecen libros completos para ser estudiados, cousa que se
+soe facer na área da _álxebra lineal_.
+
+// :FACER: Clases laterais
+// :FACER: Homomorfismos de espazos lineais (aplicacións lineais)
+// :FACER: Kernel e tal

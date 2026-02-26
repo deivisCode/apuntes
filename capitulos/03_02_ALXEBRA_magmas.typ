@@ -14,12 +14,11 @@ Nesta sección mencionamos unha das estruturas máis simples posibles.
 )[
     Unha parella $(A,*)$ onde $A$ é un conxunto arbitrario e
     $*$ é unha operación binaria e interna dise que é un
-    magma#indice[Magma]
+    magma#indice[Magma].
 ]
 
 #notacion[
     Podemos referirnos simplemente ao magma como $A$.
-
     Se a operación é conmutativa, entón é un magma conmutativo.
 ]
 

@@ -54,3 +54,8 @@ desta relación, e unha aplicación concreta $alpha$ é un representante
 específico. Esto alivia a idea de que o obxecto xeométrico que hai detrás é o
 mesmo e non nos importa se pasamos por exemplo de $t mapsto 5t$ como no exemplo
 anterior, pero falta un detalle: ¿onde está a suavidade?
+
+- Suavidade
+- Curvas pechadas
+- Velocidade, lonxitude
+- Superficies

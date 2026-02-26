@@ -1,6 +1,7 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
+// :FACER: motivas esto
 #seccion(
     nome : "Espazos Métricos",
     ancora : "sec:topoloxia:espazos-metricos"

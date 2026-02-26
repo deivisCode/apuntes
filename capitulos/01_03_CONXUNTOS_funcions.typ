@@ -22,7 +22,7 @@
 #notacion[
     En realidade usase a notación _funcional_ e escríbese $f(a) = b$. Tamén
     podemos escribir $f:A arrow.r B$ ou, máis gráficamente, $ A frecha^f B. $
-    Pra mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$
+    Para mostrar que o elemento $a$ pasa ao elemento $b$ a través de $f$
     escribimos $a mapsto b$ ou $a mapsto b=f(a)$.
 ]
 
@@ -46,7 +46,9 @@
     función $f$.
 ]
 
-_Rango_ é un sinónimo para codominio.
+#notacion[
+    _Rango_ é un sinónimo para codominio.
+]
 
 #definicion(
     nome : "Imaxe",
@@ -64,9 +66,8 @@ _Rango_ é un sinónimo para codominio.
 
 #notacion[
     Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función $f$, é
-    dicir, $b = f(a)$.
-
-    A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$ .
+    dicir, $b = f(a)$. A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$,
+    que é a notación estándar.
 ]
 
 Nalgúns contextos os nomes de _codominio_ e _imaxe_  mestúranse, pero eu
@@ -122,7 +123,7 @@ $f$ ao dominio. Polo xeral, $f^"IM"(A) subset.eq "Codominio"$.
     $->>$, ousexa $f:A arrow.r.twohead B$ é sobrexectiva.
 ]
 
-A noción de sobrexectividade é algo confusa. Por exemplo, por que a función
+A noción de sobrexectividade é algo confusa (polo menos para min). Por exemplo, por que a función
 $f:RR->RR$ dada por
 
 $
@@ -134,11 +135,12 @@ $
 
 non é sobrexectiva? Evidentemente, a imaxe de $f$ é simplemente o conxunto
 ${1,2}$, entón por qué molestarse sequera en definir $f:RR->RR$ (que non é
-sobrexectiva) en lugar de $f:RR->>{1,2}$ (que si é sobrexectiva)? Por outro
-lado, ao falar do conxunto de partida a notación é máis estricta, e sempre
+sobrexectiva) en lugar de $f:RR->>{1,2}$ (que si o é)? Sin embargo,
+ao falar do conxunto de partida a notación é máis estricta, e sempre
 usamos o espazo exacto. Non se escribe $f:RR->RR$ se a función se define como
 $f(x)=sqrt(x)$ xa que só valen $x>=0$, en cambio escribimos o espazo de partida
-(dominio) sempre $RR^+$. Este é un pequeno detalle notacional que ás veces é
+(dominio) sempre $RR^+$. Resumo, se $f:A->B$, entón $A$ soe ser o espazo exacto
+pero $B$ non. Este é un pequeno detalle notacional que ás veces é
 confuso (para min foino). En xeral resulta simple saber o conxunto de partida
 pero non tanto o conxunto de valores de chegada (a imaxe). Por exemplo, na
 función $f:RR arrow.r RR^2$ definida por
@@ -151,7 +153,16 @@ $
 temos claro o dominio pero o mellor que podemos dicir da imaxe é que debe
 pertencer a $RR^2$. Coñecer exactamente a imaxe é un exercicio en si mesmo
 #nota[Neste caso a imaxe chámase _traza_, e é unha espiral.], polo que en xeral
-se é flexible e non hai que _atinar_ co espazo de chegada.
+somos flexibles e non hai que _atinar_ co espazo de chegada.
+
+Inda así, nalgúns textos podemos atoparnos con expresións coma
+
+$
+    f: X subset A frecha Y subset B,
+$
+
+para deixar claro _de onde a onde vai a función_, concretamente vai de $X$ a
+$Y$, e temos o contexto adicional de $A$ e $B$.
 
 #definicion(
     nome : "Función inxectiva",
@@ -191,8 +202,8 @@ se é flexible e non hai que _atinar_ co espazo de chegada.
 ]
 
 As definicións de sobrexectividade, inxectividade e bixectividade soen
-presentarse sempre xuntas, e é típico memorizar que bixectividade é cas dúas
-primeiras. Isto é correcto, pero non ven nada mmotivado. Como comentara antes
+presentarse sempre xuntas (como neste caso), e é típico memorizar que bixectividade
+é a suma dasprimeiras. Isto é correcto, pero non ven nada motivado. Como comentara antes
 logo da definición @def:conxuntos:sobrexectividade o concepto de
 sobrexectividade é unha comodidade notacional xa que é complexo saber
 exactamente cal é a imaxe de certa función. Pero sempre podemos facer unha
@@ -204,19 +215,22 @@ notacional, é algo totalmente distinto a unha función sobrexectiva.
 Recordemos que unha función é unha relación que a cada elemento do espazo de
 partida lle asigna un, e só un, elemento do espazo de chegada. Por outro lado,
 dita función é inxectiva se os elementos do espazo de partida se asocian a
-elementos diferentes no de chegada. É dicir, a función é _un a un_, ou o que é
-o mesmo, por cada elemento do espazo de partida hai un único no outro. A
+elementos diferentes no de chegada. É dicir, a función é _un a un_
+(no sentido intuitivo de relacionar cousas unha a unha),
+ou o que é o mesmo, por cada elemento do espazo de partida hai un único no outro. A
 sobrexectividade é necesaria por se escribimos un espazo de chegada máis grande
 do que debería, para asegurarnos de que non quedan elementos sen preimaxe. Pero
 a idea relevante está na propia definición de función e de inxectividade.
 
 Máis adiante, no capítulo @cap:alxebra e concretamente no teorema
-@teo:alxebra:isomorfismos-primeiro veremos sempre que coñezamos unha función de
+@teo:alxebra:isomorfismos-primeiro veremos que sempre que coñezamos unha función de
 certo tipo (un homomorfismo de grupos) que non é bixectiva, temos garantizado
 que existe outra que si o é, e a idea resúmese en acotar o espazo de chegada á
-imaxe para ter sobrexectividade e en eliminar os elementos do dominio que se
+imaxe para ter sobrexectividade e en _eliminar_ os elementos do dominio que se
 van ao mesmo valor para ter inxectividade. A primeira propiedade é inmediata,
 e para a segunda veremos que fan falla multitude de conceptos e pasos a maiores.
+
+Unhas últimas definicións.
 
 #definicion(
     nome : "Función identidade",
@@ -236,7 +250,7 @@ e para a segunda veremos que fan falla multitude de conceptos e pasos a maiores.
     nome : "Composición de funcións",
     ancora : "def:conxuntos:composicion"
 )[
-    Sexan $A,B,C$ conxuntos calquera e as funcións $f:A arrow.r B$ e $f:B
+    Sexan $A,B,C$ conxuntos calquera e as funcións $f:A arrow.r B$ e $g:B
     arrow.r C$. A función $h$ que cumple que
 
     $
@@ -244,7 +258,15 @@ e para a segunda veremos que fan falla multitude de conceptos e pasos a maiores.
     $
 
     chámase #indice("Función")[Composta] composición de $f$ e $g$, e polo xeral
-    denótase por $g compose f$ #nota[Léase como "gee of eff"]
+    denótase por $g compose f$. #nota[Léase como "gee of eff"]
+]
+
+#notacion[
+    Cando se ten unha composición de funcións como nesta definición, tamén pode
+    simplificarse o diagrama escribindo
+    $
+        A frecha^f B frecha^g C.
+    $
 ]
 
 #definicion(

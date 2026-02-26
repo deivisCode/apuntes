@@ -6,6 +6,13 @@
     ancora : "sec:topoloxia:continuidade"
 )
 
+Xa falamos de conxuntos nos que existe unha noción de _entorno_, ou un conxunto
+que contén un punto concreto de interese para nós. Agora imos ter funcións
+entre espazos topolóxicos e vainos interesar ver se a dependencia entre os
+argumentos da función e a imaxe é continua. O caso xeométrico é máis ou menos
+evidente (pensando en $RR^2$ e nas definicións típicas de _épsilon-delta_),
+pero queremos tratar o caso xeral entre espazos topolóxicos.
+
 #definicion(
     nome : "Funcion Continua",
     ancora : "def:topoloxia:funcion-continua"
@@ -21,18 +28,21 @@
     É dicir, a antiimaxe de calquera aberto tamén é aberta
 ]
 
-Por exemplo, sexa $f: (X,tau_X) arrow.r (Y,tau_Y)$ dada por
+#exemplos[
+    Sexa $f: (X,tau_X) arrow.r (Y,tau_Y)$ dada por
 
-$
-    f(x) = cases(
-        x "se" x lt.eq 0.,
-        0 "se" x gt 0.
-    )
-$
+    $
+        f(x) = cases(
+            x "se" x lt.eq 0.,
+            0 "se" x gt 0.
+        )
+    $
 
-con $tau_X, tau_Y$ a topoloxía cofinita. Entón podemos escoller $U := (-oo,0)
-union (0,oo)$ cuxa antiimaxe é $f^(-1)(U) = (-oo,0) in.not tau_"COF"$, polo que
-$f$ non é continua.
+    con $tau_X, tau_Y$ a topoloxía cofinita. Entón podemos escoller $U :=
+    (-oo,0) union (0,oo)$ cuxa antiimaxe é $f^(-1)(U) = (-oo,0) in.not
+    tau_"COF"$, polo que $f$ non é continua.
+]
+
 
 #definicion(
     nome : "Funcion Aberta",

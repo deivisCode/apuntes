@@ -11,14 +11,15 @@ variedade de estruturas alxébricas concretas. Polo xeral estes resultados soen
 presentarse a carón das estruturas nas que aparecen por primeira vez, por
 exemplo o elemento neutro cos monoides, os elementos inversos aparecen ao
 estudar grupos ou as operacións distributivas cos aneis. Eu prefiro aglutinar
-os resultados e ideas comúns nesta sección.
+os resultados e ideas comúns nesta sección. A maioría destes resultados son
+coñecidos, esta sección sirve principalmente como referencia.
 
 Primeiro, dicir que unha operación non é máis que unha aplicación entre uns
-conxuntos e outros. Esquivamos o xenérico desta definición limitándonos ás
-operacións binarias e internas. Binarias#indice("Operación")[binaria] porque
-parten do produto cartesiano dun conxunto, como $A times A$; e
-internas#indice("Operación")[interna], porque devolven un valor do
-mesmo conxunto $A$.
+conxuntos e outros (véxase a definición @def:conxuntos:funcion). Esquivamos o
+xenérico desta definición limitándonos ás operacións binarias e internas.
+Binarias#indice("Operación")[binaria] porque parten do produto cartesiano dun
+conxunto, como $A times A$; e internas#indice("Operación")[interna], porque
+devolven un valor do mesmo conxunto $A$.
 
 #definicion(
     nome : "Operación binaria e interna",
@@ -34,11 +35,11 @@ mesmo conxunto $A$.
 [Cap. 2]#cita("rotman_2000") [Cap.4 $section 4.1$]#cita("delgado_2010")
 
 #notacion[
-    En xeral non se usa a notación _funcional_ cos argumentos entre paréntese,
-    senón que preferimos colocar o símbolo da operación entre eles (semellante
-    á expresión @exp:contuntos:posicion-simbolos). Ademais, non usamos letras
-    para as operacións senón símbolos especiais. É dicir, os pasos [Cap.2
-    ]#cita("rotman_2000")
+    En xeral na álxebra non se usa a notación _funcional_ cos argumentos entre
+    paréntese, senón que preferimos colocar o símbolo da operación entre eles
+    (semellante á expresión @exp:contuntos:posicion-simbolos). Ademais, non
+    usamos letras para as operacións senón símbolos especiais. É dicir, os
+    pasos [Cap.2 ]#cita("rotman_2000")
 
     $
         f(a,b) stretch(arrow.r)^"símb. entre argumentos"
@@ -91,7 +92,10 @@ en un grupo, un anel e unha operación aparte.
     conxunto. De haber varios, é típico que haxa un máis _interesante_ e
     usarase ese. Por exemplo, o grupo $(G, +)$ simplifícase por $G$, e o espazo
     lineal $((V,+),(KK,+,dot),compose)$ por $V$. A medida que aparezan
-    estruturas concretas recordarei este detalle.
+    estruturas concretas recordarei este detalle. Polo xeral úsase a notación
+    simplificada en case toda a bibliografía e eu seguirei esa norma ao rematar
+    este capítulo excepto cando o resto de operacións ou conxuntos sexan
+    relevantes.
 ]
 
 #definicion(
@@ -163,7 +167,7 @@ $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f. $
     maiores, en notación multiplicativa $a^n * a^m$ podemos simplificalo por
     $a^(n+m)$, e $(a^(n))^(m)$ é igual a $a^(n m)$, seguindo as nocións usuais de
     potencias de números [Cap.4 $section$2.3 Teo.2]#cita("kostrikin_1983"). En
-    notación aditiva temos o análogo $(n a)(m a) = (n+m)a$, e $m(n a) = n m a$.
+    notación aditiva temos o análogo $n a+m a = (n+m)a$, e $m(n a) = n m a$.
 ]
 
 #definicion(
@@ -209,7 +213,7 @@ expresións.
     esribimos o neutro como $0$, e na notación multiplicativa como $1, bb(1)$
     ou $I$, evidentemente aludindo en ambos casos ao neutro da suma de números
     reais, 0, e ao do produto, 1. Podemos combinar notacións e escribir $1_A,
-    bb(1)_B, 0_A dots$ como nos conveña.
+    bb(1)_B, 0_A dots$ como nos conveña. Cada libro usa seu propio estilo.
 ]
 
 #teorema(
@@ -245,7 +249,7 @@ expresións.
         a * y = y * a = e.
     $
 
-    dise que é o elemento inverso de $a$ #indice[Elemento Inverso], e que o
+    dise que é o elemento inverso de $a$#indice[Elemento Inverso], e que o
     elemento $a$ é invertible.
 ]
 
@@ -257,7 +261,7 @@ expresións.
 
 #teorema(
     nome : "Elemento inverso é único",
-    ancora : "teo:alxebra:inverso_unico"
+    ancora : "teo:alxebra:inverso_unico" // :FACER: ancoras con - e non _
 )[
     Sexa $(A,*)$ unha estrutura alxébrica calquera ca propiedade de que $*$ é
     unha operación asociativa. Se existe un elemento inverso, entón é único.
@@ -271,9 +275,14 @@ expresións.
     Sexa $a'^(-1)$ outro elemento inverso de $a$, entón temos que $a'^(-1)*a =
     e = a*a'^(-1)$ (por que tamén é inverso). Entón
     $
-        a^(-1) = e*a^(-1) = (a'^(-1)*a)*a^(-1) = \
-        a'^(-1)*(a*a^(-1)) = a'^(-1)*e = a'^(-1).
+        a^(-1) &= e*a^(-1) \
+               &= (a'^(-1)*a)*a^(-1) \
+               &= a'^(-1)*(a*a^(-1)) "(pola asociatividade)" \
+               &= a'^(-1)*e \
+               &= a'^(-1).
     $
+    Ousexa, se temos un elemento inverso $a^(-1)$ entón outro elemento inverso
+    $a'^(-1)$ é igual ao propio $a^(-1)$. O inverso é único.
 ]
 
 O teorema @teo:alxebra:inverso_unico garante que podemos falar de $a^(-1)$,
@@ -299,21 +308,24 @@ inversos.
 )[
     Pode demostrarse multiplicando $a*b$ pola esquera e pola
     dereita por $a^(-1)*b^(-1)$, o cal nos debe dar o neutro según a definición
-    @def:alxebra:inverso
+    @def:alxebra:inverso.
 
-    Pola esquerda
+    Pola esquerda,
     $
         (b^(-1)*a^(-1))*(a*b) = b^(-1)*(a*a^(-1))*b = \
         b^(-1)*e*b = b^(-1)*b = e.
     $
 
-    E pola dereita
+    E pola dereita,
     $
         (a*b)*(b^(-1)*a^(-1)) = a*(b*b^(-1))*a^(-1) = \
         a*e*a^(-1) = a*a^(-1) = e.
     $
 
-    Polo tanto, $(b^(-1)*a^(-1))$ é o inverso de $a*b$.
+    Polo tanto, $(b^(-1)*a^(-1))$ é o inverso de $a*b$,
+    $
+        (b^(-1)*a^(-1)) = (a*b)^(-1).
+    $
 ]
 
 Este teorema ás veces chámase _teorema de zapatos e calcetíns_ porque para
@@ -323,7 +335,7 @@ descalzarnos quitamos primeiro os zapatos e logo os calcetíns. Para facer
 teñamos nas mans teña unha operación asociativa, con neutro e con todos os
 elementos invertibles. Un monoide, por exemplo, non sabe en que orde poñer e
 quitar os zapatos e calcetíns, xa que nun monoide non todos os elementos son
-invertibles e o resultado non se aplica.
+invertibles e o resultado non se aplica. Os grupos, en cambio, si se saben calzar.
 
 Ata agora limitámonos a falar dunha soa operación de cada vez, pero en
 realidade nas estruturas que nos atopamos na física é normal ter varias
@@ -354,19 +366,21 @@ operacións, en lugar dunha soa como na asociatividade.
 
 Do mesmo modo que na teoría de conxuntos existe o concepto de subconxunto, en
 álxebra temos _subestruturas_. $B$ é un subconxunto de $A$ se calquera elemento
-de $B$ está en $A$, pero agora temos que $A$ é unha estrutura con propiedades
-adicionais, como que leva asociada unha operación asociativa, que existe un
-elemento neutro, ou calquera punto anterior desta sección. É natural esixir as
-mesmas propiedades ás subestruturas.
+de $B$ está en $A$, pero agora temos $(A,*)$, que é un conxunto cunha operación
+$*$ (sexa cal sexa, potencialmente varias), o cal é unha estrutura con
+propiedades adicionais, como a asociatividade, existencia de neutro, ou
+calquera outra definición desta sección. É natural esixir as mesmas propiedades
+ás subestruturas.
 
 #definicion(
     nome : "Sub Estrutura",
     ancora : "def:alxebra:subestrutura"
 )[
     Sexa $(A,*)$ unha estrutura alxébrica calquera, co conxunto $A$ máis a
-    operación $*$. Sexa tamén un subconxunto arbitrario $B subset A$. A parella
-    $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se se cumpren, en $B$,
-    todas as condicións que se pedían para $(A,*)$
+    operación $*$ (no caso xeral podemos ter máis conxuntos aparte de $A$ e
+    máis operacións aparte de $*$). Sexa tamén un subconxunto arbitrario $B
+    subset A$. A parella $(B,*)$ é unha subestrutura da estrutura de $(A,*)$ se
+    se cumpren, en $B$, todas as condicións que se pedían para $(A,*)$
 
     - $(forall a,b in B) space.quad a * b in B$. (A operación $*$ é interna en B)
     - Se a operación $*$ é asociativa en $(A,*)$, tamén o é en $(B,*)$.
@@ -389,7 +403,8 @@ tamén unha estrutura do mesmo tipo, coma un submonoide ou un subanel. Estes
 deben cumprir as mesmas condicións. Nalgúns casos será posible simplificar a
 demostración de varias propiedades demostrando unha relación diferente (como no
 test de subgrupo @teo:alxebra:test_subgrupo), e en xeral, hai propiedades que
-son totalmente evidentes e ninguén proba no campo de xogo nunca.
+son totalmente evidentes e ninguén proba no campo de xogo nunca (e menos no
+ámbito da física).
 
 Logo de presentar multitude de propiedades _estáticas_, podemos pasar
 finalmente a falar de aplicacións entre distintas estruturas. En xeral pode
@@ -427,6 +442,37 @@ importancia as que teñen a seguinte propiedade, os chamados _homomorfismos_.
     _isomorfismo_.
 ]
 
+Un detalle importante sobre a definición @def:alxebra:morfismo. Supoñamos que
+temos unha función $f$ como antes entre as estruturas $(A,*)$ e $(B,plus.o)$
+
+$
+    f:A frecha B.
+$
+
+Entón, dous elementos $x, y in A$ mapéanse como
+
+$
+    x mapea f(x)\
+    y mapea f(y).
+$
+
+Vendo estas liñas podemos _a ollo_ multiplicalas e dicir que
+
+$
+    x*y mapea f(x) plus.o f(y),
+$
+
+tendo en conta que $x$ e $y$ se multiplican ca operación $*$ e $f(x)$ e $f(y)$
+ca operación $plus.o$. Pero esto non é certo en xeral, xa que en realidade
+
+$
+    x*y mapea f(x*y).
+$
+
+Un homomorfismo é unha función $f$ onde esta especie de _composición_ (nun
+sentido laxo da palabra) é posible. Soe dicirse que un homomorfismo $f$
+_preserva a estrutura entre_ $(A,*)$ _e_ $(B,plus.o)$.
+
 #definicion(
     nome : "Núcleo dun morfismo",
     ancora : "def:alxebra:nucleo"
@@ -447,8 +493,10 @@ importancia as que teñen a seguinte propiedade, os chamados _homomorfismos_.
     ancora : "teo:alxebra:nucleo-unidade"
 )[
     Sexa $f:A arrow.r B$ un morfismo calquera entre as estruturas $(A,+)$ e
-    $(B,+)$. #nota[Uso en ambas estruturas a mesma operación + por comodidade.]
-    Entón $f$ é inxectiva $sse$ o núcleo de $f$ só contén o neutro de A.
+    $(B,+)$, ambas con elemento neutro. #nota[Uso en ambas estruturas a mesma
+    operación + por comodidade.] Entón,
+
+    $ f "é inxectiva" sse ker(f) "só contén o neutro de A". $
 ]
 
 #demostracion(
@@ -457,8 +505,15 @@ importancia as que teñen a seguinte propiedade, os chamados _homomorfismos_.
 
     "$arrow.r.double$" #v(1em) // :FACER: atallo para isto
 
-    Partimos de que $f$ é inxectiva. $f(e_A) = f(a-a) = f(a)-f(a) = e_B$
-    $implica f(e_A) = e_B implica e_A in ker(f)$ Pode ser que haxa outro
+    Partimos de que $f$ é inxectiva.
+
+    $
+        f(e_A) = f(a-a) = f(a)-f(a) = e_B \
+        implica f(e_A) = e_B \
+        implica e_A in ker(f)
+    $
+
+    Pode ser que haxa outro
     elemento $a' in A$ tal que $f(a') = e_B implica a' in ker(f)$, pero como
     $f$ é inxectiva, entón se $f(e_A) = f(a') = e_B implica a' = e_A$. Polo
     tanto, $ker(f) = {e_A}$.
@@ -476,9 +531,9 @@ teríamos unha noción de _kernel_ ou sequera do que é un elemento neutro. Na
 antes non eran posibles. O teorema @teo:alxebra:nucleo-unidade é unha forma
 típica de demostrar se unha certa aplicación homomorfa entre dúas estruturas
 con neutro é inxectiva ou non, sen ter que recorrer á definición de
-inxectividade.
+inxectividade @def:conxuntos:inxectividade.
 
-Os núcleos dos morfismos tomarán un papel protagonista de entre os conxuntos
+Os núcleos dos morfismos tomarán un papel protagonista entre os conxuntos
 que imos a tratar neste capítulo. O motivo non é obvio de inmediato, pero
 espero que o vaia sendo nas seccións seguintes.
 
@@ -487,5 +542,5 @@ estudante de física se centre exclusivamente nos grupos, espazos lineais e
 álxebras, sendo as últimas dúas definidas con pinceladas algo grandes. Os
 espazos lineais son conteñen un grupo e un anel, e as álxebras dous aneis. O
 motivo polo que me molesto en presentar un total de 8 estruturas é que as
-grandes están compostas das pequenas penso que tendo a imaxe completa é posible
+grandes están compostas das pequenas e penso que tendo a imaxe completa é posible
 organizar mellor as ideas. Polo menos para min.

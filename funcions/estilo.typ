@@ -422,11 +422,11 @@
             )
         } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "seccion" {
             let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
-            let NUM = counter(figure.where(kind:"seccion")).at(eso.element.location()).last()
+            // :FACER: Por que teño que sumarlle 1..?
+            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last() +1
             link(
                 eso.element.location(),
-                [#HEA.#SEC.#NUM]
+                [#HEA.#SEC]
             )
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
         // no caso de que a referencia apunte a unha figura de tipo 'math.equation'

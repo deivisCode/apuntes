@@ -33,14 +33,21 @@ agora.
     todos os elementos son invertibles.
 ]
 
-Intuitivamente, os grupos son estruturas nas que podes sumar e restar, _ou_
-multiplicar e dividir.
+Intuitivamente, os grupos son estruturas nas que podes sumar e restar;
+multiplicar e dividir; ou en xeral, operar nun sentido máis no oposto.
+
+Inda que non ten por que ser evidente, esta estrutura é dunha relevancia que
+non se pode explicar ta so nunhas poucas liñas. Vai aparecer como parte dun
+espazo lineal herdándolle súas propiedades fundamentais; e nun enfoque máis
+abstracto un grupo é a estrutura que permite _caracterizar_ a noción de
+simetría. Veremos esto en detalle nas seccións e capítulos seguintes.
+
+// :FACER: centralizador e centro
 
 #notacion[
     Podemos referirnos simplemente ao grupo como $A$.
-
     Se a operación é conmutativa, diremos que o grupo é conmutativo, ou
-    _abeliano_. #cita("rotman_2000")
+    _abeliano_.
     #nota[
         Supoño que as estruturas anteriores tamén se poden chamar _abelianas_
         en lugar de conmutativas, pero eu personalmente non o suelo ver.
@@ -81,11 +88,10 @@ multiplicar e dividir.
     + O conxunto de todas as matrices cadradas, invertibles de tamaño $n times
       n$ e con coeficientes en $RR$ é un grupo ca operación usual de
       multiplicación matricial. A multiplicación de matrices é unha operación
-      interna e asociativa. O neutro é a matriz identidade $bb(1) = mat(1, 0;
-      0, 1)$. O inverso existe (as matrices inversas dadas pola fórmula usual).
-      Este grupo adoita chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n,
-      RR)$. #nota[Veremos que outros moitos grupos de interese son subconxuntos
-      deste.]
+      interna e asociativa. O neutro é a matriz identidade $bb(II)$. O inverso
+      existe (as matrices inversas dadas pola fórmula usual). Este grupo adoita
+      chamarse _Grupo Xeral Lineal_ e denótase por $"GL"(n, RR)$. #nota[Veremos
+      que outros moitos grupos de interese son subconxuntos deste.]
 
 ]
 
@@ -156,7 +162,16 @@ reducilo a unha sola co seguinte teorema.
 
 Pode verse unha demostración na proposición 4.14 de #cita("delgado_2010"). O
 relevante do teorema @teo:alxebra:test_subgrupo é que nos permite probar se
-algo é un subgrupo cun so paso, en lugar de 3 distintos.
+algo é un subgrupo cun so paso, en lugar de 3 distintos. Por exemplo, á hora de
+probar que certa estrutura é unha subálxebra (veremos que é isto na sección
+@sec:alxebra:alxebras) fai falla demostrar entre outras cousas que estamos a
+traballar cun subgrupo, e pode facerse de golpe e nun paso seguindo o teorema
+@teo:alxebra:test_subgrupo. Algo común na bibliografía física é dicir que o
+requisito é que a operación sexa _pechada_, pero como vimos esto non é
+suficiente. Ou ben se proba que é pechada (interna), ten neutro e inversos, ou
+se proba que un elemento polo inverso doutro é unha operación pechada.
+
+Imos a comezar a tratar temas algo máis elaborados ca no caso dos monoides.
 
 #notacion[
     Podemos falar do produto de subconxuntos dun certo grupo. Sexa $G$ un
@@ -179,10 +194,10 @@ algo é un subgrupo cun so paso, en lugar de 3 distintos.
     nome : "Clase lateral",
     ancora : "def:alxebra:clase-lateral"
 )[
-    Sexa $A$ un grupo, $B subgrupo A$, e $a in A$ un elementoo fixo. Ao
-    conxunto formado polo produto de $a$ con todos os elementos de $B$, escrito
-    $a B$ chámase #indice("Clase")[Lateral] clase lateral pola esquerda de B. É
-    dicir, o conxunto
+    Sexa $A$ un grupo escrito en notación multiplicativa, $B subgrupo A$, e $a
+    in A$ un elementoo fixo. Ao conxunto formado polo produto de $a$ con todos
+    os elementos de $B$, escrito $a B$ chámase #indice("Clase")[Lateral] clase
+    lateral pola esquerda de B. É dicir, o conxunto
 
     $
         a B := { a b | b in B}.
@@ -191,10 +206,11 @@ algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
 [Def 3.4.2]#cita("dean_1990") [Páx. 146]#cita("kostrikin_1983")
 
-Pode definirse analogamente unha clase lateral _pola dereita_, $B a$.
-
 #notacion[
-    O elemento $a$ chámase _representante_ da clase $a B$.
+    Pode definirse analogamente unha clase lateral _pola dereita_, $B a$, pero
+    en xeral $a B eq.not B a$. O elemento $a$ chámase _representante_ da clase
+    $a B$. No caso de ter unha operación en notación aditiva entón a clase
+    lateral pola esquerda denótase por $a + B$, e pola dereita por $B + a$.
 ]
 
 Evidentemente, unha clase lateral non é máis co caso concreto mencionado antes
@@ -210,19 +226,19 @@ ser, é posible definilo.
       usuais que podemos pensar como frechas e denotamos por $arrow(v)$. A
       operación de interese é a suma usual de vectores $+$, que ten como neutro
       o vector $arrow(0)$ e na cal todo elemento $arrow(v)$ ten inverso
-      $(-arrow(v))$. Entón, a parella $(E^3, +)$ é un grupo.
-
-      Un subgrupo $W$, gráficamente, non é máis ca un plano que interseca a
-      orixe, ousexa un plano que contén o elemento neutro $arrow(0)$. As clases
-      laterais $arrow(v) + W$ son ditos planos pero desprazados polo vector
-      $arrow(v)$. Evidentemente, ditos planos xa non conteñen a orixe (se
-      $arrow(v) eq.not arrow(0)$) polo que non son subgrupos. Tamén é evidente
-      que ditos planos ou son disxuntos entre si, e que a unión de todos eles é
-      igual ao grupo completo $E$.
-
-      Máis adiante, veremos que esto é análogo ás variedades lineais dun certo
-      espazo vectorial.
+      $(-arrow(v))$. Entón, a parella $(E^3, +)$ é un grupo. Un subgrupo $W$,
+      gráficamente, non é máis ca un plano que interseca a orixe, ousexa un
+      plano que contén o elemento neutro $arrow(0)$. As clases laterais
+      $arrow(v) + W$ son ditos planos pero desprazados polo vector $arrow(v)$.
+      Evidentemente, ditos planos xa non conteñen a orixe (se $arrow(v) eq.not
+      arrow(0)$) polo que non son subgrupos (sabemos, da clase de álxebra
+      lineal, que non son subespazos). Tamén é evidente que ditos planos son
+      disxuntos entre si, e que a unión de todos eles é igual ao grupo completo
+      $E$. Máis adiante, veremos que esto é análogo ás variedades lineais dun
+      certo espazo vectorial.
 ]
+
+// :FACER: relación de equivalencia, está no ROTMAN
 
 // :FACER: demostracion desto
 #teorema(
@@ -238,7 +254,8 @@ ser, é posible definilo.
 É importante ver que as clases laterais non son, en xeral, subgrupos (nin
 grupos de ningún modo). En efecto, sendo $e$ o neutro de $A$, como $e in e B =
 B$ entón $e in.not a B$ se $a eq.not e$. É dicir, a única clase lateral de B
-que é un subgrupo é o propio B xa que o resto non contén o neutro.
+que é un subgrupo é o propio B xa que o resto non contén o neutro (e sen neutro
+non son sequera grupos).
 
 
 #teorema(
@@ -337,8 +354,14 @@ que é un subgrupo é o propio B xa que o resto non contén o neutro.
     pertencendo a $B$).
 ]
 
-Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos definir un morfismo de
-grupos como o morfismo
+En realidade tanto a propiedade $a B = B a$ da definición
+@def:alxebra:subgrupo-normal como a $a b a^(-1) in B$ do teorema
+@teo:alxebra:equivalencia-subgrupo-normal poden usarse para definir un subgrupo
+normal (ao fin e ao cabo o teroema di que son equivalentes). Dependendo da
+bibliografía úsase unha e demóstrase a outra.
+
+Toca falar de aplicacións. Se temos dous grupos $(A,*)$ e $(B,dot)$, podemos
+definir un homomorfismo de grupos como a aplicación
 
 $
     f: A frecha B \
@@ -349,30 +372,42 @@ No caso dos monoides gañábamos a noción de elemento neutro respecto do caso d
 semigrupos, o cal nos permitiría falar do núcleo dun morfismo de monoides.
 Agora traballamos cun grupo, polo que existe o concepto de _elemento inverso_
 polo que podemos dicir algo máis. En concreto, o neutro transformase como
-$f(e_A) = e_B$ #cita("delgado_2010") (usando notación multiplicativa por
-comodidade)
+$f(e_A) = e_B$ #cita("delgado_2010"). Esto demóstrase pola regra do camelo
+multiplicando $f(e_A)$ por $e_B$, e expandindo $e_B$,
 
 $
     f(e_A) &= f(e_A) dot e_B \
            &= f(e_A) dot (f(a) dot f(a)^(-1)) \
            &= (f(e_A) dot f(a)) dot f(a)^(-1) \
-           &= f(e_A * a) dot f(a)^(-1) \
+           &= f(e_A * a) dot f(a)^(-1) "(por ser" f "un homomorfismo)" \
            &= f(a) dot f(a)^(-1) \
            &= e_B.
 $
 
 Ollo, pode existir algún outro $a$ tal que $f(a) = e_B$, se $f$ non é
 inxectiva. Pero sempre ocorre que $f(e_A) = e_B$. Por outro lado , o inverso
-$a^(-1)$ transfórmase como $f(a^(-1)) = f(a)^(-1)$
+$a^(-1)$ transfórmase como $f(a^(-1)) = f(a)^(-1)$. Podemos probalo
+multiplicando $f(a)$ por $f(a^(-1))$ por ambos lados seguindo a definición
+@def:alxebra:inverso
 
 $
     &f(a) dot f(a^(-1)) = f(a * a^(-1)) = f(e_A) = e_B \
-    &f(a^(-1)) dot f(a) = f(a^(-1) * a) = f(e_A) = e_B \
-    &implica f(a^(-1)) dot f(a) = f(a) dot f(a^(-1)) = e_B \
-    &implica f(a^(-1)) "é o inverso de" f(a) \
-    &f(a^(-1)) = f(a)^(-1).
+    &f(a^(-1)) dot f(a) = f(a^(-1) * a) = f(e_A) = e_B,
 $
 
+polo que
+
+$
+    &f(a^(-1)) dot f(a) = f(a) dot f(a^(-1)) = e_B,
+$
+
+e entón $f(a^(-1))$ é o inverso de $f(a)$,
+
+$
+    f(a^(-1)) = f(a)^(-1).
+$
+
+// :FACER: falta o teorema inverso
 #teorema(
     nome : "O kérnel dun homomorfismo é un subgrupo normal",
     ancora : "teo:alxebra:kernel-normal"
@@ -404,12 +439,12 @@ Agora presentamos unha construción con grupos de suma importancia, o grupo
 cociente.
 
 A priori, se $B subgrupo A$ podemos definir o conxunto de todas as clases
-laterais como ${a B}$. É posible facer unha estrutura con dito conxunto máis a
-mesma operación de grupo que en $A$, ca excepción de que agora o produto de
-elementos terá a forma $(a_i B)(a_j B)$, onde uso moitos parénteses para deixar
-claro que $a_i B$ e $a_j B$ son elementos concretos. Por desgraza esto non
-forma un grupo xa que a operación non é necesariamente interna. Non podemos
-asegurar que
+laterais como ${a B}$, con $a in A$. É posible facer unha estrutura con dito
+conxunto máis a mesma operación de grupo que en $A$, ca excepción de que agora
+o produto de elementos terá a forma $(a_i B)(a_j B)$, onde uso moitos
+parénteses para deixar claro que $a_i B$ e $a_j B$ son elementos concretos. Por
+desgraza esto non forma un grupo xa que a operación non é necesariamente
+interna. Non podemos asegurar que
 
 $
     a_i B space a_j B = a_k B
@@ -439,23 +474,40 @@ $
 $a^(-1) B$ porque
 
 $
-    a^(-1) B space a B = (a^(-1)a) B = e B = B
+    a^(-1) B space a B = (a^(-1)a) B = e B = B.
 $
+
+Todas estas deduccións son análogas (cambiando a orde) para as clases laterais
+pola dereita.
+
+#cita("rotman_2000") #cita("napkin") #cita("gowers_2011")
 
 // Está explicado en gowers, rotman 109, kostrik 192
 #definicion(
     nome : "Cociente de grupos",
     ancora : "def:alxebra:cociente-grupos"
 )[
-    Sexan $A,B$ dous grupos, $a in A$ e $f: A arrow.r B$ un homomorfismo de
-    grupos. Entón, o conxunto de todas as clases laterais pola esqueda $a B$
-    chámase #indice("Grupo")[Cociente] grupo cociente, e escríbese $A\/B$. É
-    dicir, o conxunto
+    Sexa $A$ un grupo calquera e $B$ un subgrupo normal. O conxunto de clases
+    laterais pola esquerda, $a B$, chámase#indice("Grupo")[Cociente] grupo
+    cociente, e escríbese $A\/B$. É dicir, o conxunto
 
     $
-        A\/B := { a B | a in A } = {a_1B, a_2B, ...}
+        A\/B := { a B | a in A }.
     $
 ]
 
 Nesta definición requírese que $B$ sexa un subgrupo normal precisamente para
-que $A\/B$ sexa un grupo ca operación antes descrita $(a_i B)(a_j B)$.
+que $A\/B$ sexa un grupo ca operación antes descrita $(a_i B)(a_j B)$. Deste
+modo os elementos de $A\/B$ _compórtanse_ igual que os de $A$.
+
+#notacion[
+    Usando notación aditiva, o grupo cociente é
+    $
+        A\/B = { a + B | a in B}.
+    $
+    Os seus elementos opéranse como
+    $
+        (a_1 + B) + (a_2 + B) = (a_1 + a_2) + B,
+    $
+    o neutro é $0 + B = B$, e o inverso dun elemento $a + B$ é $-a + B$.
+]

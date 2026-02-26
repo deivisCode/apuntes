@@ -7,7 +7,7 @@
 )
 
 Un recurso gráfico moi útil son os diagramas, que consisten nunha serie de
-_vértices_ e de _frechas_ (ou _arestas_). Por exemplo
+_vértices_ e de _frechas_ (ou _arestas_ con dirección). Por exemplo
 
 #imaxe(
     nome : "/.pdf/01_CONXUNTOS_FIG_00_diagrama-conmutativo.pdf",
@@ -30,6 +30,14 @@ azul:
 
 Os diagramas son especialmente útiles cando temos un número relevante de
 relacións entre distintos obxectos, e ditas relacións son diferentes. Por
-exemplo, as frechas poden denotarse con $->>$ para funcións sobrexectivas, ás
-veces son liñas descontinuas para indicar que é unha relación a demostrar, etc.
+exemplo: as frechas poden denotarse con $->>$ para funcións sobrexectivas;
+con $arrow.r.hook$ para funcións inxectivas;
+e ás veces son liñas descontinuas para indicar que é unha relación a demostrar.
 Unha imaxe vale máis que mil palabras. E un bo diagrama tamén.
+
+Por exemplo, a composición ca función inversa @def:conxuntos:inversa
+
+#imaxe(
+    nome : "/.pdf/01_CONXUNTOS_FIG_02_composicion.pdf",
+    pe : [A composición dunha función ca súa inversa é a función identidade.]
+)
