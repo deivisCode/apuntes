@@ -70,6 +70,8 @@
 #let _in_envs = (
     top    : 0.9em,
     bottom : 0.9em,
+)
+#let _out_envs = (
     left   : 0.9em,
     right  : 0.9em,
 )

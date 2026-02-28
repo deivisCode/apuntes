@@ -35,12 +35,18 @@
 ) = {
     set par(first-line-indent:0pt)
     block(
-        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : rgb(_morado),
+                thickness : _pt_envs
+            ),
+        ),
         fill      : rgb(_morado).lighten(90%),
         below     : 0pt,
         width     : 100%,
         inset     : _in_envs,
-        outset    : ( bottom: 1pt ), // Para eliminar fallo visual entre bloques
+        outset    : _out_envs,
         breakable : false,
         sticky    : true,
         [
@@ -64,10 +70,17 @@
     // O Título do teorema e o corpo son dous bloques, o primero irrompible e o
     // segundo non. O primeiro é 'sticky' para que vaia pegado ao segundo
     block(
-        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : rgb(_morado),
+                thickness : _pt_envs
+            ),
+        ),
         fill      : rgb(_morado).lighten(90%),
         width     : 100%,
         inset     : _in_envs,
+        outset    : _out_envs,
         breakable : true,
         [#corpo]
     )
@@ -81,12 +94,18 @@
 ) = {
     set par(first-line-indent:0pt)
     block(
-        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : rgb(_morado),
+                thickness : _pt_envs
+            ),
+        ),
         fill      : rgb(_morado).lighten(90%),
         width     : 100%,
         below     : 0pt,
         inset     : _in_envs,
-        outset    : ( bottom: 1pt ),
+        outset    : _out_envs,
         breakable : false,
         sticky    : true,
         [
@@ -106,10 +125,17 @@
         ]
     )
     block(
-        stroke    : ( left : rgb(_morado) + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : rgb(_morado),
+                thickness : _pt_envs
+            ),
+        ),
         fill      : rgb(_morado).lighten(90%),
         width     : 100%,
         inset     : _in_envs,
+        outset    : _out_envs,
         breakable : true,
         [#corpo]
     )
@@ -123,22 +149,33 @@
     set text(fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
-        stroke    : ( left : _gris_bordos + _pt_envs ),
-        fill      : _gris_fondos,
+        // stroke    : ( left : _gris_bordos + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : _gris_bordos,
+                thickness : _pt_envs
+            ),
+        ),
         width     : 100%,
-        above     : 0pt,
         below     : 0pt,
         inset     : _in_envs,
-        outset    : ( top: 1pt, bottom: 1pt ),
+        outset    : _out_envs,
         breakable : false,
         sticky    : true,
         [#underline[Demostración] #ref(label(ancora)):]
     )
     block(
-        stroke    : ( left : _gris_bordos + _pt_envs ),
-        fill      : _gris_fondos,
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : _gris_bordos,
+                thickness : _pt_envs
+            ),
+        ),
         width     : 100%,
         inset     : _in_envs,
+        outset    : _out_envs,
         breakable : true,
         [#corpo #h(1fr) $qed$]
     )
@@ -150,22 +187,35 @@
     set text(fill: _gris_textos, font: _sans)
     set par(first-line-indent:0pt)
     block(
-        stroke    : ( left : _gris_bordos + _pt_envs),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : _gris_bordos,
+                thickness : _pt_envs
+            ),
+        ),
         fill      : _gris_fondos,
         width     : 100%,
         above     : 5pt, // :FACER: esto debería ser o interliñado
         below     : 0pt,
         inset     : _in_envs,
-        outset    : ( bottom: 1pt ),
+        outset    : _out_envs,
         breakable : false,
         sticky    : true,
         [ #underline[Exemplos]:]
     )
     block(
-        stroke    : ( left : _gris_bordos + _pt_envs ),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : _gris_bordos,
+                thickness : _pt_envs
+            ),
+        ),
         fill      : _gris_fondos,
         width     : 100%,
         inset     : _in_envs,
+        outset    : _out_envs,
         breakable : true,
         [#corpo]
     )
@@ -173,8 +223,15 @@
 
 #let notacion( corpo ) = {
     block(
-        stroke : ( left : _gris_bordos + _pt_envs),
+        stroke    : (
+            left : stroke(
+                cap       : "round",
+                paint     : _gris_bordos,
+                thickness : _pt_envs
+            ),
+        ),
         inset  : _in_envs,
+        outset : _out_envs,
         [*Notación e Vocabulario*: #corpo]
     )
 }
@@ -288,6 +345,7 @@
             stroke : _gris_bordos + _pt_fino,
             width  : 100%,
             inset  : 0pt,
+            outset : _out_envs,
             image(
                 height : alto,
                 width  : ancho,
