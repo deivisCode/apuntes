@@ -22,9 +22,7 @@ _ou_ multiplicar pero non dividir.
 
 #notacion[
     Podemos referirnos simplemente ao monoide como $A$.
-]
 
-#vocabulario[
     Se a operación é conmutativa, diremos que é un monoide conmutativo.
 ]
 

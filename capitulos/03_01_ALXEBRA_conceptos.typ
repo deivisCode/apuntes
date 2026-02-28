@@ -39,26 +39,26 @@ mesmo conxunto $A$.
     á expresión @exp:contuntos:posicion-simbolos). Ademais, non usamos letras
     para as operacións senón símbolos especiais. É dicir, os pasos [Cap.2
     ]#cita("rotman_2000")
+
+    $
+        f(a,b) stretch(arrow.r)^"símb. entre argumentos"
+        a f b stretch(arrow.r)^"símb. especial"
+        a plus.o b,
+    $ <exp:alxebra:posicion-simbolos>
+
+    onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
+    $+ * · dot.o diamond.stroked$ ou o que veña en mente ao escribir.
+    A pesar de que existen infinidade de símbolos, úsanse 2 estilos claramente
+    diferenciados. Na notación _aditiva_ úsanse símbolos que asemellan os da suma,
+    como $+ plus.o$, e as operacións escríbense completas, como $a+b$ ou $a
+    plus.o b$. Na notación _multiplicativa_ úsanse símbolos que asemellan a
+    multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
+    explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
+    ambas notacións máis adiante ao falar de asociatividade. Polo xeral a notación
+    multiplicativa é preferible na maioría de libros e apuntes de álxebra, moi
+    posiblemente porque omitir o símbolo da operación volve o texto moitísimo máis
+    simple e limpo.
 ]
-
-$
-    f(a,b) stretch(arrow.r)^"símb. entre argumentos"
-    a f b stretch(arrow.r)^"símb. especial"
-    a plus.o b,
-$ <exp:alxebra:posicion-simbolos>
-
-onde usei $plus.o$ en lugar de $f$ ao final. Outros símbolos posibles son
-$+ * · dot.o diamond.stroked$ ou o que veña en mente ao escribir.
-A pesar de que existen infinidade de símbolos, úsanse 2 estilos claramente
-diferenciados. Na notación _aditiva_ úsanse símbolos que asemellan os da suma,
-como $+ plus.o$, e as operacións escríbense completas, como $a+b$ ou $a
-plus.o b$. Na notación _multiplicativa_ úsanse símbolos que asemellan a
-multiplicación, como $times * dot$, e a operación pode escribirse con símbolo
-explícito ou sen el, $a * b$, $a b$. Tamén veremos algunha diferencia entre
-ambas notacións máis adiante ao falar de asociatividade. Polo xeral a notación
-multiplicativa é preferible na maioría de libros e apuntes de álxebra, moi
-posiblemente porque omitir o símbolo da operación volve o texto moitísimo máis
-simple e limpo.
 
 #definicion(
     nome : "Estrutura Alxébrica",
@@ -151,20 +151,20 @@ $ a * ((b * c) * ((d * e) * f)) = a * b * c * d * e * f. $
     mesmo elemento. Podemos simplificar a escritura usando o concepto de
     _potencias_, repetir a mesma operación varias veces. En notación
     multiplicativa #cita("delgado_2010")
+
+    $ underbrace(a * a * a * dots, "n veces") $
+
+    escríbese simplemente como $a^n$, semellante a se fose unha potencia usual de
+    números. E en notación aditiva
+
+    $ underbrace(a + a + a + dots, "n veces") $
+
+    simplifícase a $n a$, como se estivésemos a sumar un número varias veces. A
+    maiores, en notación multiplicativa $a^n * a^m$ podemos simplificalo por
+    $a^(n+m)$, e $(a^(n))^(m)$ é igual a $a^(n m)$, seguindo as nocións usuais de
+    potencias de números [Cap.4 $section$2.3 Teo.2]#cita("kostrikin_1983"). En
+    notación aditiva temos o análogo $(n a)(m a) = (n+m)a$, e $m(n a) = n m a$.
 ]
-
-$ underbrace(a * a * a * dots, "n veces") $
-
-escríbese simplemente como $a^n$, semellante a se fose unha potencia usual de
-números. E en notación aditiva
-
-$ underbrace(a + a + a + dots, "n veces") $
-
-simplifícase a $n a$, como se estivésemos a sumar un número varias veces. A
-maiores, en notación multiplicativa $a^n * a^m$ podemos simplificalo por
-$a^(n+m)$, e $(a^(n))^(m)$ é igual a $a^(n m)$, seguindo as nocións usuais de
-potencias de números [Cap.4 $section$2.3 Teo.2]#cita("kostrikin_1983"). En
-notación aditiva temos o análogo $(n a)(m a) = (n+m)a$, e $m(n a) = n m a$.
 
 #definicion(
     nome : "Conmutatividade",
@@ -345,7 +345,7 @@ operacións, en lugar dunha soa como na asociatividade.
     $
 ]
 
-#vocabulario[
+#notacion[
     Ás veces podemos referirnos a distributiva _pola esquerda_ ou _pola
     dereita_, no caso de que só se cumpra unha das condicións de
     #ref(<def:alxebra:distributiva>). Entón, unha operación é distributiva (a
@@ -376,7 +376,7 @@ mesmas propiedades ás subestruturas.
     - etc.
 ]
 
-#vocabulario[
+#notacion[
     Cando a operación tamén é interna no subconxunto B soe dicirse que é
     #indice("Operación")[Cerrada] _cerrada_ ou que _cerra_ en B, que é o
     primeiro punto da definición @def:alxebra:subestrutura.
@@ -413,7 +413,7 @@ importancia as que teñen a seguinte propiedade, os chamados _homomorfismos_.
     operación $plus.o$ ocorre en $B$, entre $f(a)$ e $f(b)$.
 ]
 
-#vocabulario[
+#notacion[
     Dise que a aplicación $f$ é un homomorfismo ou que é unha aplicación
     _homomorfa_. Ás veces poden cambiar algo os nomes dependendo das estruturas
     de traballo. No caso de ter unha parella de grupos ou aneis a un

@@ -28,9 +28,7 @@ operacións.
 
 #notacion[
     Podemos referirnos simplemente ao anel como $A$.
-]
 
-#vocabulario[
     Se a operación $*$ é conmutativa dicimos que o anel é conmutativo.
 ]
 
@@ -198,7 +196,7 @@ deberían ser invertibles, o cal inclúe o neutro da primera operación (chamém
 
 Nun corpo non hai divisores do 0.
 
-#vocabulario[
+#notacion[
     No caso de que a operación $*$ sexa conmutativa entón falamos dun
     #indice("Campo") campo. [Cap.4 #math.section 4]#cita("kostrikin_1983")
 ]

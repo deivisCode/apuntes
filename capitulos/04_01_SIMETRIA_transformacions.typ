@@ -21,7 +21,7 @@ Para un certo conxunto $A$, co conxunto de todas as súas tranformacións forma
 un grupo onde a operación é a composición de funcións e o neutro é a función
 identidade.
 
-#vocabulario[
+#notacion[
     O conxunto de todas as tranformacións dun conxunto $A$ soe chamarse _Grupo
     Simétrico_ #indice("Grupo")[Simétrico] e denótase por $S(A)$. No caso de
     que que o conxunto $A$ sexa finito tamén se chama _Grupo de permutacións_ e

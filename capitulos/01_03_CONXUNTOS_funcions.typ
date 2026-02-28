@@ -62,12 +62,10 @@ _Rango_ é un sinónimo para codominio.
     $
 ]
 
-#vocabulario[
+#notacion[
     Ademáis, dicimos que $b$ é a _imaxe_ de $a$ a través da función $f$, é
     dicir, $b = f(a)$.
-]
 
-#notacion[
     A imaxe de $A$ tamén se soe chamar $"Im"(A)$ ou $f(A)$ .
 ]
 

@@ -19,9 +19,7 @@ Nesta sección mencionamos unha das estruturas máis simples posibles.
 
 #notacion[
     Podemos referirnos simplemente ao magma como $A$.
-]
 
-#vocabulario[
     Se a operación é conmutativa, entón é un magma conmutativo.
 ]
 

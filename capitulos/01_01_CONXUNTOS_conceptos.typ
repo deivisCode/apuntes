@@ -31,9 +31,7 @@ non o vexo necesario.
     En xeral nomeamos un conxunto cunha letra maiúscula e seus elementos ca
     mesma letra en minúscula. Dado o conxunto $A$, se un elemento $a$ pertence
     a $A$ escribimos $a in A$, e $a in.not A$ no caso contrario.
-]
 
-#vocabulario[
     Os conxuntos poden definirse _por extensión_, nomeando todos os elementos
     que contén dentro parénteses recurvos (ou chaves),
 

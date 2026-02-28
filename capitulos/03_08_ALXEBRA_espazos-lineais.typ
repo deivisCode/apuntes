@@ -65,7 +65,7 @@ en casos moi concretos, polo que prefiro esquivalo.]
       teñen unha interpretación xeométrica evidente.
 ]
 
-#vocabulario[
+#notacion[
     En ambos exemplo temos vectores, máis so no segundo teñen unha semellanza
     ca xeometría (concretamente, frechas en $RR^3$). En física é común facer
     énfase no segundo caso, usándoo como exemplo para explicar conceptos en

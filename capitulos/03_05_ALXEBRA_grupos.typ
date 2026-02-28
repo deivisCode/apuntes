@@ -38,9 +38,7 @@ multiplicar e dividir.
 
 #notacion[
     Podemos referirnos simplemente ao grupo como $A$.
-]
 
-#vocabulario[
     Se a operación é conmutativa, diremos que o grupo é conmutativo, ou
     _abeliano_. #cita("rotman_2000")
     #nota[
@@ -195,7 +193,7 @@ algo é un subgrupo cun so paso, en lugar de 3 distintos.
 
 Pode definirse analogamente unha clase lateral _pola dereita_, $B a$.
 
-#vocabulario[
+#notacion[
     O elemento $a$ chámase _representante_ da clase $a B$.
 ]
 
@@ -332,7 +330,7 @@ que é un subgrupo é o propio B xa que o resto non contén o neutro.
 
 ]
 
-#vocabulario[
+#notacion[
     A operación feita sobre $b$ dada por $a b a^(-1)$ ás veces chámase
     _conxugación_, polo que tamén se pode dicir que un subgrupo é normal se
     todos os seus elementos son invariantes baixo conxugación (siguen

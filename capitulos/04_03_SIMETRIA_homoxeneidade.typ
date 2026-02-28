@@ -31,7 +31,7 @@ adicionais.
   $alpha (g, x) = g x$ é continua
 
 // [Cap.7$section$3.4]@kostrikin_1983
-#vocabulario[
+#notacion[
     - No caso 2. dicimos que o grupo é _continuo_ #indice("Grupo")[Continuo] ou
       _topolóxico_#indice("Grupo")[Topolóxico].
     - Se temos os casos 1. e 2., e a maiores a acción $G arrow.cw.half A$ é

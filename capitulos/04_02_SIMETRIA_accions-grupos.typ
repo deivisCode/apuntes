@@ -36,11 +36,8 @@ definicón. [Cap.11$section$3]@masa_2019 [Cap.16$section$1]@napkin
     Simplificamos a acción nunha parella de elementos calquera $alpha (g, x) =
     x$ como simplemente por $g x$.
 
-    Se o grupo $G$ actúa sobre $A$ podemos escribir simplemente $G arrow.cw.half A$.
-]
-
-#vocabulario[
-    Se o grupo $G$ actúa sobre $A$ podemos dicir que $A$ é un $G$-conxunto.
+    Se o grupo $G$ actúa sobre $A$ podemos escribir simplemente $G arrow.cw.half A$,
+    e tamén dicimos que $A$ é un $G$-conxunto.
 
     A definición @def:simetria:accion é a dunha acción _pola esquerda_, dada a
     orde dos argumentos $g, a$. Pode definirse unha acción _pola dereita_ de

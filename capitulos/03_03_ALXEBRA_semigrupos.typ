@@ -18,9 +18,7 @@
 
 #notacion[
     Podemos referirnos simplemente ao semigrupo como $A$.
-]
 
-#vocabulario[
     Se a operación é conmutativa, diremos que é un semigrupo conmutativo.
 ]
 

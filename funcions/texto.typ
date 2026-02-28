@@ -175,15 +175,7 @@
     block(
         stroke : ( left : _gris_bordos + _pt_envs),
         inset  : _in_envs,
-        [*Notación*: #corpo]
-    )
-}
-
-#let vocabulario( corpo ) = {
-    block(
-        stroke : ( left : _gris_bordos + _pt_envs),
-        inset  : _in_envs,
-        [*Vocabulario*: #corpo]
+        [*Notación e Vocabulario*: #corpo]
     )
 }
 
