@@ -59,7 +59,7 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"teorema")).get().first()
-                    [*Teorema* #HEA.#SEC.#NUM: #smallcaps(nome)]
+                    [#slab[*Teorema*] #HEA.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
@@ -118,7 +118,7 @@
                     let HEA = counter(heading.where(level: 1)).get().first()
                     let SEC = counter(heading.where(level: 2)).get().last()
                     let NUM = counter(figure.where(kind:"definicion")).get().first()
-                    [*Definición* #HEA.#SEC.#NUM: #smallcaps(nome)]
+                    [#slab[*Definición*] #HEA.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             #label(ancora)
@@ -146,7 +146,7 @@
     ancora : " -- SEN ÁNCORA -- ",
     corpo
 ) = {
-    set text(fill: _gris_textos, font: _sans)
+    set text(fill: _gris_textos)
     set par(first-line-indent:0pt)
     block(
         // stroke    : ( left : _gris_bordos + _pt_envs ),
@@ -163,7 +163,7 @@
         outset    : _out_envs,
         breakable : false,
         sticky    : true,
-        [#underline[Demostración] #ref(label(ancora)):]
+        [#slab[*Demostración*] #ref(label(ancora)):]
     )
     block(
         stroke    : (
@@ -184,7 +184,7 @@
 #let exemplos(
     corpo
 ) = {
-    set text(fill: _gris_textos, font: _sans)
+    set text(fill: _gris_textos)
     set par(first-line-indent:0pt)
     block(
         stroke    : (
@@ -202,7 +202,7 @@
         outset    : _out_envs,
         breakable : false,
         sticky    : true,
-        [ #underline[Exemplos]:]
+        slab[*Exemplos:*]
     )
     block(
         stroke    : (
@@ -230,9 +230,10 @@
                 thickness : _pt_envs
             ),
         ),
+        // :FACER: radio
         inset  : _in_envs,
         outset : _out_envs,
-        [*Notación e Vocabulario*: #corpo]
+        [#slab[*Notación e Vocabulario*]: #corpo]
     )
 }
 
@@ -245,10 +246,9 @@
 ) = {
     // :FACER: simplificar esto. Capitulo, Nome e celdas diferentes do grid...
     show heading.where(level: 1): eso => {
-        show text: set text(font: _sans)
         set align(left)
         let CAP = counter(heading.where(level: 1)).at(here()).last()
-        text(size: 1.2em, fill: _gris_titulos)[#v(0.4em)Capítulo #CAP\ ]
+        text(size: 1.2em, fill: _gris_titulos)[#v(0.4em)#condensada[*Capítulo #CAP*]\ ]
         text(size: 3em)[#eso.body]
     }
     pagebreak(to:"odd")
@@ -267,7 +267,7 @@
                     heading(
                         level: 1,
                         numbering: "1.",
-                        sf[#nome],
+                        condensada[*#nome*],
                     )
                 )
                 #label(ancora)
@@ -297,7 +297,7 @@
         let HEA = counter(heading.where(level: 1)).at(here()).last()
         let SEC = counter(heading.where(level: 2)).at(here()).last()
         set text(size: 1.5em)
-        sf[*$section$* #HEA.#SEC #eso.body]
+        condensada[*$section$ #HEA.#SEC #eso.body*]
     }
     block(
         sticky: true,

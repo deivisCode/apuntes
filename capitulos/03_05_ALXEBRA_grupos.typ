@@ -49,7 +49,7 @@ multiplicar e dividir.
 
 #exemplos[
     + Sexa o conxunto ${0,1}$ e a operación $plus.o$ dada pola porta lóxica
-      #tt[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un
+      #mono[XOR]. Esta é unha operación lóxica que devolve 1 se, es so se, _un
       so_ dos argumentos é 1. Entón, dito conxunto ca operación $plus.o$ é un
       grupo. O neutro é 0, xa que $0 plus.o 1 = 1$, $1 plus.o 0 = 1$, $0 plus.o
       0 = 0$ e o inverso de cada elemento é el mismo, $0 plus.o 0 = 0$ e $1

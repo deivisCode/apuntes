@@ -23,18 +23,21 @@
     set text(
         size     : 1.1em,
         lang     : "gl",
-        font     : _norm,
-        weight   : 550,
+        font     : _norm.familia,
+        weight   : _norm.peso,
+        style    : _norm.estilo,
+        stretch  : _norm.estiramento,
         fallback : false,
-        style    : "normal",
     )
     // Texto de matemáticas
     show math.equation: set math.text(
-        font     : _math,
+        font     : _mate.familia,
+        weight   : _mate.peso,
+        style    : _mate.estilo,
+        stretch  : _mate.estiramento,
         size     : 1.1em,
         lang     : "gl",
         fallback : false,
-        style    : "normal",
     )
     set par(
         justify           : true,

@@ -39,17 +39,14 @@ Uns apuntes persoais do que estiven estudando ultimamente.
     - [ ] En xeral, estilos
     - [ ] `pageref`, incluso con nomes do teorema `#context { query(<def:alxebra:subestrutura>).first().location().page() }`
     - [ ] Citas bibliográficas deben usar pre-post notes
-- [ ] Fontes
-    - [ ] Remirar a lista, facer comparativa de PDFs
-        - NewCM        : https://download.gnu.org.ua/release/newcm/
-        - Caslon       : https://github.com/impallari/Libre-Caslon-Text
-        - Baskervville : https://fonts.google.com/specimen/Baskervville
-        - Bembo        : https://www.ctan.org/tex-archive/fonts/fbb/
-        - Garamond     : https://fonts.google.com/specimen/EB+Garamond
-        - Crimson      : https://www.ctan.org/pkg/crimsonpro
-                       : https://www.ctan.org/pkg/crimson
-                       : https://fonts.google.com/specimen/Crimson+Text
-        - Libertinus
+- [x] Fontes
+    - Normal     : Cochineal (variante de Crimson).
+    - Serif      : Roboto
+    - Condensada : Roboto Condensed
+    - Slab       : Roboto Slab
+    - Mates      : Libertinus Math
+    - Símbolos   : Symbols Nerd Font
+    - Mono       : FiraCode Nerd Font
 - [ ] Portada
 - [ ] Contraportada
 - [ ] Explicacións

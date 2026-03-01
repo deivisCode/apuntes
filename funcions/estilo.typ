@@ -33,9 +33,10 @@
 #import("/funcions/variables.typ"): *
 
 // Funcion para crear a portada
+// :FACER: usar un grid para a portada
 #let crear_portada() = {
     v(3em)
-    text(size:3em, weight:"bold", title() )
+    text(size:3em, slab(title()) )
     v(1em)
     smallcaps( context {document.author.join("\n")} )
     v(1em)
@@ -45,8 +46,8 @@
         align: left,
         rows: (5em, 5em),
         [
-            RAMA #nf[] #sys.inputs.at("rama") \
-            HASH #nf[] #sys.inputs.at("hash") \
+            RAMA #simbolos[] #sys.inputs.at("rama") \
+            HASH #simbolos[] #sys.inputs.at("hash") \
             DIRT #sys.inputs.at("dirt")
         ],
         [
@@ -67,7 +68,7 @@
         numbering  : none,  // Non está numerado
         outlined   : false, // Non aparece no propio índice
         bookmarked : true,  // Pero si nos marcadores
-        sf[Índice de contidos],
+        condensada[Índice de contidos],
     )
     outline(
         title : none,
@@ -112,7 +113,7 @@
             align   : left + horizon,
             grid.cell(
                 x:0, y:0,
-                upper[#seccion_ultima]
+                condensada[#seccion_ultima]
             ),
             grid.cell(
                 x:0, y:1,
@@ -135,7 +136,7 @@
             align   : right + horizon,
             grid.cell(
                 x:0, y:0,
-                upper[#seccion_ultima]
+                condensada[#seccion_ultima]
             ),
             grid.cell(
                 x:0, y:1,
@@ -171,7 +172,7 @@
     // Mostrar a bibliografía
     bibliography(
         "/bibliografia.bib",
-        title : sf[Bibliografía],
+        title : condensada[Bibliografía],
         style : "/ebd.csl"
     )
 }
@@ -181,7 +182,7 @@
     heading(
         level: 1,
         numbering: none,
-        sf[Índice Alfabético],
+        condensada[Índice Alfabético],
     )
     v(1em)
     columns(2)[ ]
@@ -205,7 +206,7 @@
     heading(
         level: 1,
         numbering: none,
-        sf[Índice de Teoremas],
+        condensada[Índice de Teoremas],
     )
     v(1em)
     columns(2)[
@@ -234,7 +235,7 @@
     heading(
         level: 1,
         numbering: none,
-        sf[Índice de Definicións],
+        condensada[Índice de Definicións],
     )
     v(1em)
     columns(2)[
@@ -270,11 +271,11 @@
     )
     set text(
         size      : _pt_letra,
-        lang      : "gl",
-        font      : _norm,
-        weight    : 550,
+        font      : _norm.familia,
+        weight    : _norm.peso,
+        style     : _norm.estilo,
+        stretch   : _norm.estiramento,
         fallback  : false,
-        style     : "normal",
         features  : (
             // = 0: false, >=1: true
             // algunhas poden diferenciar valores como 1,2,3,4, etc.
@@ -289,6 +290,7 @@
             widow       : 100%,
             orphan      : 100%,
         ),
+        lang      : "gl",
         region    : "ES",
         script    : "latn",
         dir       : ltr,
@@ -302,14 +304,24 @@
         leading              : _leading,
         linebreaks           : "optimized"
     )
-    show raw: set text(font: _mono)
+    show raw: set text(
+        font    : _mono.familia,
+        weight  : _mono.peso,
+        style   : _mono.estilo,
+        stretch : _mono.estiramento
+    )
+    show math.equation: set text(
+        font    : _mate.familia,
+        weight  : _mate.peso,
+        style   : _mate.estilo,
+        stretch : _mate.estiramento
+    )
     // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
     // :FACER: cando deixe de ser necesario sobreescribir os valores dos
     // encabezados estaría ben unificar todos os 'show heading' que hai
     // desperdigados, como os dos indices, biblio, etc. Tamén depende de que
     // haxa máis cousas seleccionables, como 'show heading/footer, etc,'
     show heading: set text(size: _pt_letra)
-    show math.equation: set text(font: _math)
     doc
 }
 
@@ -325,15 +337,20 @@
         background : rect(height: 90%, width: 90%, stroke: 3pt + red),
     )
     set text(fill: white)
-    show grid: set text(font: _mono)
-    show link: set text(font: _mono)
+    show grid: set text(font: _mono.familia)
+    show link: set text(font: _mono.familia)
     doc
 }
 
 // ESTILO do frontmatter. Agradecementos, índice de contido, prólogo, etc.
 #let estilo_frontmatter(doc) = {
     show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
-    show outline.entry.where( level: 1 ): set text(weight:"bold", font: _sans, size:1.4em)
+    show outline.entry.where( level: 1 ): set text(
+        font    : _cond.familia,
+        weight  : _cond.peso + 250,
+        stretch : _cond.estiramento,
+        size    : 1.4em,
+    )
     show outline.entry.where( level: 1 ): set outline.entry(fill: none)
     show heading.where(level: 1): set block(below: 1em)
     doc
@@ -358,7 +375,7 @@
     // As ecuacions no texto deben ser 'box' para que non se rompan
     show math.equation.where(block: false): eso => { box(eso) }
     show quote: set text(style:"italic")
-    show figure.caption: set text(font: _sans)
+    show figure.caption: set text(font: _sans.familia)
     show figure.caption: eso => {
         strong[#eso.supplement~#eso.counter.display() #eso.separator]
         eso.body
