@@ -55,7 +55,8 @@
             #let actual = datetime.today()
             INIC #inicio.display() \
             ACTU #datetime.today().display() \
-            DURA #{ actual - inicio }.days() días
+            DURA #{ actual - inicio }.days() días \
+            CONT #sys.inputs.at("contribucions") contribucións
         ]
     )
 }
