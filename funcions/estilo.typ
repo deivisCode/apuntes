@@ -305,18 +305,8 @@
         leading              : _leading,
         linebreaks           : "optimized"
     )
-    show raw: set text(
-        font    : _mono.familia,
-        weight  : _mono.peso,
-        style   : _mono.estilo,
-        stretch : _mono.estiramento
-    )
-    show math.equation: set text(
-        font    : _mate.familia,
-        weight  : _mate.peso,
-        style   : _mate.estilo,
-        stretch : _mate.estiramento
-    )
+    show raw: eso => mono(eso)
+    show math.equation: eso => mates(eso)
     // Un apaño: https://github.com/typst/typst/discussions/2919#discussioncomment-7831644
     // :FACER: cando deixe de ser necesario sobreescribir os valores dos
     // encabezados estaría ben unificar todos os 'show heading' que hai
