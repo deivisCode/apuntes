@@ -82,7 +82,26 @@
 // Este estado garda todas as seccións do libro
 #let _seccions = state("seccions", ([ ],))
 
-// Ollo, este 'context' é extremadamente grande
+// A propia función que devolve o contido (separada do resto para aprobeitar o
+// caché de typst)
+#let contido_cabeza(sec) = {
+    grid(
+        columns : 1,
+        rows    : (1em, 1em),
+        align   : left + horizon,
+        grid.cell(
+            x:0, y:0,
+            condensada(sec)
+        ),
+        grid.cell(
+            x:0, y:1,
+            line(length: 100%, stroke: _pt_fino + _gris_titulos),
+        )
+    )
+}
+
+// A función que determina a info de cada encabezado e logo usamos en cada
+// páxina. Ollo, este 'context' é extremadamente grande
 #let crear_encabezado() = context {
     // Páxina actual
     let num = counter(page).get().first()
@@ -108,19 +127,7 @@
             _seccions.get().last()
         }
         // Mostrar o encabezado. 2 filas, 3 columnas. 2ª fila toda xunta cunha liña
-        grid(
-            columns : 1,
-            rows    : (1em, 1em),
-            align   : left + horizon,
-            grid.cell(
-                x:0, y:0,
-                condensada[#seccion_ultima]
-            ),
-            grid.cell(
-                x:0, y:1,
-                line(length: 100%, stroke: _pt_fino + _gris_titulos),
-            )
-        )
+        contido_cabeza(seccion_ultima)
     // Páxinas impares (dereita)
     } else {
         set text(size: 0.8em, fill: _gris_titulos)
@@ -131,19 +138,7 @@
         } else {
             _seccions.get().last()
         }
-        grid(
-            columns : 1,
-            rows    : (1em, 1em),
-            align   : right + horizon,
-            grid.cell(
-                x:0, y:0,
-                condensada[#seccion_ultima]
-            ),
-            grid.cell(
-                x:0, y:1,
-                line(length: 100%, stroke: _pt_fino + _gris_titulos),
-            )
-        )
+        contido_cabeza(seccion_ultima)
     }
 }
 
