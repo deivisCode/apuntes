@@ -82,7 +82,6 @@ in RR | 0x = 7}$.
     os mesmos elementos. É dicir,
 
     // :FACER: explicar implicas, sse, etc.
-    // :FACER: simbolo :sse
     $
         A = B :sse ( x in A sse x in B ).
     $

@@ -9,7 +9,6 @@
 Agora imos dar un cambio radical e presentar varias estruturas con _varias_
 operacións.
 
-// :FACER: usar outra operacion que non sexa ., é confuso cos puntos do text
 #definicion(
     nome : "Anel",
     ancora : "def:alxebra:anel"

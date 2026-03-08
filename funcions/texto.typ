@@ -230,7 +230,7 @@
                 thickness : _pt_envs
             ),
         ),
-        // :FACER: radio
+        radius : 1em,
         inset  : _in_envs,
         outset : _out_envs,
         [#slab[*Notación e Vocabulario*]: #corpo]

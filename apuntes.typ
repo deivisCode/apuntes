@@ -1,6 +1,5 @@
 #import("/funcions/estilo.typ"): crear_apuntes
 
-// :FACER: TODOS os sf,bold,sc, usando text(features:("smcp")) etc.
 // :FACER: unificar <exp:>, <ec:>, etc. Facer tests?
 
 #let documento = {

@@ -12,7 +12,6 @@ XERADOS := .pdf/*
 FIGURAS_PDF = $(patsubst figuras/typ/%.typ, .pdf/%.pdf, $(wildcard figuras/typ/*.typ))
 
 # Opcions para compilar
-# :FACER: esto invoca Git 3 veces pra comprobar a info do repo, non é de todo ideal
 OPCIONS := \
 	--format pdf              \
 	--root .                  \
