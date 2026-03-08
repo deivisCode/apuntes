@@ -361,10 +361,10 @@
     // As ecuacions no texto deben ser 'box' para que non se rompan
     show math.equation.where(block: false): eso => { box(eso) }
     show quote: set text(style:"italic")
-    show figure.caption: set text(font: _sans.familia)
     show figure.caption: eso => {
-        strong[#eso.supplement~#eso.counter.display() #eso.separator]
-        eso.body
+        set text(size: 0.83em)
+        sans[*#eso.supplement~#eso.counter.display():*]
+        sans[#eso.body]
     }
     // :FACER: funcion para escribir ecuacións. #ec, #ec_sin (sin numeracion),
     // #ec_lin (en liña), etc. Véxase:
