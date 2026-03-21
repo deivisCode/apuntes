@@ -13,57 +13,37 @@ segundo nome suxire unha interpretación xeométrica (as típicas _frechas_), o
 cal só é razoable en casos moi concretos, polo que prefiro esquivalo.]
 
 #definicion(
-    nome : "Módulo",
-    ancora : "def:alxebra:modulo"
-)[
-    Sexa $(E,plus.o)$ un grupo, $(A,+,dot)$ un anel, e
-    $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
-    arrow.r E$. A terna formada por ditos tres obxectos é un #indice("Módulo")
-    módulo, é dicir
-
-    $
-        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
-    $
-]
-
-En realidade interésanos o caso no que $(A,+,dot)$ é un corpo, o que nos leva á
-definición de espazo lineal.
-
-#definicion(
     nome : "Espazo Lineal",
     ancora : "def:alxebra:espazo-lineal"
 )[
-    Sexa $(E,plus.o)$ un grupo abeliano, $(A,+,dot)$ un campo, e
-    $circle.stroked.tiny$ unha operación $circle.stroked.tiny: E times A
-    arrow.r E$. A terna formada por ditos tres obxectos é un
-    #indice("Espazo")[lineal] espazo lineal ou #indice("Espazo")[Vectorial]
-    vectorial,
+    Sexa $(E,plus.o)$ un grupo abeliano, $(KK,+,dot)$ un campo, e
+    $circle.stroked.tiny$ unha operación $circle.stroked.tiny: KK times E
+    arrow.r E$ distributiva por ambos lados. A terna formada por ditos tres
+    obxectos é un #indice("Espazo")[lineal] espazo lineal ou
+    #indice("Espazo")[Vectorial] vectorial,
 
     $
-        ((E,plus.o),(A,+,dot),circle.stroked.tiny).
+        ((E,plus.o),(KK,+,dot),circle.stroked.tiny).
     $
 
-    É dicir, un módulo, pero en lugar do anel temos un campo.
+    É dicir, un $A$-módulo, pero en lugar do anel temos un campo.
 
-    Os elementos de $E$ chamámolos #indice("Vector") vectores e os de $A$
-    #indice("Escalar") escalares.
 ]
 
-// :FACER: k circ v -> v debe ser pola esquerda e pola dereita
-
 #notacion[
-    No caso xeral (que a min non me gusta demasiado) soe denotarse ao conxunto
-    do grupo como $V$, en alusión ao concepto de vector; e ao conxunto do campo
-    usando unha letra dobre, como $KK$. Ademais, a operación do grupo denotase
-    por $+$ e a primeira do campo $+$ tamén, abusando da notación (son
-    operacións distintas). A operación $circle.stroked.tiny$ soe omitirse, polo
-    que $k circle.stroked.tiny v, v in V, k in KK$ escríbese simplemente como
-    $k v$ (multiplicativamente). Finalmente, referímonos a
-    $((V,+),(KK,+,dot),circle.stroked.tiny)$ simplemente como o espazo lineal
-    $(V,KK,+)$; un _$KK$-espazo lineal_; ou como o _espazo lineal $V$ sobre
-    $KK$_. No límite de abusar da notación, referirémonos ao espazo lineal só
-    polo nome do conxunto do grupo, $V$, ou ás veces dito nome e o campo como
-    subíndice $V_KK$.
+    Os elementos de $E$ chamámolos #indice("Vector") vectores e os de $A$
+    #indice("Escalar") escalares. No caso xeral (que a min non me gusta
+    demasiado) soe denotarse ao conxunto do grupo como $V$, en alusión ao
+    concepto de vector; e ao conxunto do campo usando unha letra dobre, como
+    $KK$. Ademais, a operación do grupo denotase por $+$ e a primeira do campo
+    $+$ tamén, abusando da notación (son operacións distintas). A operación
+    $circle.stroked.tiny$ soe omitirse, polo que $k circle.stroked.tiny v, v in
+    V, k in KK$ escríbese simplemente como $k v$ (multiplicativamente).
+    Finalmente, referímonos a $((V,+),(KK,+,dot),circle.stroked.tiny)$
+    simplemente como o espazo lineal $(V,KK,+)$; un _$KK$-espazo lineal_; ou
+    como o _espazo lineal $V$ sobre $KK$_. No límite de abusar da notación,
+    referirémonos ao espazo lineal só polo nome do conxunto do grupo, $V$, ou
+    ás veces dito nome e o campo como subíndice $V_KK$.
 ]
 
 #exemplos[

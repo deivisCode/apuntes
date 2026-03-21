@@ -53,7 +53,6 @@ asociatividade, neutro ou inversos, senón outras totalmente diferentes
     fill          : cores,
     inset         : 0.5em,
 
-    // {{{
     table.cell(
         x:0, y:0,
         [
@@ -137,13 +136,27 @@ asociatividade, neutro ou inversos, senón outras totalmente diferentes
     ),
 
     table.cell(
+        x:2, y:1,
+        [
+            *$G$-Módulo* \ $((X,+),(G,plus.o),circle.stroked.small)$
+            #v(5pt)
+            $(X,+)$ grupo \
+            $(G,plus.o)$ grupo \
+            Operación $circle.stroked.small: G times X arrow X$ \
+
+            // :FACER: refacer táboa estruturas. Frechas? Diagrama..?
+            #text(size:0.8em)[(esta estrutura está algo mal clasificada)]
+        ],
+    ),
+
+    table.cell(
         x:2, y:2,
         [
-            *Módulo* \ $((G,plus.o),(KK,+,*),circle.stroked.small)$
+            *$KK$-Módulo* \ $((X,plus.o),(KK,+,dot),circle.stroked.small)$
             #v(5pt)
-            $(G,plus.o)$ grupo \
-            $(KK,+,*)$ anel unitario \
-            Operación $circle.stroked.small: KK times G arrow G$
+            $(X,plus.o)$ grupo \
+            $(KK,+,dot)$ anel unitario \
+            Operación $circle.stroked.small: KK times X arrow X$
         ],
     ),
 
@@ -204,8 +217,6 @@ asociatividade, neutro ou inversos, senón outras totalmente diferentes
             Operación $[dot,dot]$ Bilineal, Antisimétrica, cumpre a identidade de Jacobi
         ],
     ),
-
-// }}}
 
 )
 

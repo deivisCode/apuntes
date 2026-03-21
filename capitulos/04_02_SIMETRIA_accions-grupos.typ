@@ -5,6 +5,7 @@
     nome : "Accións de grupos en conxuntos",
     ancora : "sec:simetria:accions"
 )
+// :FACER: engadir funcións equivariantes https://en.wikipedia.org/wiki/Equivariant_map
 
 Imos ver como formalizar a idea de que un grupo _actua_ sobre un conxunto, que
 propiedades podemos pedir, como pode funcionar, e tamén variedade de resultados
