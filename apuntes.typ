@@ -40,10 +40,12 @@
     include("/capitulos/04_03_SIMETRIA_homoxeneidade.typ")
     include("/capitulos/04_04_SIMETRIA_xeometria.typ")
 
-    include("/capitulos/05_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
-    include("/capitulos/05_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
+    include("/capitulos/05_00_REPRESENTACIONS_introducion.typ")
 
-    include("/capitulos/06_00_MECANICA_introducion.typ")
+    include("/capitulos/06_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
+    include("/capitulos/06_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
+
+    include("/capitulos/07_00_MECANICA_introducion.typ")
 }
 
 #crear_apuntes(
