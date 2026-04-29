@@ -1,6 +1,8 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
+// :FACER: Feit, representation theory. Combinacións lineais e bases aqui
+
 #seccion(
     nome : [$KK$-Módulos],
     ancora : "sec:alxebra:k-modulos"

@@ -186,6 +186,10 @@ independentes. Exemplo dunha operación conmutativa é o produto de números
 reais, e de operación non conmutativa o produto de Poisson de funcións nun
 espazo de fases.
 
+// W Feit, representation theory of finite groups
+// :FACER: elemento idempotente, e² = e
+// :FACER: idempotentes ortogonais
+
 Agora imos falar de dous elementos concretos que podemos ter nalgunhas
 esturturas que serán de vital importancia no que ven: os elementos neutros e os
 inversos. Non todas as estruturas os teñen, ás veces podemos ter un e non o

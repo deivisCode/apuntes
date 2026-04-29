@@ -48,6 +48,7 @@
     include("/capitulos/07_00_MECANICA_introducion.typ")
 }
 
+// :FACER: meter a info cun #toml(info.toml) ? (pode que incluso as funcions/variables)
 #crear_apuntes(
     titulo    : "APUNTES",
     autoria   : ((nome: "David Cotelo Varela"),),

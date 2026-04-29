@@ -1,6 +1,8 @@
 #import("/funcions/texto.typ"): *
 #import("/funcions/simbolos.typ"): *
 
+// :FACER: fibras, simplemente f:A->B, pois f^(-1)(p) subset.eq A
+
 #seccion(
     nome : "Espazos Topolóxicos",
     ancora : "sec:topoloxia:espazos-topoloxicos"

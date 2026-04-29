@@ -62,6 +62,7 @@
 }
 
 // Funcion para crear o Índice de materias
+// :FACER: facer indice como no Naimark
 #let crear_indice_contidos() = {
     // Encabezado de Nivel 1 para o propio índice de contidos
     heading(
@@ -184,6 +185,7 @@
     columns(2)[ ]
 }
 
+// :FACER: xuntar función comun e separar tipos
 // Funcion para crear o índice de teoremas
 #let crear_indice_teoremas() = {
     // Refacer o outline case de cero

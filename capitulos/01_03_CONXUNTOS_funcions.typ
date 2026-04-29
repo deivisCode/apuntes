@@ -299,3 +299,5 @@ función inversa de $f$, entón, pode compoñerse con $f$ para dar a identidade.
 )[
     $f$ é bixectiva $sse$ $f$ ten inversa.
 ]
+
+// :FACER: proxección canónica f: A-> B, f_1:A/~ -> im(B)

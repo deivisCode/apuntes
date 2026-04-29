@@ -63,6 +63,7 @@ $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 		$(OPCIONS_FIGURAS) \
 		$^ $@
 
+# :FACER: actualizar isto. Posiblemente facendo un repo cas fontes compiladas e usando submódulos
 descargar_fontes:
 
 	$(shell if [ ! -d "fontes/NewCM" ]; then mkdir -p fontes/NewCM; fi)
