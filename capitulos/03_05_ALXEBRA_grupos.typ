@@ -304,7 +304,7 @@ non son sequera grupos).
     ancora : "def:alxebra:subgrupo-normal"
 )[
     Sexa $(A, *)$ un grupo e $(B, *) subgrupo (A,*)$. Dicimos que o $B$ é un
-    #indice("Subgrupo")[Normal] subgrupo normal, e escribimos $B lt.tri A$ se
+    #indice("Subgrupo")[Normal] subgrupo normal, e escribimos $B lt.closed A$ se
 
     $
         (forall a in A) space.quad a B = B a
@@ -317,7 +317,7 @@ non son sequera grupos).
     ancora : "teo:alxebra:equivalencia-subgrupo-normal"
 )[
     $
-        B lt.tri A sse (forall a in A, b in B) space.quad a b a^(-1) in B
+        B lt.closed A sse (forall a in A, b in B) space.quad a b a^(-1) in B
     $
 ]
 
@@ -414,7 +414,7 @@ $
 )[
     Sexan $A, B$ grupos e $f: A arrow.r B$ un homomorfismo. Entón,
     $
-        ker(f) lt.tri A
+        ker(f) lt.closed A
     $
 ]
 
@@ -430,7 +430,7 @@ $
                       &= e_B,
     $
 
-    e $a x a^(-1) in ker(f)$, polo que $ker(f) lt.tri A$
+    e $a x a^(-1) in ker(f)$, polo que $ker(f) lt.closed A$
 ]
 
 
