@@ -56,10 +56,10 @@
                 kind:"teorema",
                 supplement: nome,
                 context {
-                    let HEA = counter(heading.where(level: 1)).get().first()
-                    let SEC = counter(heading.where(level: 2)).get().last()
+                    let CAP = counter(heading.where(level: 3)).get().last()
+                    let SEC = counter(heading.where(level: 4)).get().last()
                     let NUM = counter(figure.where(kind:"teorema")).get().first()
-                    [#slab[*Teorema*] #HEA.#SEC.#NUM: #smallcaps(nome)]
+                    [#slab[*Teorema*] #CAP.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             // Esto é porque o label debe estar dentro dun contido, e así
@@ -115,10 +115,10 @@
                 kind:"definicion",
                 supplement: nome,
                 context {
-                    let HEA = counter(heading.where(level: 1)).get().first()
-                    let SEC = counter(heading.where(level: 2)).get().last()
+                    let CAP = counter(heading.where(level: 3)).get().last()
+                    let SEC = counter(heading.where(level: 4)).get().last()
                     let NUM = counter(figure.where(kind:"definicion")).get().first()
-                    [#slab[*Definición*] #HEA.#SEC.#NUM: #smallcaps(nome)]
+                    [#slab[*Definición*] #CAP.#SEC.#NUM: #smallcaps(nome)]
                 }
             )
             #label(ancora)
@@ -237,22 +237,45 @@
     )
 }
 
+// :FACER: estilo das partes?
+#let parte(
+    nome   : " -- SEN NOME -- ",
+    ancora : " -- SEN ÁNCORA -- "
+) = {
+    show heading.where(level: 2): eso => {
+        let PARTE = counter(heading.where(level: 2)).at(here()).last()
+        set align(center + horizon)
+        text(
+            size: 4em,
+            [
+                #slab[Parte #numbering("I",PARTE)]\
+                #smallcaps[*#eso.body*]
+            ]
+        )
+    }
+    pagebreak(weak: true, to:"odd")
+    heading(
+        depth : 2,
+        numbering : (.., n) => numbering("I", n),
+        smallcaps(nome)
+    )
+}
 
-/// Función para crear un CAPITULO, o cal é o nivel máis alto de todos.
+/// Función para crear un CAPITULO
 #let capitulo(
     nome     : " -- SEN NOME -- ",
     ancora   : " -- SEN ÁNCORA -- ",
     epigrafe : " -- SEN EPÍGRAFE -- "
 ) = {
-    // :FACER: simplificar esto. Capitulo, Nome e celdas diferentes do grid...
-    show heading.where(level: 1): eso => {
+    // :FACER: simplificar esto. Capitulo, Nome e celdas diferentes do grid, show, set, etc.
+    show heading.where(level: 3): eso => {
         set align(left)
-        let CAP = counter(heading.where(level: 1)).at(here()).last()
+        let CAP = counter(heading.where(level: 3)).at(here()).last()
         text(size: 1.2em, fill: _gris_titulos)[#v(0.4em)#condensada[*Capítulo #CAP*]\ ]
         text(size: 3em)[#eso.body]
     }
     pagebreak(to:"odd")
-    counter(heading.where(level: 2)).update(0)
+    counter(heading.where(level: 4)).update(0)
     grid(
         columns : (auto,20%,1fr),
         rows    : (5em, 5em),
@@ -260,13 +283,15 @@
 
         grid.cell(
             x:0, y:0,
-            [
+            context [
+                #let CAP = counter(heading.where(level: 3)).at(here()).last()
                 #figure(
                     kind: "capitulo",
                     supplement: [Capítulo],
                     heading(
-                        level: 1,
-                        numbering: "1.",
+                        level: 3,
+                        // :AQUI: por que sumar 1? E ollo, non se actualizan entre partes...
+                        numbering: (.., n) => numbering("1", CAP+1),
                         condensada[*#nome*],
                     )
                 )
@@ -292,12 +317,12 @@
     ancora : " -- SEN ÁNCORA -- "
 ) = {
     show figure: set align(right)
-    show heading.where(level: 2): eso => {
+    show heading.where(level: 4): eso => {
         // :FACER: limpar esto. Fai falla o show?
-        let HEA = counter(heading.where(level: 1)).at(here()).last()
-        let SEC = counter(heading.where(level: 2)).at(here()).last()
+        let CAP = counter(heading.where(level: 3)).at(here()).last()
+        let SEC = counter(heading.where(level: 4)).at(here()).last()
         set text(size: 1.5em)
-        condensada[*$section$ #HEA.#SEC #eso.body*]
+        condensada[*$section$ #CAP.#SEC #eso.body*]
     }
     block(
         sticky: true,
@@ -316,13 +341,14 @@
                     metadata(nome)
                 )
             },
-            [
+            context [
+                #let CAP = counter(heading.where(level: 3)).at(here()).last()
                 #figure(
                     kind: "seccion",
                     supplement: [Sección],
                     heading(
-                        level: 2,
-                        numbering: "1.",
+                        level: 4,
+                        numbering: (.., SEC) => numbering("1.1", CAP, SEC),
                         [#nome],
                     )
                 )

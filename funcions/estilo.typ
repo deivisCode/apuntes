@@ -27,9 +27,28 @@
 //     estilo_backmatter()
 //     estilo_contraportada()
 // - Función para crear os apuntes
+//     crear_apuntes()
+//
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//
+// Niveis (depth) dos títulos (headers):
+// (1) META:     Portada, Indice, Corpo do documento, Biblografía principal, Índices
+//               adicionais, contraportada
+// (2) PARTE:    Separacións semánticas do corpo máis xerais: física, matemáticas;
+//               ou Conceptos Básicos, Matemáticas, Matemáticas Aplicadas, etc.
+// (3) CAPÍTULO: Contido cunha mesma semántica, notación e finalidade: álxebra,
+//               topoloxía, mecánica clásica, etc.
+// (4) SECCIÓN:  Separacións necesarias para os capítulos
+//
+// Manter un ollo en:
+// https://github.com/typst/typst/issues/1896 [Ergonomic numbering-by-section]
+// https://github.com/typst/typst/issues/2652 [Dependent numberings]
 
 
-// Importo variables como o tamaño de letra, cores, funcións para escribir en Sans, etc.
+
+// Importo variables como o tamaño de letra, cores, funcións para escribir en
+// Sans, etc.
+// :FACER: meter a info cun #toml(info.toml)?
 #import("/funcions/variables.typ"): *
 
 // Funcion para crear a portada
@@ -62,20 +81,83 @@
 }
 
 // Funcion para crear o Índice de materias
-// :FACER: facer indice como no Naimark
+// Manter un ollo en:
+// https://github.com/typst/typst/issues/1926 [Ancestry/inside/within selector]
+// :FACER: o de repetir 'numbering' en tantos sitios é un lio...
 #let crear_indice_contidos() = {
     // Encabezado de Nivel 1 para o propio índice de contidos
     heading(
-        level      : 1,
+        depth      : 1,
         numbering  : none,  // Non está numerado
-        outlined   : false, // Non aparece no propio índice
         bookmarked : true,  // Pero si nos marcadores
-        condensada[Índice de contidos],
+        rect(
+            width:100%,
+            height:2cm,
+            {
+                set align(center + horizon)
+                text(
+                    size:2em,
+                    condensada[Índice de contidos]
+                )
+            }
+        )
     )
-    outline(
-        title : none,
-        depth : 2
-    )
+    context {
+        set par(first-line-indent: 0pt)
+        let encabezados = query(heading)
+        v(1cm)
+        // :FACER: tal vez faga falla separar os heading(depth:2) within
+        // heading(within:1) ou como sexa. Agora mesmo esto é un bucle lineal
+        for enc in encabezados {
+            // META (portada, índice, documento, biblio, etc)
+            if enc.level == 1 {
+                // :FACER: meta-encabezados (nivel 1) aparte
+                // :FACER: tal vez biblio, índices, etc. en figuras kind:
+                //         anexos, e facer outro índice para esas partes, ou
+                //         algo así
+            // PARTES do documento
+            } else if enc.level == 2 {
+                text(
+                    size: 1.5em,
+                    {
+                        set align(center)
+                        let PARTE = counter(heading).at(enc.location()).last()
+                        link(
+                            enc.location(),
+                            {
+                                smallcaps[Parte]; h(1em)
+                                numbering("I", PARTE); v(1pt)
+                                enc.body
+                            }
+                        )
+                    }
+                )
+                linebreak()
+            // CAPITULOS
+            } else if enc.level == 3 {
+                let PAX = counter(page).at(enc.location()).first()
+                let CAP = counter(heading).at(enc.location()).last()
+                v(6pt)
+                link(
+                    enc.location(),
+                    condensada[#CAP. #enc.body ]
+                )
+                box(width: 1fr,repeat([.], gap: 0.4em))
+                condensada[ #PAX]
+                linebreak()
+            // SECCIONS
+            } else if enc.level == 4 {
+                // :FACER: indentar todo isto, ao mesmo nivel que a primeira
+                // letra do capítulo. Fai falla refacer todo o índice...
+                set text(features: (onum: 1))
+                let PAX = counter(page).at(enc.location()).first()
+                link(
+                    enc.location(),
+                    [#enc.body (#PAX) #h(5pt)]
+                )
+            }
+        }
+    }
 }
 
 /// Funcion para crear un encabezado
@@ -90,19 +172,14 @@
         columns : 1,
         rows    : (1em, 1em),
         align   : left + horizon,
-        grid.cell(
-            x:0, y:0,
-            condensada(sec)
-        ),
-        grid.cell(
-            x:0, y:1,
-            line(length: 100%, stroke: _pt_fino + _gris_titulos),
-        )
+        grid.cell(x:0, y:0, condensada(sec)),
+        grid.cell(x:0, y:1, line(length: 100%, stroke: _pt_fino + _gris_titulos))
     )
 }
 
 // A función que determina a info de cada encabezado e logo usamos en cada
 // páxina. Ollo, este 'context' é extremadamente grande
+// :FACER: non mostrar o encabezado en páxinas en branco, en inicios de cap, etc.
 #let crear_encabezado() = context {
     // Páxina actual
     let num = counter(page).get().first()
@@ -177,7 +254,7 @@
 /// Funcion para crear o Índice alfabético
 #let crear_indice_alfabetico() = {
     heading(
-        level: 1,
+        depth: 1,
         numbering: none,
         condensada[Índice Alfabético],
     )
@@ -202,7 +279,7 @@
         )
     }
     heading(
-        level: 1,
+        depth: 1,
         numbering: none,
         condensada[Índice de Teoremas],
     )
@@ -231,7 +308,7 @@
         )
     }
     heading(
-        level: 1,
+        depth: 1,
         numbering: none,
         condensada[Índice de Definicións],
     )
@@ -332,15 +409,6 @@
 
 // ESTILO do frontmatter. Agradecementos, índice de contido, prólogo, etc.
 #let estilo_frontmatter(doc) = {
-    show outline.entry.where( level: 1 ): set block(above: 1.5em, below: 1em)
-    show outline.entry.where( level: 1 ): set text(
-        font    : _cond.familia,
-        weight  : _cond.peso + 250,
-        stretch : _cond.estiramento,
-        size    : 1.4em,
-    )
-    show outline.entry.where( level: 1 ): set outline.entry(fill: none)
-    show heading.where(level: 1): set block(below: 1em)
     doc
 }
 
@@ -372,60 +440,54 @@
     // #ec_lin (en liña), etc. Véxase:
     // https://github.com/typst/typst/issues/3031
     // https://github.com/typst/typst/issues/380
+    //
+    // (capitulo.seccion.numero_absoluto)
     set math.equation(
         numbering: eso => {
-            let HEA = counter(heading.where(level:1)).at(here()).last()
-            let SEC = counter(heading.where(level:2)).at(here()).last()
-            [(#HEA.#SEC.#eso)]
+            let CAP = counter(heading.where(level:3)).at(here()).last()
+            let SEC = counter(heading.where(level:4)).at(here()).last()
+            [(#CAP.#SEC.#eso)]
         }
     )
     // Esto é para customizar as referencias
     // :FACER: simplificar esto...
+    // :FACER: por que as veces é .last() e outras .first() ? LEER: https://typst.app/docs/reference/introspection/counter/
+    // :FACER: unificar <exp:>, <ec:>, etc. Facer tests?
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
         // no caso de que a referencia apunte a unha figura de tipo "teorema"
+        // (capitulo.seccion.numero_absoluto)
         if eso.element != none and eso.element.func() == figure and eso.element.kind == "teorema" {
             // :FACER: por qué non necesito usar un contexto aqui?
-            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let CAP = counter(heading.where(level: 3)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 4)).at(eso.element.location()).last()
             let NUM = counter(figure.where(kind:"teorema")).at(eso.element.location()).last()
-            link(
-                eso.element.location(),
-                [#HEA.#SEC.#NUM]
-            )
+            link( eso.element.location(), [#CAP.#SEC.#NUM])
         // O mesmo, pero con definicions
+        // (capitulo.seccion.numero_absoluto)
         } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "definicion" {
-            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let CAP = counter(heading.where(level: 3)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 4)).at(eso.element.location()).last()
             let NUM = counter(figure.where(kind:"definicion")).at(eso.element.location()).last()
-            link(
-                eso.element.location(),
-                [#HEA.#SEC.#NUM]
-            )
+            link( eso.element.location(), [#CAP.#SEC.#NUM])
+        // (capitulo)
         } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "capitulo" {
             let NUM = counter(figure.where(kind:"capitulo")).at(eso.element.location()).last()
-            link(
-                eso.element.location(),
-                [#NUM]
-            )
+            link( eso.element.location(), [#NUM])
+        // (capitulo.seccion)
         } else if eso.element != none and eso.element.func() == figure and eso.element.kind == "seccion" {
-            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
+            let CAP = counter(heading.where(level: 3)).at(eso.element.location()).last()
             // :FACER: Por que teño que sumarlle 1..?
-            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last() +1
-            link(
-                eso.element.location(),
-                [#HEA.#SEC]
-            )
+            let SEC = counter(heading.where(level: 4)).at(eso.element.location()).last() +1
+            link( eso.element.location(), [#CAP.#SEC])
         // SOBREESCRIBIR REFERENCIAS ÁS ECUACION
         // no caso de que a referencia apunte a unha figura de tipo 'math.equation'
         } else if eso.element != none and eso.element.func() == math.equation {
-            let HEA = counter(heading.where(level: 1)).at(eso.element.location()).last()
-            let SEC = counter(heading.where(level: 2)).at(eso.element.location()).last()
+            let CAP = counter(heading.where(level: 3)).at(eso.element.location()).last()
+            let SEC = counter(heading.where(level: 4)).at(eso.element.location()).last()
             let NUM = counter(math.equation).at(eso.element.location()).first()
-            link(
-                eso.element.location(),
-                [#HEA.#SEC.#NUM]
-            )
+            // (capitulo.seccion.numero_absoluto)
+            link( eso.element.location(), [#CAP.#SEC.#NUM])
         // No resto de casos
         } else {
             eso
@@ -437,6 +499,7 @@
 #let estilo_backmatter(doc) = {
     // Encabezados nivel 1 con máis espaciado
     show heading.where(level: 1): set block(below: 1em)
+    show bibliography: set heading(depth: 1)
     doc
 }
 
@@ -509,6 +572,9 @@
     // O corpo do documento. Capítulos e tal.
     {
         show: estilo_mainmatter
+        // :FACER: usar isto..?
+        heading(depth: 1, hide[Documento])
+        // counter(heading.where(level: 3)).update(0)
 
         //// Devolvemos o contido do documento
         documento

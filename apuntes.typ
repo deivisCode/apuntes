@@ -1,8 +1,9 @@
 #import("/funcions/estilo.typ"): crear_apuntes
+#import("/funcions/texto.typ"): parte
 
-// :FACER: unificar <exp:>, <ec:>, etc. Facer tests?
 
 #let documento = {
+    parte( nome : "Matemáticas",)
     include("/capitulos/01_00_CONXUNTOS_introducion.typ")
     include("/capitulos/01_01_CONXUNTOS_conceptos.typ")
     // :FACER: sección de símbolos
@@ -45,10 +46,10 @@
     include("/capitulos/06_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
     include("/capitulos/06_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
 
+    parte( nome : "Física")
     include("/capitulos/07_00_MECANICA_introducion.typ")
 }
 
-// :FACER: meter a info cun #toml(info.toml) ? (pode que incluso as funcions/variables)
 #crear_apuntes(
     titulo    : "APUNTES",
     autoria   : ((nome: "David Cotelo Varela"),),

@@ -32,6 +32,20 @@ Uns apuntes persoais do que estiven estudando ultimamente.
     - [ ] Número de páxinas múltiplo de 16.
     - [ ] Midpoint (·) máis a miúdo
 - [ ] Estrutura
+    - [ ] Estrutura clara
+        + Portada
+        + Branco
+        + Dereitos
+        + Reportada
+        + Agradecementos
+        + Indice
+        + Prefacio
+        + Documento
+        + Bibliografía
+        + Teoremas
+        + Definicions
+        + Simbolos
+        + Indice Alfabético
     - [ ] Comezar en 1 no corpo do documento
 - [ ] Referencias
     - [ ] A táboas
