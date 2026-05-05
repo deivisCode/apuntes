@@ -3,7 +3,7 @@ SHELL := bash
 .PHONY: limpa descargar_fontes comprobar_fontes
 
 METODO := compile
-XERADOS := .pdf/*
+XERADOS := .pdf/* .aux/*
 
 # Os nomes das figuras en PDF
 #
@@ -20,6 +20,7 @@ OPCIONS := \
 	--ignore-system-fonts     \
 	--ignore-embedded-fonts   \
 	--font-path=fontes        \
+	--timings=.aux/perf.json  \
 	--input rama=$(shell git rev-parse --abbrev-ref HEAD) \
 	--input hash=$(shell git rev-parse --short HEAD) \
 	--input dirt=$(shell test -z "$$(git status --porcelain)" && echo "limpo" || echo "sucio") \
@@ -34,8 +35,9 @@ OPCIONS_FIGURAS := \
 	--ignore-embedded-fonts   \
 	--font-path=fontes        \
 
-# Hai que asegurarse de que existe o directorio .pdf
+# Hai que asegurarse de que existe o directorio .pdf e .aux
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
+$(shell if [ ! -d ".aux" ]; then mkdir .aux; fi)
 
 # Xeramos os apuntes
 #

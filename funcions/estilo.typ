@@ -44,6 +44,8 @@
 // https://github.com/typst/typst/issues/1896 [Ergonomic numbering-by-section]
 // https://github.com/typst/typst/issues/2652 [Dependent numberings]
 
+// :FACER: eliminar os linebreak: optimized fora do corpo
+
 
 
 // Importo variables como o tamaño de letra, cores, funcións para escribir en
