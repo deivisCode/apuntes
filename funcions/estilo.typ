@@ -54,33 +54,53 @@
 #import("/funcions/variables.typ"): *
 
 // Funcion para crear a portada
-// :FACER: usar un grid para a portada
-#let crear_portada() = {
-    v(3em)
-    text(size:3em, slab(title()) )
-    v(1em)
-    smallcaps( context {document.author.join("\n")} )
-    v(1em)
-    link("https://github.com/deivisCode/apuntes")
-    v(1em)
-    grid(
-        align: left,
-        rows: (5em, 5em),
-        [
-            RAMA #simbolos[] #sys.inputs.at("rama") \
-            HASH #simbolos[] #sys.inputs.at("hash") \
-            DIRT #sys.inputs.at("dirt")
-        ],
-        [
-            #let inicio = datetime(year:2025, month:8, day:1)
-            #let actual = datetime.today()
-            INIC #inicio.display() \
-            ACTU #datetime.today().display() \
-            DURA #{ actual - inicio }.days() días \
-            CONT #sys.inputs.at("contribucions") contribucións
-        ]
+#let crear_portada() = grid(
+    columns : 1fr,
+    rows    : (1fr, 1fr, 1fr),
+
+    grid.cell(
+        x:0, y:0,
+        {
+            set align(center + horizon)
+            text(size:3em, slab(title()) )
+        }
+    ),
+
+    grid.cell(
+        x:0, y:1,
+        {
+            set align(center + horizon)
+            smallcaps( context {document.author.join("\n")} )
+            v(1em)
+            link("https://github.com/deivisCode/apuntes")
+        }
+    ),
+
+    grid.cell(
+        x:0, y:2,
+        {
+            set align(center + horizon)
+            grid(
+                align: left,
+                rows: (5em, 5em),
+                [
+                    RAMA #simbolos[] #sys.inputs.at("rama") \
+                    HASH #simbolos[] #sys.inputs.at("hash") \
+                    DIRT #sys.inputs.at("dirt")
+                ],
+                [
+                    #let inicio = datetime(year:2025, month:8, day:1)
+                    #let actual = datetime.today()
+                    INIC #inicio.display() \
+                    ACTU #datetime.today().display() \
+                    DURA #{ actual - inicio }.days() días \
+                    CONT #sys.inputs.at("contribucions") contribucións
+                ]
+            )
+        }
     )
-}
+
+)
 
 // Funcion para crear o Índice de materias
 // Manter un ollo en:
