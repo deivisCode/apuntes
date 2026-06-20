@@ -44,9 +44,6 @@
 // https://github.com/typst/typst/issues/1896 [Ergonomic numbering-by-section]
 // https://github.com/typst/typst/issues/2652 [Dependent numberings]
 
-// :FACER: eliminar os linebreak: optimized fora do corpo
-
-
 
 // Importo variables como o tamaño de letra, cores, funcións para escribir en
 // Sans, etc.
@@ -380,26 +377,11 @@
             liga : 1,
             kern : 1,
         ),
-        overhang  : true,
-        costs     : (
-            hyphenation : 100%,
-            runt        : 100%,
-            widow       : 100%,
-            orphan      : 100%,
-        ),
         lang      : "gl",
         region    : "ES",
         script    : "latn",
         dir       : ltr,
         hyphenate : true,
-    )
-    set par(
-        justify              : true,
-        justification-limits : _tamaños_xustificacion,
-        first-line-indent    : _par_ind,
-        spacing              : _spacing,
-        leading              : _leading,
-        linebreaks           : "optimized"
     )
     show raw: eso => mono(eso)
     show math.equation: eso => mates(eso)
@@ -449,6 +431,23 @@
             outside : _marxe_ext,
             bottom  : _marxe_inf
         ),
+    )
+    set text(
+        overhang : true,
+        costs    : (
+            hyphenation : 100%,
+            runt        : 100%,
+            widow       : 100%,
+            orphan      : 100%,
+        )
+    )
+    set par(
+        justify              : true,
+        justification-limits : _tamaños_xustificacion,
+        first-line-indent    : _par_ind,
+        spacing              : _spacing,
+        leading              : _leading,
+        linebreaks           : "optimized"
     )
     // As ecuacions no texto deben ser 'box' para que non se rompan
     show math.equation.where(block: false): eso => { box(eso) }
