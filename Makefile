@@ -20,20 +20,13 @@ OPCIONS := \
 	--ignore-system-fonts     \
 	--ignore-embedded-fonts   \
 	--font-path=fontes        \
-	--timings=.aux/perf.json  \
+	--timings=.aux/perf_{n}.json
+
+INFO_GIT := \
 	--input rama=$(shell git rev-parse --abbrev-ref HEAD) \
 	--input hash=$(shell git rev-parse --short HEAD) \
 	--input dirt=$(shell test -z "$$(git status --porcelain)" && echo "limpo" || echo "sucio") \
 	--input contribucions=$(shell git rev-list HEAD --count)
-
-OPCIONS_FIGURAS := \
-	--format pdf              \
-	--root .                  \
-	--pdf-standard 2.0        \
-	--diagnostic-format short \
-	--ignore-system-fonts     \
-	--ignore-embedded-fonts   \
-	--font-path=fontes        \
 
 # Hai que asegurarse de que existe o directorio .pdf e .aux
 $(shell if [ ! -d ".pdf" ]; then mkdir .pdf; fi)
@@ -45,9 +38,9 @@ $(shell if [ ! -d ".aux" ]; then mkdir .aux; fi)
 .PRECIOUS: .pdf/apuntes.pdf $(FIGURAS_PDF)
 
 .pdf/apuntes.pdf: apuntes.typ funcions/* $(wildcard capitulos/*.typ) $(FIGURAS_PDF)
-	@echo -e "\nCompilando apuntes...\n"
 	typst $(METODO) \
 		$(OPCIONS) \
+		$(INFO_GIT) \
 		apuntes.typ .pdf/apuntes.pdf
 
 # Xerar as figuras
@@ -60,9 +53,8 @@ $(shell if [ ! -d ".aux" ]; then mkdir .aux; fi)
 # $^ -> prereq, e.g. figuras/typ/figura.typ
 # :FACER: non podo poñer funcions/figuras.typ como prerequisito..
 $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
-	@echo -e "\nCompilando figuras...\n"
 	typst compile \
-		$(OPCIONS_FIGURAS) \
+		$(OPCIONS) \
 		$^ $@
 
 # :FACER: actualizar isto. Posiblemente facendo un repo cas fontes compiladas e usando submódulos
