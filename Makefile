@@ -20,6 +20,8 @@ OPCIONS := \
 	--ignore-system-fonts     \
 	--ignore-embedded-fonts   \
 	--font-path=fontes        \
+	--deps=.aux/deps.json     \
+	--deps-format=json        \
 	--timings=.aux/perf_{n}.json
 
 INFO_GIT := \
