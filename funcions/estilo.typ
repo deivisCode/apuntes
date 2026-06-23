@@ -8,7 +8,9 @@
 //
 // Este é o arquivo cas funcións e estilos de todos os apuntes.
 //
-// Defínense:
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//
+// FUNCIÓNS PRINCIPAIS
 //
 // - Funcións para crear distintas partes do documento:
 //     crear_portada()
@@ -31,7 +33,8 @@
 //
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //
-// Niveis (depth) dos títulos (headers):
+// NIVEIS (DEPTH) DOS TÍTULOS (HEADERS):
+//
 // (1) META:     Portada, Indice, Corpo do documento, Biblografía principal, Índices
 //               adicionais, contraportada
 // (2) PARTE:    Separacións semánticas do corpo máis xerais: física, matemáticas;
@@ -40,14 +43,14 @@
 //               topoloxía, mecánica clásica, etc.
 // (4) SECCIÓN:  Separacións necesarias para os capítulos
 //
-// Manter un ollo en:
+// :NOTA: Manter un ollo nestes issues:
 // https://github.com/typst/typst/issues/1896 [Ergonomic numbering-by-section]
 // https://github.com/typst/typst/issues/2652 [Dependent numberings]
 
 
 // Importo variables como o tamaño de letra, cores, funcións para escribir en
 // Sans, etc.
-// :FACER: meter a info cun #toml(info.toml)?
+// :FACER: meter a info cun #toml(info.toml)/json(info.json)?
 #import("/funcions/variables.typ"): *
 
 // Funcion para crear a portada
@@ -55,6 +58,7 @@
     columns : 1fr,
     rows    : (1fr, 1fr, 1fr),
 
+    // TITULO
     grid.cell(
         x:0, y:0,
         {
@@ -63,6 +67,7 @@
         }
     ),
 
+    // AUTORÍA E CONTACTO
     grid.cell(
         x:0, y:1,
         {
@@ -73,6 +78,7 @@
         }
     ),
 
+    // INFO GIT
     grid.cell(
         x:0, y:2,
         {
@@ -100,9 +106,8 @@
 )
 
 // Funcion para crear o Índice de materias
-// Manter un ollo en:
-// https://github.com/typst/typst/issues/1926 [Ancestry/inside/within selector]
 // :FACER: o de repetir 'numbering' en tantos sitios é un lio...
+// :FACER: aprobeitar o `within`
 #let crear_indice_contidos() = {
     // Encabezado de Nivel 1 para o propio índice de contidos
     heading(

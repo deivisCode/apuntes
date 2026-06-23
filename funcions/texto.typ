@@ -290,7 +290,7 @@
                     supplement: [Capítulo],
                     heading(
                         level: 3,
-                        // :AQUI: por que sumar 1? E ollo, non se actualizan entre partes...
+                        // :FACER: por que sumar 1? E ollo, non se actualizan entre partes...
                         numbering: (.., n) => numbering("1", CAP+1),
                         condensada[*#nome*],
                     )
