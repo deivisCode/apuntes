@@ -1,9 +1,11 @@
 SHELL := bash
 .DEFAULT_GOAL := .pdf/apuntes.pdf
-.PHONY: limpa descargar_fontes comprobar_fontes
+.PHONY: limpa descargar_fontes comprobar_fontes eval
 
 METODO := compile
 XERADOS := .pdf/* .aux/*
+
+# typst eval --in apuntes.typ
 
 # Os nomes das figuras en PDF
 #
@@ -23,6 +25,13 @@ OPCIONS := \
 	--deps=.aux/deps.json     \
 	--deps-format=json        \
 	--timings=.aux/perf_{n}.json
+
+OPCIONS_EVAL := \
+	--root .                  \
+	--diagnostic-format human \
+	--ignore-system-fonts     \
+	--ignore-embedded-fonts   \
+	--font-path=fontes
 
 INFO_GIT := \
 	--input rama=$(shell git rev-parse --abbrev-ref HEAD) \
@@ -58,6 +67,14 @@ $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 	typst compile \
 		$(OPCIONS) \
 		$^ $@
+
+eval: apuntes.typ funcions/* $(wildcard capitulos/*.typ)
+	typst eval \
+		$(OPCIONS_EVAL) \
+		$(INFO_GIT) \
+		--in apuntes.typ \
+		"$$(cat trebellos/consulta.typ)" >| .aux/consulta.json
+
 
 # :FACER: actualizar isto. Posiblemente facendo un repo cas fontes compiladas e usando submódulos
 descargar_fontes:
