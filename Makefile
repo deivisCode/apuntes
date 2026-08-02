@@ -59,23 +59,5 @@ $(FIGURAS_PDF): .pdf/%.pdf: figuras/typ/%.typ
 		$(OPCIONS) \
 		$^ $@
 
-# :FACER: actualizar isto. Posiblemente facendo un repo cas fontes compiladas e usando submódulos
-descargar_fontes:
-
-	$(shell if [ ! -d "fontes/NewCM" ]; then mkdir -p fontes/NewCM; fi)
-	$(shell if [ ! -d "fontes/SymbolsNerdFont" ]; then mkdir -p fontes/SymbolsNerdFont; fi)
-
-	# Descargando e descomprimindo fontes
-	wget -O fontes/NewCM.txz https://download.gnu.org.ua/release/newcm/newcm-7.0.4.txz
-	tar -xvf fontes/NewCM.txz -C fontes/NewCM
-
-	wget -O fontes/SymbolsNerdFont.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip
-	unzip fontes/SymbolsNerdFont.zip -d fontes/SymbolsNerdFont
-
-comprobar_fontes:
-
-	# comprobar as rutas
-	typst fonts --ignore-system-fonts --ignore-embedded-fonts --font-path=fontes --variants
-
 limpa:
 	rm -rf $(XERADOS)
