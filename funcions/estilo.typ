@@ -526,6 +526,10 @@
     // Encabezados nivel 1 con máis espaciado
     show heading.where(level: 1): set block(below: 1em)
     show bibliography: set heading(depth: 1)
+    show bibliography: eso => {
+        show link: set text(fill: rgb("#0000EE"), font: _mono.familia, size: 0.8em, tracking: -0.5pt)
+        eso
+    }
     doc
 }
 
