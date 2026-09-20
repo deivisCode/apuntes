@@ -328,33 +328,19 @@
         sticky: true,
         above: 2em,
         below: 1em,
-        grid(
-            columns: (1em, 1fr),
-            // Esta figura ten un 'kind' concreto que logo podo coller con
-            // query pa saber que seccións teño nunha certa páxina. O corpo da
-            // figura ten un 'metadata' co nome da sección, o cal non ocupa
-            // espazo visual algún.
-            context {
-                figure(
-                    kind : "seccions-" + str(here().page()),
-                    supplement : "figura_auxiliar_seccions",
-                    metadata(nome)
+        context [
+            #let CAP = counter(heading.where(level: 3)).at(here()).last()
+            #figure(
+                kind: "seccion",
+                supplement: [Sección],
+                heading(
+                    level: 4,
+                    numbering: (.., SEC) => numbering("1.1", CAP, SEC),
+                    [#nome],
                 )
-            },
-            context [
-                #let CAP = counter(heading.where(level: 3)).at(here()).last()
-                #figure(
-                    kind: "seccion",
-                    supplement: [Sección],
-                    heading(
-                        level: 4,
-                        numbering: (.., SEC) => numbering("1.1", CAP, SEC),
-                        [#nome],
-                    )
-                )
-                #label(ancora)
-            ]
-        )
+            )
+            #label(ancora)
+        ]
     )
 }
 

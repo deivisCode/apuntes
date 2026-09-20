@@ -184,63 +184,43 @@
     }
 }
 
-/// Funcion para crear un encabezado
-//
-// Este estado garda todas as seccións do libro
-#let _seccions = state("seccions", ([ ],))
+// Funcion que nos devolve a última sección definida na páxina actual
+#let que_seccion() = {
+    // Array con todas as sección
+    let seccions = query(heading.where(level: 4))
+        // filtramos as que están na páxina actual
+        .filter(h4 => here().page() == h4.location().page())
+    // se non hai, devolvemos NONE
+    if seccions.len() == 0 {
+        return none
+    // se hai, devolvemos a última
+    } else  {
+        return seccions.last().body
+    }
+}
 
-// A propia función que devolve o contido (separada do resto para aprobeitar o
-// caché de typst)
-#let contido_cabeza(sec) = {
+// Funcion para crear un encabezado, pasándolle o nome da seccion e o lado
+#let contido_cabeza(sec, lado) = {
+    if sec == none { return }
     grid(
         columns : 1,
         rows    : (1em, 1em),
-        align   : left + horizon,
+        align   : lado + horizon,
         grid.cell(x:0, y:0, condensada(sec)),
         grid.cell(x:0, y:1, line(length: 100%, stroke: _pt_fino + _gris_titulos))
     )
 }
 
-// A función que determina a info de cada encabezado e logo usamos en cada
-// páxina. Ollo, este 'context' é extremadamente grande
-// :FACER: non mostrar o encabezado en páxinas en branco, en inicios de cap, etc.
+// Función para crear as cabeceiras das páxinas, chámase en `set page(header: ...)`
 #let crear_encabezado() = context {
     // Páxina actual
     let num = counter(page).get().first()
     // Páxinas pares (esquerda)
     if calc.even(num) {
-        set text(size: 0.8em, fill: _gris_titulos)
-        // Todas as seccións definidas na páxina actual. Depende da función
-        // 'sección' que crea unha figura baleira de tipo "seccions-49" con
-        // metadata("nome seccion") dentro
-        let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
-        // A última sección que hai na páxina
-        let seccion_ultima = if seccions.len() != 0 {
-            // Se hai seccións nesta páxina, mostrámola e actualizamos a lista global
-            // Recordemos que:
-            // seccions                   -> array
-            // seccions.last()            -> ultimo elemento, unha figura
-            // seccions.last().body       -> o corpo da figura (#metadata)
-            // seccions.last().body.value -> o valor da metadata (o nome da seccion)
-            seccions.last().body.value
-            _seccions.update(s => s + (seccions.last().body.value,) )
-        } else {
-            // Se non hai, usamos a sección da lista global
-            _seccions.get().last()
-        }
-        // Mostrar o encabezado. 2 filas, 3 columnas. 2ª fila toda xunta cunha liña
-        contido_cabeza(seccion_ultima)
+        contido_cabeza(que_seccion(), left)
     // Páxinas impares (dereita)
-    } else {
-        set text(size: 0.8em, fill: _gris_titulos)
-        let seccions = query(figure.where(kind: "seccions-" + str(here().page())))
-        let seccion_ultima = if seccions.len() != 0 {
-            seccions.last().body.value
-            _seccions.update(s => s + (seccions.last().body.value,) )
-        } else {
-            _seccions.get().last()
-        }
-        contido_cabeza(seccion_ultima)
+    } else if calc.odd(num) {
+        contido_cabeza(que_seccion(), right)
     }
 }
 
