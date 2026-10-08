@@ -77,11 +77,12 @@
 #let documento = {
     parte( nome : "Matemáticas",)
     include("/capitulos/01_00_CONXUNTOS_introducion.typ")
-    include("/capitulos/01_01_CONXUNTOS_conceptos.typ")
-    include("/capitulos/01_02_CONXUNTOS_relacions.typ")
-    include("/capitulos/01_03_CONXUNTOS_funcions.typ")
-    include("/capitulos/01_04_CONXUNTOS_invariantes.typ")
-    include("/capitulos/01_05_CONXUNTOS_diagramas.typ")
+    include("/capitulos/01_01_CONXUNTOS_loxica.typ")
+    include("/capitulos/01_02_CONXUNTOS_conceptos.typ")
+    include("/capitulos/01_03_CONXUNTOS_relacions.typ")
+    include("/capitulos/01_04_CONXUNTOS_funcions.typ")
+    include("/capitulos/01_05_CONXUNTOS_invariantes.typ")
+    include("/capitulos/01_06_CONXUNTOS_diagramas.typ")
 
     include("/capitulos/02_00_GRAFOS_introducion.typ")
 
