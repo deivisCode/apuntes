@@ -106,19 +106,21 @@
     include("/capitulos/03_11_ALXEBRA_estruturas.typ")
     include("/capitulos/03_12_ALXEBRA_alxebra.typ")
 
-    include("/capitulos/04_00_SIMETRIA_introducion.typ")
-    include("/capitulos/04_01_SIMETRIA_transformacions.typ")
-    include("/capitulos/04_02_SIMETRIA_accions-grupos.typ")
-    include("/capitulos/04_03_SIMETRIA_homoxeneidade.typ")
-    include("/capitulos/04_04_SIMETRIA_xeometria.typ")
+    include("/capitulos/04_00_ESPAZOS_LINEAIS_introduccion.typ")
 
-    include("/capitulos/05_00_REPRESENTACIONS_introducion.typ")
+    include("/capitulos/05_00_SIMETRIA_introducion.typ")
+    include("/capitulos/05_01_SIMETRIA_transformacions.typ")
+    include("/capitulos/05_02_SIMETRIA_accions-grupos.typ")
+    include("/capitulos/05_03_SIMETRIA_homoxeneidade.typ")
+    include("/capitulos/05_04_SIMETRIA_xeometria.typ")
 
-    include("/capitulos/06_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
-    include("/capitulos/06_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
+    include("/capitulos/06_00_REPRESENTACIONS_introducion.typ")
+
+    include("/capitulos/07_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
+    include("/capitulos/07_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
 
     parte( nome : "Física")
-    include("/capitulos/07_00_MECANICA_introducion.typ")
+    include("/capitulos/08_00_MECANICA_introducion.typ")
 }
 
 #crear_apuntes(

@@ -26,12 +26,12 @@ cal só é razoable en casos moi concretos, polo que prefiro esquivalo.]
         ((E,plus.o),(KK,+,dot),circle.stroked.tiny).
     $
 
-    É dicir, un $A$-módulo, pero en lugar do anel temos un campo.
+    É dicir, un $KK$-módulo, pero en lugar do anel temos un campo.
 
 ]
 
 #notacion[
-    Os elementos de $E$ chamámolos #indice("Vector") vectores e os de $A$
+    Os elementos de $E$ chamámolos #indice("Vector") vectores e os de $KK$
     #indice("Escalar") escalares. No caso xeral (que a min non me gusta
     demasiado) soe denotarse ao conxunto do grupo como $V$, en alusión ao
     concepto de vector; e ao conxunto do campo usando unha letra dobre, como
@@ -78,7 +78,7 @@ cal só é razoable en casos moi concretos, polo que prefiro esquivalo.]
 
     - Sexa o conxunto de tensores 3 veces contravariantes e 1 vez covariantes,
       e $Gamma^(a b c)_d$ e $Gamma'^(a' b' c')_(d')$ dous tensores concretos.
-      Sabemos que podemos multiplicalos por escalares linealmente; existea suma
+      Sabemos que podemos multiplicalos por escalares linealmente; existe a suma
       de tensores ca que forman un grupo; e en realidade teñen todas as
       propiedades antes descritas en @def:alxebra:espazo-lineal. Polo tanto,
       dito conxunto de tensores é un espazo vectorial e seus elementos,
