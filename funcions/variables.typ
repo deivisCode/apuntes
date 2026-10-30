@@ -29,22 +29,22 @@
 // text(font: "Roboto", weight:400, stretch: 75% ) -> Roboto Condensed
 // text(font: "Roboto", weight:400, stretch: 100%) -> Roboto Normal
 //
-// NORMAL      Cochineal  https://ctan.org/pkg/cochineal
-// MATES       NewCM      https://github.com/alerque/libertinus
-// SANS        Roboto     https://fonts.google.com/specimen/Roboto
-// CONDENSADA  Roboto     https://fonts.google.com/specimen/Roboto
-// SLAB        RobotoSlab https://fonts.google.com/specimen/Roboto+Slab
-// MONO        FiraCodeNF https://github.com/ryanoasis/nerd-fonts/releases/
-// SIMBOLOS    SymbolsNF  https://github.com/ryanoasis/nerd-fonts/releases/
+// NORMAL      Common Serif https://github.com/StefanPeev/Common-Serif
+// MATES       Libertinus   https://github.com/alerque/libertinus
+// SANS        Roboto       https://fonts.google.com/specimen/Roboto
+// CONDENSADA  Roboto       https://fonts.google.com/specimen/Roboto
+// SLAB        RobotoSlab   https://fonts.google.com/specimen/Roboto+Slab
+// MONO        FiraCodeNF   https://github.com/ryanoasis/nerd-fonts/releases/
+// SIMBOLOS    SymbolsNF    https://github.com/ryanoasis/nerd-fonts/releases/
 //
 // Esto son dicionarios que se poden acceder noutras partes do código pa ter a
 // info das fontes
-#let _norm = ( familia: "Cochineal"              , peso: 400 , estilo: "normal" , estiramento: 100% )
+#let _norm = ( familia: "Common Serif"           , peso: 400 , estilo: "normal" , estiramento: 100% )
 #let _mate = ( familia: "Libertinus Math"        , peso: 400 , estilo: "normal" , estiramento: 100% )
 #let _sans = ( familia: "Roboto"                 , peso: 400 , estilo: "normal" , estiramento: 100% )
 #let _cond = ( familia: "Roboto"                 , peso: 400 , estilo: "normal" , estiramento: 75%  )
 #let _slab = ( familia: "Roboto Slab"            , peso: 200 , estilo: "normal" , estiramento: 100% )
-#let _mono = ( familia: "FiraCode Nerd Font"     , peso: 400 , estilo: "normal" , estiramento: 100% )
+#let _mono = ( familia: "FiraCode Nerd Font Mono", peso: 400 , estilo: "normal" , estiramento: 100% )
 #let _simb = ( familia: "Symbols Nerd Font Mono" , peso: 400 , estilo: "normal" , estiramento: 100% )
 
 // Varias funcións para activar as distintas fontes directamente

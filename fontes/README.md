@@ -1,0 +1,24 @@
+- Common Serif
+  - VERSION: `1.048`
+  - DESCARGAS: https://github.com/StefanPeev/Common-Serif
+  - LICENCIA: [SIL OFL](https://ctan.org/license/ofl)
+- Libertinus
+  - VERSIÓN: `7.051`
+  - DESCARGAS: https://github.com/alerque/libertinus
+  - LICENCIA: [SIL OFL](https://ctan.org/license/ofl)
+- Roboto
+  - VERSIÓN: `3.016`
+  - DESCARGAS: https://fonts.google.com/specimen/Roboto
+  - LICENCIA: [SIL OFL](https://ctan.org/license/ofl)
+- Roboto Slab
+  - VERSIÓN: `2.002`
+  - DESCARGAS: https://fonts.google.com/specimen/Roboto+Slab
+  - LICENCIA: [Apache 2.0](https://ctan.org/license/ofl)
+- Fira Code NF https://github.com/ryanoasis/nerd-fonts/releases/
+  - VERSIÓN: `3.4.0`
+  - DESCARGAS: https://github.com/ryanoasis/nerd-fonts/releases/
+  - LICENCIA: [SIL OFL](https://ctan.org/license/ofl)
+- Símbolos NF https://github.com/ryanoasis/nerd-fonts/releases/
+  - VERSIÓN: `3.4.0`
+  - DESCARGAS: https://github.com/ryanoasis/nerd-fonts/releases/
+  - LICENCIA: [SIL OFL](https://ctan.org/license/ofl)
