@@ -263,49 +263,55 @@
 
 /// Función para crear un CAPITULO
 #let capitulo(
-    nome     : " -- SEN NOME -- ",
-    ancora   : " -- SEN ÁNCORA -- ",
-    epigrafe : " -- SEN EPÍGRAFE -- "
+    nome     : none,
+    ancora   : none,
+    epigrafe : none
 ) = {
-    // :FACER: simplificar esto. Capitulo, Nome e celdas diferentes do grid, show, set, etc.
-    show heading.where(level: 3): eso => {
-        set align(left)
-        let CAP = counter(heading.where(level: 3)).at(here()).last()
-        text(size: 1.2em, fill: _gris_titulos)[#v(0.4em)#condensada[*Capítulo #CAP*]\ ]
-        text(size: 3em)[#eso.body]
-    }
+
+    assert(nome != none, message: "O nome do capítulo non pode estar baleiro.")
+    assert(ancora != none, message: "A áncora do capítulo non pode estar baleira.")
     pagebreak(to:"odd")
     counter(heading.where(level: 4)).update(0)
+    show heading.where(level: 3): eso => text(size: 3em)[#eso.body] // cabeceira do cap. so co nome, sen número
+
     grid(
-        columns : (auto,20%,1fr),
-        rows    : (5em, 5em),
-        align   : (left, center, right + bottom),
+        rows    : (2em, 3em, 5em),
+        columns : 1fr,
 
         grid.cell(
             x:0, y:0,
+            context {
+                let CAP = counter(heading.where(level: 3)).at(here()).last() + 1
+                condensada[Capítulo #CAP]
+            }
+        ),
+
+        grid.cell(
+            x:0, y:1,
             context [
+                #show figure: set align(left)
                 #let CAP = counter(heading.where(level: 3)).at(here()).last()
                 #figure(
                     kind: "capitulo",
-                    supplement: [Capítulo],
+                    supplement: "Capítulo",
                     heading(
                         level: 3,
-                        // :FACER: por que sumar 1? E ollo, non se actualizan entre partes...
-                        numbering: (.., n) => numbering("1", CAP+1),
+                        // :FACER: por que sumar 1?
+                        numbering: (.., n) => numbering("1", CAP + 1),
                         condensada[*#nome*],
                     )
                 )
                 #label(ancora)
-            ],
+            ]
         ),
 
         grid.cell(
-            x:2, y:1,
-            text(size:0.7em)[
-                #epigrafe
-                #v(1fr)
-                #line(length:20%, stroke:_pt_fino)
-            ]
+            x:0, y:2,
+            align: right + bottom,
+            {
+                if epigrafe == none { " -- SEN EPÍGRAFE -- " }
+                else { text(size:0.7em, { epigrafe; line(length:20%, stroke:_pt_fino) }) }
+            }
         )
 
     )
