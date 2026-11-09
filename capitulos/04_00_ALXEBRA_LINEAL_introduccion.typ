@@ -2,13 +2,13 @@
 #import("/funcions/simbolos.typ"): *
 
 #capitulo(
-    nome : "Espazos Lineais",
-    ancora : "cap:espazos-lineais",
+    nome : "Álxebra Lineal",
+    ancora : "cap:alxebra-lineal",
 )
 
 #seccion(
     nome : "Introdución",
-    ancora : "sec:espazos-lineais:introducion"
+    ancora : "sec:alxebra-lineal:introducion"
 )
 
 @axler_2024

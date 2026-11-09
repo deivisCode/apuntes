@@ -4,7 +4,6 @@
 /* :FACER: lista xeral
 - Funcións
     - Notas na marxe a man. Depende de https://github.com/typst/typst/issues/5233
-        - Ecuacions/Seccions nas marxes
     - Índice a man
         - Ir á palabra exacta
         - Resaltar a palabra no texto
@@ -51,15 +50,6 @@
     - En xeral, estilos
     - `pageref`, incluso con nomes do teorema `#context { query(<def:alxebra:subestrutura>).first().location().page() }`
     - Citas bibliográficas deben usar pre-post notes
-- Fontes
-    - Normal     : Cochineal (variante de Crimson).
-    - Serif      : Roboto
-    - Condensada : Roboto Condensed
-    - Slab       : Roboto Slab
-    - Mates      : Libertinus Math
-    - Símbolos   : Symbols Nerd Font
-    - Mono       : FiraCode Nerd Font
-    - rematar submódulos, eliminar sobrantes
 - Portada
 - Contraportada
 - Explicacións
@@ -72,6 +62,7 @@
 - Seccións e temas
     - sección de símbolos
     - seccion de retículas
+- Figuras. O sistema de tamaños e tal non é robusto, as cousas acaban con distintos tamaños
 */
 
 #let documento = {
@@ -106,21 +97,26 @@
     include("/capitulos/03_11_ALXEBRA_estruturas.typ")
     include("/capitulos/03_12_ALXEBRA_alxebra.typ")
 
-    include("/capitulos/04_00_ESPAZOS_LINEAIS_introduccion.typ")
+    include("/capitulos/04_00_ALXEBRA_LINEAL_introduccion.typ")
 
-    include("/capitulos/05_00_SIMETRIA_introducion.typ")
-    include("/capitulos/05_01_SIMETRIA_transformacions.typ")
-    include("/capitulos/05_02_SIMETRIA_accions-grupos.typ")
-    include("/capitulos/05_03_SIMETRIA_homoxeneidade.typ")
-    include("/capitulos/05_04_SIMETRIA_xeometria.typ")
+    include("/capitulos/05_00_ALXEBRA_MULTILINEAL_introduccion.typ")
+    include("/capitulos/05_01_ALXEBRA_MULTILINEAL_formas-bilineais.typ")
 
-    include("/capitulos/06_00_REPRESENTACIONS_introducion.typ")
+    include("/capitulos/06_00_GRUPOS_introduccion.typ")
 
-    include("/capitulos/07_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
-    include("/capitulos/07_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
+    include("/capitulos/07_00_SIMETRIA_introducion.typ")
+    include("/capitulos/07_01_SIMETRIA_transformacions.typ")
+    include("/capitulos/07_02_SIMETRIA_accions-grupos.typ")
+    include("/capitulos/07_03_SIMETRIA_homoxeneidade.typ")
+    include("/capitulos/07_04_SIMETRIA_xeometria.typ")
+
+    include("/capitulos/08_00_REPRESENTACIONS_introducion.typ")
+
+    include("/capitulos/09_00_XEOMETRIA-DIFERENCIAL_introducion.typ")
+    include("/capitulos/09_01_XEOMETRIA-DIFERENCIAL_curvas.typ")
 
     parte( nome : "Física")
-    include("/capitulos/08_00_MECANICA_introducion.typ")
+    include("/capitulos/10_00_MECANICA_introducion.typ")
 }
 
 #crear_apuntes(

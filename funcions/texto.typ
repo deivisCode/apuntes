@@ -19,7 +19,7 @@
 
 /// Usado para citar unha referencia.
 // :FACER: Pode usarse esto ao facer @kostrikin_1986 ? Tal vez se uso unha show: cite =>
-// :FACER: Cambiar idioma para as citas (así fai mellores hífens)? Includo
+// :FACER: Cambiar idioma para as citas (así fai mellores hífens)? Incluido
 //         creando un parámetro (por defecto 'en' ou 'es') para controlalo en cada
 //         cita. Ou incluso usar a info da cita?. CSL debería ter un valor tipo 'lang'
 //         set text(lang: "en")
@@ -296,7 +296,6 @@
                     supplement: "Capítulo",
                     heading(
                         level: 3,
-                        // :FACER: por que sumar 1?
                         numbering: (.., n) => numbering("1", CAP + 1),
                         condensada[*#nome*],
                     )
@@ -324,7 +323,6 @@
 ) = {
     show figure: set align(right)
     show heading.where(level: 4): eso => {
-        // :FACER: limpar esto. Fai falla o show?
         let CAP = counter(heading.where(level: 3)).at(here()).last()
         let SEC = counter(heading.where(level: 4)).at(here()).last()
         set text(size: 1.5em)

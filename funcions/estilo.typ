@@ -48,9 +48,7 @@
 // https://github.com/typst/typst/issues/2652 [Dependent numberings]
 
 
-// Importo variables como o tamaño de letra, cores, funcións para escribir en
-// Sans, etc.
-// :FACER: meter a info cun #toml(info.toml)/json(info.json)?
+// Importo variables como o tamaño de letra, cores, funcións para escribir en Sans, etc.
 #import("/funcions/variables.typ"): *
 
 // Funcion para crear a portada
@@ -463,7 +461,6 @@
     )
     // Esto é para customizar as referencias
     // :FACER: simplificar esto...
-    // :FACER: por que as veces é .last() e outras .first() ? LEER: https://typst.app/docs/reference/introspection/counter/
     // :FACER: unificar <exp:>, <ec:>, etc. Facer tests?
     show ref: eso => {
         // SOBREESCRIBIR REFERENCIAS ÁS FIGURAS DOS TEOREMAS
