@@ -449,10 +449,16 @@
     //
     // (capitulo.seccion.numero_absoluto)
     set math.equation(
-        numbering: eso => {
+        numbering: eso => context {
             let CAP = counter(heading.where(level:3)).at(here()).last()
             let SEC = counter(heading.where(level:4)).at(here()).last()
-            [(#CAP.#SEC.#eso)]
+            let num = counter(page).get().first()
+            set text(fill: _gris_textos, size: 0.9em)
+            if calc.even(num) {
+                box[#move(dx:2cm, [(#CAP.#SEC.#eso)])]
+            } else if calc.odd(num) {
+                box[#move(dx:-14.5cm, [(#CAP.#SEC.#eso)])]
+            }
         }
     )
     // Esto é para customizar as referencias
